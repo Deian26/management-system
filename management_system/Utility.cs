@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Security.Cryptography;
-using System.Windows.Forms;
 
 namespace management_system
 {
@@ -140,7 +139,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Error loading errors from the DataBase table 'BASE_Errors': "+exception.ToString());
+                MessageBox.Show("Error loading errors from the DataBase table 'BASE_Errors'.");
             }
 
 
