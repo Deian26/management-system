@@ -1,3 +1,40 @@
-﻿<root>
+﻿<Errors signature="">
+
+	<EN>
+		<DB_conn_failed>Connection to the database failed. </DB_conn_failed>
+		<DB_invalid_database>Invalid DataBase name. </DB_invalid_database>
+		<DB_disconnect_failed>Error disconnecting from database. </DB_disconnect_failed>
+		<DB_load_databases_failed>Error loading the list of databases saved in the system XML file. </DB_load_databases_failed>
+		
+		<Load_languages_failed>Failed to load languages pack. </Load_languages_failed>
+		<Load_themes_failed>Failed to load themes pack. </Load_themes_failed>
+		
+		<Invalid_username>Invalid username. </Invalid_username>
+		<Invalid_username_duplicate>This username alread exists. </Invalid_username_duplicate>
+		<Invalid_password>Invalid password. The password must have at least 10 character and contain at least one lower case latin alphabet letter, at least one upper case latin alphabet letter, at least one digit and at least one special character from the list: ~!@#$%^*_ . </Invalid_password>
+		<Invalid_credentials>Invalid credentials. </Invalid_credentials>
+		
+		<XML_format_error>Invalid XML format or path. </XML_format_error>
+		<XML_language_control_not_found>Language pack: Control not found in the form. Check XML file. Control: </XML_language_control_not_found>
+		<XML_theme_control_not_found>Theme pack: Control not found in the form. Check XML file. Control: </XML_theme_control_not_found>
+		<XML_file_invalid_signature>SECURITY ERROR: THE SIGNATURE OF THE SELECTED XML FILE IS INVALID. Details: </XML_file_invalid_signature>
+		
+		<SQL_statement_error>SQL statement error. </SQL_statement_error>
+		<SQL_table_format_error>SQL table format error. </SQL_table_format_error>
+		
+		<Code_wrong_function_call>Wrong function call (check parameters and returned values); function:  </Code_wrong_function_call>
+		<Code_utility_thread_termination_error>Error when terminating the utility service thread. Details:  </Code_utility_thread_termination_error>
+		<Code_error_opening_diagnostic_log_saveFile_dialog>Error opening the save file dialog box for the diagnostic log. Details:  </Code_error_opening_diagnostic_log_saveFile_dialog>
+		<Code_error_saving_diagnostic_log>Error saving the diagnostic log file. Details:  </Code_error_saving_diagnostic_log>
+		<Code_invalid_byte_digit>Invalid string representing a byte digit format. Details:  </Code_invalid_byte_digit>
+		
+		<Form_duplicate_controls>Multiple controls with the same name: </Form_duplicate_controls>
+		
+		<Account_Error_new_user_registered>Error while registering new account. Details: </Account_Error_new_user_registered>
+	</EN>
 	
-</root>
+	<RO>
+		
+	</RO>
+	
+</Errors>

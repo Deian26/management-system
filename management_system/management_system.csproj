@@ -46,14 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="F0_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="F0_Login.Designer.cs">
+      <DependentUpon>F0_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="F1_MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F1_MainForm.Designer.cs">
+      <DependentUpon>F1_MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="U0_UtilityMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="U0_UtilityMainForm.Designer.cs">
+      <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="U1_CustomizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="U1_CustomizationForm.Designer.cs">
+      <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="F0_Login.resx">
+      <DependentUpon>F0_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F1_MainForm.resx">
+      <DependentUpon>F1_MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +88,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="U0_UtilityMainForm.resx">
+      <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U1_CustomizationForm.resx">
+      <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SYSTEM\SETTINGS\XML_errors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DATA\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

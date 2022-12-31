@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\management_system"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\management_system\\management_system.sln",
   "PreviewInSolutionExplorer": false
 }

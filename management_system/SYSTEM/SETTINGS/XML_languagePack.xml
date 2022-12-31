@@ -1,0 +1,41 @@
+﻿<Languages signature="">
+	<EN>
+		<F0_Login>
+			<F0_label_titleLogIn>Log In</F0_label_titleLogIn>
+			<F0_label_username>Username: </F0_label_username>
+			<F0_label_password>Password: </F0_label_password>
+			<F0_label_dataBase>DataBase: </F0_label_dataBase>
+			<F0_button_register>Register</F0_button_register>
+			<F0_button_login>Login</F0_button_login>
+			<F0_button_language>EN</F0_button_language>
+		</F0_Login>
+		
+		<F1_MainForm>
+			<F1_label_greeting>
+				<WELCOME>Welcome, #USERNAME# !</WELCOME>
+				<NEWS>#USERNAME#, these are the latest news</NEWS>
+				<NOTIFICATIONS>#USERNAME#, YOU HAVE #NUMBER_NOTIFICATIONS# of unread notifications</NOTIFICATIONS>
+			</F1_label_greeting>
+		</F1_MainForm>
+	</EN>
+	
+	<RO>
+		<F0_Login>
+			<F0_label_titleLogIn>Conectare</F0_label_titleLogIn>
+			<F0_label_username>Utilizator: </F0_label_username>
+			<F0_label_password>Parolă: </F0_label_password>
+			<F0_label_dataBase>Bază de Date: </F0_label_dataBase>
+			<F0_button_register>Înregistrare</F0_button_register>
+			<F0_button_login>Conectare</F0_button_login>
+			<F0_button_language>RO</F0_button_language>
+		</F0_Login>
+		
+		<F1_MainForm>
+			<F1_label_greeting>
+				<WELCOME>Bună ziua, #USERNAME# !</WELCOME>
+				<NEWS>#USERNAME#, acestea sunt ultimele noutăți</NEWS>
+				<NOTIFICATIONS>#USERNAME#, aveți #NUMBER_NOTIFICATIONS# notificări necitite</NOTIFICATIONS>
+			</F1_label_greeting>
+		</F1_MainForm>
+	</RO>
+</Languages>

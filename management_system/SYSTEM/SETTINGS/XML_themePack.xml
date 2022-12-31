@@ -1,0 +1,35 @@
+﻿<Themes signature="">
+	<LITE>
+		<F0_Login backcolor="WhiteSmoke">
+			<F0_label_titleLogIn backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_label_username backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_label_password backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_label_dataBase backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_button_register backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_button_login backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_button_language backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+			<F0_button_theme backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+		</F0_Login>
+		
+		<F1_MainForm backcolor="WhiteSmoke">
+			<F1_label_greeting backcolor="WhiteSmoke" forecolor="Black" font="Times New Roman" />
+		</F1_MainForm>
+	</LITE>
+	
+	<DARK>
+		<F0_Login backcolor = "ControlDarkDark">
+			<F0_label_titleLogIn backcolor="" forecolor="ControlLight" font="Times New Roman" />
+			<F0_label_username backcolor="" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_label_password backcolor="" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_label_dataBase backcolor="" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_button_register backcolor="ControlDarkDark" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_button_login backcolor="ControlDarkDark" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_button_language backcolor="ControlDarkDark" forecolor="ControlLight" font="Times New Roman"  />
+			<F0_button_theme backcolor="ControlDarkDark" forecolor="ControlLight" font="Times New Roman"  />
+		</F0_Login>
+		
+		<F1_MainForm backcolor="ControlDarkDark">
+			<F1_label_greeting backcolor="Gray" forecolor="DarkGray" font="Times New Roman" />
+		</F1_MainForm>
+	</DARK>
+</Themes>

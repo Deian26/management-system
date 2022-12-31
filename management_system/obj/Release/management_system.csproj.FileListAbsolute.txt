@@ -1,0 +1,12 @@
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\bin\Release\management_system.exe.config
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\bin\Release\management_system.exe
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\bin\Release\management_system.pdb
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.csproj.AssemblyReference.cache
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.csproj.SuggestedBindingRedirects.cache
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.F0_Login.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.F1_MainForm.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.Properties.Resources.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.csproj.GenerateResource.cache
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.csproj.CoreCompileInputs.cache
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.exe
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Release\management_system.pdb

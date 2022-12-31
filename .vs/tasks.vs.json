@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-management_system",
+      "appliesTo": "management_system/management_system.sln",
+      "type": "launch"
+    }
+  ]
+}
