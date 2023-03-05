@@ -1,0 +1,17 @@
+Roadmap for the Management System project
+Starting form the MainForm groups implementation
+
+1) Implement the display of the groups in the MainForm
+
+2) Implement file editors:
+  2.1) Text editor
+  2.2) Database table editor
+  2.3) XML editor
+  2.4) Image viewer
+
+3) Implement the export system; formats:
+  3.1) .txt
+  3.2) PDF
+  3.3) XML (if the input file can be converted into an XML file)
+
+4) Implement a form editor (Optional)
