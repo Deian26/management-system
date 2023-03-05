@@ -1,2 +1,2 @@
-# city_management_system
-A system that aims to facilitate the management of an organization.
+# Management System
+A system that aims to facilitate the file management of an organization.
