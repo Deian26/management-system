@@ -12,3 +12,5 @@ C:\Users\deian\source\repos\Deian26\city_management_system\management_system\obj
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F1_MainForm.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.U0_UtilityMainForm.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.U1_CustomizationForm.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F2_MainFormNotificationWindow.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F3_UserManagement.resources

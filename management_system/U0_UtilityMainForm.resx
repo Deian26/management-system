@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="U0_groupBox_diagnostics.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="U0_groupBox_diagnosticSettingFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="U0_groupBox_diagnosticsDataBaseConnection.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="U0_richTextBox_diagnosticLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="U0_label_diagnosticsLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="&gt;&gt;U0_groupBox_diagnosticSettingFiles.Name" xml:space="preserve">
     <value>U0_groupBox_diagnosticSettingFiles</value>
   </data>
@@ -182,10 +167,17 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="U0_groupBox_diagnostics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 40</value>
+    <value>130, 32</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="U0_groupBox_diagnostics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="U0_groupBox_diagnostics.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_diagnostics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 392</value>
+    <value>355, 318</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="U0_groupBox_diagnostics.TabIndex" type="System.Int32, mscorlib">
@@ -206,9 +198,6 @@
   <data name="&gt;&gt;U0_groupBox_diagnostics.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="U0_groupBox_diagnosticSettingFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="&gt;&gt;U0_label_XML_setting_files_status.Name" xml:space="preserve">
     <value>U0_label_XML_setting_files_status</value>
   </data>
@@ -234,10 +223,16 @@
     <value>1</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 134</value>
+    <value>4, 109</value>
+  </data>
+  <data name="U0_groupBox_diagnosticSettingFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="U0_groupBox_diagnosticSettingFiles.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 68</value>
+    <value>342, 55</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -263,15 +258,17 @@
   <data name="U0_label_XML_setting_files_status.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="U0_label_XML_setting_files_status.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="U0_label_XML_setting_files_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 26</value>
+    <value>146, 21</value>
+  </data>
+  <data name="U0_label_XML_setting_files_status.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="U0_label_XML_setting_files_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
+    <value>171, 19</value>
   </data>
   <data name="U0_label_XML_setting_files_status.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -298,10 +295,13 @@
     <value>NoControl</value>
   </data>
   <data name="U0_button_diagnosticCheck_XML_Setting_Files.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
+    <value>4, 17</value>
+  </data>
+  <data name="U0_button_diagnosticCheck_XML_Setting_Files.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_button_diagnosticCheck_XML_Setting_Files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 33</value>
+    <value>135, 27</value>
   </data>
   <data name="U0_button_diagnosticCheck_XML_Setting_Files.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -321,12 +321,6 @@
   <data name="&gt;&gt;U0_button_diagnosticCheck_XML_Setting_Files.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="U0_groupBox_diagnosticsDataBaseConnection.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="U0_label_ConnectedDataBase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="&gt;&gt;U0_textBox_ConnectedDataBase.Name" xml:space="preserve">
     <value>U0_textBox_ConnectedDataBase</value>
   </data>
@@ -376,10 +370,16 @@
     <value>3</value>
   </data>
   <data name="U0_groupBox_diagnosticsDataBaseConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
+    <value>4, 17</value>
+  </data>
+  <data name="U0_groupBox_diagnosticsDataBaseConnection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="U0_groupBox_diagnosticsDataBaseConnection.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_diagnosticsDataBaseConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 107</value>
+    <value>342, 87</value>
   </data>
   <data name="U0_groupBox_diagnosticsDataBaseConnection.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -400,10 +400,13 @@
     <value>1</value>
   </data>
   <data name="U0_textBox_ConnectedDataBase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 70</value>
+    <value>146, 57</value>
+  </data>
+  <data name="U0_textBox_ConnectedDataBase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_textBox_ConnectedDataBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 22</value>
+    <value>193, 20</value>
   </data>
   <data name="U0_textBox_ConnectedDataBase.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -420,9 +423,6 @@
   <data name="&gt;&gt;U0_textBox_ConnectedDataBase.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="U0_label_ConnectedDataBase.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="U0_label_ConnectedDataBase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -433,16 +433,19 @@
     <value>NoControl</value>
   </data>
   <data name="U0_label_ConnectedDataBase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 70</value>
+    <value>4, 57</value>
+  </data>
+  <data name="U0_label_ConnectedDataBase.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="U0_label_ConnectedDataBase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>140, 19</value>
   </data>
   <data name="U0_label_ConnectedDataBase.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="U0_label_ConnectedDataBase.Text" xml:space="preserve">
-    <value>Connected DataBase:</value>
+    <value>DataBase connection:</value>
   </data>
   <data name="&gt;&gt;U0_label_ConnectedDataBase.Name" xml:space="preserve">
     <value>U0_label_ConnectedDataBase</value>
@@ -466,10 +469,13 @@
     <value>NoControl</value>
   </data>
   <data name="U0_label_DataBaseConnectionStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 26</value>
+    <value>146, 21</value>
+  </data>
+  <data name="U0_label_DataBaseConnectionStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="U0_label_DataBaseConnectionStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 22</value>
+    <value>164, 19</value>
   </data>
   <data name="U0_label_DataBaseConnectionStatus.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -493,10 +499,13 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="U0_button_resetDataBaseConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 21</value>
+    <value>4, 17</value>
+  </data>
+  <data name="U0_button_resetDataBaseConnection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_button_resetDataBaseConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 33</value>
+    <value>135, 27</value>
   </data>
   <data name="U0_button_resetDataBaseConnection.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -516,14 +525,14 @@
   <data name="&gt;&gt;U0_button_resetDataBaseConnection.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="U0_richTextBox_diagnosticLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="U0_richTextBox_diagnosticLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 230</value>
+    <value>4, 187</value>
+  </data>
+  <data name="U0_richTextBox_diagnosticLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 156</value>
+    <value>343, 128</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -543,9 +552,6 @@
   <data name="&gt;&gt;U0_richTextBox_diagnosticLog.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <metadata name="U0_label_diagnosticsLog.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="U0_label_diagnosticsLog.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -553,10 +559,13 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="U0_label_diagnosticsLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 205</value>
+    <value>4, 167</value>
+  </data>
+  <data name="U0_label_diagnosticsLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="U0_label_diagnosticsLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
+    <value>100, 19</value>
   </data>
   <data name="U0_label_diagnosticsLog.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -582,29 +591,14 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>147</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>658, 461</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Name" xml:space="preserve">
-    <value>U0_label_userAccess</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Parent" xml:space="preserve">
-    <value>U0_groupBox_accountDetails</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>494, 375</value>
   </data>
   <data name="&gt;&gt;U0_label_username.Name" xml:space="preserve">
     <value>U0_label_username</value>
@@ -616,13 +610,19 @@
     <value>U0_groupBox_accountDetails</value>
   </data>
   <data name="&gt;&gt;U0_label_username.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="U0_groupBox_accountDetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 40</value>
+    <value>9, 32</value>
+  </data>
+  <data name="U0_groupBox_accountDetails.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="U0_groupBox_accountDetails.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_accountDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 128</value>
+    <value>116, 43</value>
   </data>
   <data name="U0_groupBox_accountDetails.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -640,7 +640,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;U0_groupBox_accountDetails.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="U0_button_openCustomizationForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -649,10 +649,13 @@
     <value>NoControl</value>
   </data>
   <data name="U0_button_openCustomizationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 184</value>
+    <value>9, 158</value>
+  </data>
+  <data name="U0_button_openCustomizationForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_button_openCustomizationForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 54</value>
+    <value>108, 46</value>
   </data>
   <data name="U0_button_openCustomizationForm.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -670,19 +673,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;U0_button_openCustomizationForm.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="U0_statusStrip_utilityService.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>288, 57</value>
   </metadata>
-  <metadata name="U0_statusStrip_utilityService.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="U0_statusStrip_utilityService.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 435</value>
+    <value>0, 353</value>
+  </data>
+  <data name="U0_statusStrip_utilityService.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 0, 10, 0</value>
   </data>
   <data name="U0_statusStrip_utilityService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 26</value>
+    <value>494, 22</value>
   </data>
   <data name="U0_statusStrip_utilityService.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -705,14 +708,14 @@
   <metadata name="U0_toolStrip_utilityService.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>284, 19</value>
   </metadata>
-  <metadata name="U0_toolStrip_utilityService.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="U0_toolStrip_utilityService.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="U0_toolStrip_utilityService.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
   <data name="U0_toolStrip_utilityService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 25</value>
+    <value>494, 28</value>
   </data>
   <data name="U0_toolStrip_utilityService.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -731,6 +734,12 @@
   </data>
   <data name="&gt;&gt;U0_toolStrip_utilityService.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="$this.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -792,10 +801,10 @@
   <data name="&gt;&gt;U0_notifyIcon_utilityService.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;U0_timer_diagnosticTimer.Name" xml:space="preserve">
-    <value>U0_timer_diagnosticTimer</value>
+  <data name="&gt;&gt;U0_timer_logTimer.Name" xml:space="preserve">
+    <value>U0_timer_logTimer</value>
   </data>
-  <data name="&gt;&gt;U0_timer_diagnosticTimer.Type" xml:space="preserve">
+  <data name="&gt;&gt;U0_timer_logTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;U0_clearLogToolStripMenuItem.Name" xml:space="preserve">
@@ -828,6 +837,18 @@
   <data name="&gt;&gt;U0_timer_clearErr.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;U0_timer_updateDBNotif.Name" xml:space="preserve">
+    <value>U0_timer_updateDBNotif</value>
+  </data>
+  <data name="&gt;&gt;U0_timer_updateDBNotif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;U0_toolStripButton_EXIT.Name" xml:space="preserve">
+    <value>U0_toolStripButton_EXIT</value>
+  </data>
+  <data name="&gt;&gt;U0_toolStripButton_EXIT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>U0_UtilityMainForm</value>
   </data>
@@ -835,43 +856,43 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="U0_toolStripStatusLabel_errorStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
+    <value>84, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_errorStatus.Text" xml:space="preserve">
     <value>#ERR_STATUS#</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 20</value>
+    <value>10, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator.Text" xml:space="preserve">
     <value>|</value>
   </data>
   <data name="U0_toolStripStatusLabel_warningStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 20</value>
+    <value>119, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_warningStatus.Text" xml:space="preserve">
     <value>#WARNING_STATUS#</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 20</value>
+    <value>10, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator2.Text" xml:space="preserve">
     <value>|</value>
   </data>
   <data name="U0_toolStripStatusLabel_notification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 20</value>
+    <value>139, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_notification.Text" xml:space="preserve">
     <value>#OTHER_NOTIFICATION#</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>13, 20</value>
+    <value>10, 17</value>
   </data>
   <data name="U0_toolStripStatusLabel_separator3.Text" xml:space="preserve">
     <value>|</value>
   </data>
   <data name="U0_toolStripProgressBar_actionStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 18</value>
+    <value>75, 16</value>
   </data>
   <metadata name="U0_notifyIcon_utilityService.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>30, 66</value>
@@ -882,14 +903,14 @@
   <data name="U0_notifyIcon_utilityService.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="U0_timer_diagnosticTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1262, 19</value>
+  <metadata name="U0_timer_logTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1006, 26</value>
   </metadata>
   <metadata name="U0_contextMenuStrip_diagnosticLog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>543, 57</value>
   </metadata>
   <data name="U0_contextMenuStrip_diagnosticLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 52</value>
+    <value>152, 48</value>
   </data>
   <data name="&gt;&gt;U0_contextMenuStrip_diagnosticLog.Name" xml:space="preserve">
     <value>U0_contextMenuStrip_diagnosticLog</value>
@@ -898,13 +919,13 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="U0_clearLogToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 24</value>
+    <value>151, 22</value>
   </data>
   <data name="U0_clearLogToolStripMenuItem.Text" xml:space="preserve">
     <value>Clear log</value>
   </data>
   <data name="U0_saveLogToFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 24</value>
+    <value>151, 22</value>
   </data>
   <data name="U0_saveLogToFileToolStripMenuItem.Text" xml:space="preserve">
     <value>Save log to file</value>
@@ -913,7 +934,7 @@
     <value>536, 20</value>
   </metadata>
   <metadata name="U0_timer_notification.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1264, 59</value>
+    <value>1004, 56</value>
   </metadata>
   <data name="U0_label_username.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -925,10 +946,13 @@
     <value>NoControl</value>
   </data>
   <data name="U0_label_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
+    <value>4, 17</value>
+  </data>
+  <data name="U0_label_username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="U0_label_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 22</value>
+    <value>110, 19</value>
   </data>
   <data name="U0_label_username.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -946,42 +970,39 @@
     <value>U0_groupBox_accountDetails</value>
   </data>
   <data name="&gt;&gt;U0_label_username.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="U0_label_userAccess.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="U0_label_userAccess.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="U0_label_userAccess.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="U0_label_userAccess.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 70</value>
-  </data>
-  <data name="U0_label_userAccess.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 28</value>
-  </data>
-  <data name="U0_label_userAccess.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="U0_label_userAccess.Text" xml:space="preserve">
-    <value>#ACCESS#</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Name" xml:space="preserve">
-    <value>U0_label_userAccess</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.Parent" xml:space="preserve">
-    <value>U0_groupBox_accountDetails</value>
-  </data>
-  <data name="&gt;&gt;U0_label_userAccess.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="U0_timer_clearErr.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1265, 95</value>
+    <value>1005, 92</value>
   </metadata>
+  <metadata name="U0_timer_updateDBNotif.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>811, 23</value>
+  </metadata>
+  <data name="U0_toolStripButton_EXIT.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="U0_toolStripButton_EXIT.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="U0_toolStripButton_EXIT.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="U0_toolStripButton_EXIT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 25</value>
+  </data>
+  <data name="U0_toolStripButton_EXIT.Text" xml:space="preserve">
+    <value>EXIT</value>
+  </data>
 </root>

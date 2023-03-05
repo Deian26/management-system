@@ -2,7 +2,32 @@
 
 	<EN>
 		<Account_new_user_registered>New user successfully registered. </Account_new_user_registered>
-	</EN>
+		<Account_access_Admin>Rights: Admin</Account_access_Admin>
+		<Account_access_User>Rights: User</Account_access_User>
+		<Account_confirmation_delete>Do you really want to delete the account? </Account_confirmation_delete>
+		<Account_details_title>Account</Account_details_title>
+		
+		<Help_register_username>The username needs to be at least 5 characters and must only contain lowercase, uppercase letters from the latin alphabet and the character '_' (underscore)</Help_register_username>
+		<Help_register_password>The password must have at least 10 character and contain at least one lower case latin alphabet letter, at least one upper case latin alphabet letter, at least one digit and at least one special character from the list: ~!@#$%^*_</Help_register_password>
+		<Help_database_combobox>The database to connect to</Help_database_combobox>
+		<Help_register_user>Register a new user with normal access rights</Help_register_user>
+		<Help_login>Log into the selected database using the selected credentials</Help_login>
+		<Help_language>Change the language</Help_language>
+		<Help_theme>Change the theme</Help_theme>
+		
+		<F1_Notification_count_text>Unread notifications: </F1_Notification_count_text>
+		<F1_Notification_DB_connection_status_text>Connection status: </F1_Notification_DB_connection_status_text>
+
+		<F3_dataGridView_usernameColumnHeader>Username</F3_dataGridView_usernameColumnHeader>
+		<F3_dataGridView_rightsColumnHeader>Rights</F3_dataGridView_rightsColumnHeader>
+		
+		<System_systemShutdownMessage>Shutdown(min):</System_systemShutdownMessage>
+
+		<XML_setting_file_invalid_signature>Invalid signature</XML_setting_file_invalid_signature>
+		<XML_valid_setting_files>Valid signatures</XML_valid_setting_files>
+
+	
+</EN>
 	
 	<RO>
 		

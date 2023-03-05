@@ -1,10 +1,15 @@
 ﻿<Errors signature="">
 
 	<EN>
-		<DB_conn_failed>Connection to the database failed. </DB_conn_failed>
+		<DB_conn_failed>Database connection failed. </DB_conn_failed>
 		<DB_invalid_database>Invalid DataBase name. </DB_invalid_database>
 		<DB_disconnect_failed>Error disconnecting from database. </DB_disconnect_failed>
 		<DB_load_databases_failed>Error loading the list of databases saved in the system XML file. </DB_load_databases_failed>
+		<DB_creating_table_failed>Error creating a table. </DB_creating_table_failed>
+		<DB_delete_old_notifications_failed>Error deeleting old notifications from the database. </DB_delete_old_notifications_failed>
+		<DB_create_table_failed>Error deleting old notifications. </DB_create_table_failed>
+		<DB_account_not_found>Account not found in the database. </DB_account_not_found>
+		
 		
 		<Load_languages_failed>Failed to load languages pack. </Load_languages_failed>
 		<Load_themes_failed>Failed to load themes pack. </Load_themes_failed>
@@ -18,6 +23,7 @@
 		<XML_language_control_not_found>Language pack: Control not found in the form. Check XML file. Control: </XML_language_control_not_found>
 		<XML_theme_control_not_found>Theme pack: Control not found in the form. Check XML file. Control: </XML_theme_control_not_found>
 		<XML_file_invalid_signature>SECURITY ERROR: THE SIGNATURE OF THE SELECTED XML FILE IS INVALID. Details: </XML_file_invalid_signature>
+		<XML_updating_notifications_failed>Failed to update notifications from the data base into the local XML file. Details: </XML_updating_notifications_failed>
 		
 		<SQL_statement_error>SQL statement error. </SQL_statement_error>
 		<SQL_table_format_error>SQL table format error. </SQL_table_format_error>
@@ -26,11 +32,16 @@
 		<Code_utility_thread_termination_error>Error when terminating the utility service thread. Details:  </Code_utility_thread_termination_error>
 		<Code_error_opening_diagnostic_log_saveFile_dialog>Error opening the save file dialog box for the diagnostic log. Details:  </Code_error_opening_diagnostic_log_saveFile_dialog>
 		<Code_error_saving_diagnostic_log>Error saving the diagnostic log file. Details:  </Code_error_saving_diagnostic_log>
-		<Code_invalid_byte_digit>Invalid string representing a byte digit format. Details:  </Code_invalid_byte_digit>
+		<Code_invalid_byte_digit>Invalid string representing a byte number. Details:  </Code_invalid_byte_digit>
 		
 		<Form_duplicate_controls>Multiple controls with the same name: </Form_duplicate_controls>
 		
 		<Account_Error_new_user_registered>Error while registering new account. Details: </Account_Error_new_user_registered>
+		<Account_security_utility_service_insufficient_rights>ACCOUNT WITH USER RIGHTS ATTEMPTED TO ACCESS THE UTILITY SERVICE (ADMIN ONLY) </Account_security_utility_service_insufficient_rights>
+		
+		<Data_wrong_folder_path>Incorrect path given to create a new directory. Details: </Data_wrong_folder_path>
+		<Data_wrong_file_path_or_type>Incorrect path or file type given to create a new data file. Details: </Data_wrong_file_path_or_type>
+	
 	</EN>
 	
 	<RO>

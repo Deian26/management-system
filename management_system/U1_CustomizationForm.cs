@@ -12,9 +12,20 @@ namespace management_system
 {
     public partial class U1_CustomizationForm : Form
     {
+        //CONSTRUCTORS
         public U1_CustomizationForm()
         {
             InitializeComponent();
+        }
+
+        //EVENT HANDLERS
+
+        //form load
+        private void U1_CustomizationForm_Load(object sender, EventArgs e)
+        {
+            //form settings
+            this.MinimumSize = this.Size;
+            this.MaximumSize = this.Size;
         }
     }
 }

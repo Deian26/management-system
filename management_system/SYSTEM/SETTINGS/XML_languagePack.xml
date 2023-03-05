@@ -13,9 +13,11 @@
 		<F1_MainForm>
 			<F1_label_greeting>
 				<WELCOME>Welcome, #USERNAME# !</WELCOME>
-				<NEWS>#USERNAME#, these are the latest news</NEWS>
-				<NOTIFICATIONS>#USERNAME#, YOU HAVE #NUMBER_NOTIFICATIONS# of unread notifications</NOTIFICATIONS>
+				<NEWS>#USERNAME#, these are your groups</NEWS>
+				<NOTIFICATIONS>#USERNAME#, you have #NUMBER_NOTIFICATIONS# unread notifications</NOTIFICATIONS>
 			</F1_label_greeting>
+			<F1_label_groupsTitle>Groups</F1_label_groupsTitle>
+				
 		</F1_MainForm>
 	</EN>
 	
@@ -33,9 +35,11 @@
 		<F1_MainForm>
 			<F1_label_greeting>
 				<WELCOME>Bună ziua, #USERNAME# !</WELCOME>
-				<NEWS>#USERNAME#, acestea sunt ultimele noutăți</NEWS>
+				<NEWS>#USERNAME#, acestea sunt groupurile dvs</NEWS>
 				<NOTIFICATIONS>#USERNAME#, aveți #NUMBER_NOTIFICATIONS# notificări necitite</NOTIFICATIONS>
 			</F1_label_greeting>
+			<F1_label_groupsTitle>Grupuri</F1_label_groupsTitle>	
+	
 		</F1_MainForm>
 	</RO>
 </Languages>

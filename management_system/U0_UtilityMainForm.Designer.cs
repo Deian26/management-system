@@ -42,7 +42,6 @@
             this.U0_richTextBox_diagnosticLog = new System.Windows.Forms.RichTextBox();
             this.U0_label_diagnosticsLog = new System.Windows.Forms.Label();
             this.U0_eventLog_utilityService = new System.Diagnostics.EventLog();
-            this.U0_toolStrip_utilityService = new System.Windows.Forms.ToolStrip();
             this.U0_statusStrip_utilityService = new System.Windows.Forms.StatusStrip();
             this.U0_toolStripStatusLabel_errorStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.U0_toolStripStatusLabel_separator = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,7 +51,7 @@
             this.U0_toolStripStatusLabel_separator3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.U0_toolStripProgressBar_actionStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.U0_notifyIcon_utilityService = new System.Windows.Forms.NotifyIcon(this.components);
-            this.U0_timer_diagnosticTimer = new System.Windows.Forms.Timer(this.components);
+            this.U0_timer_logTimer = new System.Windows.Forms.Timer(this.components);
             this.U0_contextMenuStrip_diagnosticLog = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.U0_clearLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.U0_saveLogToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +60,10 @@
             this.U0_button_openCustomizationForm = new System.Windows.Forms.Button();
             this.U0_groupBox_accountDetails = new System.Windows.Forms.GroupBox();
             this.U0_label_username = new System.Windows.Forms.Label();
-            this.U0_label_userAccess = new System.Windows.Forms.Label();
             this.U0_timer_clearErr = new System.Windows.Forms.Timer(this.components);
+            this.U0_timer_updateDBNotif = new System.Windows.Forms.Timer(this.components);
+            this.U0_toolStripButton_EXIT = new System.Windows.Forms.ToolStripButton();
+            this.U0_toolStrip_utilityService = new System.Windows.Forms.ToolStrip();
             this.U0_groupBox_diagnostics.SuspendLayout();
             this.U0_groupBox_diagnosticSettingFiles.SuspendLayout();
             this.U0_groupBox_diagnosticsDataBaseConnection.SuspendLayout();
@@ -70,6 +71,7 @@
             this.U0_statusStrip_utilityService.SuspendLayout();
             this.U0_contextMenuStrip_diagnosticLog.SuspendLayout();
             this.U0_groupBox_accountDetails.SuspendLayout();
+            this.U0_toolStrip_utilityService.SuspendLayout();
             this.SuspendLayout();
             // 
             // U0_groupBox_diagnostics
@@ -153,12 +155,6 @@
             this.U0_eventLog_utilityService.SynchronizingObject = this;
             this.U0_eventLog_utilityService.EntryWritten += new System.Diagnostics.EntryWrittenEventHandler(this.eventLog1_EntryWritten);
             // 
-            // U0_toolStrip_utilityService
-            // 
-            this.U0_toolStrip_utilityService.ImageScalingSize = new System.Drawing.Size(20, 20);
-            resources.ApplyResources(this.U0_toolStrip_utilityService, "U0_toolStrip_utilityService");
-            this.U0_toolStrip_utilityService.Name = "U0_toolStrip_utilityService";
-            // 
             // U0_statusStrip_utilityService
             // 
             this.U0_statusStrip_utilityService.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -212,9 +208,9 @@
             // 
             resources.ApplyResources(this.U0_notifyIcon_utilityService, "U0_notifyIcon_utilityService");
             // 
-            // U0_timer_diagnosticTimer
+            // U0_timer_logTimer
             // 
-            this.U0_timer_diagnosticTimer.Tick += new System.EventHandler(this.U0_timer_diagnosticTimer_Tick);
+            this.U0_timer_logTimer.Tick += new System.EventHandler(this.U0_timer_logTimer_Tick);
             // 
             // U0_contextMenuStrip_diagnosticLog
             // 
@@ -254,7 +250,6 @@
             // 
             // U0_groupBox_accountDetails
             // 
-            this.U0_groupBox_accountDetails.Controls.Add(this.U0_label_userAccess);
             this.U0_groupBox_accountDetails.Controls.Add(this.U0_label_username);
             resources.ApplyResources(this.U0_groupBox_accountDetails, "U0_groupBox_accountDetails");
             this.U0_groupBox_accountDetails.Name = "U0_groupBox_accountDetails";
@@ -264,26 +259,47 @@
             // 
             resources.ApplyResources(this.U0_label_username, "U0_label_username");
             this.U0_label_username.Name = "U0_label_username";
-            // 
-            // U0_label_userAccess
-            // 
-            resources.ApplyResources(this.U0_label_userAccess, "U0_label_userAccess");
-            this.U0_label_userAccess.Name = "U0_label_userAccess";
+            this.U0_label_username.Click += new System.EventHandler(this.U0_label_username_Click);
             // 
             // U0_timer_clearErr
             // 
             this.U0_timer_clearErr.Tick += new System.EventHandler(this.U0_timer_clearErr_Tick);
             // 
+            // U0_timer_updateDBNotif
+            // 
+            this.U0_timer_updateDBNotif.Tick += new System.EventHandler(this.U0_timer_updateDBNotif_Tick);
+            // 
+            // U0_toolStripButton_EXIT
+            // 
+            this.U0_toolStripButton_EXIT.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.U0_toolStripButton_EXIT.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.U0_toolStripButton_EXIT, "U0_toolStripButton_EXIT");
+            this.U0_toolStripButton_EXIT.ForeColor = System.Drawing.Color.Red;
+            this.U0_toolStripButton_EXIT.Name = "U0_toolStripButton_EXIT";
+            this.U0_toolStripButton_EXIT.Click += new System.EventHandler(this.U0_toolStripButton_EXIT_Click);
+            // 
+            // U0_toolStrip_utilityService
+            // 
+            this.U0_toolStrip_utilityService.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.U0_toolStrip_utilityService.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.U0_toolStripButton_EXIT});
+            resources.ApplyResources(this.U0_toolStrip_utilityService, "U0_toolStrip_utilityService");
+            this.U0_toolStrip_utilityService.Name = "U0_toolStrip_utilityService";
+            this.U0_toolStrip_utilityService.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.U0_toolStrip_utilityService_ItemClicked);
+            // 
             // U0_UtilityMainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ControlBox = false;
             this.Controls.Add(this.U0_groupBox_accountDetails);
             this.Controls.Add(this.U0_button_openCustomizationForm);
             this.Controls.Add(this.U0_statusStrip_utilityService);
             this.Controls.Add(this.U0_toolStrip_utilityService);
             this.Controls.Add(this.U0_groupBox_diagnostics);
             this.Name = "U0_UtilityMainForm";
+            this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.U0_UtilityMainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.U0_UtilityMainForm_FormClosed);
             this.Load += new System.EventHandler(this.U0_UtilityMainForm_Load);
             this.U0_groupBox_diagnostics.ResumeLayout(false);
@@ -298,6 +314,8 @@
             this.U0_contextMenuStrip_diagnosticLog.ResumeLayout(false);
             this.U0_groupBox_accountDetails.ResumeLayout(false);
             this.U0_groupBox_accountDetails.PerformLayout();
+            this.U0_toolStrip_utilityService.ResumeLayout(false);
+            this.U0_toolStrip_utilityService.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +325,6 @@
         private System.Windows.Forms.GroupBox U0_groupBox_diagnostics;
         private System.Windows.Forms.Label U0_label_diagnosticsLog;
         private System.Diagnostics.EventLog U0_eventLog_utilityService;
-        private System.Windows.Forms.ToolStrip U0_toolStrip_utilityService;
         private System.Windows.Forms.StatusStrip U0_statusStrip_utilityService;
         private System.Windows.Forms.ToolStripStatusLabel U0_toolStripStatusLabel_errorStatus;
         private System.Windows.Forms.ToolStripStatusLabel U0_toolStripStatusLabel_warningStatus;
@@ -322,7 +339,7 @@
         private System.Windows.Forms.GroupBox U0_groupBox_diagnosticSettingFiles;
         private System.Windows.Forms.Label U0_label_XML_setting_files_status;
         private System.Windows.Forms.Button U0_button_diagnosticCheck_XML_Setting_Files;
-        private System.Windows.Forms.Timer U0_timer_diagnosticTimer;
+        private System.Windows.Forms.Timer U0_timer_logTimer;
         private System.Windows.Forms.ContextMenuStrip U0_contextMenuStrip_diagnosticLog;
         private System.Windows.Forms.ToolStripMenuItem U0_saveLogToFileToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog U0_saveFileDialog_diagnosticLog;
@@ -334,8 +351,10 @@
         private System.Windows.Forms.Timer U0_timer_notification;
         private System.Windows.Forms.Button U0_button_openCustomizationForm;
         private System.Windows.Forms.GroupBox U0_groupBox_accountDetails;
-        private System.Windows.Forms.Label U0_label_userAccess;
         private System.Windows.Forms.Label U0_label_username;
         private System.Windows.Forms.Timer U0_timer_clearErr;
+        private System.Windows.Forms.Timer U0_timer_updateDBNotif;
+        private System.Windows.Forms.ToolStrip U0_toolStrip_utilityService;
+        private System.Windows.Forms.ToolStripButton U0_toolStripButton_EXIT;
     }
 }

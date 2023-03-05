@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ Trif, Paul-Deian
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -32,7 +36,9 @@ namespace management_system
         private static void startUtilityService()
         {
             u0_utilityMainFrom = new U0_UtilityMainForm();
+            //u0_utilityMainFrom.Hide();
             Application.Run(u0_utilityMainFrom);
+            
         }
         //main
         static void Main()
@@ -48,12 +54,12 @@ namespace management_system
             {
                 //main
                 f0_logIn = new F0_Login();
-                f1_mainForm = new F1_MainForm();
 
                 Start.initializeUtilityService(); //DEV
 
                 //start the main program
                 Application.Run(f0_logIn);
+
 
                 //stop the utility service
                 try

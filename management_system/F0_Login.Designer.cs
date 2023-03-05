@@ -43,6 +43,10 @@
             this.F0_button_theme = new System.Windows.Forms.Button();
             this.F0_timer_errorClear = new System.Windows.Forms.Timer(this.components);
             this.F0_timer_warningClear = new System.Windows.Forms.Timer(this.components);
+            this.timer_debug = new System.Windows.Forms.Timer(this.components);
+            this.F0_helpProvider_help = new System.Windows.Forms.HelpProvider();
+            this.F0_toolTip_help = new System.Windows.Forms.ToolTip(this.components);
+            this.F0_timer_updateTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.F0_errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +54,11 @@
             // 
             this.F0_textBox_username.Location = new System.Drawing.Point(154, 75);
             this.F0_textBox_username.Name = "F0_textBox_username";
+            this.F0_helpProvider_help.SetShowHelp(this.F0_textBox_username, true);
             this.F0_textBox_username.Size = new System.Drawing.Size(255, 22);
             this.F0_textBox_username.TabIndex = 0;
             this.F0_textBox_username.TextChanged += new System.EventHandler(this.F0_textBox_username_TextChanged);
+            this.F0_textBox_username.MouseEnter += new System.EventHandler(this.F0_textBox_username_MouseEnter);
             // 
             // F0_textBox_password
             // 
@@ -61,6 +67,7 @@
             this.F0_textBox_password.Size = new System.Drawing.Size(255, 22);
             this.F0_textBox_password.TabIndex = 1;
             this.F0_textBox_password.TextChanged += new System.EventHandler(this.F0_textBox_password_TextChanged);
+            this.F0_textBox_password.MouseEnter += new System.EventHandler(this.F0_textBox_password_MouseEnter);
             // 
             // F0_errorProvider
             // 
@@ -106,6 +113,7 @@
             this.F0_button_login.Text = "Login";
             this.F0_button_login.UseVisualStyleBackColor = true;
             this.F0_button_login.Click += new System.EventHandler(this.F0_button_login_Click);
+            this.F0_button_login.MouseEnter += new System.EventHandler(this.F0_button_login_MouseEnter);
             // 
             // F0_button_register
             // 
@@ -117,6 +125,7 @@
             this.F0_button_register.Text = "Register";
             this.F0_button_register.UseVisualStyleBackColor = true;
             this.F0_button_register.Click += new System.EventHandler(this.F0_button_register_Click);
+            this.F0_button_register.MouseEnter += new System.EventHandler(this.F0_button_register_MouseEnter);
             // 
             // F0_comboBox_dataBase
             // 
@@ -126,6 +135,7 @@
             this.F0_comboBox_dataBase.Size = new System.Drawing.Size(255, 24);
             this.F0_comboBox_dataBase.TabIndex = 8;
             this.F0_comboBox_dataBase.SelectedIndexChanged += new System.EventHandler(this.F0_comboBox_dataBase_SelectedIndexChanged);
+            this.F0_comboBox_dataBase.MouseEnter += new System.EventHandler(this.F0_comboBox_dataBase_MouseEnter);
             // 
             // F0_label_dataBase
             // 
@@ -147,6 +157,7 @@
             this.F0_button_language.Text = "EN";
             this.F0_button_language.UseVisualStyleBackColor = true;
             this.F0_button_language.Click += new System.EventHandler(this.F0_button_language_Click);
+            this.F0_button_language.MouseEnter += new System.EventHandler(this.F0_button_language_MouseEnter);
             // 
             // F0_button_theme
             // 
@@ -158,6 +169,7 @@
             this.F0_button_theme.Text = "TH";
             this.F0_button_theme.UseVisualStyleBackColor = true;
             this.F0_button_theme.Click += new System.EventHandler(this.F0_button_theme_Click);
+            this.F0_button_theme.MouseEnter += new System.EventHandler(this.F0_button_theme_MouseEnter);
             // 
             // F0_timer_errorClear
             // 
@@ -166,6 +178,14 @@
             // F0_timer_warningClear
             // 
             this.F0_timer_warningClear.Tick += new System.EventHandler(this.F0_timer_warningClear_Tick);
+            // 
+            // timer_debug
+            // 
+            this.timer_debug.Tick += new System.EventHandler(this.timer_debug_Tick);
+            // 
+            // F0_timer_updateTimer
+            // 
+            this.F0_timer_updateTimer.Tick += new System.EventHandler(this.F0_timer_updateTimer_Tick);
             // 
             // F0_Login
             // 
@@ -212,6 +232,10 @@
         public System.Windows.Forms.Timer F0_timer_errorClear;
         public System.Windows.Forms.Button F0_button_theme;
         private System.Windows.Forms.Timer F0_timer_warningClear;
+        private System.Windows.Forms.Timer timer_debug;
+        private System.Windows.Forms.HelpProvider F0_helpProvider_help;
+        private System.Windows.Forms.ToolTip F0_toolTip_help;
+        private System.Windows.Forms.Timer F0_timer_updateTimer;
     }
 }
 

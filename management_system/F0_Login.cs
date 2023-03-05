@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace management_system
 {
@@ -23,53 +26,12 @@ namespace management_system
         }
 
         //UTILITY FUNCTIONS
-        //check the username
-        private bool validUsername(string username)
+
+        //clear credential textboxes
+        public void ClearCredentials()
         {
-            //valid characters: [a-zA-Z0-9_]
-
-            if (username == null || username.Equals("")) return false;
-
-            foreach (char c in username)
-                if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c<'0' || c>'9') && c != '_') return false;
-
-            return true;
-        }
-
-        //check the password (before registering a new user)
-        private bool validPassword(string password)
-        {
-            /*
-            the password must:
-             * be have least 10 characters
-             
-            the password must contain:
-             * at least one lower case latin alphabet letter [a-z]
-             * at least one upper case latin alphabet letter [A-Z]
-             * at least one digit [0-9]
-             * at least one special character from the list: [~!@#$%^*_]
-             */
-
-            //flags
-            bool lowercase = false,
-                 uppercase = false,
-                 digit = false,
-                 special_char = false;
-
-            if (password == null || password.Equals("") || password.Length<10) return false;
-
-            foreach (char c in password)
-            {
-                if (c >= 'a' && c <= 'z') lowercase = true; //lower case letter found
-                if (c >= 'A' && c <= 'Z') uppercase = true; //upper case letter found
-                if("0123456789".Contains(c)) digit = true; //digit found
-                if("~!@#$%^*_".Contains(c)) special_char = true; //special character found
-            }
-
-            if(lowercase==true && uppercase==true && digit==true && special_char==true) return true;
-
-            return false;
-            
+            this.F0_textBox_password.Clear();
+            this.F0_textBox_username.Clear();
         }
 
         //EVENTS
@@ -77,6 +39,29 @@ namespace management_system
         //form load
         private void F0_Login_Load(object sender, EventArgs e)
         {
+            //form settings
+            this.AllowDrop= false;
+            this.MaximizeBox= false;
+            //this.MinimizeBox = false;
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+
+            //set preference buttons to the correct values
+            string[] preferences = Utility.setLoginButtonsText(); //set the correct language and theme on the corresponding buttons in the login form
+            this.F0_button_language.Text = preferences[0]; //language
+            this.F0_button_theme.Text = preferences[1]; //theme
+
+            //set the help provider and tooltip controls
+            //username textbox
+            //help provider
+            this.F0_helpProvider_help.SetHelpString(this.F0_textBox_username, Utility.displayMessage("Help_register_username")); 
+            this.F0_helpProvider_help.SetShowHelp(this.F0_textBox_username,true);
+
+            //password textbox
+            //help provider
+            this.F0_helpProvider_help.SetHelpString(this.F0_textBox_password, Utility.displayMessage("Help_register_password"));
+            this.F0_helpProvider_help.SetShowHelp(this.F0_textBox_password, true);
+
             //set the timer for the error flags to be cleared
             this.F0_timer_errorClear.Interval = Utility.clearErrTimeInterval; //ms
             this.F0_timer_warningClear.Interval = Utility.clearWarningTimeInterval; //ms
@@ -95,6 +80,16 @@ namespace management_system
             //set the preferences for the current form (based on the default preferences saved in the XML_preferences)
             Utility.setLanguage(this);
             this.F0_button_theme.Text = Utility.setTheme(this);
+
+            //start the update timer
+            this.F0_timer_updateTimer.Interval = Utility.intervalUpdateTimer;
+            this.F0_timer_updateTimer.Start();
+
+            //DEBUG - TO BE DELETED AFTER DEVELOPMENT
+            timer_debug.Interval = 10;
+            timer_debug.Start();
+
+
         }
 
         //form closed
@@ -107,12 +102,11 @@ namespace management_system
         private void F0_button_login_Click(object sender, EventArgs e)
         {
             bool valid = true;
-            bool admin = false;
 
             //login mechanism
 
             //check the connection details
-            if (this.validUsername(F0_textBox_username.Text) == false)
+            if (Utility.validUsername(F0_textBox_username.Text) == false)
             {
                 //display an error
                 this.F0_textBox_username.BackColor= Color.Salmon;
@@ -149,31 +143,33 @@ namespace management_system
                 if (Utility.ERR == false)
                 {
                     //try to find the given credentials in the data base
-                    switch (Utility.logIn(this.F0_textBox_username.Text, this.F0_textBox_password.Text))
+                    string adminString = Utility.logIn(this.F0_textBox_username.Text, this.F0_textBox_password.Text);
+                    if (adminString == null)
                     {
-                        case 0: //admin
-                            admin = true;
-                            break;  
-                        case 1: //user
-                            admin = false;
-                            break;
-
-                        default: //account not found / error
-                            MessageBox.Show(Utility.displayError("Invalid_credentials"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //Application.Exit();
-                            Utility.ERR = true;
-                            Start.f0_logIn.F0_timer_errorClear.Stop();
-                            Start.f0_logIn.F0_timer_errorClear.Start();
-                            break;
+                    MessageBox.Show(Utility.displayError("Invalid_credentials"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //Application.Exit();
+                    Utility.ERR = true;
+                    Start.f0_logIn.F0_timer_errorClear.Stop();
+                    Start.f0_logIn.F0_timer_errorClear.Start();
                     }
+                    
 
                     if (Utility.ERR == false)
-                        Utility.setCredentials(this.F0_textBox_username.Text, this.F0_textBox_password.Text.Length, admin); //username, encryption key for the credentials, admin status
+                    { 
+                        Utility.setCredentials(this.F0_textBox_username.Text, Utility.getDataKey(this.F0_textBox_username.Text) , adminString, this.F0_textBox_password.Text); //username, encryption key for the credentials, admin status
+                        //Utility.setCredentials(this.F0_textBox_username.Text, this.F0_textBox_password.Text.Length, admin);
+    
+                        //start the main application
 
-                    //open F1_MainForm and hide the LogIn form
-                    if (Utility.ERR == false)
-                    {
+                        //load notifications from the database and update the local XML notification file
+                        Utility.updateXMLNotificationsFile(Utility.dirPathDATA+"\\"+Utility.username+"\\"+Utility.username+"_notifications.xml");
+
+                        this.ClearCredentials();
+
+                        //open the MainForm
+                        Start.f1_mainForm = new F1_MainForm();
                         Start.f1_mainForm.Show(); //show form
+                        this.F0_timer_updateTimer.Stop(); //stop the update timer
                         this.Hide();
                     }
                 }
@@ -184,6 +180,7 @@ namespace management_system
         private void F0_button_language_Click(object sender, EventArgs e)
         {
             Utility.nextLanguage(this); //update the language
+            this.F0_toolTip_help.Active = !Utility.ERR_MESSAGES;
 
         }
 
@@ -227,16 +224,17 @@ namespace management_system
         private void F0_button_register_Click(object sender, EventArgs e)
         {
             string hashed_username, hashed_password;
-            int data_key, number_of_keys, number_of_usernames=1;
+            int data_key;
+            SqlDataReader number_of_usernames = null, number_of_keys=null;
             Random rnd = new Random();
             SqlCommand cmd = null, data_key_cmd = null, username_cmd=null;
 
             //check the username and password
-            if (this.validUsername(this.F0_textBox_username.Text) == false) //invalid username
+            if (Utility.validUsername(this.F0_textBox_username.Text) == false) //invalid username
             {
                 this.F0_errorProvider.SetError(this.F0_textBox_username, Utility.displayError("Invalid_username"));
             }
-            else if (this.validPassword(this.F0_textBox_password.Text) == false) //invalid password
+            else if (Utility.validPassword(this.F0_textBox_password.Text) == false) //invalid password
             {
                 this.F0_errorProvider.SetError(this.F0_textBox_password, Utility.displayError("Invalid_password"));
             }
@@ -248,9 +246,10 @@ namespace management_system
                 //hash the credentials (username and password)
                 hashed_username = Utility.DB_HASH(this.F0_textBox_username.Text);
                 //check if the username is unique else exit
-                username_cmd = Utility.getSqlStatement("SELECT * FROM Users WHERE username='" +hashed_username.ToString()+"'");
-                number_of_usernames = username_cmd.ExecuteNonQuery();
-                if (number_of_usernames != -1) //duplicate usernames
+                username_cmd = Utility.getSqlCommand("SELECT * FROM Users WHERE username='" +hashed_username.ToString()+"'");
+                
+                number_of_usernames = username_cmd.ExecuteReader();
+                if (number_of_usernames.HasRows) //duplicate usernames
                 {
                     this.F0_errorProvider.SetError(this.F0_textBox_username,Utility.displayError("Invalid_username_duplicate"));
                     Utility.ERR = true;
@@ -260,21 +259,65 @@ namespace management_system
                     return;
                 }
 
+                //count users
+                int nr_usernames = 0;
+                while(number_of_usernames.Read())
+                {
+                    nr_usernames++;
+                }
+
+                number_of_usernames.Close(); //close data reader
                 hashed_password = Utility.DB_HASH(this.F0_textBox_password.Text);
 
                 do {
-                    data_key = rnd.Next(); //pseudo-random encryption key for files and data other than credentials, unique for each user
-                    data_key_cmd = Utility.getSqlStatement("SELECT * FROM Users WHERE data_key=" + data_key.ToString());
-                    number_of_keys = data_key_cmd.ExecuteNonQuery();
-                } while(number_of_keys != -1); //generate a new data key if the current key already exists
+                    data_key = rnd.Next()%100; //pseudo-random encryption key for files and data other than credentials, unique to each user
+                    data_key_cmd = Utility.getSqlCommand("SELECT * FROM Users WHERE data_key=" + data_key.ToString());
+                    number_of_keys = data_key_cmd.ExecuteReader();
+                } while(number_of_keys.HasRows && data_key<5); //generate a new data key if the current key already exists
+                number_of_keys.Close(); //close data reader
+
 
                 //write the credentials and data encryption key into the database
-                cmd = Utility.getSqlStatement("INSERT INTO Users(username,password,data_key) VALUES('" + hashed_username + "','" + hashed_password + "'," + data_key.ToString() + ")");
+                string adminString = (rnd.Next() % 100).ToString();
+
+                if(nr_usernames==0) //nu users added yet
+                {
+                    adminString = Utility.ENC_GEN(this.F0_textBox_password.Text,data_key + this.F0_textBox_username.Text.Length); //give the first registered user admin rights
+                }
+
+                cmd = Utility.getSqlCommand("INSERT INTO Users(username,password,data_key,admin) VALUES('" + hashed_username + "','" + hashed_password + "'," + data_key.ToString() + ",'"+Utility.DB_HASH(adminString).ToString() +"')");
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
 
+                //create a Notifications table in the current database, if one does not already exists
+                SqlCommand cmd_init = Utility.getSqlCommand("CREATE  TABLE Notifications(_id INT, _text NVARCHAR(150), _sender NVARCHAR(21), _date NVARCHAR(15), _importance INT, _read INT)");
+                Dictionary<string, string> aux_newTableFields = new Dictionary<string, string>
+                {
+                    { "_id", "INT" },
+                    { "_text", "NVARCHAR(150)" },
+                    { "_sender", "NVARCHAR(21)" },
+                    { "_date", "NVARCHAR(15)" },
+                    { "_importance", "INT" },
+                    { "_read", "INT" },
+                };
+                Utility.setCreateTable("Notifications", aux_newTableFields);
+                
+                //create a local user directory for locally stored data
+                bool err_flag = true;
+                err_flag = !Utility.setDirectory(Utility.dirPathDATA + "\\" + this.F0_textBox_username.Text);
+                if (err_flag == true)
+                {
+                    Utility.ERR = true;
+                }
+                //create a local XML notifications file
+                err_flag = Utility.ERR = !Utility.createNotificationFile(Utility.dirPathDATA + "\\"+this.F0_textBox_username.Text+"\\" + this.F0_textBox_username.Text + "_notifications.xml", "Notifications", this.F0_textBox_username.Text);
+                if (err_flag == true)
+                {
+                    Utility.ERR = true;
+                }
+                
                 //display a confirmation message that the user has been registered
-                if(Utility.ERR==false && Utility.WARNING==false) MessageBox.Show(Utility.displayMessage("Account_new_user_registered"),"NOTIFICATION",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if(Utility.ERR==false) MessageBox.Show(Utility.displayMessage("Account_new_user_registered"),"NOTIFICATION",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 else MessageBox.Show(Utility.displayError("Account_Error_new_user_registered"), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -284,6 +327,93 @@ namespace management_system
         {
             this.F0_timer_warningClear.Stop(); //stop this timer
             Utility.WARNING = false; //clear the warning flag
+        }
+
+        //DEBUG - TO BE DELETED AFTER DEVELOPMENT
+        private void timer_debug_Tick(object sender, EventArgs e)
+        {
+            
+            timer_debug.Stop();
+            this.F0_textBox_username.Text = "admin1";
+            this.F0_textBox_password.Text = "Admin1234@";
+            this.F0_button_login.PerformClick();
+            
+        }
+
+        //enter the username textbox
+        private void F0_textBox_username_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_textBox_username, Utility.displayMessage("Help_register_username")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_register_username"), this, Utility.tooltipDuration); 
+            }
+        }
+
+        //enter the password textbox
+        private void F0_textBox_password_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_textBox_password, Utility.displayMessage("Help_register_password")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_register_password"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //enter the database combobox
+        private void F0_comboBox_dataBase_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_comboBox_dataBase, Utility.displayMessage("Help_database_combobox")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_database_combobox"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //enter the register new user button
+        private void F0_button_register_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_button_register, Utility.displayMessage("Help_register_user")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_register_user"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //enter the login button
+        private void F0_button_login_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_button_register, Utility.displayMessage("Help_login")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_login"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //enter the change language button
+        private void F0_button_language_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_button_language, Utility.displayMessage("Help_language")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_language"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //enter the change theme button
+        private void F0_button_theme_MouseEnter(object sender, EventArgs e)
+        {
+            if (Utility.ERR_MESSAGES == false)
+            {
+                this.F0_toolTip_help.SetToolTip(this.F0_button_theme, Utility.displayMessage("Help_theme")); //associate the tooltip with the control
+                //this.F0_toolTip_help.Show(Utility.displayMessage("Help_theme"), this, Utility.tooltipDuration);
+            }
+        }
+
+        //update values
+        private void F0_timer_updateTimer_Tick(object sender, EventArgs e)
+        {
+            if(Utility.ERR==false) this.F0_toolTip_help.Active = !Utility.ERR_MESSAGES; //update the tooltip availability
         }
     }
 }
