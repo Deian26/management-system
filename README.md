@@ -1,2 +1,4 @@
-# city_management_system
-A system that aims to facilitate the management of an organization.
+# Management System
+This project is meant to be used as an example for educational purposes. It is not intended to be used otherwise.
+
+A system that aims to facilitate the file management of an organization.
