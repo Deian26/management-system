@@ -46,56 +46,121 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="F0_Login.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F0_Login.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.Designer.cs">
       <DependentUpon>F0_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="F1_MainForm.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F1_MainForm.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.Designer.cs">
       <DependentUpon>F1_MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="F2_MainFormNotificationWindow.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F2_MainFormNotificationWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F2_MainFormNotificationWindow.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F2_MainFormNotificationWindow.Designer.cs">
       <DependentUpon>F2_MainFormNotificationWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="F3_UserManagement.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F3_UserManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F3_UserManagement.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F3_UserManagement.Designer.cs">
       <DependentUpon>F3_UserManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Start.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="U0_UtilityMainForm.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F4_NewGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="U0_UtilityMainForm.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F4_NewGroup.Designer.cs">
+      <DependentUpon>F4_NewGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.Designer.cs">
+      <DependentUpon>F6_GeneralInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.Designer.cs">
+      <DependentUpon>F5mdi1_TextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi2_XmlEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi2_XmlEditor.Designer.cs">
+      <DependentUpon>F5mdi2_XmlEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\F5_FileEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\F5_FileEditorForm.Designer.cs">
+      <DependentUpon>F5_FileEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\CLASSES\FILES\FILE_EDITORS\FileEditor.cs" />
+    <Compile Include="SYSTEM\CLASSES\FILES\FILE_TYPES\GeneralFile.cs" />
+    <Compile Include="SYSTEM\CLASSES\FILES\FILE_TYPES\TextFile.cs" />
+    <Compile Include="SYSTEM\CLASSES\FILES\FILE_TYPES\XmlFile.cs" />
+    <Compile Include="SYSTEM\CLASSES\GROUPS\Group.cs" />
+    <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\Start.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi3_DatabaseTableEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi3_DatabaseTableEditor.Designer.cs">
+      <DependentUpon>F5mdi3_DatabaseTableEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi4_FileTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi4_FileTreeView.Designer.cs">
+      <DependentUpon>F5mdi4_FileTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.Designer.cs">
+      <DependentUpon>F5mdi5_FileOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.Designer.cs">
       <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="U1_CustomizationForm.cs">
+    <Compile Include="SYSTEM\FORMS\UTILITY\U1_CustomizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="U1_CustomizationForm.Designer.cs">
+    <Compile Include="SYSTEM\FORMS\UTILITY\U1_CustomizationForm.Designer.cs">
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utility.cs" />
-    <EmbeddedResource Include="F0_Login.resx">
+    <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\Utility.cs" />
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.resx">
       <DependentUpon>F0_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F1_MainForm.resx">
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.resx">
       <DependentUpon>F1_MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F2_MainFormNotificationWindow.resx">
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F2_MainFormNotificationWindow.resx">
       <DependentUpon>F2_MainFormNotificationWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F3_UserManagement.resx">
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F3_UserManagement.resx">
       <DependentUpon>F3_UserManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F4_NewGroup.resx">
+      <DependentUpon>F4_NewGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.resx">
+      <DependentUpon>F6_GeneralInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.resx">
+      <DependentUpon>F5mdi1_TextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\F5_FileEditorForm.resx">
+      <DependentUpon>F5_FileEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,10 +171,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="U0_UtilityMainForm.resx">
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi2_XmlEditor.resx">
+      <DependentUpon>F5mdi2_XmlEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi3_DatabaseTableEditor.resx">
+      <DependentUpon>F5mdi3_DatabaseTableEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi4_FileTreeView.resx">
+      <DependentUpon>F5mdi4_FileTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.resx">
+      <DependentUpon>F5mdi5_FileOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.resx">
       <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="U1_CustomizationForm.resx">
+    <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U1_CustomizationForm.resx">
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

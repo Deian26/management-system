@@ -25,7 +25,30 @@
 
 		<XML_setting_file_invalid_signature>Invalid signature</XML_setting_file_invalid_signature>
 		<XML_valid_setting_files>Valid signatures</XML_valid_setting_files>
+		
+		<F5_wordCountLabel>words</F5_wordCountLabel>
+		
+		<F6_title_textEditor_About>About - Text Editor</F6_title_textEditor_About>
+		<F6_info_textEditor_AboutInfo>About the Text Editor
+		
+Version: v0.1
+Management system version: v0.1
 
+	The Text Editor is a sub-system used to open, view and modify text files (.txt, .rtf) and general files, which can be interpreted as text.
+	
+	Tools:
+	1) Text formatting
+		- font styles: Bold, Italic, Underline, Strikethrough
+		- text: set the text colour, text size and font family
+		- search words in the text
+		- replace words from the text
+	2) File options
+		- save file (by default, .txt or .rtf; other formats can also be given)
+		- word count
+		- see file extension
+		- database sync status for database files
+		
+</F6_info_textEditor_AboutInfo>
 	
 </EN>
 	

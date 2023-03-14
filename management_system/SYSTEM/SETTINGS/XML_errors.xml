@@ -9,6 +9,7 @@
 		<DB_delete_old_notifications_failed>Error deeleting old notifications from the database. </DB_delete_old_notifications_failed>
 		<DB_create_table_failed>Error deleting old notifications. </DB_create_table_failed>
 		<DB_account_not_found>Account not found in the database. </DB_account_not_found>
+		<DB_error_getting_key>Error loading the cryptographic key. </DB_error_getting_key>
 		
 		
 		<Load_languages_failed>Failed to load languages pack. </Load_languages_failed>
@@ -30,6 +31,7 @@
 		
 		<Code_wrong_function_call>Wrong function call (check parameters and returned values); function:  </Code_wrong_function_call>
 		<Code_utility_thread_termination_error>Error when terminating the utility service thread. Details:  </Code_utility_thread_termination_error>
+		<Code_main_thread_termination_error>Error when terminating the main thread. Details:  </Code_main_thread_termination_error>
 		<Code_error_opening_diagnostic_log_saveFile_dialog>Error opening the save file dialog box for the diagnostic log. Details:  </Code_error_opening_diagnostic_log_saveFile_dialog>
 		<Code_error_saving_diagnostic_log>Error saving the diagnostic log file. Details:  </Code_error_saving_diagnostic_log>
 		<Code_invalid_byte_digit>Invalid string representing a byte number. Details:  </Code_invalid_byte_digit>
@@ -41,8 +43,34 @@
 		
 		<Data_wrong_folder_path>Incorrect path given to create a new directory. Details: </Data_wrong_folder_path>
 		<Data_wrong_file_path_or_type>Incorrect path or file type given to create a new data file. Details: </Data_wrong_file_path_or_type>
+
+		<Groups_failed_to_load_local_fileNames>Failed to load the names of the locally stored files. </Groups_failed_to_load_local_fileNames>
+		<Groups_failed_to_load_database_fileNames>Failed to load the names of the files stored in the database. </Groups_failed_to_load_database_fileNames>
+		<Groups_failed_to_compute_key>Failed to compute group's cryptographic key. </Groups_failed_to_compute_key>
+		<Groups_failed_to_load_groups>Failed to load groups. </Groups_failed_to_load_groups>
+		<Groups_failed_to_load_group_NameTooLongInDB>Failed to load a group (the name in the database was too long). Name: </Groups_failed_to_load_group_NameTooLongInDB>
+		<Groups_failed_to_load_group_InvalidCharacter>Failed to load a group (invalid character). Details: </Groups_failed_to_load_group_InvalidCharacter>
+		<Groups_failed_to_load_group_InvalidImage>Failed to load a group (invalid image). Details: </Groups_failed_to_load_group_InvalidImage>
+		<Groups_invalid_group_name_too_long>Group name is too long. Maximum length (characters): </Groups_invalid_group_name_too_long>
+		<Groups_invalid_character_in_group_name>Invalid group name. Group names can only contain english aplhabet letters(A-Z, a-z), digits (0-9) and underscore ('_') symbols.</Groups_invalid_character_in_group_name>
+
+		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. Path: </TextEditor_failed_to_open_text_file>
+		<TextEditor_file_does_not_exist>The specified file does not exist; path: </TextEditor_file_does_not_exist>
+		<TextEditor_a_file_already_open>Cannot open the text file. A file is already open. </TextEditor_a_file_already_open>
+		<TextEditor_file_cannot_be_closed>File cannot be closed; path:  </TextEditor_file_cannot_be_closed>
+		<TextEditor_unrecognized_character_found_in_text>Unrecognized character found in the text: </TextEditor_unrecognized_character_found_in_text>
+		<TextEditor_cannot_save_file>Cannot save .txt file at the path: </TextEditor_cannot_save_file>
+		<TextEditor_cannot_display_AboutInfo>Cannot display 'About' information about the Text Editor. </TextEditor_cannot_display_AboutInfo>
+		<TextEditor_invalid_path>Invalid path. </TextEditor_invalid_path>
+		
+		<XmlEditor_cannot_add_tree_node>Failed to add a new node in the tree. </XmlEditor_cannot_add_tree_node>
+		<XmlEditor_cannot_edit_tree_node>Failed to edit the XML tree node. </XmlEditor_cannot_edit_tree_node>
+		
+		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
-	</EN>
+
+
+</EN>
 	
 	<RO>
 		
