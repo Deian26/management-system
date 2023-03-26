@@ -8,6 +8,8 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,9 +140,9 @@ namespace management_system
 
             if (this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Checked) //match case
                 this.searchOptions |= RichTextBoxFinds.MatchCase;
-            if (this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Checked) //reverse search
+            if (this.F5mdi1_toolStripMenuItem_reverseCheckbox.Checked) //reverse search
                 this.searchOptions |= RichTextBoxFinds.Reverse;
-            if (this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Checked) //match whole word
+            if (this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.Checked) //match whole word
                 this.searchOptions |= RichTextBoxFinds.WholeWord;
 
             int position = this.F5mdi1_richTextBox_textEditor.Find(phrase,startPosition,this.searchOptions); //returns -1 if the phrase not found; otherwise, returns the position of the first string found
@@ -196,46 +198,46 @@ namespace management_system
             return -1; //error parsing the text
         }
 
-        //save the currently open file
-        private void saveFile()
+        //locally save the currently open file as a .rtf file
+        private void saveRtfFile()
         {
-            if (((this.F5mdi1_richTextBox_textEditor.Font.Style & FontStyle.Underline) != 0) || ((this.F5mdi1_richTextBox_textEditor.Font.Style & FontStyle.Strikeout) != 0)) //save to a .txt file 
+            try
             {
-                if (this.file.isDbFile() == true) //database file (in the current database)
-                {
-                    //DEV
-                }else  //local file
-                {
-                    try
-                    {
-                        File.WriteAllText(this.file.getFilePath(), this.F5mdi1_richTextBox_textEditor.Text + ".txt"); //write to the specified file (overwrite it if it already exists)
+                
+                Utility.currentGroupPath = "C:\\Users\\deian\\Desktop\\DevGroup1"; //DEBUG
+                if (!Directory.Exists(Utility.currentGroupPath)) //group folder/RTF folder does not exist locally
+                    throw new Exception("Invalid path");
 
-                    }
-                    catch (Exception exception)
-                    {
-                        Utility.DisplayWarning("TextEditor_cannot_save_file" + this.file.getFilePath().ToString(), exception, "Cannot save .txt file at: " + this.file.getFilePath().ToString() + "; " + exception.ToString(), false);
-                    }
-                }
-            }
-            else //save to an .rtf file
+                
+                //group folder/RTF exists locally => save .rtf file in the RTF folder (directory)
+                //encrypt file
+                string aux_string = this.F5mdi1_richTextBox_textEditor.Text;
+
+                this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
+                
+
+                //set filter
+                this.F5mdi1_saveFileDialog_newRtfFile.Filter = "Rich Text Format | *.rtf";
+                //set path
+                this.F5mdi1_saveFileDialog_newRtfFile.InitialDirectory= Utility.currentGroupPath + "\\" + Utility.localRtfFolderName;
+
+                //open save file dialog
+                DialogResult result = this.F5mdi1_saveFileDialog_newRtfFile.ShowDialog();
+                string path = this.F5mdi1_saveFileDialog_newRtfFile.FileName;
+
+                if (!result.Equals(DialogResult.OK)) // quit
+                    return;
+
+                this.F5mdi1_richTextBox_textEditor.SaveFile(path);
+
+                this.F5mdi1_richTextBox_textEditor.Text = aux_string;
+
+            }catch (Exception exception)
             {
-                if (this.file.isDbFile() == true) //database file (in the current database)
-                {
-                    //DEV
-                }else //local file
-                {
-                    try
-                    {
-                        File.WriteAllText(this.file.getFilePath(), this.F5mdi1_richTextBox_textEditor.Text + ".rtf"); //write to the specified file (overwrite it if it already exists); Rich Text Format fileExtension
-
-                    }
-                    catch (Exception exception)
-                    {
-                        Utility.DisplayWarning("TextEditor_cannot_save_file" + this.file.getFilePath().ToString(), exception, "Cannot save .txt file at: " + this.file.getFilePath().ToString() + "; " + exception.ToString(), false);
-                    }
-                }
+                Utility.DisplayError("TextEditor_cannot_save_file", exception, "TextEditor: Could not locally save a file: " + exception.ToString(), false);
             }
         }
+
 
         //EVENT HANDLERS
         //shortcut events for the rich textbox control (text editor)
@@ -248,7 +250,7 @@ namespace management_system
             if (this.F5mdi1_richTextBox_textEditor.SelectionFont.Bold == true) style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style & (~FontStyle.Bold);
             else style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style | FontStyle.Bold;
 
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.Font, style);
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont, style);
         }
 
         //set the selected text to italic
@@ -259,7 +261,7 @@ namespace management_system
             if (this.F5mdi1_richTextBox_textEditor.SelectionFont.Italic == true) style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style & (~FontStyle.Italic);
             else style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style | FontStyle.Italic;
 
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.Font, style);
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont, style);
         }
 
         //underline the selected text
@@ -270,7 +272,7 @@ namespace management_system
             if(this.F5mdi1_richTextBox_textEditor.SelectionFont.Underline == true) style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style & (~FontStyle.Underline);
             else style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style | FontStyle.Underline;
 
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.Font, style);
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont, style);
         }
 
         //strikethrough the selected text
@@ -281,7 +283,7 @@ namespace management_system
             if (this.F5mdi1_richTextBox_textEditor.SelectionFont.Strikeout == true) style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style & (~FontStyle.Strikeout);
             else style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style | FontStyle.Strikeout;
 
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.Font, style);
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont, style);
         }
 
         //increase the size of the selected text
@@ -309,7 +311,7 @@ namespace management_system
         //save text
         private void onShortcut_saveText(object sender, EventArgs e)
         {
-            this.saveFile();
+            this.saveRtfFile();
         }
 
         //form load
@@ -393,7 +395,8 @@ namespace management_system
         {
             try
             {
-                if (this.F5mdi1_toolStripComboBox_font.SelectedItem != null) this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_toolStripComboBox_font.SelectedItem.ToString(), this.F5mdi1_richTextBox_textEditor.SelectionFont.Size, this.F5mdi1_richTextBox_textEditor.SelectionFont.Style);
+                if (this.F5mdi1_toolStripComboBox_font.SelectedItem != null) 
+                    this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_toolStripComboBox_font.SelectedItem.ToString(), this.F5mdi1_richTextBox_textEditor.SelectionFont.Size, this.F5mdi1_richTextBox_textEditor.SelectionFont.Style);
             }
             catch (Exception exception)
             {
@@ -440,10 +443,10 @@ namespace management_system
             this.F5mdi1_toolStripStatusLabel_wordCount.Text = this.countWords().ToString() + " " + Utility.displayMessage("F5_wordCountLabel");
         }
 
-        //save the file
+        //save the file into the database (serialize local file then upload it into the database)
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            this.saveFile();
+            Utility.uploadFileIntoDB(this.file.getFilePath());
         }
 
         //display the 'About' page
@@ -467,7 +470,7 @@ namespace management_system
         //'Print' button pressed
         private void printToolStripButton_Click(object sender, EventArgs e)
         {
-            //DEV
+            //DEV - OPTIONAL
             
             //this.F5mdi1_printDocument_currentDocument.
 
@@ -475,5 +478,67 @@ namespace management_system
             //open print dialog
             this.F5mdi1_printPreviewDialog_printPreview.ShowDialog();
         }
+
+        //replace all words matching the text in the search textbox with the text from the replace textbox
+        private void F5mdi1_toolStripMenuItem_replaceAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(this.F5mdi1_toolStripTextBox_searchTextbox.Text!="" && this.F5mdi1_toolStripTextBox_replaceTextBox.Text!="")
+                    this.F5mdi1_richTextBox_textEditor.Text = this.F5mdi1_richTextBox_textEditor.Text.Replace(this.F5mdi1_toolStripTextBox_searchTextbox.Text, this.F5mdi1_toolStripTextBox_replaceTextBox.Text);
+            }catch (Exception exception)
+            {
+                Utility.DisplayError("TextEditor_cannot_replace_phrase", exception, "Could not replace the text from the search box:" + this.F5mdi1_toolStripTextBox_searchTextbox.Text.ToString() + " with the text from the 'Replace all' textbox: " + this.F5mdi1_toolStripTextBox_replaceTextBox.Text.ToString() + " : " + exception.ToString(), false);
+                return;
+            }
+
+            //replace successful
+            MessageBox.Show(Utility.displayMessage("Replace_text_successful"), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        //text box was clicked
+        private void F5mdi1_richTextBox_textEditor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //clear the text highlited in the phrase search
+        private void F5mdi1_toolStripButton_clearSearchedTextHighlights_Click(object sender, EventArgs e)
+        {
+            this.F5mdi1_richTextBox_textEditor.SelectAll();
+            this.F5mdi1_richTextBox_textEditor.SelectionBackColor = Color.White;
+            this.F5mdi1_richTextBox_textEditor.DeselectAll();
+        }
+
+        //save the file as a local .rtf file
+        private void F5mdi1_toolStripMenuItem_saveAsButton_Click(object sender, EventArgs e)
+        {
+            this.saveRtfFile();
+        }
+
+        //open a local file
+        private void F5mdi1_toolStripButton_openFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //apply a filter to the open file dialog so that onlt .rtf files can be selected
+                this.F5mdi1_openFileDialog_openLocalFile.Filter = "Roch Text Format | *.rtf";
+
+                //show the open file dialog
+                DialogResult result = this.F5mdi1_openFileDialog_openLocalFile.ShowDialog();
+
+                if(result.Equals(DialogResult.OK)) //OK
+                {
+                    this.F5mdi1_richTextBox_textEditor.LoadFile(this.F5mdi1_openFileDialog_openLocalFile.FileName);  //store the text from the selected RTF file into the rich text box control
+
+                    this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_GEN(this.F5mdi1_richTextBox_textEditor.Text,Utility.key); //decrypt text
+                }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("TextEditor_failed_to_open_text_file", exception, "TextEditor: could not open a local file: " + exception.ToString(), false);
+            }
+        }
+
     }   
 }

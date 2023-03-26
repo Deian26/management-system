@@ -49,6 +49,8 @@ Management system version: v0.1
 		- database sync status for database files
 		
 </F6_info_textEditor_AboutInfo>
+
+		<Replace_text_successful>The text was successfully replaced! </Replace_text_successful>
 	
 </EN>
 	

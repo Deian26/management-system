@@ -133,6 +133,10 @@ namespace management_system
         private void F1_MainForm_Load(object sender, EventArgs e)
         {
 
+            //DEV - DEBUG: to be deleted after development
+            F5_FileEditorForm f5_debug = new F5_FileEditorForm();
+            f5_debug.Show();
+
             //priority settings (admin)
             if (Utility.admin == null)
             {

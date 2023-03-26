@@ -16,9 +16,9 @@ C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F3_UserManagement.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F4_NewGroup.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5_FileEditorForm.resources
-C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.SYSTEM.FORMS.PROGRAM_FORMS.F5mdi2_XmlEditor.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS.F5mdi3_DatabaseTableEditor.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS.F5mdi4_FileTreeView.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS.F5mdi5_FileOverview.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F6_GeneralInformation.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi1_TextEditor.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi2_XmlEditor.resources

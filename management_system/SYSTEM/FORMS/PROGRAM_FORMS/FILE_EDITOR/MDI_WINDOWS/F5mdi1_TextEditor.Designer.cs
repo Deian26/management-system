@@ -34,6 +34,7 @@
             this.F5mdi1_toolStripDropDownButton_fileButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.F5mdi1_toolStripMenuItem_saveAsButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi1_toolStripSeparator_separator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.F5mdi1_toolStripButton_openFile = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_toolStripButton_save = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_toolStripButton_print = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_toolStripButton_helpButton = new System.Windows.Forms.ToolStripButton();
@@ -60,6 +61,7 @@
             this.F5mdi1_toolStripTextBox_replaceTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.F5mdi1_toolStripMenuItem_replaceAll = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi1_toolStripButton_startSearch = new System.Windows.Forms.ToolStripButton();
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_statusStrip_status = new System.Windows.Forms.StatusStrip();
             this.F5mdi1_toolStripStatusLabel_wordCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.F5mdi1_toolStripStatusLabel_separator1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -69,6 +71,8 @@
             this.F5mdi1_colorDialog_textColour = new System.Windows.Forms.ColorDialog();
             this.F5mdi1_printPreviewDialog_printPreview = new System.Windows.Forms.PrintPreviewDialog();
             this.F5mdi1_printDocument_currentDocument = new System.Drawing.Printing.PrintDocument();
+            this.F5mdi1_openFileDialog_openLocalFile = new System.Windows.Forms.OpenFileDialog();
+            this.F5mdi1_saveFileDialog_newRtfFile = new System.Windows.Forms.SaveFileDialog();
             this.F5mdi1_toolStrip_textEditor.SuspendLayout();
             this.F5mdi1_statusStrip_status.SuspendLayout();
             this.SuspendLayout();
@@ -78,11 +82,12 @@
             this.F5mdi1_richTextBox_textEditor.Location = new System.Drawing.Point(12, 28);
             this.F5mdi1_richTextBox_textEditor.Name = "F5mdi1_richTextBox_textEditor";
             this.F5mdi1_richTextBox_textEditor.ShowSelectionMargin = true;
-            this.F5mdi1_richTextBox_textEditor.Size = new System.Drawing.Size(966, 395);
+            this.F5mdi1_richTextBox_textEditor.Size = new System.Drawing.Size(1138, 395);
             this.F5mdi1_richTextBox_textEditor.TabIndex = 0;
             this.F5mdi1_richTextBox_textEditor.Text = "";
             this.F5mdi1_richTextBox_textEditor.WordWrap = false;
             this.F5mdi1_richTextBox_textEditor.SelectionChanged += new System.EventHandler(this.F5mdi1_richTextBox_textEditor_SelectionChanged);
+            this.F5mdi1_richTextBox_textEditor.Click += new System.EventHandler(this.F5mdi1_richTextBox_textEditor_Click);
             this.F5mdi1_richTextBox_textEditor.TextChanged += new System.EventHandler(this.F5mdi1_richTextBox_textEditor_TextChanged);
             // 
             // F5mdi1_toolStrip_textEditor
@@ -91,6 +96,7 @@
             this.F5mdi1_toolStrip_textEditor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5mdi1_toolStripDropDownButton_fileButton,
             this.F5mdi1_toolStripSeparator_separator1,
+            this.F5mdi1_toolStripButton_openFile,
             this.F5mdi1_toolStripButton_save,
             this.F5mdi1_toolStripButton_print,
             this.F5mdi1_toolStripButton_helpButton,
@@ -109,10 +115,11 @@
             this.F5mdi1_toolStripLabel_searchTextboxLabel,
             this.F5mdi1_toolStripTextBox_searchTextbox,
             this.F5mdi1_toolStripSplitButton_searchOptions,
-            this.F5mdi1_toolStripButton_startSearch});
+            this.F5mdi1_toolStripButton_startSearch,
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights});
             this.F5mdi1_toolStrip_textEditor.Location = new System.Drawing.Point(0, 0);
             this.F5mdi1_toolStrip_textEditor.Name = "F5mdi1_toolStrip_textEditor";
-            this.F5mdi1_toolStrip_textEditor.Size = new System.Drawing.Size(990, 26);
+            this.F5mdi1_toolStrip_textEditor.Size = new System.Drawing.Size(1165, 26);
             this.F5mdi1_toolStrip_textEditor.TabIndex = 1;
             this.F5mdi1_toolStrip_textEditor.Text = "ToolStrip";
             this.F5mdi1_toolStrip_textEditor.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.F5mdi1_toolStrip_textEditor_ItemClicked);
@@ -131,13 +138,24 @@
             // F5mdi1_toolStripMenuItem_saveAsButton
             // 
             this.F5mdi1_toolStripMenuItem_saveAsButton.Name = "F5mdi1_toolStripMenuItem_saveAsButton";
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(123, 22);
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(180, 22);
             this.F5mdi1_toolStripMenuItem_saveAsButton.Text = "Save as";
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click);
             // 
             // F5mdi1_toolStripSeparator_separator1
             // 
             this.F5mdi1_toolStripSeparator_separator1.Name = "F5mdi1_toolStripSeparator_separator1";
             this.F5mdi1_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 26);
+            // 
+            // F5mdi1_toolStripButton_openFile
+            // 
+            this.F5mdi1_toolStripButton_openFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.F5mdi1_toolStripButton_openFile.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_openFile.Image")));
+            this.F5mdi1_toolStripButton_openFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi1_toolStripButton_openFile.Name = "F5mdi1_toolStripButton_openFile";
+            this.F5mdi1_toolStripButton_openFile.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_openFile.Text = "&Open";
+            this.F5mdi1_toolStripButton_openFile.Click += new System.EventHandler(this.F5mdi1_toolStripButton_openFile_Click);
             // 
             // F5mdi1_toolStripButton_save
             // 
@@ -354,6 +372,7 @@
             this.F5mdi1_toolStripMenuItem_replaceAll.Name = "F5mdi1_toolStripMenuItem_replaceAll";
             this.F5mdi1_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(177, 24);
             this.F5mdi1_toolStripMenuItem_replaceAll.Text = "Replace all";
+            this.F5mdi1_toolStripMenuItem_replaceAll.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_replaceAll_Click);
             // 
             // F5mdi1_toolStripButton_startSearch
             // 
@@ -366,6 +385,17 @@
             this.F5mdi1_toolStripButton_startSearch.Text = "#SEARCH#";
             this.F5mdi1_toolStripButton_startSearch.Click += new System.EventHandler(this.F5mdi1_toolStripButton_startSearch_Click);
             // 
+            // F5mdi1_toolStripButton_clearSearchedTextHighlights
+            // 
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_clearSearchedTextHighlights.Image")));
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Name = "F5mdi1_toolStripButton_clearSearchedTextHighlights";
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Size = new System.Drawing.Size(139, 23);
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Text = "#CLEAR_SEARCH#";
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Click += new System.EventHandler(this.F5mdi1_toolStripButton_clearSearchedTextHighlights_Click);
+            // 
             // F5mdi1_statusStrip_status
             // 
             this.F5mdi1_statusStrip_status.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -377,7 +407,7 @@
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus});
             this.F5mdi1_statusStrip_status.Location = new System.Drawing.Point(0, 428);
             this.F5mdi1_statusStrip_status.Name = "F5mdi1_statusStrip_status";
-            this.F5mdi1_statusStrip_status.Size = new System.Drawing.Size(990, 22);
+            this.F5mdi1_statusStrip_status.Size = new System.Drawing.Size(1165, 22);
             this.F5mdi1_statusStrip_status.TabIndex = 2;
             // 
             // F5mdi1_toolStripStatusLabel_wordCount
@@ -420,11 +450,19 @@
             this.F5mdi1_printPreviewDialog_printPreview.Name = "F5mdi1_printPreviewDialog_printPreview";
             this.F5mdi1_printPreviewDialog_printPreview.Visible = false;
             // 
+            // F5mdi1_openFileDialog_openLocalFile
+            // 
+            this.F5mdi1_openFileDialog_openLocalFile.FileName = "NewFile";
+            // 
+            // F5mdi1_saveFileDialog_newRtfFile
+            // 
+            this.F5mdi1_saveFileDialog_newRtfFile.FileName = "New RTF File";
+            // 
             // F5mdi1_TextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 450);
+            this.ClientSize = new System.Drawing.Size(1165, 450);
             this.Controls.Add(this.F5mdi1_statusStrip_status);
             this.Controls.Add(this.F5mdi1_toolStrip_textEditor);
             this.Controls.Add(this.F5mdi1_richTextBox_textEditor);
@@ -484,5 +522,9 @@
         private System.Windows.Forms.ToolStripSeparator F5mdi1_toolStripSeparator_separator5;
         private System.Windows.Forms.PrintPreviewDialog F5mdi1_printPreviewDialog_printPreview;
         private System.Drawing.Printing.PrintDocument F5mdi1_printDocument_currentDocument;
+        private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_clearSearchedTextHighlights;
+        private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_openFile;
+        private System.Windows.Forms.OpenFileDialog F5mdi1_openFileDialog_openLocalFile;
+        private System.Windows.Forms.SaveFileDialog F5mdi1_saveFileDialog_newRtfFile;
     }
 }

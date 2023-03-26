@@ -54,21 +54,34 @@
 		<Groups_invalid_group_name_too_long>Group name is too long. Maximum length (characters): </Groups_invalid_group_name_too_long>
 		<Groups_invalid_character_in_group_name>Invalid group name. Group names can only contain english aplhabet letters(A-Z, a-z), digits (0-9) and underscore ('_') symbols.</Groups_invalid_character_in_group_name>
 
-		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. Path: </TextEditor_failed_to_open_text_file>
+		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. </TextEditor_failed_to_open_text_file>
 		<TextEditor_file_does_not_exist>The specified file does not exist; path: </TextEditor_file_does_not_exist>
 		<TextEditor_a_file_already_open>Cannot open the text file. A file is already open. </TextEditor_a_file_already_open>
 		<TextEditor_file_cannot_be_closed>File cannot be closed; path:  </TextEditor_file_cannot_be_closed>
 		<TextEditor_unrecognized_character_found_in_text>Unrecognized character found in the text: </TextEditor_unrecognized_character_found_in_text>
-		<TextEditor_cannot_save_file>Cannot save .txt file at the path: </TextEditor_cannot_save_file>
+		<TextEditor_cannot_save_file>Cannot save .rtf file at the path: </TextEditor_cannot_save_file>
 		<TextEditor_cannot_display_AboutInfo>Cannot display 'About' information about the Text Editor. </TextEditor_cannot_display_AboutInfo>
 		<TextEditor_invalid_path>Invalid path. </TextEditor_invalid_path>
+		<TextEditor_cannot_replace_phrase>Error replacing the text from the search text box with the text from the "Replace all" textbox. </TextEditor_cannot_replace_phrase>
 		
 		<XmlEditor_cannot_add_tree_node>Failed to add a new node in the tree. </XmlEditor_cannot_add_tree_node>
 		<XmlEditor_cannot_edit_tree_node>Failed to edit the XML tree node. </XmlEditor_cannot_edit_tree_node>
+		<XMLEditor_cannot_add_custom_node>Failed to add an XML node. </XMLEditor_cannot_add_custom_node>
+		<XMLEditor_cannot_get_custom_node>Failed to get an XML node. </XMLEditor_cannot_get_custom_node>
+		<XMLEditor_cannot_remove_custom_node>Failed to remove an XML node. </XMLEditor_cannot_remove_custom_node>
+		<XMLEditor_cannot_add_custom_node_attribute>Failed to remove add an attribute to an XML node. </XMLEditor_cannot_add_custom_node_attribute>
+		<XMLEditor_cannot_save_tree>Failed to save the tree view XML structure in memory. </XMLEditor_cannot_save_tree>
+		<XMLEditor_cannot_load_textbox_XML_string_into_memory>Failed to save the textbox XML structure in memory. </XMLEditor_cannot_load_textbox_XML_string_into_memory>
+		<XMLEditor_cannot_load_local_XML_file>Failed to load the local XML file. </XMLEditor_cannot_load_local_XML_file>
+		<XMLEditor_cannot_save_local_XML_file>Failed to save the XML dtaa to a local file. </XMLEditor_cannot_save_local_XML_file>
+
+		<DataBaseTableEditor_failed_to_load_database_table>Failed to load the database table. </DataBaseTableEditor_failed_to_load_database_table>
+		<DataBaseTableEditor_failed_to_upload_database_table>Failed to upload the database table into the database. </DataBaseTableEditor_failed_to_upload_database_table>
+		<DataBaseTableEditor_failed_to_locally_save_database_table>Failed to save the database table as a local .tbl file. </DataBaseTableEditor_failed_to_locally_save_database_table>
 		
 		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
-
+		<UtilityService_failed_to_check_XML_files>Failed to check XML files. </UtilityService_failed_to_check_XML_files>
 
 </EN>
 	

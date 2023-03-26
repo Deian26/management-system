@@ -172,7 +172,6 @@ namespace management_system
             };
 
         //database connection
-        // "Data Source=DEIAN-PC\\WINCC;Initial Catalog = Management_system; Integrated Security = True"; //DEV
         private static SqlConnection conn = null;
         
         public static string DB_name = "";
@@ -191,11 +190,19 @@ namespace management_system
 
         //groups
         public static List<Group> userGroups = new List<Group>();
-
+        public static string currentGroupPath = null; //the path to the local group path
         public const int maxGroupNameLength = 20; //the maximum length of a group name
         public const int maxUsernameLength = 20; //the maximum length of a username
 
         public static string groupIconFileFilterString = "JPEG|*.jpeg|JPG|*.jpg|PNG|*.png";//the filter to be applied for the files shown in the new group icon file dialog 
+
+        //local folder names
+        public static string TempfolderName = "TBL"; //Temp folder
+        public static string localRtfFolderName = "RTF"; //RTF folder
+        public static string localXmlFolderName = "XML"; //XML folder
+        public static string localTblFolderName = "TBL"; //TBL folder
+        public static string localGrphFolderName = "GRPH"; //GRPH folder
+        
 
 
         //file editting
@@ -552,7 +559,7 @@ namespace management_system
                 {
                     if (Utility.pathXmlSettingFiles[0].Equals(path)) //database XML file
                         {
-                            Application.Exit();//trigger application exit
+                            //Application.Exit();//trigger application exit
                         throw new Exception(path + ": Database file corrupted. Application shutdown tirggered.");  
                         }
                     throw new Exception(path);
@@ -561,13 +568,7 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_file_invalid_signature") + exception.Message, "SECURITY ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("Invalid XML file signature: " + path.ToString());
-                Utility.ERR = true;
-                Utility.WARNING = true;
-
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
+                Utility.DisplayError("XML_file_invalid_signature", exception, "Invalid XML file signature: " + path.ToString(), false);
 
             }
 
@@ -596,6 +597,14 @@ namespace management_system
         #endregion
 
         #region database
+        //serialize the file at the specified path then upload it into the corresponding table of the currently connected database
+        public static void uploadFileIntoDB(string filePath)
+        {
+            //DEV
+            //serialize file
+            
+        }
+
         //get the databases from the XML file
         public static bool getDataBases()
         {
@@ -649,6 +658,7 @@ namespace management_system
 
 
         }
+
         //connect to the database
         public static bool DB_connect(string connString)
         {
@@ -2096,7 +2106,7 @@ namespace management_system
         //add a new entry into the diagnsotic log (Utility.error_log); this function is used when the displayError() function is not to be used
         public static void logDiagnsoticEntry(string message)
         {
-            Utility.error_log_messages.Add(message);
+            Utility.error_log.Add(message);
         }
 
         //display an error message and log a diagnostic entry and restarts the clear error timer; exit the application if requested

@@ -342,19 +342,25 @@ namespace management_system
         //check the XML setting files (including preferences, theme and language packs)
         private void U0_button_diagnosticCheck_XML_Setting_Files_Click(object sender, EventArgs e)
         {
-            bool error = false;
-            foreach (string path in Utility.pathXmlSettingFiles)
-                if (Utility.checkXML(path) == false) error = true;
+            try
+            {
+                bool error = false;
+                foreach (string path in Utility.pathXmlSettingFiles)
+                    if (Utility.checkXML(path) == false) error = true;
 
-            if (error == true) //display message in the utility service main form
+                if (error == true) //display message in the utility service main form
+                {
+                    this.U0_label_XML_setting_files_status.Text = Utility.displayMessage("XML_setting_file_invalid_signature");
+                    this.U0_label_XML_setting_files_status.ForeColor = Color.Red;
+                }
+                else
+                {
+                    this.U0_label_XML_setting_files_status.Text = Utility.displayMessage("XML_valid_setting_files");
+                    this.U0_label_XML_setting_files_status.ForeColor = Color.GreenYellow;
+                }
+            }catch (Exception exception)
             {
-                this.U0_label_XML_setting_files_status.Text = Utility.displayMessage("XML_setting_file_invalid_signature");
-                this.U0_label_XML_setting_files_status.ForeColor = Color.Red;
-            }
-            else
-            {
-                this.U0_label_XML_setting_files_status.Text = Utility.displayMessage("XML_valid_setting_files");
-                this.U0_label_XML_setting_files_status.ForeColor = Color.GreenYellow;
+                Utility.DisplayError("UtilityService_failed_to_check_XML_files", exception, "UtilityService: Error checking XML files" + exception.ToString(), true);
             }
         }
 

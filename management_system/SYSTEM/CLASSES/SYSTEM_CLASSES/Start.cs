@@ -81,9 +81,6 @@ namespace management_system
                 Start.initializeUtilityService(); //start the utility service thread
                 Start.initializeMainThread(); //start the main thread
 
-                //DEV - DEBUG: to be deleted after development
-                F5_FileEditorForm f5_debug = new F5_FileEditorForm();
-                Application.Run(f5_debug);
 
                 /* DEV - obsolete?
                 //stop the main thread
