@@ -203,14 +203,12 @@ namespace management_system
         {
             try
             {
-                
-                Utility.currentGroupPath = "C:\\Users\\deian\\Desktop\\DevGroup1"; //DEBUG
                 if (!Directory.Exists(Utility.currentGroupPath)) //group folder/RTF folder does not exist locally
                     throw new Exception("Invalid path");
 
                 
                 //group folder/RTF exists locally => save .rtf file in the RTF folder (directory)
-                //encrypt file
+                //encrypt text
                 string aux_string = this.F5mdi1_richTextBox_textEditor.Text;
 
                 this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
