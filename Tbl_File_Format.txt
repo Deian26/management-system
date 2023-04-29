@@ -2,15 +2,15 @@ Locally stored Database Table file format : XML format (.tbl extension)
 
 Format:
 <table name="">
-  <column name="">
-    <row name="" type="" value= >
+  <column name="" type="">
+    <row name="" value= >
   </column>
 </table>
 
 Format example:
 <table name="table1">
-  <column name="column1">
-    <row name="row1" type="nvarchar(20)" value="value1">
-    <row name="row2" type="integer" value=10>
+  <column name="column1" type="nvarchar(20)">
+    <row name="row1" value="value1">
+    <row name="row2" value="value2">
   </column>
 </table>
