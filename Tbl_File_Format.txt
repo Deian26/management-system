@@ -1,0 +1,16 @@
+Locally stored Database Table file format : XML format (.tbl extension)
+
+Format:
+<table name="">
+  <column name="">
+    <row name="" type="" value= >
+  </column>
+</table>
+
+Format example:
+<table name="table1">
+  <column name="column1">
+    <row name="row1" type="nvarchar(20)" value="value1">
+    <row name="row2" type="integer" value=10>
+  </column>
+</table>
