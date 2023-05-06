@@ -96,7 +96,7 @@ namespace management_system
         //form closed
         private void F0_Login_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Application.Exit();//DEV
         }
 
         //login
@@ -285,6 +285,11 @@ namespace management_system
                 {
                     adminString = Utility.ENC_GEN(this.F0_textBox_password.Text,data_key + this.F0_textBox_username.Text.Length); //give the first registered user admin rights
                 }
+
+                /*The 'admin' field stores the password encrypted with data_key+ username.Length and hashed;
+                 * if, when logging in, the given password encrypted with the data_key and username.Length and hashed does not match the value stored in the 'admin' field, the user is given user rights;
+                 * if the values match, then the user is given administrator rights.
+                 */
 
                 cmd = Utility.getSqlCommand("INSERT INTO Users(username,password,data_key,admin) VALUES('" + hashed_username + "','" + hashed_password + "'," + data_key.ToString() + ",'"+Utility.DB_HASH(adminString).ToString() +"')");
                 cmd.ExecuteNonQuery();

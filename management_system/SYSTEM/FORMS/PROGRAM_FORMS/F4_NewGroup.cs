@@ -30,26 +30,31 @@ namespace management_system
         private bool validGroupName(string groupName)
         {
 
-            if(groupName.Length > Utility.maxGroupNameLength) //group name too long
+            if (groupName.Length > Utility.maxGroupNameLength) //group name too long
             {
-                this.F4_errorProvider_newGroupForm.SetError(this.F4_textBox_groupName, Utility.displayError("Groups_invalid_group_name_too_long") +Utility.maxGroupNameLength.ToString());
+                this.F4_errorProvider_newGroupForm.SetError(this.F4_textBox_groupName, Utility.displayError("Groups_invalid_group_name_too_long") + Utility.maxGroupNameLength.ToString());
+                return false;
+            }
+            else if (groupName.Length == 0 || groupName == null || groupName == "") //no name given
+            {
+                this.F4_errorProvider_newGroupForm.SetError(this.F4_textBox_groupName, Utility.displayError("Groups_invalid_group_name_empty"));
                 return false;
             }
 
-            foreach(char c in groupName)
+            foreach (char c in groupName)
             {
-                if((c<'A' || c>'Z') && (c<'a' || c>'z') && (c<'0' || c>'9') && c!='_') //invalid character
+                if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < '0' || c > '9') && c != '_') //invalid character
                 {
                     this.F4_errorProvider_newGroupForm.SetError(this.F4_textBox_groupName, Utility.displayError("Groups_invalid_character_in_group_name"));
                     return false;
                 }
-             }
+            }
 
 
             //no errors
             return true;
 
-            
+
         }
 
         //EVENT HANDLERS
@@ -66,7 +71,7 @@ namespace management_system
             Utility.setLanguage(this);
             Utility.setTheme(this);
 
-            
+
 
         }
 
@@ -74,10 +79,38 @@ namespace management_system
         private void F4_button_createNewGroup_Click(object sender, EventArgs e)
         {
             //check group name
-            if(this.validGroupName(this.F4_textBox_groupName.Text)==true) //valid group name
+            if (this.validGroupName(this.F4_textBox_groupName.Text) == true) //valid group name
             {
+                try
+                {
+                    //if no icon has been chosen => set a default icon from a predefined location in the SYSTEM folder
+                    if (this.icon == null)
+                    {
+                        this.icon = Image.FromFile(Utility.IMG_defaultIconFilePath);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Utility.DisplayError("Groups_cannot_load_default_group_icon", exception, "Group: Failed to load the default group icon from the SYSTEM folder: " + exception.ToString(), false);
+                }
+
                 //create the group and add it into the database index table
-                Utility.createNewGroup(this.F4_textBox_groupName.Text,Utility.username, DateTime.Now, Utility.admin!=null, this.icon);
+                int result = Utility.createNewGroup(this.F4_textBox_groupName.Text, Utility.username, DateTime.Now, Utility.admin != null, this.icon);
+
+                
+                if(result==0) //group created
+                {
+                    MessageBox.Show(Utility.displayMessage("F4_newGroupCreated"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else if(result==-1) //group not created because there already exists another group with the same name
+                {
+                    MessageBox.Show(Utility.displayMessage("F4_newGroupNotCreated_duplicateName"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else //error encounterd (value = -2)
+                {
+                    MessageBox.Show(Utility.displayMessage("F4_newGroupNotCreated_error"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
             }
             //else -> invalid group name, do not create group and set an error on the textbox control; errors set in the validGroupName() function
 
@@ -109,7 +142,7 @@ namespace management_system
                     int input = 0, i = 0;
                     byte[] byteBuffer = new byte[4096];
 
-                    //store the byets into a byte array
+                    //store the bytes into a byte array
                     do
                     {
                         input = iconStream.ReadByte();
@@ -121,15 +154,17 @@ namespace management_system
                     //DEV
                 }
 
-            }catch (Exception exception)
+            }
+            catch (Exception exception)
             {
 
-                MessageBox.Show(Utility.displayError("System_failed_to_select_new_group_icon")+exception.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(Utility.displayError("System_failed_to_select_new_group_icon") + exception.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Utility.logDiagnsoticEntry("Warning: failed to open the new group icon file dialog: " + exception.ToString());
                 Utility.WARNING = true;
-                
+
 
             }
         }
+
     }
 }

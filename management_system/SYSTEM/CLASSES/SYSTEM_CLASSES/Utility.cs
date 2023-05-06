@@ -106,13 +106,15 @@ namespace management_system
 
         //misc
         public static int oldNotificationsLifespanDays = 14; //days
+        public static int genKey = 23; //generic encryption key, used to encrypt general data in the database table (such as each group's cryptographic key)
+        public static string enc_allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|="; //allowed characters for encryption/decryption
 
         //diagnostic
         public static int maxDiaggnosticLogCharacters = int.MaxValue-1; //max number of characters to add into the diagnsotic log before clearing the textbox
 
         //forms
         public static bool openUtilityService = false;
-        public static Size utilityServiceMainFormSize = new Size(510, 414);
+        public static Size utilityServiceMainFormSize = new Size(1170, 856);
         public static Size fileEditorFormMinimumSize = new Size(1000, 700);
         public static Size mdiEditorMinimumSize = new Size((int)(Utility.fileEditorFormMinimumSize.Width*0.15), (int)(Utility.fileEditorFormMinimumSize.Height*0.30));
         public static Size minimumInfoFormSize = new Size(1000,500);
@@ -148,7 +150,8 @@ namespace management_system
                                                            "..\\..\\SYSTEM\\RESOURCES\\IMG_notifications_icon_important.bmp",
                                                            "..\\..\\SYSTEM\\RESOURCES\\IMG_notifications_icon_important_notificationWindow.bmp"
                                                            };
-
+        public static string IMG_defaultIconFilePath = "..\\..\\SYSTEM\\RESOURCES\\IMG_default_group_icon.bmp";
+        public static string imgName_defaultGroupIcon = "IMG_defaultGroupIcon";
         //XML documents
         private static string XML_errors = "..\\..\\SYSTEM\\SETTINGS\\XML_errors.xml";
         private static string XML_messages = "..\\..\\SYSTEM\\SETTINGS\\XML_messages.xml";
@@ -560,7 +563,7 @@ namespace management_system
                     if (Utility.pathXmlSettingFiles[0].Equals(path)) //database XML file
                         {
                             //Application.Exit();//trigger application exit
-                        throw new Exception(path + ": Database file corrupted. Application shutdown tirggered.");  
+                        throw new Exception(path + ": Database file corrupted. Application shutdown triggered.");  
                         }
                     throw new Exception(path);
                 } //correct signature 
@@ -835,7 +838,7 @@ namespace management_system
             return -1;
         }
 
-        //get tha last database the application was connected to
+        //get the last database the application was connected to
         public static string getLastDataBaseConnString()
         {
             return Utility.DB_connString;
@@ -884,7 +887,7 @@ namespace management_system
                     cmd.ExecuteNonQuery();
                 }catch (Exception exception) 
                 {
-                    Utility.logDiagnsoticEntry("Notifications table already exists in the database");
+                    Utility.logDiagnsoticEntry("Notifications table already exists in the database: "+exception.ToString());
                 }
                     
                 cmd.Dispose();
@@ -1000,8 +1003,7 @@ namespace management_system
             string output = "";
             int sgn = 1;
             char[] txt = input.ToCharArray();
-            string allowed_characters = "abcdefghijklmnopqrstvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]'\"/\\<>`~|";
-            
+
             for (int i = 0; i < txt.Length; i++)
             {
                 txt[i] = (char)(txt[i] + (char)(sgn * key));
@@ -1021,11 +1023,12 @@ namespace management_system
             string output = "";
             int sgn = 1;
             char[] txt = input.ToCharArray();
-            string allowed_characters = "abcdefghijklmnopqrstvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]'\"/\\<>`~|";
-
+            
+            
             for (int i = 0; i < txt.Length; i++)
             {
-                txt[i] = (char)(txt[i] + (char)(sgn * key));
+                //txt[i] = (char)(txt[i] + (char)(sgn * key));
+                txt[i] = Utility.enc_allowedCharacters[(Utility.enc_allowedCharacters.IndexOf(txt[i]) + (sgn * key)) % Utility.enc_allowedCharacters.Length];
                 //sgn *= -1;
             }
 
@@ -1034,6 +1037,18 @@ namespace management_system
 
 
             return output;
+        }
+
+        //ENC_GEN() overload for integers
+        public static int ENC_GEN(int input, int key)
+        {
+            return input + key;
+        }
+
+        //ENC_GEN() overload for floating point numbers
+        public static float ENC_GEN(float input, int key)
+        {
+            return input + key;
         }
 
         //decryption functions
@@ -1069,7 +1084,19 @@ namespace management_system
 
             for (int i = 0; i < txt.Length; i++)
             {
-                txt[i] = (char)(txt[i] + (char)(sgn * key));
+                //txt[i] = (char)(txt[i] + (char)(sgn * key));
+
+                if (Utility.enc_allowedCharacters.IndexOf(txt[i])-key<0) //wrap around from the end of the Utility.enc_allowedCharacters string
+                {
+                    int index = key - Utility.enc_allowedCharacters.IndexOf(txt[i]);
+
+                    txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.Length - index];
+                }
+                else
+                {
+                    txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.IndexOf(txt[i]) - key];
+                }
+                
                 //sgn *= -1;
             }
 
@@ -1079,6 +1106,21 @@ namespace management_system
             return output;
         }
 
+        //DEC_GEN() overload for integers
+        public static int DEC_GEN(int input, int key)
+        {
+
+            return input - key;
+
+        }
+
+        //DEC_GEN() overload for floating point numbers
+        public static float DEC_GEN(float input, int key)
+        {
+
+            return input - key;
+
+        }
         #endregion
 
         //getters & setters
@@ -2388,17 +2430,112 @@ namespace management_system
         }
 
         //create a new group
-        public static void createNewGroup(string groupName, string author, DateTime dateCraeted, bool adminGroup, Image icon)
+        public static int createNewGroup(string groupName, string author, DateTime dateCraeted, bool adminGroup, Image icon)
         {
-            //add the details of the new group into memory
-            Utility.userGroups.Add(new Group(groupName,
-                                             author,
-                                             dateCraeted,
-                                             Utility.DB_name,
-                                             adminGroup,
-                                             icon
-                                            ));
+            //if the group name already exists, do not create it
+            foreach(Group group in Utility.userGroups)
+                if(group.getName().Equals(groupName))
+                {
+                    Utility.logDiagnsoticEntry("Group: the group name already exists and cannot be used again: "+groupName);
 
+                    return -1; //group not created - duplicate names
+                }
+
+            try
+            {
+                //add the details of the new group into memory
+                Utility.userGroups.Add(new Group(groupName,
+                                                 author,
+                                                 dateCraeted,
+                                                 Utility.DB_name,
+                                                 adminGroup,
+                                                 icon
+                                                ));
+            }catch(Exception exception) 
+            {
+                Utility.DisplayError("Groups_failed_to_load_group_into_mmeory", exception, "Group: Failed to load group: " + groupName + " into memory: " + exception.ToString(), false); ;
+                return -2; //group not created - error
+            }
+
+            return 0; //group created
+        }
+
+        //load groups from the database into memory
+        public static void loadGroupsIntoMemory()
+        {
+            SqlDataReader dr = null;
+            try
+            {
+                SqlCommand readGroups = Utility.getSqlCommand("SELECT * FROM GroupIndex");
+                dr = readGroups.ExecuteReader();
+                List<tempGroup> tempList = new List<tempGroup>(); //temporary memory struct
+                
+                //add group details into temporary memory storage
+                while(dr.Read())
+                {
+                    tempList.Add(new tempGroup(
+                            Utility.DEC_GEN(dr.GetString(0), Utility.genKey), //group name
+                            Utility.DEC_GEN(dr.GetString(1), Utility.genKey), //group author
+                            Utility.DEC_GEN(dr.GetString(2), Utility.genKey), //creation date of the group
+                            Utility.DEC_GEN(dr.GetInt32(3), Utility.genKey), //adminGroup (1=true, 0 = false)
+                            null,                                       //image, //image - DEV
+                            Utility.DEC_GEN(dr.GetInt32(5), Utility.genKey), //cryptographic key
+
+                            Utility.getLastDataBaseConnString()//currently connected database - from which the details are read
+                            )
+                            );
+                }
+                dr.Close();
+                
+                //move details from temporary storage to the userGroups list
+                foreach(tempGroup group in tempList)
+                {
+                    Utility.userGroups.Add(new Group(//already defined group constructor
+                        group.getName(),
+                        group.getAuthor(),
+                        group.getDateCreated(),
+                        group.getAdminGroup(),
+                        //group.getIcon(), //DEV
+                        group.getKey(),
+                        group.getDatabase()
+                        )
+                        ) ;
+                }
+
+                /*
+                while (dr.Read())
+                {
+                    //DEV
+                    //byte[] image = new byte[256];
+                    //dr.GetBytes(4, 0, image, 0, 256);
+
+                    
+                    Utility.userGroups.Add(new Group( //already defined group
+                        Utility.DEC_GEN(dr.GetString(0),Utility.genKey), //group name
+                        Utility.DEC_GEN(dr.GetString(1),Utility.genKey), //group author
+                        Utility.DEC_GEN(dr.GetString(2), Utility.genKey), //creation date of the group
+                        Utility.DEC_GEN(dr.GetInt32(3),Utility.genKey), //adminGroup (1=true, 0 = false)
+                        //image, //image - DEV
+                        Utility.DEC_GEN(dr.GetInt32(5),Utility.genKey) //cryptographic key
+                        )
+                        );
+                    
+
+
+                }
+                */
+
+
+                //dr.Close();
+                readGroups.Dispose();
+
+
+            }catch(Exception exception)
+            {
+                if (dr != null) dr.Close();
+                Utility.DisplayError("Groups_failed_to_load_groups_form_database_into_memory", exception, "Group: Failed to load groups from the database indexing table into memory: " + exception.ToString(), false);
+                
+            }
         }
 
         #endregion

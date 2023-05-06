@@ -267,7 +267,10 @@ namespace management_system
                         this.ACTION = false;
                     }
 
-                    this.U0_textBox_ConnectedDataBase.Text = connection_details["STATE"].ToString();
+
+                    if(connection_details!=null) 
+                        this.U0_textBox_ConnectedDataBase.Text = connection_details["STATE"].ToString();
+
 
                     //action ongoing status update
                     if(this.ACTION==false)

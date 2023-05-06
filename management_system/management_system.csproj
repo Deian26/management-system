@@ -204,7 +204,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DATA\admin1_notifications.xml" />
+    <Content Include="SYSTEM\RESOURCES\IMG_default_group_icon.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_important_notificationWindow.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_important.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_unimportant.bmp" />
@@ -215,6 +215,8 @@
     <Content Include="SYSTEM\SETTINGS\XML_preferences.xml" />
     <Content Include="SYSTEM\SETTINGS\XML_themePack.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DATA\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

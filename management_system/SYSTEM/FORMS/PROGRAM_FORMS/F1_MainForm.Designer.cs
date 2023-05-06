@@ -71,16 +71,6 @@
             this.F1_timer_shutdownNotification = new System.Windows.Forms.Timer(this.components);
             this.F1_listView_groups = new System.Windows.Forms.ListView();
             this.F1_button_addNewGroup = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel9 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel10 = new System.Windows.Forms.ToolStripStatusLabel();
             this.F1_panel_greeting.SuspendLayout();
             this.F1_groupBox_accountDetails.SuspendLayout();
             this.F1_statusStrip_status.SuspendLayout();
@@ -150,22 +140,12 @@
             this.F1_statusStrip_status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F1_toolStripStatusLabel_DataBaseName,
             this.F1_toolStripStatusLabel_separator1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel1,
             this.F1_toolStripStatusLabel_ConnectionStatusText,
             this.F1_toolStripStatusLabel_connectionStatus,
             this.F1_toolStripStatusLabel_separator2,
             this.F1_toolStripStatusLabel_NumberOfNotificationsText,
             this.F1_toolStripStatusLabel_NumberOfNotifications,
             this.F1_toolStripStatusLabel_separator3,
-            this.toolStripStatusLabel10,
-            this.toolStripStatusLabel9,
-            this.toolStripStatusLabel8,
-            this.toolStripStatusLabel7,
-            this.toolStripStatusLabel6,
-            this.toolStripStatusLabel5,
-            this.toolStripStatusLabel4,
-            this.toolStripStatusLabel3,
             this.F1_toolStripStatusLabel_DateTime,
             this.F1_toolStripStatusLabel_separator4,
             this.F1_toolStripStatusLabel_notificationText});
@@ -435,70 +415,6 @@
             this.F1_button_addNewGroup.UseVisualStyleBackColor = true;
             this.F1_button_addNewGroup.Click += new System.EventHandler(this.F1_button_addNewGroup_Click);
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(70, 17);
-            this.toolStripStatusLabel1.Text = "#DB_NAME#";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(98, 17);
-            this.toolStripStatusLabel2.Text = "#STATUS_TEXT#";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(70, 17);
-            this.toolStripStatusLabel3.Text = "#DB_NAME#";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(89, 15);
-            this.toolStripStatusLabel4.Text = "#STATUS_TEXT#";
-            // 
-            // toolStripStatusLabel5
-            // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(75, 17);
-            this.toolStripStatusLabel5.Text = "#DB_NAME#";
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(89, 15);
-            this.toolStripStatusLabel6.Text = "#STATUS_TEXT#";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(99, 15);
-            this.toolStripStatusLabel7.Text = "#CONN_STATUS#";
-            // 
-            // toolStripStatusLabel8
-            // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(83, 15);
-            this.toolStripStatusLabel8.Text = "#NOTIF_TEXT#";
-            // 
-            // toolStripStatusLabel9
-            // 
-            this.toolStripStatusLabel9.Name = "toolStripStatusLabel9";
-            this.toolStripStatusLabel9.Size = new System.Drawing.Size(37, 17);
-            this.toolStripStatusLabel9.Text = "#NR#";
-            // 
-            // toolStripStatusLabel10
-            // 
-            this.toolStripStatusLabel10.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toolStripStatusLabel10.Name = "toolStripStatusLabel10";
-            this.toolStripStatusLabel10.Size = new System.Drawing.Size(77, 17);
-            this.toolStripStatusLabel10.Text = "#DATE_TIME";
-            // 
             // F1_MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -577,15 +493,5 @@
         private System.Windows.Forms.ToolStripButton F1_toolStripButton_openUtilityService;
         private System.Windows.Forms.ListView F1_listView_groups;
         private System.Windows.Forms.Button F1_button_addNewGroup;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel10;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel9;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

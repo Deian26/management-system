@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
@@ -34,7 +35,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
         public F5mdi3_DatabaseTableEditor(F5_FileEditorForm f5_containerForm, string databaseTable)
         {
             InitializeComponent();
-
+            
             //link the specified database table with the data grid view control
             this.databaseTable = databaseTable;
             this.currentTable = new DataTable(this.databaseTable);
@@ -50,7 +51,49 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
 
         //UTILITY FUNCTIONS
 
-        //get the table values
+        //parse a locally stored .tbl file (xml format)
+        private void parseTblFile(string path)
+        {
+            try
+            {
+                //open file
+                XmlDocument xml = new XmlDocument();
+                xml.Load(path);
+
+                //load the document element (root element)
+                XmlNode root = xml.DocumentElement;
+
+                //parse the XML structure and load the column names into memory
+                foreach (XmlAttribute column in root.ChildNodes[0].Attributes)
+                {
+                    this.currentTable.Columns.Add(column.Value); //add column
+                }
+
+                //parse the XML file and load the rows into memory
+                object[] rowValues = new object[this.currentTable.Columns.Count];
+                int i;
+                foreach(XmlNode row in root.ChildNodes[1].ChildNodes)
+                {
+                    //load row values form the .tbl file into an object array
+                    i = 0;
+                    foreach (XmlAttribute value in row.Attributes)
+                        rowValues[i++] = value.Value;
+
+                    this.currentTable.Rows.Add(rowValues); //add values into memory
+
+                   //delete old values from the array to make sure that a missing attribute from the XML does not allow an old value to be written into memory again
+                   for (i = 0; i < this.currentTable.Columns.Count; i++)
+                        rowValues[i] = null;
+                }
+
+
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_failed_to_parse_local_file_tbl", exception, "DataBaseTableEditor: Failed to parse a loclaly stored .tbl file: " + exception.ToString(), false);
+            }
+        }
+
+        //get the table values from the connected database
         private void getCurrentTable()
         {
             try
@@ -61,8 +104,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
                 SqlDataReader dr = refresh_cmd.ExecuteReader();
                 for(int i = 0;i<dr.FieldCount;i++)
                 {
-                    //construct a string containing column names to be used when updating the database table
-                    this.stringColumns.Add(dr.GetName(i));
+                    //this.stringColumns.Add(dr.GetName(i));
 
                     this.currentTable.Columns.Add(dr.GetName(i));
                 }
@@ -178,23 +220,40 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
 
             try
             {
+                //clear old column names
+                this.stringColumns.Clear();
+
+                //get column names from the current data table
+                foreach(DataColumn column in this.currentTable.Columns)
+                {
+                    this.stringColumns.Add(column.ColumnName);
+                }
+
                 foreach (DataGridViewRow row in this.F5mdi3_dataGridView_databaseTableEditor.Rows)
                 {
                     values = "UPDATE "+databaseTable.ToString()+" SET ";
+
+                    if (row.IsNewRow) break; //if this is the last, empty row used to add new rows, skip it
+
                     for(int i=0; i<row.Cells.Count;i++)
                     {
                         //construct a string containing the new values
-                        values += this.stringColumns[i]+"="+row.Cells[i].Value;
+                        values += this.stringColumns[i]+"=";
+
+                        //prepend and append thevalue to '
+                        values += "'";
+                        values += row.Cells[i].Value + "'";
+                        
 
                         if (i < row.Cells.Count - 1) values += ",";
                     }
-
+                    
                     //update the row
                     upload_cmd = Utility.getSqlCommand(values);
                     int result = upload_cmd.ExecuteNonQuery();
 
                     if (result == -1) //no rows updated
-                        throw new Exception("Failed to update database table");
+                        throw new Exception("Failed to update connected database table");
                 }
             }
             catch (Exception exception)
@@ -202,5 +261,50 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
                 Utility.DisplayError("DataBaseTableEditor_failed_to_upload_database_table",exception,"DataBaseTableEditor: failed to upload the database table into the database: "+exception.ToString(),false);
             }
         }
+
+        //open locally saved database table (.tbl file)
+        private void F5mdi3_openToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = this.F5mdi3_openFileDialog_openLocalFile.ShowDialog();
+
+                switch (result)
+                {
+                    case DialogResult.OK: //open file
+
+                        //clear current table from the data grid control
+                        this.currentTable.Clear();
+                        this.currentTable.Columns.Clear();
+
+                        //parse the .tbl file
+                        this.parseTblFile(this.F5mdi3_openFileDialog_openLocalFile.FileName);
+
+                        break;
+                    
+                    case DialogResult.Cancel: //cancel openning the file
+                        break;
+                    
+                    case DialogResult.Abort: //cancel openning the file
+                            break;
+                    
+                    default: 
+                        throw new Exception("Invalid dialog option chosen: "+result.ToString());
+                        break;
+                }
+
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl", exception, "DataBaseTableEditor: Failed to load a locally stored Database file (.tbl)", false);
+            }
+
+        }
+
+        //click on a data grid control cell
+        private void F5mdi3_dataGridView_databaseTableEditor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
-}
+    }

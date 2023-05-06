@@ -43,8 +43,8 @@ namespace management_system
 
             //DEBUG - delete after development
             //this.f5_mdiXmlEditor = new F5mdi2_XmlEditor(this, null);
-            this.f5_mdiTextEditor = new F5mdi1_TextEditor(this, null);
-            //this.f5_mdiDatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this,null);
+            //this.f5_mdiTextEditor = new F5mdi1_TextEditor(this, null);
+            this.f5_mdiDatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this,null);
 
             //form settings
 

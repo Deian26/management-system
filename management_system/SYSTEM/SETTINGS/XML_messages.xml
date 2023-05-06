@@ -20,6 +20,11 @@
 
 		<F3_dataGridView_usernameColumnHeader>Username</F3_dataGridView_usernameColumnHeader>
 		<F3_dataGridView_rightsColumnHeader>Rights</F3_dataGridView_rightsColumnHeader>
+
+		<F4_newGroup_title>New group</F4_newGroup_title>
+		<F4_newGroupCreated>New group created</F4_newGroupCreated>
+		<F4_newGroupNotCreated_duplicateName>New group not created. Another group already has that name. </F4_newGroupNotCreated_duplicateName>
+		<F4_newGroupNotCreated_error>New group not created. An error was encountered. </F4_newGroupNotCreated_error>
 		
 		<System_systemShutdownMessage>Shutdown(min):</System_systemShutdownMessage>
 

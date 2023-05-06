@@ -190,7 +190,7 @@
     <value>1</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 109</value>
+    <value>354, 35</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -199,7 +199,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 55</value>
+    <value>342, 87</value>
   </data>
   <data name="U0_groupBox_diagnosticSettingFiles.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -346,7 +346,7 @@
     <value>3</value>
   </data>
   <data name="U0_groupBox_diagnosticsDataBaseConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 17</value>
+    <value>4, 35</value>
   </data>
   <data name="U0_groupBox_diagnosticsDataBaseConnection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -376,13 +376,13 @@
     <value>1</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 187</value>
+    <value>12, 145</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>343, 128</value>
+    <value>998, 612</value>
   </data>
   <data name="U0_richTextBox_diagnosticLog.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -409,7 +409,7 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="U0_label_diagnosticsLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 167</value>
+    <value>8, 124</value>
   </data>
   <data name="U0_label_diagnosticsLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 2, 0</value>
@@ -436,7 +436,7 @@
     <value>3</value>
   </data>
   <data name="U0_groupBox_diagnostics.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 32</value>
+    <value>129, 32</value>
   </data>
   <data name="U0_groupBox_diagnostics.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -445,7 +445,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="U0_groupBox_diagnostics.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 318</value>
+    <value>1014, 761</value>
   </data>
   <data name="U0_groupBox_diagnostics.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -472,13 +472,13 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>147</value>
+    <value>101</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>494, 375</value>
+    <value>1154, 817</value>
   </data>
   <data name="U0_label_username.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -553,7 +553,7 @@
     <value>NoControl</value>
   </data>
   <data name="U0_button_openCustomizationForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 158</value>
+    <value>15, 79</value>
   </data>
   <data name="U0_button_openCustomizationForm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -622,13 +622,13 @@
     <value>75, 16</value>
   </data>
   <data name="U0_statusStrip_utilityService.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 353</value>
+    <value>0, 795</value>
   </data>
   <data name="U0_statusStrip_utilityService.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 0, 10, 0</value>
   </data>
   <data name="U0_statusStrip_utilityService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 22</value>
+    <value>1154, 22</value>
   </data>
   <data name="U0_statusStrip_utilityService.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -685,7 +685,7 @@
     <value>No</value>
   </data>
   <data name="U0_toolStrip_utilityService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>494, 28</value>
+    <value>1154, 28</value>
   </data>
   <data name="U0_toolStrip_utilityService.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>

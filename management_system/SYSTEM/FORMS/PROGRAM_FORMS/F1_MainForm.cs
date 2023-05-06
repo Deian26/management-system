@@ -30,6 +30,21 @@ namespace management_system
         }
 
         //UTILITY FUNCTIONS
+        //add a new group to the list view control with the details specified in the F4_NewGroup dialog form
+        public void addNewGroup(Image image, string name)
+        {
+            try
+            {
+                if (image == null || name == null) throw new Exception("");
+                
+                this.F1_listView_groups.LargeImageList.Images.Add(name, image);
+                this.F1_listView_groups.Items.Add(name, this.F1_listView_groups.LargeImageList.Images.Count - 1);
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("Groups_error_loading_groups_in_listView_control",exception,"Group: Failed to load a greoup into the list view control of the main form",false);
+            }
+        }
+
         //update notifications
         private void updateNotifications()
         {
@@ -133,10 +148,6 @@ namespace management_system
         private void F1_MainForm_Load(object sender, EventArgs e)
         {
 
-            //DEV - DEBUG: to be deleted after development
-            F5_FileEditorForm f5_debug = new F5_FileEditorForm();
-            f5_debug.Show();
-
             //priority settings (admin)
             if (Utility.admin == null)
             {
@@ -192,14 +203,22 @@ namespace management_system
             this.F1_timer_shutdownNotification.Interval = Utility.shutdownTimerInterval - Utility.updateTimerInterval/4;
             this.F1_timer_shutdownNotification.Start();
 
-            //load groups
-            this.loadGroups();
+            //load groups from the database into memory
+            Utility.loadGroupsIntoMemory();
+
+            //load groups from memory into the list view control
+            //this.loadGroups();
+
+            //add the default group icon to the groupIcons list
+            this.groupIcons.Images.Add(Utility.imgName_defaultGroupIcon, Image.FromFile(Utility.IMG_defaultIconFilePath));
+
+            //link an icon list to the groups listview
+            this.F1_listView_groups.LargeImageList = this.groupIcons;
 
             //display groups
             this.displayGroups();
 
-            //link an icon list to the groups listview
-            this.F1_listView_groups.LargeImageList = groupIcons;
+
 
 
         }
@@ -375,13 +394,24 @@ namespace management_system
             //clear the listview control
             this.F1_listView_groups.Items.Clear();
 
+            //add the 
+
             foreach (Group group in Utility.userGroups)
             {
                 //load group icon
-                groupIcons.Images.Add(group.getName(),group.getIcon());
+                try
+                {
+                    this.groupIcons.Images.Add(group.getName(), group.getIcon());
 
-                //add the group icon into the listview control
-                this.F1_listView_groups.Items.Add(group.getName(),group.getName());
+                    //add the group icon into the listview control (the group name is also the image key)
+                    this.F1_listView_groups.Items.Add(group.getName(), group.getName());
+                }catch(Exception exception)
+                {
+                    //Utility.DisplayError("Groups_invalid_image",exception,"Group: Invalid image given to for the group creation: "+exception.ToString(),false);
+                    
+                    Utility.logDiagnsoticEntry("Group: Invalid image given to for the group creation: "+exception.ToString());
+                    this.F1_listView_groups.Items.Add(group.getName(),Utility.imgName_defaultGroupIcon); //set the default group image as the groups' icon
+                }
             }
 
         }

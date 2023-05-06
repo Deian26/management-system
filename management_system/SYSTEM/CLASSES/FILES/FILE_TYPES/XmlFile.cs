@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace management_system.SYSTEM.CLASSES.FILES.FILE_TYPES
 {
-    /* Text file type class
+    /* XML file type class
          - used when a .xml file is encountered
      */
     public class XmlFile : GeneralFile
