@@ -56,6 +56,9 @@ namespace management_system
             this.F5mdi1_richTextBox_textEditor.ShowSelectionMargin = true;
             this.F5mdi1_richTextBox_textEditor.ShortcutsEnabled = true;
 
+            //set the form title to the file name
+            this.Text = this.file.getFilePath().Split('\\').Last();
+
             //shortcuts
             ContextMenu textboxShortcuts = new ContextMenu();
             MenuItem shortcut;
@@ -118,18 +121,39 @@ namespace management_system
 
             //add the shortcuts to the text editor
             this.F5mdi1_richTextBox_textEditor.ContextMenu = textboxShortcuts;
-            
+
+            //load the text from the file into the text editortry
+            try 
+            {
+                this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(this.file.getFilePath());
+            }catch(Exception exception) 
+            {
+                Utility.DisplayError("TextEditor_failed_to_load_text_file_into_textbox", exception,"TextEditor: Failed to load the text into the textbox. "+exception.ToString() ,false);
+            }
+
+            //display file extension
+            try
+            {
+                this.F5mdi1_toolStripStatusLabel_fileExtension.Text = this.file.getFilePath().Split('.').Last();
+            }catch(Exception exception)
+            {
+                Utility.logDiagnsoticEntry("TextEditor: Failed to display file extension for file: "+this.file.getFilePath()+" ; details: " + exception.ToString());
+            }
+
+            //display word count
+            this.countWords();
         }
 
-        
+
 
         //UTILITY FUNCTIONS
 
         //refresh the appearance of controls in this form
         private void refreshControlsAppearance()
         {
-            //text editor
+            //text box control size
             this.F5mdi1_richTextBox_textEditor.Size = new Size(this.Size.Width-this.widthOffset, this.Size.Height - this.heightOffset);
+
         }
 
         //search a word in the text box - RECURSIVE FUNCTION
@@ -162,44 +186,47 @@ namespace management_system
         }
 
         //count the words in the text editor (separater by whitespace)
-        private long countWords()
+        private void countWords()
         {
-            long count = 0;
-            bool character=false;
-            char chr = (char)0x00;
-
             try
             {
-                foreach (char c in this.F5mdi1_richTextBox_textEditor.Text)
+                string[] aux_str = this.F5mdi1_richTextBox_textEditor.Text.Split(' ');
+                int count = 0;
+
+                foreach(string aux in aux_str) 
                 {
-                    chr = c;
-                    if (Utility.recognizedWhitespaces.Contains(c) == true) //recognized whitespace encountered
-                    {
-                        if(character == true)
-                        {
-                            count++;
-                            character = false;
-                        }
-                    }
-                    else
-                    {
-                        character = true;
-                    }
+                    if (!aux.Equals(""))
+                        count++;
                 }
 
-                //return number of whitespaces
+                //display word count
+                this.F5mdi1_toolStripStatusLabel_wordCount.Text = count.ToString() + " " + Utility.displayMessage("F5_wordCountLabel");
 
-                return count;
             }catch(Exception exception) 
             {
-                Utility.DisplayWarning("TextEditor_unrecognized_character_found_in_text"+"; "+chr.ToString(), exception, null, false);
+                Utility.DisplayWarning("TextEditor_unrecognized_character_found_in_text", exception, null, false);
             }
 
-            return -1; //error parsing the text
         }
 
-        //locally save the currently open file as a .rtf file
-        private void saveRtfFile()
+        //locally save the file open (overwrite the file); the function returns 'true' if the saving operation was successful and 'false' otherwise
+        private bool saveTextFile()
+        {
+            try
+            {
+                this.F5mdi1_richTextBox_textEditor.SaveFile(this.file.getFilePath(), RichTextBoxStreamType.PlainText);
+
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("TextEditor_could_not_save_same_file",exception, "TextEditor: Could not sabe the text file: "+this.file.getFilePath().ToString(), false);
+                return false;
+            }
+
+            return true;
+        }
+
+        //locally save the currently open file as an .rtf/.txt file
+        private void saveTextFileAs()
         {
             try
             {
@@ -215,9 +242,9 @@ namespace management_system
                 
 
                 //set filter
-                this.F5mdi1_saveFileDialog_newRtfFile.Filter = "Rich Text Format | *.rtf";
+                this.F5mdi1_saveFileDialog_newRtfFile.Filter = "Rich Text Format | *.rtf|Text file | *.txt";
                 //set path
-                this.F5mdi1_saveFileDialog_newRtfFile.InitialDirectory= Utility.currentGroupPath + "\\" + Utility.localRtfFolderName;
+                this.F5mdi1_saveFileDialog_newRtfFile.InitialDirectory= Utility.currentGroupPath + "\\";
 
                 //open save file dialog
                 DialogResult result = this.F5mdi1_saveFileDialog_newRtfFile.ShowDialog();
@@ -309,7 +336,7 @@ namespace management_system
         //save text
         private void onShortcut_saveText(object sender, EventArgs e)
         {
-            this.saveRtfFile();
+            this.saveTextFileAs();
         }
 
         //form load
@@ -317,6 +344,11 @@ namespace management_system
         {
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false;
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = false;
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Font = new Font(this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Font,FontStyle.Bold);
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Font = new Font(this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Font,FontStyle.Bold);
+
 
             //preferences
             Utility.setLanguage(this);
@@ -337,6 +369,10 @@ namespace management_system
 
             //display the first font from the combobox
             if(this.F5mdi1_toolStripComboBox_font.Items.Count>=1) this.F5mdi1_toolStripComboBox_font.SelectedIndex = 0;
+
+            //start timer
+            this.F5mdi1_timer_textEditor.Interval = 3000; //ms
+            this.F5mdi1_timer_textEditor.Start(); //start timer
         }
 
         //MDI window is being resized
@@ -438,13 +474,24 @@ namespace management_system
         //text was edited
         private void F5mdi1_richTextBox_textEditor_TextChanged(object sender, EventArgs e)
         {
-            this.F5mdi1_toolStripStatusLabel_wordCount.Text = this.countWords().ToString() + " " + Utility.displayMessage("F5_wordCountLabel");
+            //this.countWords();
         }
 
         //save the file into the database (serialize local file then upload it into the database)
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            Utility.uploadFileIntoDB(this.file.getFilePath());
+            if(this.saveTextFile()==true) //file successfully saved
+            {
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.ForeColor = Color.Green;
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = true;
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Text = Utility.displayMessage("F5mdi1_local_file_save_successful");
+            }
+            else //file not saved
+            {
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.ForeColor = Color.Red;
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = true;
+                this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Text = Utility.displayMessage("F5mdi1_local_file_save_unsuccessful");
+            }
         }
 
         //display the 'About' page
@@ -511,7 +558,17 @@ namespace management_system
         //save the file as a local .rtf file
         private void F5mdi1_toolStripMenuItem_saveAsButton_Click(object sender, EventArgs e)
         {
-            this.saveRtfFile();
+            if(Utility.uploadFileIntoDB(this.file.getFilePath())==true) //upload successful
+            {
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Text = Utility.displayMessage("F5mdi1_db_file_upload_successful");
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.ForeColor = Color.Green;
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = true;
+            }else //upload unsuccessful
+            {
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Text = Utility.displayMessage("F5mdi1_db_file_upload_unsuccessful");
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.ForeColor = Color.Red;
+                this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = true;
+            }
         }
 
         //open a local file
@@ -538,5 +595,18 @@ namespace management_system
             }
         }
 
+        //save the file to a custom location with the same / a different extension
+        private void F5mdi1_toolStripMenuItem_saveAsButton_Click_1(object sender, EventArgs e)
+        {
+            this.saveTextFileAs();
+        }
+
+        //timer
+        private void F5mdi1_timer_textEditor_Tick(object sender, EventArgs e)
+        {
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = false; //hide the local file save status label
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false; //hide the database file upload label
+            this.countWords(); //calculate and display the word count
+        }
     }   
 }

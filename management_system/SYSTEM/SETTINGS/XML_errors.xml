@@ -10,10 +10,15 @@
 		<DB_create_table_failed>Error deleting old notifications. </DB_create_table_failed>
 		<DB_account_not_found>Account not found in the database. </DB_account_not_found>
 		<DB_error_getting_key>Error loading the cryptographic key. </DB_error_getting_key>
-		
+		<DB_failed_to_upload_group_file>Failed to upload a group file to the database. </DB_failed_to_upload_group_file>
 		
 		<Load_languages_failed>Failed to load languages pack. </Load_languages_failed>
 		<Load_themes_failed>Failed to load themes pack. </Load_themes_failed>
+		<Load_f1_mainForm_about_page_failed>Could not load the Main Form's About page information. </Load_f1_mainForm_about_page_failed>
+		<Load_f1_mainForm_user_manual_page_failed>Failed to load the user manual. </Load_f1_mainForm_user_manual_page_failed>
+		<Load_f1_mainForm_create_group_guide_page_failed>Failed to load the 'Create group' guide. </Load_f1_mainForm_create_group_guide_page_failed>
+		<Load_f1_mainForm_add_delete_files_guide_page_failed>Failed to load the 'Add/Delete files' guide. </Load_f1_mainForm_add_delete_files_guide_page_failed>
+		<Load_f1_mainForm_user_rights_information_page_failed>Failed to load the 'User rights' information form. </Load_f1_mainForm_user_rights_information_page_failed>
 		
 		<Invalid_username>Invalid username. </Invalid_username>
 		<Invalid_username_duplicate>This username alread exists. </Invalid_username_duplicate>
@@ -63,7 +68,12 @@
 		<Groups_failed_to_add_to_temporary_memory>Failed to add information into temporary memory. </Groups_failed_to_add_to_temporary_memory>
 		<Groups_failed_to_create_databaseFiles_table>Failed to create the file table for this group. </Groups_failed_to_create_databaseFiles_table>
 		<Groups_failed_to_load_group_into_mmeory>Failed to load group into memory. </Groups_failed_to_load_group_into_mmeory>
-			
+		<Groups_failed_to_open_group>Failed to open a group from the main form. </Groups_failed_to_open_group>
+
+		<FileTreeView_failed_to_load_group_files>Failed to load the files of the current group into the File Tree view. </FileTreeView_failed_to_load_group_files>
+		<FileTreeView_failed_to_load_file>Failed to load the selected file from the tree view. </FileTreeView_failed_to_load_file>
+		<FileTreeView_failed_to_expand_file_tree_view_nodes>Failed to expand the nodes of the file tree control. </FileTreeView_failed_to_expand_file_tree_view_nodes>
+		
 		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. </TextEditor_failed_to_open_text_file>
 		<TextEditor_file_does_not_exist>The specified file does not exist; path: </TextEditor_file_does_not_exist>
 		<TextEditor_a_file_already_open>Cannot open the text file. A file is already open. </TextEditor_a_file_already_open>
@@ -73,7 +83,8 @@
 		<TextEditor_cannot_display_AboutInfo>Cannot display 'About' information about the Text Editor. </TextEditor_cannot_display_AboutInfo>
 		<TextEditor_invalid_path>Invalid path. </TextEditor_invalid_path>
 		<TextEditor_cannot_replace_phrase>Error replacing the text from the search text box with the text from the "Replace all" textbox. </TextEditor_cannot_replace_phrase>
-		
+		<TextEditor_failed_to_load_text_file_into_textbox>Failed to load the the text from the text file into the text box. </TextEditor_failed_to_load_text_file_into_textbox>
+			
 		<XmlEditor_cannot_add_tree_node>Failed to add a new node in the tree. </XmlEditor_cannot_add_tree_node>
 		<XmlEditor_cannot_edit_tree_node>Failed to edit the XML tree node. </XmlEditor_cannot_edit_tree_node>
 		<XMLEditor_cannot_add_custom_node>Failed to add an XML node. </XMLEditor_cannot_add_custom_node>

@@ -32,7 +32,7 @@ namespace management_system
         //CONSTRUCTORS
 
         //filePath constructor
-        public GeneralFile(string path)
+        public GeneralFile(string path, FileEditor.FileType fileType)
         {
             try
             {
@@ -48,7 +48,10 @@ namespace management_system
                 this.fileExtension = FileEditor.extension[(int)this.fileType]; //determine the file fileExtension
 
                 //determine the file type
-                this.fileType = this.determineFileType(path);
+                this.fileType = fileType;
+                //this.fileType = this.determineFileType(path);
+
+                this.file.Close();
             }catch (Exception exception)
             {
                 Utility.DisplayWarning("TextEditor_failed_to_open_text_file"+path.ToString(), exception, "Invalid file: " + path.ToString(), false);
@@ -84,7 +87,8 @@ namespace management_system
         {
             try
             {
-                this.file.Close(); //try to close the file
+                if(this.file!=null)
+                    this.file.Close(); //try to close the file
 
             }
             catch (Exception exception)

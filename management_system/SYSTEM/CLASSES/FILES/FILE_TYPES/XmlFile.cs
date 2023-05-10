@@ -14,7 +14,7 @@ namespace management_system.SYSTEM.CLASSES.FILES.FILE_TYPES
         //VARIABLES
 
         //CONSTRUCTORS
-        public XmlFile(string path) : base(path)
+        public XmlFile(string path) : base(path, FileEditor.FileType.xml)
         {
             this.fileType = FileEditor.FileType.xml;
         }

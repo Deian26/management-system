@@ -18,7 +18,8 @@ namespace management_system
     public partial class F6_GeneralInformation : Form
     {
         //VARIABLES
-
+        private int absolute_heightDifference = 70; //pixels
+        private int absolute_widthDifference = 40; //pixels
         //CONSTRUCTORS
         public F6_GeneralInformation(string formTitle, string info)
         {
@@ -29,17 +30,33 @@ namespace management_system
             //store the title and information received from the caller form
             this.Text = formTitle;
             this.F6_richTextBox_info.Text = info;
-            this.MinimumSize = Utility.minimumInfoFormSize;
-            this.MaximumSize = Utility.minimumInfoFormSize;
+            //this.MinimumSize = Utility.minimumInfoFormSize;
+            //this.MaximumSize = Utility.minimumInfoFormSize;
             
+            this.refreshControls();
+
         }
 
         //UTILITY FUNCTIONS
+
+        //refresh control appearance in the form
+        private void refreshControls()
+        {
+            //resize the text box
+            this.F6_richTextBox_info.Height = this.Height - this.absolute_heightDifference;
+            this.F6_richTextBox_info.Width = this.Width - this.absolute_widthDifference;
+        }
 
         //EVENT HANDLERS
         private void F6_GeneralInformation_Load(object sender, EventArgs e)
         {
             
+        }
+
+        //form is being resized
+        private void F6_GeneralInformation_Resize(object sender, EventArgs e)
+        {
+            this.refreshControls();
         }
     }
 }

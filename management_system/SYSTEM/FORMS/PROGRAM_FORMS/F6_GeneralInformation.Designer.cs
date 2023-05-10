@@ -46,10 +46,11 @@
             this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.F6_richTextBox_info);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F6_GeneralInformation";
             this.Text = "Info";
             this.Load += new System.EventHandler(this.F6_GeneralInformation_Load);
+            this.Resize += new System.EventHandler(this.F6_GeneralInformation_Resize);
             this.ResumeLayout(false);
 
         }

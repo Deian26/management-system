@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -31,29 +32,37 @@ namespace management_system
                         };
         //METHODS
 
-        //determine the file type based on the given file extension
-        public static FileType determineFilType(string fileExtension)
+        //determine the file type based on the given file name . extension
+        public static FileType determineFilType(string filenameAndExtension)
         {
 
-            switch(fileExtension)
+            //check if the file name and extension given contains multiple dots ('.')
+            if(filenameAndExtension.Split('.').Length >2)
             {
-                case ".txt":
+                return FileEditor.FileType.general; //try to open the file as a general file
+            }
+
+            string fileExtension = filenameAndExtension.Split('.')[1];
+
+            switch (fileExtension)
+            {
+                case "txt":
                     return FileType.text;
 
-                case "..xml":
+                case "xml":
                     return FileType.xml;
 
-                case ".tbl":
+                case "tbl":
                     return FileType.databaseTable;
 
-                case ".rtf":
+                case "rtf":
                         return FileType.rtf;
 
                 default: //general file -> unrecognized file extension
                     return FileType.general;
             }
 
-            return FileType.noFile;
+            //return FileType.noFile;
         }
     }
 }

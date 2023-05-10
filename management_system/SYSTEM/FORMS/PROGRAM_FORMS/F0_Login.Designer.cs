@@ -56,7 +56,7 @@
             this.F0_textBox_username.Margin = new System.Windows.Forms.Padding(2);
             this.F0_textBox_username.Name = "F0_textBox_username";
             this.F0_helpProvider_help.SetShowHelp(this.F0_textBox_username, true);
-            this.F0_textBox_username.Size = new System.Drawing.Size(204, 20);
+            this.F0_textBox_username.Size = new System.Drawing.Size(191, 20);
             this.F0_textBox_username.TabIndex = 0;
             this.F0_textBox_username.TextChanged += new System.EventHandler(this.F0_textBox_username_TextChanged);
             this.F0_textBox_username.MouseEnter += new System.EventHandler(this.F0_textBox_username_MouseEnter);
@@ -66,7 +66,7 @@
             this.F0_textBox_password.Location = new System.Drawing.Point(118, 106);
             this.F0_textBox_password.Margin = new System.Windows.Forms.Padding(2);
             this.F0_textBox_password.Name = "F0_textBox_password";
-            this.F0_textBox_password.Size = new System.Drawing.Size(204, 20);
+            this.F0_textBox_password.Size = new System.Drawing.Size(191, 20);
             this.F0_textBox_password.TabIndex = 1;
             this.F0_textBox_password.UseSystemPasswordChar = true;
             this.F0_textBox_password.TextChanged += new System.EventHandler(this.F0_textBox_password_TextChanged);
@@ -112,7 +112,7 @@
             // F0_button_login
             // 
             this.F0_button_login.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_login.Location = new System.Drawing.Point(222, 180);
+            this.F0_button_login.Location = new System.Drawing.Point(209, 180);
             this.F0_button_login.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_login.Name = "F0_button_login";
             this.F0_button_login.Size = new System.Drawing.Size(100, 37);
@@ -125,7 +125,7 @@
             // F0_button_register
             // 
             this.F0_button_register.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_register.Location = new System.Drawing.Point(118, 180);
+            this.F0_button_register.Location = new System.Drawing.Point(100, 180);
             this.F0_button_register.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_register.Name = "F0_button_register";
             this.F0_button_register.Size = new System.Drawing.Size(100, 37);
@@ -141,7 +141,7 @@
             this.F0_comboBox_dataBase.Location = new System.Drawing.Point(118, 144);
             this.F0_comboBox_dataBase.Margin = new System.Windows.Forms.Padding(2);
             this.F0_comboBox_dataBase.Name = "F0_comboBox_dataBase";
-            this.F0_comboBox_dataBase.Size = new System.Drawing.Size(204, 21);
+            this.F0_comboBox_dataBase.Size = new System.Drawing.Size(191, 21);
             this.F0_comboBox_dataBase.TabIndex = 8;
             this.F0_comboBox_dataBase.SelectedIndexChanged += new System.EventHandler(this.F0_comboBox_dataBase_SelectedIndexChanged);
             this.F0_comboBox_dataBase.MouseEnter += new System.EventHandler(this.F0_comboBox_dataBase_MouseEnter);

@@ -600,12 +600,20 @@ namespace management_system
         #endregion
 
         #region database
-        //serialize the file at the specified path then upload it into the corresponding table of the currently connected database
-        public static void uploadFileIntoDB(string filePath)
+        //serialize the file at the specified path then upload it into the corresponding table of the currently connected database; the function returns 'true' if the upload was successful and 'false' otherwise
+        public static bool uploadFileIntoDB(string filePath)
         {
-            //DEV
-            //serialize file
-            
+            try
+            {
+                //DEV
+                //serialize file
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("DB_failed_to_upload_group_file", exception, "DataBase: Failed to upload a file to the database, file:" + filePath.ToString() + " ; details: " + exception.ToString(),false);
+                return false; //upload unsuccessful
+            }
+
+            return true; //upload successful
         }
 
         //get the databases from the XML file
@@ -783,9 +791,12 @@ namespace management_system
             Utility.username = "";
             Utility.key = 0;
             Utility.notifications.Clear();
+            Utility.userGroups.Clear();
+
             Utility.ERR = false;
             Utility.WARNING = false;
-            f1.Close();
+            //f1.Close();
+            f1.Hide();
             Start.f0_logIn.Show();
             Start.f0_logIn.ClearCredentials();
 

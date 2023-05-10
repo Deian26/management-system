@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F5mdi1_TextEditor));
             this.F5mdi1_richTextBox_textEditor = new System.Windows.Forms.RichTextBox();
             this.F5mdi1_toolStrip_textEditor = new System.Windows.Forms.ToolStrip();
             this.F5mdi1_toolStripDropDownButton_fileButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.F5mdi1_toolStripMenuItem_saveAsButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi1_toolStripSeparator_separator1 = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi1_toolStripButton_openFile = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_toolStripButton_save = new System.Windows.Forms.ToolStripButton();
@@ -73,6 +74,9 @@
             this.F5mdi1_printDocument_currentDocument = new System.Drawing.Printing.PrintDocument();
             this.F5mdi1_openFileDialog_openLocalFile = new System.Windows.Forms.OpenFileDialog();
             this.F5mdi1_saveFileDialog_newRtfFile = new System.Windows.Forms.SaveFileDialog();
+            this.F5mdi1_toolStripMenuItem_saveAsButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.F5mdi1_timer_textEditor = new System.Windows.Forms.Timer(this.components);
             this.F5mdi1_toolStrip_textEditor.SuspendLayout();
             this.F5mdi1_statusStrip_status.SuspendLayout();
             this.SuspendLayout();
@@ -128,19 +132,20 @@
             // 
             this.F5mdi1_toolStripDropDownButton_fileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.F5mdi1_toolStripDropDownButton_fileButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.F5mdi1_toolStripMenuItem_saveAsButton});
+            this.F5mdi1_toolStripMenuItem_saveAsButton,
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton});
             this.F5mdi1_toolStripDropDownButton_fileButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripDropDownButton_fileButton.Image")));
             this.F5mdi1_toolStripDropDownButton_fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripDropDownButton_fileButton.Name = "F5mdi1_toolStripDropDownButton_fileButton";
             this.F5mdi1_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(48, 23);
             this.F5mdi1_toolStripDropDownButton_fileButton.Text = "File";
             // 
-            // F5mdi1_toolStripMenuItem_saveAsButton
+            // F5mdi1_toolStripMenuItem_saveIntoDatabaseButton
             // 
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Name = "F5mdi1_toolStripMenuItem_saveAsButton";
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(180, 22);
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Text = "Save as";
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click);
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Name = "F5mdi1_toolStripMenuItem_saveIntoDatabaseButton";
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Size = new System.Drawing.Size(214, 22);
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Text = "Upload into database";
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click);
             // 
             // F5mdi1_toolStripSeparator_separator1
             // 
@@ -404,7 +409,8 @@
             this.F5mdi1_toolStripStatusLabel_separator1,
             this.F5mdi1_toolStripStatusLabel_fileExtension,
             this.F5mdi1_toolStripStatusLabel_separator2,
-            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus});
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus,
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus});
             this.F5mdi1_statusStrip_status.Location = new System.Drawing.Point(0, 428);
             this.F5mdi1_statusStrip_status.Name = "F5mdi1_statusStrip_status";
             this.F5mdi1_statusStrip_status.Size = new System.Drawing.Size(1165, 22);
@@ -439,6 +445,7 @@
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Name = "F5mdi1_toolStripStatusLabel_databaseSyncStatus";
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Size = new System.Drawing.Size(161, 17);
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Text = "#DATABASE_SYNC_STATUS#";
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false;
             // 
             // F5mdi1_printPreviewDialog_printPreview
             // 
@@ -457,6 +464,24 @@
             // F5mdi1_saveFileDialog_newRtfFile
             // 
             this.F5mdi1_saveFileDialog_newRtfFile.FileName = "New RTF File";
+            // 
+            // F5mdi1_toolStripMenuItem_saveAsButton
+            // 
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Name = "F5mdi1_toolStripMenuItem_saveAsButton";
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(214, 22);
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Text = "Save as";
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click_1);
+            // 
+            // F5mdi1_toolStripStatusLabel_localFileSaveStatus
+            // 
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Name = "F5mdi1_toolStripStatusLabel_localFileSaveStatus";
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Size = new System.Drawing.Size(161, 17);
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Text = "#DATABASE_SYNC_STATUS#";
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = false;
+            // 
+            // F5mdi1_timer_textEditor
+            // 
+            this.F5mdi1_timer_textEditor.Tick += new System.EventHandler(this.F5mdi1_timer_textEditor_Tick);
             // 
             // F5mdi1_TextEditor
             // 
@@ -517,7 +542,7 @@
         private System.Windows.Forms.ToolStripMenuItem F5mdi1_toolStripMenuItem_replaceAll;
         private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_print;
         private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_helpButton;
-        private System.Windows.Forms.ToolStripMenuItem F5mdi1_toolStripMenuItem_saveAsButton;
+        private System.Windows.Forms.ToolStripMenuItem F5mdi1_toolStripMenuItem_saveIntoDatabaseButton;
         private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_save;
         private System.Windows.Forms.ToolStripSeparator F5mdi1_toolStripSeparator_separator5;
         private System.Windows.Forms.PrintPreviewDialog F5mdi1_printPreviewDialog_printPreview;
@@ -526,5 +551,8 @@
         private System.Windows.Forms.ToolStripButton F5mdi1_toolStripButton_openFile;
         private System.Windows.Forms.OpenFileDialog F5mdi1_openFileDialog_openLocalFile;
         private System.Windows.Forms.SaveFileDialog F5mdi1_saveFileDialog_newRtfFile;
+        private System.Windows.Forms.ToolStripMenuItem F5mdi1_toolStripMenuItem_saveAsButton;
+        private System.Windows.Forms.ToolStripStatusLabel F5mdi1_toolStripStatusLabel_localFileSaveStatus;
+        private System.Windows.Forms.Timer F5mdi1_timer_textEditor;
     }
 }

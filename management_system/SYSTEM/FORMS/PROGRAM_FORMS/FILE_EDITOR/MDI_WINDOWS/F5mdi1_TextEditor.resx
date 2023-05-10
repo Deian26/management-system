@@ -539,4 +539,7 @@
   <metadata name="F5mdi1_saveFileDialog_newRtfFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 41</value>
   </metadata>
+  <metadata name="F5mdi1_timer_textEditor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>253, 41</value>
+  </metadata>
 </root>

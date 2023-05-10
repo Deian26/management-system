@@ -44,6 +44,7 @@
             this.F5mdi2_toolStripTextBox_searchTextbox = new System.Windows.Forms.ToolStripTextBox();
             this.F5mdi2_toolStripButton_startSearch = new System.Windows.Forms.ToolStripButton();
             this.F5mdi2_toolStrip_xmlEditor = new System.Windows.Forms.ToolStrip();
+            this.F5mdi2_toolStripButton_openFile = new System.Windows.Forms.ToolStripButton();
             this.F5mdi1_toolStripSplitButton_searchOptions = new System.Windows.Forms.ToolStripDropDownButton();
             this.F5mdi2_toolStripMenuItem_matchCaseCheckbox = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi2_toolStripMenuItem_reverseCheckbox = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.F5mdi2_toolStripMenuItem_replaceButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi2_toolStripTextBox_replaceTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.F5mdi2_toolStripMenuItem_replaceAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi2_toolStrip_xmlTools = new System.Windows.Forms.ToolStrip();
             this.F5mdi2_toolStripButton_removeXmlElement = new System.Windows.Forms.ToolStripButton();
             this.F5mdi2_toolStripButton_addXmlElement = new System.Windows.Forms.ToolStripButton();
@@ -58,10 +60,9 @@
             this.F5mdi2_toolStripSeparator_separator4 = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi2_toolStripButton_editMode = new System.Windows.Forms.ToolStripButton();
             this.F5mdi2_richTextBox_xmlEditor = new System.Windows.Forms.RichTextBox();
-            this.F5mdi2_toolStripButton_openFile = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi2_openFileDialog_openLocalXmlFile = new System.Windows.Forms.OpenFileDialog();
             this.F5mdi2_saveFileDialog_newXmlFile = new System.Windows.Forms.SaveFileDialog();
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi2_toolStrip_xmlEditor.SuspendLayout();
             this.F5mdi2_toolStrip_xmlTools.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +88,8 @@
             // 
             this.F5mdi2_toolStripDropDownButton_fileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.F5mdi2_toolStripDropDownButton_fileButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.F5mdi2_toolStripMenuItem_saveAsButton});
+            this.F5mdi2_toolStripMenuItem_saveAsButton,
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton});
             this.F5mdi2_toolStripDropDownButton_fileButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripDropDownButton_fileButton.Image")));
             this.F5mdi2_toolStripDropDownButton_fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi2_toolStripDropDownButton_fileButton.Name = "F5mdi2_toolStripDropDownButton_fileButton";
@@ -97,7 +99,7 @@
             // F5mdi2_toolStripMenuItem_saveAsButton
             // 
             this.F5mdi2_toolStripMenuItem_saveAsButton.Name = "F5mdi2_toolStripMenuItem_saveAsButton";
-            this.F5mdi2_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(180, 22);
+            this.F5mdi2_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(200, 22);
             this.F5mdi2_toolStripMenuItem_saveAsButton.Text = "Save as";
             this.F5mdi2_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_saveAsButton_Click);
             // 
@@ -198,6 +200,16 @@
             this.F5mdi2_toolStrip_xmlEditor.TabIndex = 4;
             this.F5mdi2_toolStrip_xmlEditor.Text = "ToolStrip";
             // 
+            // F5mdi2_toolStripButton_openFile
+            // 
+            this.F5mdi2_toolStripButton_openFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.F5mdi2_toolStripButton_openFile.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripButton_openFile.Image")));
+            this.F5mdi2_toolStripButton_openFile.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi2_toolStripButton_openFile.Name = "F5mdi2_toolStripButton_openFile";
+            this.F5mdi2_toolStripButton_openFile.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi2_toolStripButton_openFile.Text = "&Open";
+            this.F5mdi2_toolStripButton_openFile.Click += new System.EventHandler(this.F5mdi2_toolStripButton_openFile_Click);
+            // 
             // F5mdi1_toolStripSplitButton_searchOptions
             // 
             this.F5mdi1_toolStripSplitButton_searchOptions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -258,6 +270,11 @@
             this.F5mdi2_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(177, 24);
             this.F5mdi2_toolStripMenuItem_replaceAll.Text = "Replace all";
             this.F5mdi2_toolStripMenuItem_replaceAll.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_replaceAll_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 26);
             // 
             // F5mdi2_toolStrip_xmlTools
             // 
@@ -336,21 +353,6 @@
             this.F5mdi2_richTextBox_xmlEditor.Text = "";
             this.F5mdi2_richTextBox_xmlEditor.TextChanged += new System.EventHandler(this.F5mdi2_richTextBox_xmlEditor_TextChanged);
             // 
-            // F5mdi2_toolStripButton_openFile
-            // 
-            this.F5mdi2_toolStripButton_openFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.F5mdi2_toolStripButton_openFile.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripButton_openFile.Image")));
-            this.F5mdi2_toolStripButton_openFile.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.F5mdi2_toolStripButton_openFile.Name = "F5mdi2_toolStripButton_openFile";
-            this.F5mdi2_toolStripButton_openFile.Size = new System.Drawing.Size(23, 23);
-            this.F5mdi2_toolStripButton_openFile.Text = "&Open";
-            this.F5mdi2_toolStripButton_openFile.Click += new System.EventHandler(this.F5mdi2_toolStripButton_openFile_Click);
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 26);
-            // 
             // F5mdi2_openFileDialog_openLocalXmlFile
             // 
             this.F5mdi2_openFileDialog_openLocalXmlFile.FileName = "XML file";
@@ -358,6 +360,13 @@
             // F5mdi2_saveFileDialog_newXmlFile
             // 
             this.F5mdi2_saveFileDialog_newXmlFile.FileName = "New XML File";
+            // 
+            // F5mdi2_toolStripMenuItem_uploadToDatabaseButton
+            // 
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Name = "F5mdi2_toolStripMenuItem_uploadToDatabaseButton";
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Size = new System.Drawing.Size(200, 22);
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Text = "Upload to database";
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton_Click);
             // 
             // F5mdi2_XmlEditor
             // 
@@ -417,5 +426,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.OpenFileDialog F5mdi2_openFileDialog_openLocalXmlFile;
         private System.Windows.Forms.SaveFileDialog F5mdi2_saveFileDialog_newXmlFile;
+        private System.Windows.Forms.ToolStripMenuItem F5mdi2_toolStripMenuItem_uploadToDatabaseButton;
     }
 }

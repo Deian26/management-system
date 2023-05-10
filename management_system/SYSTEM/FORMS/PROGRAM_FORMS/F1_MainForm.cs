@@ -1,9 +1,11 @@
-﻿using System;
+﻿using management_system.SYSTEM.CLASSES.FILES.FILE_TYPES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -209,9 +211,6 @@ namespace management_system
             //load groups from memory into the list view control
             //this.loadGroups();
 
-            //add the default group icon to the groupIcons list
-            this.groupIcons.Images.Add(Utility.imgName_defaultGroupIcon, Image.FromFile(Utility.IMG_defaultIconFilePath));
-
             //link an icon list to the groups listview
             this.F1_listView_groups.LargeImageList = this.groupIcons;
 
@@ -393,9 +392,10 @@ namespace management_system
         {
             //clear the listview control
             this.F1_listView_groups.Items.Clear();
+            this.groupIcons.Images.Clear();
+            this.groupIcons.Images.Add(Utility.imgName_defaultGroupIcon, Image.FromFile(Utility.IMG_defaultIconFilePath)); //add the default group icon to the groupIcons list
 
-            //add the 
-
+            //add the groups to the list view control
             foreach (Group group in Utility.userGroups)
             {
                 //load group icon
@@ -436,5 +436,121 @@ namespace management_system
 
 
         #endregion
+
+        //about form
+        private void F1_toolStripButton_About_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //load the 'About' information into a General Information form and display it
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F1_aboutPageTitle"), Utility.displayMessage("F1_aboutPageInfo"));
+
+                f6_GeneralInformation.ShowDialog();
+
+                f6_GeneralInformation.Dispose();
+                
+                    
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("Load_f1_mainForm_about_page_failed", exception, "F1_MainForm: Could not load the F1_MainForm about page", false);
+            }
+        }
+
+        //display the User manual
+        private void userGuideToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F1_user_manual_form_title"), Utility.displayMessage("F1_user_manual_form_info"));
+
+                f6_GeneralInformation.ShowDialog(); //display the user manual
+
+                f6_GeneralInformation.Dispose();
+                
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Load_f1_mainForm_user_manual_page_failed", exception, "MainForm: Failed to load the user manual: " + exception.ToString(), false); ;
+            }
+        }
+
+        private void guidesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //display the 'Create group' guide
+        private void creatingAGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F1_create_group_guide_form_title"), Utility.displayMessage("F1_create_group_guide_form_info"));
+
+                f6_GeneralInformation.ShowDialog(); //display the user manual
+
+                f6_GeneralInformation.Dispose();
+
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Load_f1_mainForm_create_group_guide_page_failed", exception, "MainForm: Failed to load the 'Create group' guide: " + exception.ToString(), false); ;
+            }
+        }
+
+        //display the 'Add/Delete files from a group' guide
+        private void deletingAGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F1_add_delete_files_guide_form_title"), Utility.displayMessage("F1_add_delete_files_guide_form_info"));
+
+                f6_GeneralInformation.ShowDialog(); //display the user manual
+
+                f6_GeneralInformation.Dispose();
+
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Load_f1_mainForm_add_delete_files_guide_page_failed", exception, "MainForm: Failed to load the 'Add/Delete files from a group' guide: " + exception.ToString(), false); ;
+            }
+        }
+
+        //display information about the user rights and account system of Management System
+        private void userAccessRightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F1_user_rights_information_form_title"), Utility.displayMessage("F1_user_rights_information_form_info"));
+
+                f6_GeneralInformation.ShowDialog(); //display the user manual
+
+                f6_GeneralInformation.Dispose();
+
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Load_f1_mainForm_user_rights_information_page_failed", exception, "MainForm: Failed to load the 'Add/Delete files from a group' guide: " + exception.ToString(), false); ;
+            }
+        }
+
+        //a group has been selected in the list view control
+        private void F1_listView_groups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                F5_FileEditorForm f5_fileEditorForm = new F5_FileEditorForm(
+                    Utility.userGroups.Find(x => x.getName().Equals(this.F1_listView_groups.SelectedItems[0].Text)) //search for the currently selected group name int the list of user groups and pass the group to the constructor
+                    );
+                
+                this.Hide(); //hide the main form
+                
+                f5_fileEditorForm.ShowDialog(); //display the file editor form
+                 
+                this.Show(); //show the main form again
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_open_group", exception, "Groups: Failed to open the group: " + this.F1_listView_groups.SelectedItems.ToString() + ": " + exception.ToString(), false);
+            }
+        }
     }
 }

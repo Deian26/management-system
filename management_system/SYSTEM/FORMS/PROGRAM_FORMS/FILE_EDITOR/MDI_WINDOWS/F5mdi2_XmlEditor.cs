@@ -77,6 +77,21 @@ namespace management_system
 
         //UTILITY FUNCTIONS
 
+        //save XML file locally (overwrite current file)
+        private bool saveXmlFile()
+        {
+            try
+            {
+                //DEV
+            }catch(Exception exception)
+            {
+                Utility.logDiagnsoticEntry("XmlEditor: Failed to locally save (overwrite) the XML file: "+this.file.getFilePath().ToString()+"; details: " + exception.ToString());
+                return false; //saving operation unsuccessful
+            }
+
+            return true; //saving operation successful
+        }
+
         //stores the information contained in the given TreeNode as an XMLNode (according to the conventions for attributes: attribute1=value1,attribute2=value2 etc.)
         private XMLNode treeNodeToXMLNode(TreeNode source)
         {
@@ -634,8 +649,17 @@ namespace management_system
         //save XML file into the currently connected database
         private void F5mdi2_toolStripButton_save_Click(object sender, EventArgs e)
         {
-            //upload the file into the database
-            Utility.uploadFileIntoDB(this.file.getFilePath());
+            //DEV
+
+            //save the file locally (overwrite)
+            if(this.saveXmlFile()==true) //file saved
+            {
+
+            }
+            else //file not saved
+            {
+
+            }
         }
 
         //open locally stored XML file
@@ -724,6 +748,20 @@ namespace management_system
             catch (Exception exception)
             {
                 Utility.DisplayError("XMLEditor_cannot_save_local_XML_file", exception,"XmlEditor: Could not locally save the XML file: "+exception.ToString(),false);
+            }
+        }
+
+        //upload file to the connected database
+        private void F5mdi2_toolStripMenuItem_uploadToDatabaseButton_Click(object sender, EventArgs e)
+        {
+            //DEV
+            if(Utility.uploadFileIntoDB(this.file.getFilePath()) == true) //upload successful
+            {
+
+            }
+            else //upload unsuccessful
+            {
+
             }
         }
     }

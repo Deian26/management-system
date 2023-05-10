@@ -17,7 +17,84 @@
 		
 		<F1_Notification_count_text>Unread notifications: </F1_Notification_count_text>
 		<F1_Notification_DB_connection_status_text>Connection status: </F1_Notification_DB_connection_status_text>
-
+		<F1_aboutPageTitle>About the Management System</F1_aboutPageTitle>
+		<F1_aboutPageInfo> THIS PROGRAM IS MEANT TO BE USED AS AN EXAMPLE OR FOR RESEARCH/DEVELOPEMENT OF OTHER PROGRAMS !
+		This program is meant to help manage different groups of files, both locally and on a connected database.
+		Current implementation:
+			Account system:
+				-> 'User' access rights (regular access, can not create admin groups or send admin notifications; also cannot access the utility service)
+				-> 'Administrator' ('admin') access rights ('user' access rights and can create admin groups, send admin notifications and access the utility service)
+			Utility service:
+				-> mainly used to diagnose issues with the program
+				-> features currently under implementation: form language and theme packs editor
+			Groups:
+				-> can contain (open and edit):
+					*) Text files (and any file that can be interpreted as a text file)
+					*) XML files
+					*) Rich text files (.rtf)
+					*) Database tables (in the connected database and locally stored)
+				-> are stored locally (independently, for each user) and on the connected database
+				-> more information about an editor can be found in the respective editor's 'About' form
+			Notifications:
+				-> can be sent with 2 levels of importance:
+					*) normal
+					*) admin (important)
+				-> can be read by all users (users and administrators)
+				-> are stored in the connected database (and in a local file, for each user, in order to only display the unread notifications to individual users)
+				
+Trif Paul Deian, May 6, 2023
+</F1_aboutPageInfo>
+		
+		<F1_user_manual_form_title>User manual</F1_user_manual_form_title>
+		<F1_user_manual_form_info>
+		This manual aims to provide information relevant to the regular use of the Management System.
+		Specific information can be found in the guide and about pages.
+		
+		
+Trif Paul Deian		
+</F1_user_manual_form_info>
+		
+		<F1_create_group_guide_form_title>Create a new group</F1_create_group_guide_form_title>
+		<F1_create_group_guide_form_info>
+		This guide explains the basics of creating a new group.
+		
+		1. Click on the 'New group' button in the main form of the application (the first page after the log in page)
+		2. Write the name of the new group (it has to be unique, otherwise the group will no be created; multiple groups cannot have the same name);
+		   click on the 'Group icon' button and select the group's image (if not selected, a default (locally stored) image will be loaded.
+		3. Click on the 'Create group' button
+		4. The new group will be added to the database, the list of groups in the main form and a folder will be created for it in the user's folder.
+		
+Trif Paul Deian, May 7, 2023
+</F1_create_group_guide_form_info>
+		
+		<F1_add_delete_files_guide_form_title>Add/Delete files from a group</F1_add_delete_files_guide_form_title>
+		<F1_add_delete_files_guide_form_info>
+		This guide explains the basics of adding and deleting files to/from a group.
+		
+		1.
+		
+Trif Paul Deian		
+</F1_add_delete_files_guide_form_info>
+		
+		<F1_user_rights_information_form_title>User rights and account system</F1_user_rights_information_form_title>
+		<F1_user_rights_information_form_info>
+		This form explains the account system used by Management System.
+		
+		The account system uses 2 types of accounts to grant rights to the users of this program:
+		
+		1.User rights:
+			-> allows users to create groups
+			-> allows users to view/add/edit/delete files in groups
+			
+		2.Administrator rights ('admin rights').
+		 The 'Administrator(s)' has the same rights as the 'User' plus:
+			-> allows the administrator(s) of the program to create groups marked as 'Admin groups';
+			-> allows administrator(s) to send important notifications;
+			-> allows administrator(s) access to the Utility service for diagnostic purposes and to change the appearance of the application (add languages and themes)
+		
+Trif Paul Deian, May 7, 2023
+</F1_user_rights_information_form_info>
+			
 		<F3_dataGridView_usernameColumnHeader>Username</F3_dataGridView_usernameColumnHeader>
 		<F3_dataGridView_rightsColumnHeader>Rights</F3_dataGridView_rightsColumnHeader>
 
@@ -32,7 +109,9 @@
 		<XML_valid_setting_files>Valid signatures</XML_valid_setting_files>
 		
 		<F5_wordCountLabel>words</F5_wordCountLabel>
-		
+		<F5mdi4_file_tree_view_default_node_Local>Local</F5mdi4_file_tree_view_default_node_Local>
+		<F5mdi4_file_tree_view_default_node_Database>Database</F5mdi4_file_tree_view_default_node_Database>
+			
 		<F6_title_textEditor_About>About - Text Editor</F6_title_textEditor_About>
 		<F6_info_textEditor_AboutInfo>About the Text Editor
 		
@@ -56,8 +135,13 @@ Management system version: v0.1
 </F6_info_textEditor_AboutInfo>
 
 		<Replace_text_successful>The text was successfully replaced! </Replace_text_successful>
-	
-</EN>
+		
+		<F5mdi1_local_file_save_successful>File saved!</F5mdi1_local_file_save_successful>
+		<F5mdi1_local_file_save_unsuccessful>File was not saved!</F5mdi1_local_file_save_unsuccessful>
+		<F5mdi1_word_count_label>word(s)</F5mdi1_word_count_label>
+		<F5mdi1_db_file_upload_successful>Upload successful!</F5mdi1_db_file_upload_successful>
+		<F5mdi1_db_file_upload_unsuccessful>Upload successful!</F5mdi1_db_file_upload_unsuccessful>
+	</EN>
 	
 	<RO>
 		

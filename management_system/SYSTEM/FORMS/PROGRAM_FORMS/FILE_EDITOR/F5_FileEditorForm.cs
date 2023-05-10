@@ -18,6 +18,8 @@ namespace management_system
     public partial class F5_FileEditorForm : Form
     {
         //VARIABLES
+        //current group
+        internal Group currentGroup = null;
 
         //appearance variables
         private int offsetX = 0; //pixels -> top of the form to the top of the control
@@ -37,14 +39,13 @@ namespace management_system
         F5mdi5_FileOverview f5_mdiFileOverview = null;
 
         //CONSTRUCTORS
-        public F5_FileEditorForm()
+        public F5_FileEditorForm(Group group)
         {
             InitializeComponent();
 
-            //DEBUG - delete after development
-            //this.f5_mdiXmlEditor = new F5mdi2_XmlEditor(this, null);
-            //this.f5_mdiTextEditor = new F5mdi1_TextEditor(this, null);
-            this.f5_mdiDatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this,null);
+            //store current group details
+            this.currentGroup = group;
+            Utility.currentGroupPath = group.getLocalFilesPath();
 
             //form settings
 
@@ -58,31 +59,6 @@ namespace management_system
             this.IsMdiContainer = true; //mark this form as and MDI container
             this.WindowState = FormWindowState.Maximized; //maximize window
 
-        }
-
-        //UTILITY FUNCTIONS
-        //load a text file into the text editor
-        public void LoadText(string path, FileStream file)
-        {
-            //display the text editor MDI window
-
-            //load the text into the textbox
-            try
-            {
-
-                //DEV
-                //load the file filePath into the status bar label
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show(Utility.displayError("TextEditor_failed_to_open_text_file") + path.ToString() + "; " + exception.Message, "TextEditor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Utility.logDiagnsoticEntry("TextEditor: Cannot open the text or general type file at path: " + path.ToString() + "; details: " + exception.ToString());
-
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-            }
         }
 
         //UTILITY FUNCTIONS

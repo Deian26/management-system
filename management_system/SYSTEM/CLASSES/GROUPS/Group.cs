@@ -146,7 +146,7 @@ namespace management_system
 
                 //store the filePath to the local files folder
                 this.localFilesPath = Utility.dirPathDATA + "\\" + Utility.username + "\\Group_" + this.name;
-
+                this.localFilesPath = Path.GetFullPath(this.localFilesPath);
 
                 Directory.CreateDirectory(localFilesPath);
 
@@ -179,7 +179,8 @@ namespace management_system
             this.database = database;
 
             //store the filePath to the local files folder
-            this.localFilesPath = Utility.dirPathDATA + "\\Group_" + this.name;
+            this.localFilesPath = Utility.dirPathDATA +"\\"+Utility.username+ "\\Group_" + this.name;
+            this.localFilesPath = Path.GetFullPath(this.localFilesPath);
 
             //load the names of the locally stored files
             this.loadLocalFileNames(this.localFilesPath);
@@ -192,6 +193,11 @@ namespace management_system
         public string getName()
         {
             return this.name;
+        }
+
+        public string getLocalFilesPath()
+        {
+            return this.localFilesPath;
         }
 
         public DateTime getCreationDate()
