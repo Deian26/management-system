@@ -100,7 +100,7 @@ Trif Paul Deian, May 7, 2023
 
 		<F4_newGroup_title>New group</F4_newGroup_title>
 		<F4_newGroupCreated>New group created</F4_newGroupCreated>
-		<F4_newGroupNotCreated_duplicateName>New group not created. Another group already has that name. </F4_newGroupNotCreated_duplicateName>
+		<F4_newGroupNotCreated_duplicateName>New group not created. That name cannot be used. </F4_newGroupNotCreated_duplicateName>
 		<F4_newGroupNotCreated_error>New group not created. An error was encountered. </F4_newGroupNotCreated_error>
 		
 		<System_systemShutdownMessage>Shutdown(min):</System_systemShutdownMessage>
@@ -108,10 +108,14 @@ Trif Paul Deian, May 7, 2023
 		<XML_setting_file_invalid_signature>Invalid signature</XML_setting_file_invalid_signature>
 		<XML_valid_setting_files>Valid signatures</XML_valid_setting_files>
 		
-		<F5_wordCountLabel>words</F5_wordCountLabel>
 		<F5mdi4_file_tree_view_default_node_Local>Local</F5mdi4_file_tree_view_default_node_Local>
 		<F5mdi4_file_tree_view_default_node_Database>Database</F5mdi4_file_tree_view_default_node_Database>
-			
+		<F5mdi1_local_file_save_successful>File saved!</F5mdi1_local_file_save_successful>
+		<F5mdi1_local_file_save_unsuccessful>File was not saved!</F5mdi1_local_file_save_unsuccessful>
+		<F5_wordCountLabel>word(s)</F5_wordCountLabel>
+		<F5mdi1_db_file_upload_successful>Upload successful!</F5mdi1_db_file_upload_successful>
+		<F5mdi1_db_file_upload_unsuccessful>Upload successful!</F5mdi1_db_file_upload_unsuccessful>
+		
 		<F6_title_textEditor_About>About - Text Editor</F6_title_textEditor_About>
 		<F6_info_textEditor_AboutInfo>About the Text Editor
 		
@@ -136,11 +140,27 @@ Management system version: v0.1
 
 		<Replace_text_successful>The text was successfully replaced! </Replace_text_successful>
 		
-		<F5mdi1_local_file_save_successful>File saved!</F5mdi1_local_file_save_successful>
-		<F5mdi1_local_file_save_unsuccessful>File was not saved!</F5mdi1_local_file_save_unsuccessful>
-		<F5mdi1_word_count_label>word(s)</F5mdi1_word_count_label>
-		<F5mdi1_db_file_upload_successful>Upload successful!</F5mdi1_db_file_upload_successful>
-		<F5mdi1_db_file_upload_unsuccessful>Upload successful!</F5mdi1_db_file_upload_unsuccessful>
+		<F1_delete_group_context_menu_message>Delete group</F1_delete_group_context_menu_message>
+		<F1_confirm_group_deletion>Are you sure you want to delete the selected group?</F1_confirm_group_deletion>
+		<F1_group_successfully_deleted>The selected group was successfully deleted! </F1_group_successfully_deleted>
+		
+		<F5mdi4_delete_file>Delete file</F5mdi4_delete_file>
+		<F5mdi4_delete_file_confirmation>Are you sure you want to delete the selected file?</F5mdi4_delete_file_confirmation>
+	
+		<F7_new_file_created>New file successfully created!</F7_new_file_created>
+	
+		<F5mdi5_filePath>File path</F5mdi5_filePath>
+		<F5mdi5_fileAttributes>File attributes</F5mdi5_fileAttributes>
+		<F5mdi5_lastAccessDateTime>Last access date and time</F5mdi5_lastAccessDateTime>
+		<F5mdi5_lastModificationDateTime>Last modification date and time</F5mdi5_lastModificationDateTime>
+		<F5mdi5_fileExtension>File extension</F5mdi5_fileExtension>
+		<F5mdi5_fileType>File type</F5mdi5_fileType>
+		<F5mdi5_fileCreationDateTime>File creation date and time</F5mdi5_fileCreationDateTime>
+		<F5mdi5_containerGroup>Group name</F5mdi5_containerGroup>	
+		<F5mdi5_groupAuthor>Group author</F5mdi5_groupAuthor>	
+		<F5mdi5_adminGroup>Admin group</F5mdi5_adminGroup>
+		<F5mdi5_fileName>Filename</F5mdi5_fileName>
+	
 	</EN>
 	
 	<RO>

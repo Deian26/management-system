@@ -1,4 +1,4 @@
-﻿namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
+﻿namespace management_system
 {
     partial class F5mdi5_FileOverview
     {
@@ -28,21 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.F5mdi5_richTextBox_fileOverview = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
+            // 
+            // F5mdi5_richTextBox_fileOverview
+            // 
+            this.F5mdi5_richTextBox_fileOverview.Location = new System.Drawing.Point(12, 12);
+            this.F5mdi5_richTextBox_fileOverview.Name = "F5mdi5_richTextBox_fileOverview";
+            this.F5mdi5_richTextBox_fileOverview.Size = new System.Drawing.Size(890, 297);
+            this.F5mdi5_richTextBox_fileOverview.TabIndex = 0;
+            this.F5mdi5_richTextBox_fileOverview.Text = "";
             // 
             // F5mdi5_FileOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ClientSize = new System.Drawing.Size(914, 311);
+            this.Controls.Add(this.F5mdi5_richTextBox_fileOverview);
+            this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F5mdi5_FileOverview";
             this.Text = "File Overview";
             this.Load += new System.EventHandler(this.F5mdi5_FileOverview_Load);
+            this.Resize += new System.EventHandler(this.F5mdi5_FileOverview_Resize);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.RichTextBox F5mdi5_richTextBox_fileOverview;
     }
 }

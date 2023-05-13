@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +48,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,9 +62,18 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\XMLNode.cs" />
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.Designer.cs">
+      <DependentUpon>F7_CreateNewFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +166,9 @@
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\Utility.cs" />
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.resx">
+      <DependentUpon>F7_CreateNewFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.resx">
       <DependentUpon>F0_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +247,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DATA\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

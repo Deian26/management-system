@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
+namespace management_system
 {
     public partial class F5mdi4_FileTreeView : Form
     {
@@ -19,7 +19,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
         private F5_FileEditorForm f5_containerForm = null;
 
         //controls appearance
-        private int absolute_heightDifference = 70;//pizels
+        private int absolute_heightDifference = 100;//pizels
         private int absolute_widthDifference = 40; //pixels
 
         //CONSTRUCTORS
@@ -36,6 +36,16 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
 
             //add the files of the current group into the tree view
             this.loadGroupFiles();
+
+            //add a context menu to the Tree view control
+            MenuItem[] menuItems = new MenuItem[1];
+            menuItems[0] = new MenuItem(Utility.displayMessage("F5mdi4_delete_file"), F5mdi4_DeleteFile);
+            ContextMenu treeViewContextMenu = new ContextMenu(menuItems);
+
+            this.F5mdi4_treeView_currentGroupFiles.ContextMenu = treeViewContextMenu;
+
+            //disable close option for this form
+            this.ControlBox = false;
         }
 
         //UTILITY FUNCTIONS
@@ -50,6 +60,12 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
                     this.F5mdi4_treeView_currentGroupFiles.SelectedNode == this.F5mdi4_treeView_currentGroupFiles.Nodes[1])
                     return;
 
+                //check if the file still exists
+                if (File.Exists(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name) == false)
+                {
+                    Utility.DisplayWarning("FileTreeViewer_invalid_file_or_filepath",new Exception(""),"FileTreeView: Failed to open a file; the file path or name might be invalid (he file might have been deleted). Path: "+this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name.ToString(),false);
+                    return;
+                }
                 //check if the selected file is a local file or a database table
                 if (this.F5mdi4_treeView_currentGroupFiles.Nodes[0].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //local file
                 {
@@ -57,7 +73,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
 
                     //DEV
                     GeneralFile file = null;
-                    switch (FileEditor.determineFilType(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text))
+                    switch (FileEditor.determineFileType(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text))
                     {
 
                         case FileEditor.FileType.xml: //XML
@@ -110,7 +126,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
                 }
                 else if (this.F5mdi4_treeView_currentGroupFiles.Nodes[1].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //database table
                 {
-                    F5mdi3_DatabaseTableEditor f5Mdi1_databaseTableEditor = new F5mdi3_DatabaseTableEditor(this.f5_containerForm, this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text);
+                    F5mdi3_DatabaseTableEditor f5Mdi1_databaseTableEditor = new F5mdi3_DatabaseTableEditor(this.f5_containerForm, this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text, false); //'false' = not a local .tbl database table
 
                     f5Mdi1_databaseTableEditor.Show();
 
@@ -216,5 +232,69 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
         {
 
         }
+
+        //create a new file
+        private void F5mdi4_button_createNewFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //display the create new file form (F7 form)
+                F7_CreateNewFile f7_createNewFile = new F7_CreateNewFile();
+
+                f7_createNewFile.ShowDialog();
+
+                f7_createNewFile.Close();
+
+                //re-load group files
+                this.loadGroupFiles();
+
+                //expand all tree nodes
+                this.F5mdi4_treeView_currentGroupFiles.ExpandAll();
+
+            }
+            catch(Exception exception) 
+            {
+                Utility.DisplayError("Groups_failed_to_create_new_file", exception, "Group: Failed to add a new file from the Tree view MDI window: " + exception.ToString(), false);
+            }
+        }
+
+
+        //delete file event handler
+        private void F5mdi4_DeleteFile(object sender, EventArgs e)
+        {
+            try
+            {
+                //get the file path
+                string filepath = this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name;
+
+                //display a deletion confirmation dialog box
+                DialogResult deleteFile = MessageBox.Show(Utility.displayMessage("F5mdi4_delete_file_confirmation"),"",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+                if(deleteFile== DialogResult.Yes) //delete file
+                {
+                    File.Delete(filepath);
+
+                    //refresh the tree view control (re-load group files)
+                    this.loadGroupFiles();
+
+                    //expand all Tree view nodes
+                    this.F5mdi4_treeView_currentGroupFiles.ExpandAll();
+                }
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("FileTreeView_could_not_delete_file",exception,"FileTreeView: Failed to delete a file: \n"+exception.ToString(),false);
+            }
+        }
+
+        //re-load group files into the Tree view control
+        private void F5mdi4_button_reloadFiles_Click(object sender, EventArgs e)
+        {
+            this.loadGroupFiles();
+
+            //expand all of the nodes or the Tree view control
+            this.F5mdi4_treeView_currentGroupFiles.ExpandAll();
+        }
+
+
     }
 }

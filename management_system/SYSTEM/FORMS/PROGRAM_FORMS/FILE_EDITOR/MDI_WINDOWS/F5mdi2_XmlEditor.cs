@@ -32,11 +32,11 @@ namespace management_system
         private Color highlightColour = Color.GreenYellow;
 
         //XML editor
-        XMLNode xml = new XMLNode(Utility.rootXmlNode.Name);
+        XMLNode xml = new XMLNode(Utility.rootXmlNode.Name); //root node
 
         private string newNodeString = "NewNode";
 
-        private int editMode = 0; /* edit mode:
+        private int editMode = 1; /* edit mode:
                                      0 - XML tree view
                                      1 - text box
                                    */
@@ -55,6 +55,9 @@ namespace management_system
         {
             InitializeComponent();
 
+            //store the XML file
+            this.file = file;
+
             //container form
             this.MdiParent = f5_containerForm;
             this.f5_containerForm = f5_containerForm;
@@ -63,7 +66,7 @@ namespace management_system
             this.F5mdi2_treeView_xmlEditor.LabelEdit = true; //allow the user to edit the text from this control
             this.F5mdi2_treeView_xmlEditor.Font = this.Font; //set the editor font to the font of the form
             this.F5mdi2_treeView_xmlEditor.Font = new Font(this.Font.FontFamily,Utility.defaultPointTextSize); //set the text size to the default point size
-            this.F5mdi2_treeView_xmlEditor.Nodes.Add(Utility.rootXmlNode); //default (mandatory for the program) XML root node
+            //this.F5mdi2_treeView_xmlEditor.Nodes.Add(Utility.rootXmlNode); //default (mandatory for the program) XML root node
             this.F5mdi2_richTextBox_xmlEditor.Font = new Font(Utility.defaultFontFamily, Utility.defaultPointTextSize); //set the text box font
             this.F5mdi2_treeView_xmlEditor.ShowNodeToolTips = true; //display tool tip texts when the mouse hovers over a tree view node
 
@@ -72,25 +75,17 @@ namespace management_system
             this.F5mdi2_richTextBox_xmlEditor.Enabled = false; //deactivate the text box control
 
             //hide the text box
-            this.F5mdi2_richTextBox_xmlEditor.Visible = false;
+            this.F5mdi2_treeView_xmlEditor.Visible = true;
+            this.F5mdi2_richTextBox_xmlEditor.Visible = true;
+            
+
+            //load file
+            this.loadXmlFile(this.file.getFilePath());
+
+            this.F5mdi2_toolStripButton_editMode.PerformClick();
         }
 
         //UTILITY FUNCTIONS
-
-        //save XML file locally (overwrite current file)
-        private bool saveXmlFile()
-        {
-            try
-            {
-                //DEV
-            }catch(Exception exception)
-            {
-                Utility.logDiagnsoticEntry("XmlEditor: Failed to locally save (overwrite) the XML file: "+this.file.getFilePath().ToString()+"; details: " + exception.ToString());
-                return false; //saving operation unsuccessful
-            }
-
-            return true; //saving operation successful
-        }
 
         //stores the information contained in the given TreeNode as an XMLNode (according to the conventions for attributes: attribute1=value1,attribute2=value2 etc.)
         private XMLNode treeNodeToXMLNode(TreeNode source)
@@ -137,36 +132,43 @@ namespace management_system
             }
         }
 
-        //store the data in the current editor into memory
+        //store the data in the current tree view editor into memory
         private void storeTreeDataIntoMemory()
         {
-            //clear memory
-            this.xml.removeChildNodes();
+            try
+            {
+                //clear memory
+                this.xml.removeChildNodes();
 
-            //load mandatory root element into memory
-            if(this.F5mdi2_treeView_xmlEditor.Nodes != null) this.xml = this.treeNodeToXMLNode(this.F5mdi2_treeView_xmlEditor.Nodes[0]);
+                //load mandatory root element into memory
+                if (this.F5mdi2_treeView_xmlEditor.Nodes != null) this.xml = this.treeNodeToXMLNode(this.F5mdi2_treeView_xmlEditor.Nodes[0]);
 
-            //load tree nodes into memory
-            foreach(TreeNode node in this.F5mdi2_treeView_xmlEditor.Nodes)
-                this.parseTree(node, this.xml);
+                //load tree nodes into memory
+                foreach (TreeNode node in this.F5mdi2_treeView_xmlEditor.Nodes)
+                    this.parseTree(node, this.xml);
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("XmlEditor_failed_to_switch_XML_edit_mode", exception, "XmlEditor: failed to switch the edit mode in the XML Editor to text mode:\n" + exception.ToString(), false);
+            }
         }
 
         //load the XML data stored in memory into the text box XML editor
-        private void loadXmlDataIntoTextbox(XMLNode root, int indent)
+        private void loadXmlDataIntoTextbox(XMLNode root, int indent, Color lastColour)
         {
             for (int i = 0; i < indent; i++)
                 this.F5mdi2_richTextBox_xmlEditor.AppendText("\t"); //add tabs to indent the current node
 
             //determine the colour of the current node
-            Random rnd = new Random();
             Color colour = Color.Black;
 
             try
             {
                 do
                 {
+                    Random rnd = new Random((int)DateTime.Now.Ticks); //get a new random number generator based on the current number of clock ticks
                     colour = Color.FromArgb(rnd.Next());
-                } while (colour.Equals(Color.GreenYellow));
+                } while (colour.Equals(Color.GreenYellow) || colour == lastColour);
 
             }catch (Exception exception)
             {
@@ -184,7 +186,7 @@ namespace management_system
             if(root.getChildNodes().Count!=0) //the current node has child nodes
                 foreach (XMLNode node in root.getChildNodes())
                 {
-                    this.loadXmlDataIntoTextbox(node, indent+1);   //parse the child nodes list of the current node
+                    this.loadXmlDataIntoTextbox(node, indent+1, colour);   //parse the child nodes list of the current node
                 }
             else //the current node does not have child nodes -> check if the current node has inner text
             {
@@ -403,20 +405,28 @@ namespace management_system
                 xml_doc.Load(path);
                 XmlNode root = xml_doc.DocumentElement;
 
+
+                this.F5mdi2_richTextBox_xmlEditor.Text = File.ReadAllText(path);
+                //this.editMode = (int)F5mdi2_XmlEditor.EditMode.text;
+
+
+
                 //display the contents of the file according to the current edit mode
+                /*
                 switch (this.editMode)
                 {
-                    case (int)F5mdi2_XmlEditor.EditMode.text: //text box
+                    case (int)F5mdi2_XmlEditor.EditMode.treeView: //tree view control
                         this.loadXmlDataIntoTreeView(this.xml);
                         break;
 
-                    case (int)F5mdi2_XmlEditor.EditMode.treeView: //tree view control
+                    case (int)F5mdi2_XmlEditor.EditMode.text: //text box
                         this.loadXmlDataIntoTextbox(this.xml, 0);
                         break;
 
                     default:
                         break;
                 }
+                */
 
 
             }
@@ -424,6 +434,12 @@ namespace management_system
             {
                 Utility.DisplayError("XMLEditor_cannot_load_local_XML_file", exception, "XmlEditor: Cannot load the locally stored XML file: " + exception.ToString(), false);
             }
+        }
+
+        //return the file associated with this MDI window
+        public GeneralFile getFile()
+        {
+            return this.file;
         }
 
         //EVENT HANDLERS
@@ -483,6 +499,7 @@ namespace management_system
         //change the way to edit the XML document: text box or tree view control
         private void F5mdi2_toolStripButton_editMode_Click(object sender, EventArgs e)
         {
+            
             //store the XML data contained in the tree into memory
             switch (this.editMode)
             {
@@ -546,7 +563,7 @@ namespace management_system
 
                     this.F5mdi2_richTextBox_xmlEditor.Clear(); //clear text box
 
-                    this.loadXmlDataIntoTextbox(this.xml,0); //load the XML data from memory into the text box control
+                    this.loadXmlDataIntoTextbox(this.xml,0, Color.Black); //load the XML data from memory into the text box control
 
                     this.F5mdi2_richTextBox_xmlEditor.Visible = true; //display the text box control
 
@@ -649,16 +666,14 @@ namespace management_system
         //save XML file into the currently connected database
         private void F5mdi2_toolStripButton_save_Click(object sender, EventArgs e)
         {
-            //DEV
 
             //save the file locally (overwrite)
-            if(this.saveXmlFile()==true) //file saved
+            try
             {
-
-            }
-            else //file not saved
+                File.WriteAllText(this.file.getFilePath(), this.F5mdi2_richTextBox_xmlEditor.Text);
+            }catch(Exception exception)
             {
-
+                Utility.DisplayError("XmlEditor_failed_to_save_XML_file", exception, "XmlEditor: Failed to save the XML file: \n" + exception.ToString(), false);
             }
         }
 
@@ -707,7 +722,7 @@ namespace management_system
 
                     this.F5mdi2_richTextBox_xmlEditor.Clear(); //clear text box
 
-                    this.loadXmlDataIntoTextbox(this.xml, 0); //load the XML data from memory into the text box control
+                    this.loadXmlDataIntoTextbox(this.xml, 0, Color.Black); //load the XML data from memory into the text box control
 
                     this.F5mdi2_richTextBox_xmlEditor.Visible = true; //display the text box control
                 }

@@ -69,10 +69,16 @@
 		<Groups_failed_to_create_databaseFiles_table>Failed to create the file table for this group. </Groups_failed_to_create_databaseFiles_table>
 		<Groups_failed_to_load_group_into_mmeory>Failed to load group into memory. </Groups_failed_to_load_group_into_mmeory>
 		<Groups_failed_to_open_group>Failed to open a group from the main form. </Groups_failed_to_open_group>
-
+		<Groups_failed_to_create_groupUsers_table>Failed to create the users table for a group. </Groups_failed_to_create_groupUsers_table>
+		<Groups_failed_to_delete_a_group>Failed to delete a group. </Groups_failed_to_delete_a_group>
+		<Groups_failed_to_find_group_by_name>Failed to find a group. </Groups_failed_to_find_group_by_name>
+		<Groups_failed_to_delete_group_from_mainForm>Failed to delete the selected group from the Main Form. </Groups_failed_to_delete_group_from_mainForm>
+		<Groups_failed_to_create_new_file>Failed to create a new file. </Groups_failed_to_create_new_file>
+		
 		<FileTreeView_failed_to_load_group_files>Failed to load the files of the current group into the File Tree view. </FileTreeView_failed_to_load_group_files>
 		<FileTreeView_failed_to_load_file>Failed to load the selected file from the tree view. </FileTreeView_failed_to_load_file>
 		<FileTreeView_failed_to_expand_file_tree_view_nodes>Failed to expand the nodes of the file tree control. </FileTreeView_failed_to_expand_file_tree_view_nodes>
+		<FileTreeViewer_invalid_file_or_filepath>Failed to open the selected file. The file might have been deleted or the path/filename is invalid.</FileTreeViewer_invalid_file_or_filepath>
 		
 		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. </TextEditor_failed_to_open_text_file>
 		<TextEditor_file_does_not_exist>The specified file does not exist; path: </TextEditor_file_does_not_exist>
@@ -84,7 +90,7 @@
 		<TextEditor_invalid_path>Invalid path. </TextEditor_invalid_path>
 		<TextEditor_cannot_replace_phrase>Error replacing the text from the search text box with the text from the "Replace all" textbox. </TextEditor_cannot_replace_phrase>
 		<TextEditor_failed_to_load_text_file_into_textbox>Failed to load the the text from the text file into the text box. </TextEditor_failed_to_load_text_file_into_textbox>
-			
+		
 		<XmlEditor_cannot_add_tree_node>Failed to add a new node in the tree. </XmlEditor_cannot_add_tree_node>
 		<XmlEditor_cannot_edit_tree_node>Failed to edit the XML tree node. </XmlEditor_cannot_edit_tree_node>
 		<XMLEditor_cannot_add_custom_node>Failed to add an XML node. </XMLEditor_cannot_add_custom_node>
@@ -95,18 +101,23 @@
 		<XMLEditor_cannot_load_textbox_XML_string_into_memory>Failed to save the textbox XML structure in memory. </XMLEditor_cannot_load_textbox_XML_string_into_memory>
 		<XMLEditor_cannot_load_local_XML_file>Failed to load the local XML file. </XMLEditor_cannot_load_local_XML_file>
 		<XMLEditor_cannot_save_local_XML_file>Failed to save the XML dtaa to a local file. </XMLEditor_cannot_save_local_XML_file>
-
+		<XmlEditor_failed_to_switch_XML_edit_mode>Failed to switch edit modes in the XML editor. </XmlEditor_failed_to_switch_XML_edit_mode>
+		<XmlEditor_failed_to_save_XML_file>Failed to save an XML file. </XmlEditor_failed_to_save_XML_file>
+		
 		<DataBaseTableEditor_failed_to_load_database_table>Failed to load the database table. </DataBaseTableEditor_failed_to_load_database_table>
 		<DataBaseTableEditor_failed_to_upload_database_table>Failed to upload the database table into the database. </DataBaseTableEditor_failed_to_upload_database_table>
 		<DataBaseTableEditor_failed_to_locally_save_database_table>Failed to save the database table as a local .tbl file. </DataBaseTableEditor_failed_to_locally_save_database_table>
 		<DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>Failed to load locally stored database file (.tbl). </DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>
 		<DataBaseTableEditor_failed_to_parse_local_file_tbl>Failed to parse a locally stored .tbl file: </DataBaseTableEditor_failed_to_parse_local_file_tbl>
-		
+		<DataBaseTableEditor_failed_to_open_table>Failed to open a database table. </DataBaseTableEditor_failed_to_open_table>
+
 		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
 		<UtilityService_failed_to_check_XML_files>Failed to check XML files. </UtilityService_failed_to_check_XML_files>
 
-</EN>
+		<FileOverview_failed_to_load_file_overview>Failed to load file details into the File Overview MDI window. </FileOverview_failed_to_load_file_overview>
+		<FileOverview_failed_to_get_file_information>Failed to get file information. </FileOverview_failed_to_get_file_information>
+	</EN>
 	
 	<RO>
 		

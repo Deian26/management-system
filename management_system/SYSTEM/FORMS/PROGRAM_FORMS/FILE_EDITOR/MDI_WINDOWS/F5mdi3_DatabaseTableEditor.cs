@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
+namespace management_system
 {
     public partial class F5mdi3_DatabaseTableEditor : Form
     {
@@ -31,19 +31,23 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
         private DataTable currentTable = null;
         private List<string> stringColumns = new List<string>();
 
-        //CONSTRUCTORS
-        public F5mdi3_DatabaseTableEditor(F5_FileEditorForm f5_containerForm, string databaseTable)
+        //CONSTRUCTORSw
+        public F5mdi3_DatabaseTableEditor(F5_FileEditorForm f5_containerForm, string databaseTable, bool localFile)
         {
             InitializeComponent();
             
             //link the specified database table with the data grid view control
             this.databaseTable = databaseTable;
             this.currentTable = new DataTable(this.databaseTable);
-            //DEBUG - TO BE DELETED AFTER DEVELOPMENT
-            this.databaseTable = "DevGroup1_Table1";
 
-            this.refreshDatabaseData();
-
+            if (localFile == true) //local .tbl file
+            {
+                this.parseTblFile(this.databaseTable);
+            }
+            else //database table
+            {
+                this.refreshDatabaseData();
+            }
             //container form
             this.MdiParent = f5_containerForm;
             this.f5_containerForm = f5_containerForm;
@@ -98,7 +102,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
         {
             try
             {
-                SqlCommand refresh_cmd = Utility.getSqlCommand("SELECT * FROM " + databaseTable.ToString());
+                SqlCommand refresh_cmd = Utility.getSqlCommand("SELECT * FROM " + this.databaseTable.ToString());
 
                 //get columns
                 SqlDataReader dr = refresh_cmd.ExecuteReader();
@@ -141,7 +145,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
 
                 }
                 else
-                    Utility.logDiagnsoticEntry("DatabaseTableEditor: failed to load database table; 'databasTable' was null");
+                    Utility.logDiagnsoticEntry("DatabaseTableEditor: failed to load database table; 'databaseTable' was null");
             }catch(Exception exception)
             {
                 Utility.DisplayError("DataBaseTableEditor_failed_to_load_database_table", exception, "DataBaseTableEditor: failed to load database table: " + exception.ToString(), false);
@@ -173,6 +177,13 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
                 Utility.DisplayError("DataBaseTableEditor_failed_to_locally_save_database_table", exception, "DataBaseTableEditor: Could not save the table as a local .tbl file: " + exception.ToString(), false);
             }
         }
+
+        //return the database table associated with this MDI window
+        public string getTableName()
+        {
+            return this.databaseTable;
+        }
+
         //EVENT HANDLERS
         private void F5mdi3_DatabaseTableEditor_Load(object sender, EventArgs e)
         {
@@ -262,7 +273,7 @@ namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
             }
         }
 
-        //open locally saved database table (.tbl file)
+        //open a locally saved database table (.tbl file)
         private void F5mdi3_openToolStripButton_Click(object sender, EventArgs e)
         {
             try

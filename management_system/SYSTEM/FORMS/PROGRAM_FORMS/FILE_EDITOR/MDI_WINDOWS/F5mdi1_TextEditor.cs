@@ -57,7 +57,7 @@ namespace management_system
             this.F5mdi1_richTextBox_textEditor.ShortcutsEnabled = true;
 
             //set the form title to the file name
-            this.Text = this.file.getFilePath().Split('\\').Last();
+            if(this.file!=null) this.Text = this.file.getFilePath().Split('\\').Last();
 
             //shortcuts
             ContextMenu textboxShortcuts = new ContextMenu();
@@ -147,6 +147,12 @@ namespace management_system
 
 
         //UTILITY FUNCTIONS
+
+        //return the file associated with this MDI window
+        public GeneralFile getFile()
+        {
+            return this.file;
+        }
 
         //refresh the appearance of controls in this form
         private void refreshControlsAppearance()
@@ -571,22 +577,32 @@ namespace management_system
             }
         }
 
-        //open a local file
+        //open a local file into the current editor if saved, will overwrite the current file)
         private void F5mdi1_toolStripButton_openFile_Click(object sender, EventArgs e)
         {
             try
             {
-                //apply a filter to the open file dialog so that onlt .rtf files can be selected
-                this.F5mdi1_openFileDialog_openLocalFile.Filter = "Roch Text Format | *.rtf";
+                //apply a filter to the open file dialog so that onlt .rtf and .txt files can be selected
+                this.F5mdi1_openFileDialog_openLocalFile.Filter = "Rich Text Format | *.rtf|Text | *.txt";
 
                 //show the open file dialog
                 DialogResult result = this.F5mdi1_openFileDialog_openLocalFile.ShowDialog();
 
-                if(result.Equals(DialogResult.OK)) //OK
+                if (result.Equals(DialogResult.OK)) //OK
                 {
-                    this.F5mdi1_richTextBox_textEditor.LoadFile(this.F5mdi1_openFileDialog_openLocalFile.FileName);  //store the text from the selected RTF file into the rich text box control
+                    string filePath = this.F5mdi1_openFileDialog_openLocalFile.FileName;
+                    if (Path.GetExtension(filePath).ToLower().Equals("rtf")) this.F5mdi1_richTextBox_textEditor.LoadFile(filePath);  //store the text from the selected RTF file into the rich text box control
+                    else if (Path.GetExtension(filePath).ToLower().Equals("txt")) //open a simple text file and store the text in the rich text box
+                    {
+                        this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(filePath);
+                    }
 
-                    this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_GEN(this.F5mdi1_richTextBox_textEditor.Text,Utility.key); //decrypt text
+                    //check if the file has the path to the 'management_system' folder in its path and if so, decrypt the file; otherwise, leave the text as it is
+                    if (Utility.managementSystemDataFile(filePath) == true)
+                    {
+                        this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key); //decrypt text
+                    }
+                    
                 }
             }
             catch (Exception exception)

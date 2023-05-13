@@ -108,7 +108,7 @@ namespace management_system
         public static int oldNotificationsLifespanDays = 14; //days
         public static int genKey = 23; //generic encryption key, used to encrypt general data in the database table (such as each group's cryptographic key)
         public static string enc_allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|="; //allowed characters for encryption/decryption
-
+        public static string filename_allowedSpecialCharacters = "_# *"; //special characters allowed in file names
         //diagnostic
         public static int maxDiaggnosticLogCharacters = int.MaxValue-1; //max number of characters to add into the diagnsotic log before clearing the textbox
 
@@ -196,6 +196,7 @@ namespace management_system
         public static string currentGroupPath = null; //the path to the local group path
         public const int maxGroupNameLength = 20; //the maximum length of a group name
         public const int maxUsernameLength = 20; //the maximum length of a username
+        public static Group currentGroup = null; //current group   
 
         public static string groupIconFileFilterString = "JPEG|*.jpeg|JPG|*.jpg|PNG|*.png";//the filter to be applied for the files shown in the new group icon file dialog 
 
@@ -2294,6 +2295,36 @@ namespace management_system
 
         #region groups
 
+        //check if te file at the given path is in the under the main 'management_system' folder of the program (returns 'true' if so)
+        public static bool managementSystemDataFile(string filePath)
+        {
+            try
+            {
+                //get the path to the folder 'management_system'
+                string[] path = Directory.GetCurrentDirectory().Split('\\');
+                string mainFolderPath = "";
+                for (int i = 0; i < path.Length - 3; i++)
+                {
+                    mainFolderPath += path[i] + "\\";
+
+                }
+                mainFolderPath += path[path.Length - 3];
+
+                if (Directory.GetParent(filePath).Parent.Parent.Parent.FullName.ToLower().Equals(mainFolderPath.ToLower()) &&
+                Directory.GetParent(filePath).Parent.Parent.Name.ToLower().Equals("data"))
+                {
+                    return true; //management system DATA file
+                }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_veifiy_if_file_is_management_system_data_file", exception, "Group: Failed to verify if the file at the given path is a Management System DATA file: " + exception.ToString(), false);
+                return false; //error
+            }
+
+            return false; //not a management system DATA file
+        }
+
         //check the name of the group
         private static bool validGroupNameFromDB(string groupName)
         {
@@ -2440,24 +2471,120 @@ namespace management_system
             }
         }
 
-        //create a new group
-        public static int createNewGroup(string groupName, string author, DateTime dateCraeted, bool adminGroup, Image icon)
+        //find and return a group specified by name
+        public static Group getGroupByName(string name)
         {
-            //if the group name already exists, do not create it
-            foreach(Group group in Utility.userGroups)
-                if(group.getName().Equals(groupName))
+            try
+            {
+                foreach(Group group in Utility.userGroups)
                 {
-                    Utility.logDiagnsoticEntry("Group: the group name already exists and cannot be used again: "+groupName);
-
-                    return -1; //group not created - duplicate names
+                    if(group.getName().Equals(name))
+                        return group; //group found
                 }
+
+
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_find_group_by_name", exception, "Group: Failed to find the group: " + name.ToString()+"; details: " + exception.ToString(), false);
+                return null; //group not found
+            }
+
+            return null; //group not found
+        }
+
+        //delete a group given by Group object
+        public static bool deleteGroup(Group group)
+        {
+            try
+            {
+                string name = group.getName();
+
+                //delete database tables associated with the group
+                SqlCommand deleteGroupTable = Utility.getSqlCommand("SELECT * FROM "+name+"_DatabaseFiles");
+                SqlDataReader dr = deleteGroupTable.ExecuteReader();
+                List<string> tables = new List<string>(); //list of database tables in the group
+
+                while(dr.Read())
+                {
+                    if(dr.GetInt32(2)==1) //if the current file is a database table, delete the table
+                    {
+                        tables.Add(dr.GetString(0)); //add table name in the 'tables' list
+                    }
+                }
+
+                dr.Close();
+
+                foreach(string table in tables)
+                {
+                    deleteGroupTable = Utility.getSqlCommand("DROP TABLE " + table); //delete the table
+                    deleteGroupTable.ExecuteNonQuery();
+                }
+
+                //delete the _DatabaseFiles table
+                deleteGroupTable = Utility.getSqlCommand("DROP TABLE "+name+"_DatabaseFiles");
+                deleteGroupTable.ExecuteNonQuery();
+
+                //delete the entry associated with this group from the GroupIndex table
+                deleteGroupTable = Utility.getSqlCommand("DELETE FROM GroupIndex WHERE name='"+Utility.ENC_GEN(name,Utility.genKey) +"'");
+                deleteGroupTable.ExecuteNonQuery();
+
+                //delete the GroupName_Users table
+                deleteGroupTable = Utility.getSqlCommand("DROP TABLE " + name + "_Users");
+                deleteGroupTable.ExecuteNonQuery();
+
+                //delete local folder of the group
+                Directory.Delete(group.getLocalFilesPath(),true);
+
+                //delete the group from the userGroups list
+                Utility.userGroups.Remove(group);
+
+                return true; //group deleted
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_delete_a_group", exception, "Group: Failed to delete group: " + group.getName().ToString()+"; details: " + exception.ToString(), false) ;
+                return false; //group was not deleted
+            }
+
+            //return false; //group was not deleted
+        }
+
+        //create a new group
+        public static int createNewGroup(string groupName, string author, DateTime dateCreated, bool adminGroup, Image icon)
+        {
 
             try
             {
+                //if the group name already exists in the group table, do not create it
+                SqlCommand checkDuplicateGroup = Utility.getSqlCommand("SELECT * FROM GroupIndex");
+                SqlDataReader dr = checkDuplicateGroup.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    if(dr.GetString(0).Equals(Utility.ENC_GEN(groupName,Utility.genKey))==true) //group name already exists in the GroupIndex database table
+                    {
+                        Utility.logDiagnsoticEntry("Group: the group name already exists in the GroupIndex database table and cannot be used again: " + groupName);
+                        dr.Close();
+                        return -1; //group not created - duplicate names
+                    }
+                }
+                
+                dr.Close();
+                checkDuplicateGroup.Dispose();
+
+                //if the name already exists in memory, do not create the group again
+                foreach (Group group in Utility.userGroups)
+                    if (group.getName().Equals(groupName))
+                    {
+                        Utility.logDiagnsoticEntry("Group: the group name already exists in memory and cannot be used again: " + groupName);
+
+                        return -1; //group not created - duplicate names
+                    }
+                
                 //add the details of the new group into memory
                 Utility.userGroups.Add(new Group(groupName,
                                                  author,
-                                                 dateCraeted,
+                                                 dateCreated,
                                                  Utility.DB_name,
                                                  adminGroup,
                                                  icon
@@ -2480,7 +2607,8 @@ namespace management_system
                 SqlCommand readGroups = Utility.getSqlCommand("SELECT * FROM GroupIndex");
                 dr = readGroups.ExecuteReader();
                 List<tempGroup> tempList = new List<tempGroup>(); //temporary memory struct
-                
+                bool userHasAccess = false;
+
                 //add group details into temporary memory storage
                 while(dr.Read())
                 {
@@ -2497,7 +2625,33 @@ namespace management_system
                             );
                 }
                 dr.Close();
-                
+
+                //check which groups the current user has access to by checking the GroupName_Users table of each group
+                for(int i = 0; i<tempList.Count; i++) 
+                {
+                    readGroups = Utility.getSqlCommand("SELECT * FROM " + tempList[i].getName()+"_Users");
+                    dr = readGroups.ExecuteReader();
+
+                    userHasAccess = false;
+
+                    while (dr.Read())
+                    {
+                        if(dr.GetString(0).Equals(Utility.DB_HASH(Utility.username))==true) //the current user has access to the current group
+                        {
+                            userHasAccess = true;
+                            break;
+                        }
+                    }
+
+                    if(userHasAccess==false) //delete the group from temporary memory
+                    {
+                        tempList.Remove(tempList[i]);
+                        i--;
+                    }
+
+                    dr.Close();
+                }
+
                 //move details from temporary storage to the userGroups list
                 foreach(tempGroup group in tempList)
                 {

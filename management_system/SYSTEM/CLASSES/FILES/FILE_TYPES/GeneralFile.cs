@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,28 +39,26 @@ namespace management_system
             {
                 this.file = File.Open(path, FileMode.Open); //open the file
                 this.filePath = path; //store the given filePath
-                
-
 
                 this.fileAttributes = File.GetAttributes(path); //get file attributes
                 this.creationDateTime = File.GetCreationTimeUtc(path); //get file creation date and time
                 this.lastModifiedDateTime = File.GetLastWriteTimeUtc(path); //get the last date and time when this file was written to
                 this.lasAccessDateTime = File.GetLastAccessTimeUtc(path); //get the last time this file was accessed
-                this.fileExtension = FileEditor.extension[(int)this.fileType]; //determine the file fileExtension
 
                 //determine the file type
                 this.fileType = fileType;
-                //this.fileType = this.determineFileType(path);
+                this.fileExtension = FileEditor.extension[(int)this.fileType]; //determine the file fileExtension
+                //this.FileType = this.determineFileType(path);
 
                 this.file.Close();
             }catch (Exception exception)
             {
-                Utility.DisplayWarning("TextEditor_failed_to_open_text_file"+path.ToString(), exception, "Invalid file: " + path.ToString(), false);
+                Utility.DisplayWarning("TextEditor_failed_to_open_text_file", exception, "Invalid file: " + path.ToString(), false);
             }
         }
 
         //METHODS
-
+        
         //determine the type of a file based on the given path
         private FileEditor.FileType determineFileType(string path)
         {
@@ -72,7 +71,7 @@ namespace management_system
                 else
                 {
                     this.fileExtension = aux_path[1]; //store the file fileExtension as a string
-                    FileEditor.determineFilType(this.fileExtension); //determine the file type based on the file extension
+                    FileEditor.determineFileType(this.fileExtension); //determine the file type based on the file extension
                 }
 
             }
@@ -116,9 +115,52 @@ namespace management_system
             }
         }
 
-        //setters
+        //SETTERS
 
-        //getters
+        //GETTERS
+        
+        //get file name and extension
+        public string getFilename()
+        {
+            try
+            {
+                string[] path = this.filePath.Split('\\');
+
+                return path[path.Length - 1]; //get filename
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("FileOverview_failed_to_get_file_information", exception, "FileOverview: Failed to get file information from the file in the active MDI window: \n" + exception.ToString(), false);
+                return null;
+            }
+        }
+
+        //get file information
+        public string[] getFileInfo()
+        {
+            try
+            {
+                string[] info = new string[7];
+
+                
+                                                    info[0] = this.fileAttributes.ToString();
+                if(this.lasAccessDateTime!=null)    info[1] = this.lasAccessDateTime.ToString();
+                if(this.lastModifiedDateTime!=null) info[2] = this.lastModifiedDateTime.ToString();
+                if(this.fileExtension!=null)        info[3] = this.fileExtension.ToString();
+                                                    info[4] = this.fileType.ToString();
+                if(this.creationDateTime!=null)     info[5] = this.creationDateTime.ToString();
+                if (this.filePath != null)          info[6] = this.filePath.ToString();
+
+                return info;
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("FileOverview_failed_to_get_file_information", exception, "FileOverview: Failed to get file information from the file in the active MDI window: \n" + exception.ToString(), false);
+                return null;
+            }
+
+        }
+
         public FileEditor.FileType getFileType()
         {
             return this.fileType;

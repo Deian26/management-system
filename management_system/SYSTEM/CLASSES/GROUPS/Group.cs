@@ -156,7 +156,10 @@ namespace management_system
                 //store the group's details into the indexing database table (currently connected database)
                 this.storeGroupDetailsIntoIndexingTable();
 
-                //create a GroupName_DatabaseFiles table to store group files in the database
+                //create a GroupName_Users database table to store the users which have access to this group (automatically adds the current user as a user of this group)
+                this.createGroupUsersTable();
+
+                //create a GroupName_DatabaseFiles database table to store group files in the database
                 this.createGroupDatabaseFilesTable();
             }
             else
@@ -233,12 +236,33 @@ namespace management_system
 
         //other methods
 
-        //creates a table in the connected database (naming: Group_DatabaseFiles) which can store the group files
+        //create a database table to store the users of the group
+        private void createGroupUsersTable()
+        {
+            try
+            {
+                SqlCommand command = Utility.getSqlCommand("CREATE TABLE " + this.name + "_Users (users nvarchar(100))");
+
+                //create table
+                command.ExecuteNonQuery();
+
+                //add the current user into the users table
+                command = Utility.getSqlCommand("INSERT INTO "+this.name+"_Users VALUES('"+Utility.DB_HASH(Utility.username)+"')");
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_create_groupUsers_table", exception, "Group: Failed to create the group users table in the connected database: " + exception.ToString(), false);
+            }
+        }
+
+        //creates a database table in the connected database (naming: Group_DatabaseFiles) which can store the group files
         private void createGroupDatabaseFilesTable()
         {
             try
             {
-                SqlCommand createTable = Utility.getSqlCommand("CREATE TABLE " + this.name + "_DatabaseFiles (filename nvarchar(50), _file varbinary(MAX) )");
+                SqlCommand createTable = Utility.getSqlCommand("CREATE TABLE " + this.name + "_DatabaseFiles (filename nvarchar(50), _file varbinary(MAX), databaseTable int)");
 
                 //create table
                 createTable.ExecuteNonQuery();

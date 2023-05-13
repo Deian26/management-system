@@ -36,6 +36,7 @@
             this.F5_statusStrip_fileEditorForm = new System.Windows.Forms.StatusStrip();
             this.F5mdi1_toolStripStatusLabel_connectedDatabaseName = new System.Windows.Forms.ToolStripStatusLabel();
             this.F5mdi1_toolStripProgressBar_databaseSyncProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.F5_openFileDialog_openFile = new System.Windows.Forms.OpenFileDialog();
             this.F5_toolStrip_fileEditorForm.SuspendLayout();
             this.F5_statusStrip_fileEditorForm.SuspendLayout();
             this.SuspendLayout();
@@ -61,12 +62,14 @@
             this.F5_toolStripDropDownButton_fileButton.Name = "F5_toolStripDropDownButton_fileButton";
             this.F5_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(48, 22);
             this.F5_toolStripDropDownButton_fileButton.Text = "File";
+            this.F5_toolStripDropDownButton_fileButton.Click += new System.EventHandler(this.F5_toolStripDropDownButton_fileButton_Click);
             // 
             // F5_ToolStripMenuItem_openFile
             // 
             this.F5_ToolStripMenuItem_openFile.Name = "F5_ToolStripMenuItem_openFile";
             this.F5_ToolStripMenuItem_openFile.Size = new System.Drawing.Size(102, 22);
             this.F5_ToolStripMenuItem_openFile.Text = "Open";
+            this.F5_ToolStripMenuItem_openFile.Click += new System.EventHandler(this.F5_ToolStripMenuItem_openFile_Click);
             // 
             // F5_toolStripSeparator_separator1
             // 
@@ -109,6 +112,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "File Editor";
             this.Load += new System.EventHandler(this.F5_FileEditorForm_Load);
+            this.MdiChildActivate += new System.EventHandler(this.F5_FileEditorForm_MdiChildActivate);
             this.Resize += new System.EventHandler(this.F5_FileEditorForm_Resize);
             this.F5_toolStrip_fileEditorForm.ResumeLayout(false);
             this.F5_toolStrip_fileEditorForm.PerformLayout();
@@ -127,5 +131,6 @@
         private System.Windows.Forms.StatusStrip F5_statusStrip_fileEditorForm;
         private System.Windows.Forms.ToolStripStatusLabel F5mdi1_toolStripStatusLabel_connectedDatabaseName;
         private System.Windows.Forms.ToolStripProgressBar F5mdi1_toolStripProgressBar_databaseSyncProgressBar;
+        private System.Windows.Forms.OpenFileDialog F5_openFileDialog_openFile;
     }
 }

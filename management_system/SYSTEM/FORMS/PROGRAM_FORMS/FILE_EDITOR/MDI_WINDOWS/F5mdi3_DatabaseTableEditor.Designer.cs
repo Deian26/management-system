@@ -1,4 +1,4 @@
-﻿namespace management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS
+﻿namespace management_system
 {
     partial class F5mdi3_DatabaseTableEditor
     {

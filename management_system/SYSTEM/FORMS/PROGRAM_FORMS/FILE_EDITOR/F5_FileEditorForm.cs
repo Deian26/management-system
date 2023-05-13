@@ -1,5 +1,4 @@
-﻿using management_system.SYSTEM.FORMS.PROGRAM_FORMS;
-using management_system.SYSTEM.FORMS.PROGRAM_FORMS.FILE_EDITOR.MDI_WINDOWS;
+﻿using management_system;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +44,7 @@ namespace management_system
 
             //store current group details
             this.currentGroup = group;
+            Utility.currentGroup = group;
             Utility.currentGroupPath = group.getLocalFilesPath();
 
             //form settings
@@ -148,6 +148,99 @@ namespace management_system
         {
             //refresh the size and position of the controls of this form
             this.refreshControlsAppearance(false);
+        }
+
+        //open file
+        private void F5_ToolStripMenuItem_openFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //apply a filter to the open file dialog so that onlt .rtf and .txt files can be selected
+                //this.F5_openFileDialog_openFile.Filter = ";
+
+                //show the open file dialog
+                DialogResult result = this.F5_openFileDialog_openFile.ShowDialog();
+
+                if (result.Equals(DialogResult.OK)) //OK
+                {
+                    //determine the file type and open the corresponding editor or the text editor, if the file extension is not recognised
+
+                    string filePath = this.F5_openFileDialog_openFile.FileName; //get full file path
+
+                    FileEditor.FileType fileType =  FileEditor.determineFileType(filePath); //get file type
+
+                    GeneralFile file = new GeneralFile(filePath, fileType);
+
+                    //open editor
+                    F5mdi1_TextEditor f5Mdi1_TextEditor = null;
+                    F5mdi2_XmlEditor f5Mdi2_XmlEditor = null;
+                    F5mdi3_DatabaseTableEditor f5Mdi3_DatabaseTableEditor = null;
+
+                    switch (fileType)
+                    {
+                        case FileEditor.FileType.text: //TXT
+                            f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
+
+                            f5Mdi1_TextEditor.Show(); //display MDI window
+
+                            file = null; 
+
+                            break;
+
+                        case FileEditor.FileType.rtf: //RTF
+                            f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
+
+                            f5Mdi1_TextEditor.Show(); //display MDI window
+
+                            file = null;
+                            break;
+
+                        case FileEditor.FileType.xml: //XML
+                            f5Mdi2_XmlEditor = new F5mdi2_XmlEditor(this, file);
+
+                            file = null;
+                            break;
+                        
+                        case FileEditor.FileType.general: //open a text editor
+                            f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
+
+                            f5Mdi1_TextEditor.Show(); //display MDI window
+
+                            file = null;
+                            break;
+
+                        case FileEditor.FileType.databaseTable: //local Database table (.tbl file)
+                            f5Mdi3_DatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this, filePath, true); //'true' = local database file (.tbl)
+                            break;
+
+
+                        default: //general file => open the text editor
+                            f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
+
+                            f5Mdi1_TextEditor.Show(); //display MDI window
+
+                            file = null;
+                            break;
+                    }
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("TextEditor_failed_to_open_text_file", exception, "TextEditor: could not open a local file: " + exception.ToString(), false);
+            }
+        }
+
+        private void F5_toolStripDropDownButton_fileButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //MDI window activated
+        private void F5_FileEditorForm_MdiChildActivate(object sender, EventArgs e)
+        {
+            if(this.f5_mdiFileOverview != null)
+                this.f5_mdiFileOverview.getCurrentFileOverview();
         }
     }
 }

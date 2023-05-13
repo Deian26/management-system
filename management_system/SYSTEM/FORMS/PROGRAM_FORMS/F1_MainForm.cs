@@ -135,11 +135,21 @@ namespace management_system
             //update date
             this.F1_toolStripStatusLabel_DateTime.Text = DateTime.Now.ToString();
 
+            //groups list view settings
+            this.F1_listView_groups.MultiSelect= false;
+
+            //add a context menu to the groups list view control
+            MenuItem[] menuItems = new MenuItem[1];
+            
+            menuItems[0] = new MenuItem(Utility.displayMessage("F1_delete_group_context_menu_message"), F1_DeleteGroup);
+
+            ContextMenu groupsMenu = new ContextMenu(menuItems);
+
+            this.F1_listView_groups.ContextMenu = groupsMenu;
         }
 
-
-
         //EVENT HANDLERS
+
         //form closed
         private void F1_MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -533,24 +543,60 @@ namespace management_system
             }
         }
 
-        //a group has been selected in the list view control
-        private void F1_listView_groups_SelectedIndexChanged(object sender, EventArgs e)
+        //a group was selected (double click on an item in the list view control)
+        private void F1_listView_groups_ItemActivate(object sender, EventArgs e)
         {
             try
             {
                 F5_FileEditorForm f5_fileEditorForm = new F5_FileEditorForm(
                     Utility.userGroups.Find(x => x.getName().Equals(this.F1_listView_groups.SelectedItems[0].Text)) //search for the currently selected group name int the list of user groups and pass the group to the constructor
                     );
-                
+
                 this.Hide(); //hide the main form
-                
+
                 f5_fileEditorForm.ShowDialog(); //display the file editor form
-                 
+
                 this.Show(); //show the main form again
-            }catch(Exception exception)
+            }
+            catch (Exception exception)
             {
                 Utility.DisplayError("Groups_failed_to_open_group", exception, "Groups: Failed to open the group: " + this.F1_listView_groups.SelectedItems.ToString() + ": " + exception.ToString(), false);
             }
         }
+
+        //the list view control is clicked
+        private void F1_listView_groups_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //delete group event handler
+        private void F1_DeleteGroup(object sender, EventArgs e)
+        {
+            try
+            {
+                //confirm the deletion
+                DialogResult deleteGroup = MessageBox.Show(Utility.displayMessage("F1_confirm_group_deletion"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (deleteGroup == DialogResult.No) //do not delete the group
+                    return;
+
+                //delete group
+                if (Utility.deleteGroup(Utility.getGroupByName(this.F1_listView_groups.SelectedItems[0].Text)) == true) //the group was deleted
+                {
+                    //delete the list view item associated with the deleted group
+                    this.F1_listView_groups.SelectedItems[0].Remove();
+
+                    //display a message to indicate that the group has been deleted
+                    MessageBox.Show(Utility.displayMessage("F1_group_successfully_deleted"), "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_delete_group_from_mainForm", exception, "Group: Failed to delete the selected group from the MainForm: " + exception.ToString(), false);
+            }
+
+            }
     }
 }

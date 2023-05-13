@@ -19,8 +19,8 @@ namespace management_system
             general = 1, 
             text = 2, 
             xml = 3, 
-            databaseTable = 3,
-            rtf = 4
+            databaseTable = 4,
+            rtf = 5
         };
         public static string[] extension = { //currently recognized file extensions - this string array matches the 'FileType' enum
                         null, //no file currently open
@@ -33,7 +33,7 @@ namespace management_system
         //METHODS
 
         //determine the file type based on the given file name . extension
-        public static FileType determineFilType(string filenameAndExtension)
+        public static FileType determineFileType(string filenameAndExtension)
         {
 
             //check if the file name and extension given contains multiple dots ('.')

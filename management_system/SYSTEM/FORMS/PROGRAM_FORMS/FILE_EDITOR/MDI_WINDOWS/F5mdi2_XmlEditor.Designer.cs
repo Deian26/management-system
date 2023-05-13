@@ -33,6 +33,7 @@
             this.F5mdi2_treeView_xmlEditor = new System.Windows.Forms.TreeView();
             this.F5mdi2_toolStripDropDownButton_fileButton = new System.Windows.Forms.ToolStripDropDownButton();
             this.F5mdi2_toolStripMenuItem_saveAsButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi2_toolStripSeparator_separator1 = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi2_toolStripButton_save = new System.Windows.Forms.ToolStripButton();
             this.F5mdi2_toolStripButton_print = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +63,6 @@
             this.F5mdi2_richTextBox_xmlEditor = new System.Windows.Forms.RichTextBox();
             this.F5mdi2_openFileDialog_openLocalXmlFile = new System.Windows.Forms.OpenFileDialog();
             this.F5mdi2_saveFileDialog_newXmlFile = new System.Windows.Forms.SaveFileDialog();
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi2_toolStrip_xmlEditor.SuspendLayout();
             this.F5mdi2_toolStrip_xmlTools.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +102,13 @@
             this.F5mdi2_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(200, 22);
             this.F5mdi2_toolStripMenuItem_saveAsButton.Text = "Save as";
             this.F5mdi2_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_saveAsButton_Click);
+            // 
+            // F5mdi2_toolStripMenuItem_uploadToDatabaseButton
+            // 
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Name = "F5mdi2_toolStripMenuItem_uploadToDatabaseButton";
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Size = new System.Drawing.Size(200, 22);
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Text = "Upload to database";
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton_Click);
             // 
             // F5mdi2_toolStripSeparator_separator1
             // 
@@ -360,13 +367,6 @@
             // F5mdi2_saveFileDialog_newXmlFile
             // 
             this.F5mdi2_saveFileDialog_newXmlFile.FileName = "New XML File";
-            // 
-            // F5mdi2_toolStripMenuItem_uploadToDatabaseButton
-            // 
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Name = "F5mdi2_toolStripMenuItem_uploadToDatabaseButton";
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Size = new System.Drawing.Size(200, 22);
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Text = "Upload to database";
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton_Click);
             // 
             // F5mdi2_XmlEditor
             // 
