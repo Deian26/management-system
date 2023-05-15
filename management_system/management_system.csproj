@@ -110,6 +110,12 @@
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.Designer.cs">
       <DependentUpon>F6_GeneralInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F8_AddNewTableColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F8_AddNewTableColumn.Designer.cs">
+      <DependentUpon>F8_AddNewTableColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.resx">
       <DependentUpon>F6_GeneralInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F8_AddNewTableColumn.resx">
+      <DependentUpon>F8_AddNewTableColumn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.resx">
       <DependentUpon>F5mdi1_TextEditor.cs</DependentUpon>

@@ -19,7 +19,7 @@ namespace management_system
     {
         //VARIABLES
         //database table
-        private string databaseTable = null; //GroupName + _ + TableName
+        private string databaseTable = null; //database table name : GroupName + _ + TableName
 
         private F5_FileEditorForm f5_containerForm = null;
 
@@ -316,6 +316,49 @@ namespace management_system
         private void F5mdi3_dataGridView_databaseTableEditor_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        //Database table editor guide
+        private void F5mdi3_helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F6_GeneralInformation f6_GeneralInformation = new F6_GeneralInformation(Utility.displayMessage("F5mdi3_guide_form_title"), Utility.displayMessage("F5mdi3_guide_form_info"));
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_failed_to_open_editor_guide", exception, "DataBaseTableEditor: Failed to open the editor guide: \n" + exception.ToString(), false);
+            }
+        }
+
+        //delete a column
+        private void F5mdi3_cutToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //print
+        private void F5mdi3_printToolStripButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //add a new column
+        private void F5mdi3_toolStripButton_addColumn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //open a form to specify the new column name and data type
+                F8_AddNewTableColumn f8_AddNewTableColumn = new F8_AddNewTableColumn(this.databaseTable);
+
+                f8_AddNewTableColumn.ShowDialog();
+
+                f8_AddNewTableColumn.Close();
+
+            }catch(Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_failed_to_add_new_column_to_table", exception, "DataBaseTableEditor: Failed to add a new column to the table: \n" + exception.ToString(), false);
+            }
         }
     }
     }

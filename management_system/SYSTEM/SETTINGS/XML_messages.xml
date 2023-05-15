@@ -110,6 +110,7 @@ Trif Paul Deian, May 7, 2023
 		
 		<F5mdi4_file_tree_view_default_node_Local>Local</F5mdi4_file_tree_view_default_node_Local>
 		<F5mdi4_file_tree_view_default_node_Database>Database</F5mdi4_file_tree_view_default_node_Database>
+		
 		<F5mdi1_local_file_save_successful>File saved!</F5mdi1_local_file_save_successful>
 		<F5mdi1_local_file_save_unsuccessful>File was not saved!</F5mdi1_local_file_save_unsuccessful>
 		<F5_wordCountLabel>word(s)</F5_wordCountLabel>
@@ -160,8 +161,36 @@ Management system version: v0.1
 		<F5mdi5_groupAuthor>Group author</F5mdi5_groupAuthor>	
 		<F5mdi5_adminGroup>Admin group</F5mdi5_adminGroup>
 		<F5mdi5_fileName>Filename</F5mdi5_fileName>
+
+		<F5mdi3_guide_form_title>Database table editor guide</F5mdi3_guide_form_title>
+		<F5mdi3_guide_form_info>
+		How to use the Database table editor
+		
+		-> Open local file:
+			1. select the 'Open file' icon (an open folder)
+			2. select the valid .tbl file you want to open
+		
+		-> Save file into the associated database table:
+			1. click on the 'Save' icon (a Floppy disk)
+		
+		-> Delete a column:
+			1. Select the 'Cut' icon (a pair of scissors)
+		
+		-> Add a new column:
+			1. Click on the 'Add column' button
+			2. Specify a valid column name and data type
+			3. Click on the 'Add column' button in the dialog form
+		
+		-> Save the table as a local .tbl file:
+			1. Click on the 'File' button
+			2. Click on the 'Save as .tbl file' button
+			3. Select the file name and location and click on 'Save' in the dialog box
+			
+Trif Paul Deian, May 14, 2023
+</F5mdi3_guide_form_info>
+		
 	
-	</EN>
+</EN>
 	
 	<RO>
 		

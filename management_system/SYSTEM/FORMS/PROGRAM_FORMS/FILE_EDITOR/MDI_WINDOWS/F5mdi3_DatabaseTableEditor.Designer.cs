@@ -35,7 +35,6 @@
             this.F5mdi3_toolStripButton_File = new System.Windows.Forms.ToolStripDropDownButton();
             this.F5mdi3_saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.F5mdi3_toolStripSeparator_separator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.F5mdi3_newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_printToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -44,6 +43,7 @@
             this.F5mdi3_toolStripSeparator_separator3 = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi3_helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_openFileDialog_openLocalFile = new System.Windows.Forms.OpenFileDialog();
+            this.F5mdi3_toolStripButton_addColumn = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.F5mdi3_dataGridView_databaseTableEditor)).BeginInit();
             this.F5mdi3_toolStrip_toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -70,11 +70,11 @@
             this.F5mdi3_toolStrip_toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5mdi3_toolStripButton_File,
             this.F5mdi3_toolStripSeparator_separator1,
-            this.F5mdi3_newToolStripButton,
             this.F5mdi3_openToolStripButton,
             this.F5mdi3_saveToolStripButton,
             this.F5mdi3_printToolStripButton,
             this.F5mdi3_toolStripSeparator_separator2,
+            this.F5mdi3_toolStripButton_addColumn,
             this.F5mdi3_cutToolStripButton,
             this.F5mdi3_toolStripSeparator_separator3,
             this.F5mdi3_helpToolStripButton});
@@ -109,15 +109,6 @@
             this.F5mdi3_toolStripSeparator_separator1.Name = "F5mdi3_toolStripSeparator_separator1";
             this.F5mdi3_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 26);
             // 
-            // F5mdi3_newToolStripButton
-            // 
-            this.F5mdi3_newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.F5mdi3_newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_newToolStripButton.Image")));
-            this.F5mdi3_newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.F5mdi3_newToolStripButton.Name = "F5mdi3_newToolStripButton";
-            this.F5mdi3_newToolStripButton.Size = new System.Drawing.Size(23, 23);
-            this.F5mdi3_newToolStripButton.Text = "&New";
-            // 
             // F5mdi3_openToolStripButton
             // 
             this.F5mdi3_openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -146,6 +137,7 @@
             this.F5mdi3_printToolStripButton.Name = "F5mdi3_printToolStripButton";
             this.F5mdi3_printToolStripButton.Size = new System.Drawing.Size(23, 23);
             this.F5mdi3_printToolStripButton.Text = "&Print";
+            this.F5mdi3_printToolStripButton.Click += new System.EventHandler(this.F5mdi3_printToolStripButton_Click);
             // 
             // F5mdi3_toolStripSeparator_separator2
             // 
@@ -160,6 +152,7 @@
             this.F5mdi3_cutToolStripButton.Name = "F5mdi3_cutToolStripButton";
             this.F5mdi3_cutToolStripButton.Size = new System.Drawing.Size(23, 23);
             this.F5mdi3_cutToolStripButton.Text = "C&ut";
+            this.F5mdi3_cutToolStripButton.Click += new System.EventHandler(this.F5mdi3_cutToolStripButton_Click);
             // 
             // F5mdi3_toolStripSeparator_separator3
             // 
@@ -174,6 +167,18 @@
             this.F5mdi3_helpToolStripButton.Name = "F5mdi3_helpToolStripButton";
             this.F5mdi3_helpToolStripButton.Size = new System.Drawing.Size(23, 23);
             this.F5mdi3_helpToolStripButton.Text = "He&lp";
+            this.F5mdi3_helpToolStripButton.Click += new System.EventHandler(this.F5mdi3_helpToolStripButton_Click);
+            // 
+            // F5mdi3_toolStripButton_addColumn
+            // 
+            this.F5mdi3_toolStripButton_addColumn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.F5mdi3_toolStripButton_addColumn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi3_toolStripButton_addColumn.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_toolStripButton_addColumn.Image")));
+            this.F5mdi3_toolStripButton_addColumn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi3_toolStripButton_addColumn.Name = "F5mdi3_toolStripButton_addColumn";
+            this.F5mdi3_toolStripButton_addColumn.Size = new System.Drawing.Size(103, 23);
+            this.F5mdi3_toolStripButton_addColumn.Text = "Add column";
+            this.F5mdi3_toolStripButton_addColumn.Click += new System.EventHandler(this.F5mdi3_toolStripButton_addColumn_Click);
             // 
             // F5mdi3_DatabaseTableEditor
             // 
@@ -202,7 +207,6 @@
         private System.Windows.Forms.StatusStrip F5mdi3_statusStrip_statusBar;
         private System.Windows.Forms.ToolStrip F5mdi3_toolStrip_toolStrip;
         private System.Windows.Forms.ToolStripSeparator F5mdi3_toolStripSeparator_separator1;
-        private System.Windows.Forms.ToolStripButton F5mdi3_newToolStripButton;
         private System.Windows.Forms.ToolStripButton F5mdi3_openToolStripButton;
         private System.Windows.Forms.ToolStripButton F5mdi3_saveToolStripButton;
         private System.Windows.Forms.ToolStripButton F5mdi3_printToolStripButton;
@@ -213,5 +217,6 @@
         private System.Windows.Forms.ToolStripDropDownButton F5mdi3_toolStripButton_File;
         private System.Windows.Forms.ToolStripMenuItem F5mdi3_saveAsToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog F5mdi3_openFileDialog_openLocalFile;
+        private System.Windows.Forms.ToolStripButton F5mdi3_toolStripButton_addColumn;
     }
 }

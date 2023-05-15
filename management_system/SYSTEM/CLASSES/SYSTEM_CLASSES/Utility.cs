@@ -856,13 +856,16 @@ namespace management_system
             return Utility.DB_connString;
         }
 
-        //create an SQL command
+        //create an SQL command that does not contain 'DROP TABLE'
         public static SqlCommand getSqlCommand(string SQL_command)
         {
             SqlCommand cmd = null;
 
             try
             {
+                if (SQL_command.ToUpper().Contains("DROP TABLE")) //refuse to construct the specified SQL command
+                    return new SqlCommand();
+
                 cmd = new SqlCommand(SQL_command, Utility.conn);
             }catch (Exception exception)
             {
@@ -870,6 +873,30 @@ namespace management_system
                 Start.f0_logIn.F0_timer_errorClear.Stop();
                 Start.f0_logIn.F0_timer_errorClear.Start();
                 MessageBox.Show(Utility.displayError("DB_conn_failed") +exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+
+            return cmd;
+        }
+
+        //return a command that is used to delete ('DROP') an entire table specified by name
+        public static SqlCommand getDropTableSqlCommand(string table_name)
+        {
+            SqlCommand cmd = null;
+
+            try
+            {
+                if (table_name.ToUpper().Contains("DROP TABLE") || table_name.ToUpper().Contains("DELETE")) //refuse to construct the specified SQL command
+                    return new SqlCommand();
+
+                cmd = new SqlCommand("DROP TABLE "+table_name, Utility.conn);
+            }
+            catch (Exception exception)
+            {
+                Utility.ERR = true;
+                Start.f0_logIn.F0_timer_errorClear.Stop();
+                Start.f0_logIn.F0_timer_errorClear.Start();
+                MessageBox.Show(Utility.displayError("DB_conn_failed") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
 
@@ -2516,12 +2543,12 @@ namespace management_system
 
                 foreach(string table in tables)
                 {
-                    deleteGroupTable = Utility.getSqlCommand("DROP TABLE " + table); //delete the table
+                    deleteGroupTable = Utility.getDropTableSqlCommand(table); //delete the table
                     deleteGroupTable.ExecuteNonQuery();
                 }
 
                 //delete the _DatabaseFiles table
-                deleteGroupTable = Utility.getSqlCommand("DROP TABLE "+name+"_DatabaseFiles");
+                deleteGroupTable = Utility.getDropTableSqlCommand(name+"_DatabaseFiles");
                 deleteGroupTable.ExecuteNonQuery();
 
                 //delete the entry associated with this group from the GroupIndex table
@@ -2529,7 +2556,7 @@ namespace management_system
                 deleteGroupTable.ExecuteNonQuery();
 
                 //delete the GroupName_Users table
-                deleteGroupTable = Utility.getSqlCommand("DROP TABLE " + name + "_Users");
+                deleteGroupTable = Utility.getDropTableSqlCommand(name + "_Users");
                 deleteGroupTable.ExecuteNonQuery();
 
                 //delete local folder of the group

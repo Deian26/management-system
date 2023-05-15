@@ -110,7 +110,10 @@
 		<DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>Failed to load locally stored database file (.tbl). </DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>
 		<DataBaseTableEditor_failed_to_parse_local_file_tbl>Failed to parse a locally stored .tbl file: </DataBaseTableEditor_failed_to_parse_local_file_tbl>
 		<DataBaseTableEditor_failed_to_open_table>Failed to open a database table. </DataBaseTableEditor_failed_to_open_table>
-
+		<DataBaseTableEditor_failed_to_open_editor_guide>Failed to open the Database table editor guide. </DataBaseTableEditor_failed_to_open_editor_guide>
+		<DataBaseTableEditor_failed_to_add_new_column_to_table>Failed to add a new column to the Database table. </DataBaseTableEditor_failed_to_add_new_column_to_table>
+		<DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>Invalid new column name or database error. </DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>
+		
 		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
 		<UtilityService_failed_to_check_XML_files>Failed to check XML files. </UtilityService_failed_to_check_XML_files>
