@@ -20,7 +20,7 @@ namespace management_system
         public TextFile(string path) : base(path, FileEditor.FileType.text)
         {
             this.fileType = FileEditor.FileType.text; // file type = text
-
+            
             //count characters
             this.characterCount = File.ReadAllText(path).Replace("\t","").Replace("\n","").Replace("\r","").Replace(" ","").Length;
         }

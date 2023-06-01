@@ -147,11 +147,7 @@ namespace management_system
                     string adminString = Utility.logIn(this.F0_textBox_username.Text, this.F0_textBox_password.Text);
                     if (adminString == null)
                     {
-                    MessageBox.Show(Utility.displayError("Invalid_credentials"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //Application.Exit();
-                    Utility.ERR = true;
-                    Start.f0_logIn.F0_timer_errorClear.Stop();
-                    Start.f0_logIn.F0_timer_errorClear.Start();
+                        Utility.DisplayError("Invalid_credentials",new Exception(""),"SYSTEM: Invalid credentials. ",false);
                     }
                     
 
@@ -185,13 +181,13 @@ namespace management_system
 
         }
 
-        //update username texbox
+        //update username textbox
         private void F0_textBox_username_TextChanged(object sender, EventArgs e)
         {
             this.F0_textBox_username.BackColor= Color.WhiteSmoke;
         }
 
-        //update password texbox
+        //update password textbox
         private void F0_textBox_password_TextChanged(object sender, EventArgs e)
         {
             this.F0_textBox_password.BackColor= Color.WhiteSmoke;
@@ -281,10 +277,14 @@ namespace management_system
                 //write the credentials and data encryption key into the database
                 string adminString = (rnd.Next() % 100).ToString();
 
-                if(nr_usernames==0) //nu users added yet
+                username_cmd = Utility.getSqlCommand("SELECT * FROM Users");
+                number_of_usernames = username_cmd.ExecuteReader();
+
+                if(number_of_usernames.HasRows==false) ////nu users added yet => the first user is automatically given admin rights
                 {
                     adminString = Utility.ENC_GEN(this.F0_textBox_password.Text,data_key + this.F0_textBox_username.Text.Length); //give the first registered user admin rights
                 }
+                number_of_usernames.Close();
 
                 /*The 'admin' field stores the password encrypted with data_key+ username.Length and hashed;
                  * if, when logging in, the given password encrypted with the data_key and username.Length and hashed does not match the value stored in the 'admin' field, the user is given user rights;
@@ -296,7 +296,7 @@ namespace management_system
                 cmd.Dispose();
 
                 //create a Notifications table in the current database, if one does not already exists
-                SqlCommand cmd_init = Utility.getSqlCommand("CREATE  TABLE Notifications(_id INT, _text NVARCHAR(150), _sender NVARCHAR(21), _date NVARCHAR(15), _importance INT, _read INT)");
+                //SqlCommand cmd_init = Utility.getSqlCommand("CREATE  TABLE Notifications(_id INT, _text NVARCHAR(150), _sender NVARCHAR(21), _date NVARCHAR(15), _importance INT, _read INT)");
                 Dictionary<string, string> aux_newTableFields = new Dictionary<string, string>
                 {
                     { "_id", "INT" },

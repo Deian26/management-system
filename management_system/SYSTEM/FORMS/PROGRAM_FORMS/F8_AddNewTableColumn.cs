@@ -74,12 +74,20 @@ namespace management_system
 
                         addColumn.Dispose();
                     }
+                    else Utility.DisplayError("DataBaseTableEditor_invalid_column_type", new Exception(""), "DataBaseTableEditor: invalid new column type: " + this.F8_textBox_newColumnDataType.Text, false); ;
                 }
+                else throw new Exception(this.F8_label_newColumnName.Text);
 
             }catch(Exception exception)
             {
                 Utility.DisplayError("DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name", exception, "DataBaseTableEditor: Failed to add a new column: Invalid new column name or Database error; details: \n" + exception.ToString(), false);
             }
+        }
+
+        //Form load
+        private void F8_AddNewTableColumn_Load(object sender, EventArgs e)
+        {
+            Utility.setLanguage(this); //set language
         }
     }
 }

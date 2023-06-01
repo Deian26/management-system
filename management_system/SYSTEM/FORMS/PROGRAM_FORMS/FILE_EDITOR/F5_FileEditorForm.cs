@@ -1,4 +1,5 @@
 ﻿using management_system;
+using management_system.SYSTEM.CLASSES.FILES.FILE_TYPES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace management_system
 {
-    //form used in file editting and as a file explorer (displaying files from the current group)
+    //form used in file editing and as a file explorer (displaying files from the current group)
     public partial class F5_FileEditorForm : Form
     {
         //VARIABLES
@@ -48,6 +49,12 @@ namespace management_system
             Utility.currentGroupPath = group.getLocalFilesPath();
 
             //form settings
+            //database name label
+            this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Text = Utility.DB_name;
+
+            //status bar
+            this.F5mdi1_toolStripProgressBar_databaseSyncProgressBar.Visible = false;
+            this.F5mdi1_toolStripProgressBar_databaseSyncProgressBar.Value = 0;
 
             //min size
             this.MinimumSize = Utility.fileEditorFormMinimumSize;
@@ -134,6 +141,7 @@ namespace management_system
         //EVENT HANDLERS
         private void F5_FileEditorForm_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
 
             //display the common MDI windows
             this.f5_mdiFileTreeView.Show();
@@ -150,12 +158,12 @@ namespace management_system
             this.refreshControlsAppearance(false);
         }
 
-        //open file
+        //open file 
         private void F5_ToolStripMenuItem_openFile_Click(object sender, EventArgs e)
         {
             try
             {
-                //apply a filter to the open file dialog so that onlt .rtf and .txt files can be selected
+                //apply a filter to the open file dialog so that only .rtf and .txt files can be selected
                 //this.F5_openFileDialog_openFile.Filter = ";
 
                 //show the open file dialog
@@ -179,6 +187,7 @@ namespace management_system
                     switch (fileType)
                     {
                         case FileEditor.FileType.text: //TXT
+                            file = new TextFile(filePath);
                             f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
 
                             f5Mdi1_TextEditor.Show(); //display MDI window
@@ -188,6 +197,7 @@ namespace management_system
                             break;
 
                         case FileEditor.FileType.rtf: //RTF
+                            file = new TextFile(filePath);
                             f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
 
                             f5Mdi1_TextEditor.Show(); //display MDI window
@@ -196,12 +206,14 @@ namespace management_system
                             break;
 
                         case FileEditor.FileType.xml: //XML
+                            file = new XmlFile(filePath);
                             f5Mdi2_XmlEditor = new F5mdi2_XmlEditor(this, file);
 
                             file = null;
                             break;
                         
                         case FileEditor.FileType.general: //open a text editor
+                            file = new TextFile(filePath);
                             f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
 
                             f5Mdi1_TextEditor.Show(); //display MDI window
@@ -210,11 +222,13 @@ namespace management_system
                             break;
 
                         case FileEditor.FileType.databaseTable: //local Database table (.tbl file)
-                            f5Mdi3_DatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this, filePath, true); //'true' = local database file (.tbl)
+                            f5Mdi3_DatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this, filePath, true, false); //'true' = local database file (.tbl); 'false' = not a new table
                             break;
 
 
                         default: //general file => open the text editor
+                            file = new TextFile(filePath);
+
                             f5Mdi1_TextEditor = new F5mdi1_TextEditor(this, file);
 
                             f5Mdi1_TextEditor.Show(); //display MDI window

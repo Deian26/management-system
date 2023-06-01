@@ -8,20 +8,23 @@ using System.Threading.Tasks;
 
 namespace management_system
 {
-    // Static class to handle file editting
+    // Static class to handle file editing
     
     public static class FileEditor
     {
         //VARIABLES
-        private static GeneralFile file = null; //current text file
+        //private static GeneralFile file = null; //current text file
+        
         public enum FileType { //currently recognized file types
             noFile = 0, //no file currently open
             general = 1, 
             text = 2, 
             xml = 3, 
             databaseTable = 4,
-            rtf = 5
+            rtf = 5,
+            img = 6
         };
+
         public static string[] extension = { //currently recognized file extensions - this string array matches the 'FileType' enum
                         null, //no file currently open
                         "", //general file type

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace management_system
     public partial class F3_UserManagement : Form
     {
         //VARIABLES
-        private static string adminString = null;
+        private string adminString = null; //the admin string of the user who is granted permission
+        private int key=0; // the individual key of the user who is granted permissions
 
         //CONSTRUCTORS
         public F3_UserManagement()
@@ -29,6 +31,8 @@ namespace management_system
         //load form
         private void F3_UserManagement_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //set the minimum and maximum sizes for the form
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
@@ -53,35 +57,51 @@ namespace management_system
         {
             try
             {
+                //get individual key
+
+                this.key = Utility.getDataKey(this.F3_textBox_username.Text);
+                
+                //calculate admin string
+                Random rnd = new Random();
+
+                switch (this.F3_comboBox_userRights.SelectedItem)
+                {
+                    case "User": //assign user rights (default)
+                        this.adminString = Utility.DB_HASH((rnd.Next() % 100).ToString());
+                        break;
+                    case "Administrator": //assign admin rights
+                        this.adminString = Utility.DB_HASH(Utility.ENC_GEN(this.F3_textBox_password.Text, this.key));
+                        break;
+
+                    default: //invalid value
+                        break;
+                }
+
                 //display errors if the credentials are supplied in an invalid format
                 if (!Utility.validUsername(this.F3_textBox_username.Text))
                 {
-                    
+
                     this.F3_errorProvider_userManagement.SetError(this.F3_textBox_username, Utility.displayError("Invalid_username"));
 
                     return;
                 }
 
-                if(!Utility.validPassword(this.F3_textBox_password.Text))
+                if (!Utility.validPassword(this.F3_textBox_password.Text))
                 {
                     this.F3_errorProvider_userManagement.SetError(this.F3_textBox_password, Utility.displayError("Invalid_password"));
 
                     return;
                 }
 
-                SqlCommand cmd = Utility.getSqlCommand("INSERT INTO Users(admin) VALUES("+ F3_UserManagement.adminString.ToString()+") WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text) + "' and password = '"+Utility.DB_HASH(this.F3_textBox_password.Text)+"'");
+                SqlCommand cmd = Utility.getSqlCommand("UPDATE Users SET admin='" + this.adminString.ToString() + "' WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text) + "' and password = '" + Utility.DB_HASH(this.F3_textBox_password.Text) + "'");
                 cmd.ExecuteNonQuery();
 
                 cmd.Dispose();
 
+
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("DB_account_not_found") + exception.ToString(), "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); //display an error message
-                //Utility.logDiagnsoticEntry("EN: Invalid signature for the XML file: " + XML_path.ToString());
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                //Application.Exit(); //trigger an application exit
+                Utility.DisplayError("DB_account_not_found", exception, "SYSTEM: Database account not found: \n" + exception.ToString(), false);
             }
         }
 
@@ -95,20 +115,7 @@ namespace management_system
         //select user rights to assign
         private void F3_comboBox_userRights_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Random rnd = new Random();
 
-            switch(this.F3_comboBox_userRights.SelectedItem)
-            {
-                case "User": //assign user rights (default)
-                    F3_UserManagement.adminString = (rnd.Next() % 100).ToString();
-                    break;
-                case "Administrator": //assign admin rights
-                    F3_UserManagement.adminString = Utility.DB_HASH(Utility.ENC_GEN(this.F3_textBox_password.Text, Utility.key));
-                    break;
-
-                default: //invalid value
-                    break;
-            }
         }
 
         //delete the account (based only on the given username)
@@ -117,25 +124,23 @@ namespace management_system
             try
             {
                 //wait admin confirmation
-                DialogResult result = MessageBox.Show("CONFIRMATION", Utility.displayMessage("Account_confirmation_delete"), MessageBoxButtons.OKCancel);
+                DialogResult result = MessageBox.Show(Utility.displayMessage("Account_confirmation_delete"), "CONFIRM", MessageBoxButtons.OKCancel);
 
                 if (result.Equals(DialogResult.OK)) //deletion confirmed
                 {
-
+                    //delete account from the database
                     SqlCommand cmd = Utility.getSqlCommand("DELETE FROM Users WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text) + "'");
                     cmd.ExecuteNonQuery();
 
                     cmd.Dispose();
+
+                    //delete local user folder
+                    Directory.Delete(Utility.dirPathDATA+"\\"+this.F3_textBox_username.Text,true);
                 }
 
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("DB_account_not_found") + exception.ToString(), "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning); //display an error message
-                //Utility.logDiagnsoticEntry("EN: Invalid signature for the XML file: " + XML_path.ToString());
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                //Application.Exit(); //trigger an application exit
+                Utility.DisplayError("DB_account_not_found",exception,"SYSTEM: Failed to delete an account: \n"+exception.ToString(),false);
             }
         }
     }

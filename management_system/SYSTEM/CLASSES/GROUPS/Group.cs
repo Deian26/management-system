@@ -280,7 +280,7 @@ namespace management_system
                 int aux_adminGroup = 0;
                 aux_adminGroup = this.adminGroup ? 1 : 0; //1=admin group, 0=not an admin group
 
-                //DEV - chage the storing of the group's icon here
+                //DEV - change the storing of the group's icon here
                 SqlCommand addDetails = Utility.getSqlCommand("INSERT INTO GroupIndex (name,author,dateCreated,adminGroup,cryptographicKey) VALUES('" + Utility.ENC_GEN(this.name,Utility.genKey) + "','" + Utility.ENC_GEN(this.author,Utility.genKey) + "','" + Utility.ENC_GEN(this.creationDate.ToString(),Utility.genKey) + "',"+(aux_adminGroup+Utility.genKey).ToString()/* + Utility.ENC_GEN(this.icon.ToString(),Utility.genKey) + ","*/ + ","+ Utility.ENC_GEN(this.key,Utility.genKey).ToString() + ")");
                 
                 addDetails.ExecuteNonQuery(); //add values into the database indexing table
@@ -340,7 +340,7 @@ namespace management_system
             }catch (Exception exception)
             {
                 MessageBox.Show(Utility.displayError("Groups_failed_to_load_database_fileNames") + exception.Message, "Groups", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("Failed to load database file names");
+                Utility.logDiagnosticEntry("Failed to load database file names");
                 Utility.ERR = true;
                 Utility.WARNING = true;
 

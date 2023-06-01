@@ -21,7 +21,7 @@ namespace management_system
     {
         //VARIABLES
         private F5_FileEditorForm f5_containerForm = null;
-        private GeneralFile file = null; //current file
+        private XmlFile file = null; //current file
 
         //control appearance
         private int AbsoluteEditorControlWidthSubtract = 95;//points
@@ -56,7 +56,8 @@ namespace management_system
             InitializeComponent();
 
             //store the XML file
-            this.file = file;
+            this.file = new XmlFile(file.getFilePath());
+            this.Text = file.getFilename();
 
             //container form
             this.MdiParent = f5_containerForm;
@@ -70,17 +71,19 @@ namespace management_system
             this.F5mdi2_richTextBox_xmlEditor.Font = new Font(Utility.defaultFontFamily, Utility.defaultPointTextSize); //set the text box font
             this.F5mdi2_treeView_xmlEditor.ShowNodeToolTips = true; //display tool tip texts when the mouse hovers over a tree view node
 
-            //keep the Tree view and text box controlw deactivated until the user clicks either one (depending on which control is currently visible)
+            //keep the Tree view and text box control deactivated until the user clicks either one (depending on which control is currently visible)
             this.F5mdi2_treeView_xmlEditor.Enabled = false; //deactivate the Tree view control
             this.F5mdi2_richTextBox_xmlEditor.Enabled = false; //deactivate the text box control
 
             //hide the text box
             this.F5mdi2_treeView_xmlEditor.Visible = true;
             this.F5mdi2_richTextBox_xmlEditor.Visible = true;
-            
+
+
 
             //load file
             this.loadXmlFile(this.file.getFilePath());
+
 
             this.F5mdi2_toolStripButton_editMode.PerformClick();
         }
@@ -93,7 +96,7 @@ namespace management_system
             try
             {
                 string[] attributes = source.Text.Split(' '); //if the name contains ',' => the node has attributes => add the name and the attributes to the XMLNode structure
-                                                              //if the name does not contain ',', then only add the name to the XMLNode structure
+                                                              //if the name does not contain ',', then only add the name to the XMLNode structures
 
                 List<string> all_attributes = new List<string>();
 
@@ -107,7 +110,7 @@ namespace management_system
                 return destination;
             }catch (Exception exception)
             {
-                Utility.logDiagnsoticEntry("Could not load Tree Node into memory: "+exception.ToString());
+                Utility.logDiagnosticEntry("Could not load Tree Node into memory: "+exception.ToString());
                 return new XMLNode("");
             }
         }
@@ -172,7 +175,7 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                Utility.logDiagnsoticEntry("Could not change the colour of an XML node: " + exception.ToString());
+                Utility.logDiagnosticEntry("Could not change the colour of an XML node: " + exception.ToString());
                 colour = this.xmlTextBoxDefaultColour; //set the colour of the current XML node to a default value if the colour determination fails 
             }
 
@@ -259,12 +262,12 @@ namespace management_system
                 return new XMLNode(""); //return an empty XMLNode
             }catch (Exception exception)
             {
-                Utility.logDiagnsoticEntry("Could not convert an XmlNode to an XMLNode: " + exception.ToString());
+                Utility.logDiagnosticEntry("Could not convert an XmlNode to an XMLNode: " + exception.ToString());
                 return new XMLNode("");
             }
         }
 
-        //parse the given XmlDocument and store the data in the specified XMLNode vaiable
+        //parse the given XmlDocument and store the data in the specified XMLNode variable
         private void parseXmlDocument(XmlNode root, XMLNode memoryRoot)
         {
             try
@@ -400,33 +403,14 @@ namespace management_system
         {
             try
             {
+                //DEV
                 //load XML file into memory
-                XmlDocument xml_doc = new XmlDocument();
-                xml_doc.Load(path);
-                XmlNode root = xml_doc.DocumentElement;
+                //XmlDocument xml_doc = new XmlDocument();
+                //xml_doc.Load(path);
+                //XmlNode root = xml_doc.DocumentElement;
 
 
                 this.F5mdi2_richTextBox_xmlEditor.Text = File.ReadAllText(path);
-                //this.editMode = (int)F5mdi2_XmlEditor.EditMode.text;
-
-
-
-                //display the contents of the file according to the current edit mode
-                /*
-                switch (this.editMode)
-                {
-                    case (int)F5mdi2_XmlEditor.EditMode.treeView: //tree view control
-                        this.loadXmlDataIntoTreeView(this.xml);
-                        break;
-
-                    case (int)F5mdi2_XmlEditor.EditMode.text: //text box
-                        this.loadXmlDataIntoTextbox(this.xml, 0);
-                        break;
-
-                    default:
-                        break;
-                }
-                */
 
 
             }
@@ -437,7 +421,7 @@ namespace management_system
         }
 
         //return the file associated with this MDI window
-        public GeneralFile getFile()
+        public XmlFile getFile()
         {
             return this.file;
         }
@@ -445,6 +429,8 @@ namespace management_system
         //EVENT HANDLERS
         private void F5mdi2_XmlEditor_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
 
@@ -590,7 +576,7 @@ namespace management_system
                 
             }catch (Exception exception)
             {
-                Utility.logDiagnsoticEntry("Could not load inner text from a Tree View node: " + exception.ToString());
+                Utility.logDiagnosticEntry("Could not load inner text from a Tree View node: " + exception.ToString());
             }
         }
 
@@ -670,6 +656,9 @@ namespace management_system
             //save the file locally (overwrite)
             try
             {
+                if(this.editMode == (int)F5mdi2_XmlEditor.EditMode.treeView)
+                    this.F5mdi2_toolStripButton_editMode.PerformClick();
+
                 File.WriteAllText(this.file.getFilePath(), this.F5mdi2_richTextBox_xmlEditor.Text);
             }catch(Exception exception)
             {

@@ -162,6 +162,8 @@ namespace management_system
         //EVENT HANDLERS
         private void F5mdi5_FileOverview_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
 

@@ -39,11 +39,12 @@
             this.F5mdi3_saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_toolStripSeparator_separator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.F5mdi3_toolStripButton_addColumn = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_cutToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_toolStripSeparator_separator3 = new System.Windows.Forms.ToolStripSeparator();
             this.F5mdi3_helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.F5mdi3_toolStripButton_tools = new System.Windows.Forms.ToolStripButton();
             this.F5mdi3_openFileDialog_openLocalFile = new System.Windows.Forms.OpenFileDialog();
-            this.F5mdi3_toolStripButton_addColumn = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.F5mdi3_dataGridView_databaseTableEditor)).BeginInit();
             this.F5mdi3_toolStrip_toolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +78,8 @@
             this.F5mdi3_toolStripButton_addColumn,
             this.F5mdi3_cutToolStripButton,
             this.F5mdi3_toolStripSeparator_separator3,
-            this.F5mdi3_helpToolStripButton});
+            this.F5mdi3_helpToolStripButton,
+            this.F5mdi3_toolStripButton_tools});
             this.F5mdi3_toolStrip_toolStrip.Location = new System.Drawing.Point(0, 0);
             this.F5mdi3_toolStrip_toolStrip.Name = "F5mdi3_toolStrip_toolStrip";
             this.F5mdi3_toolStrip_toolStrip.Size = new System.Drawing.Size(800, 26);
@@ -94,14 +96,14 @@
             this.F5mdi3_toolStripButton_File.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_toolStripButton_File.Image")));
             this.F5mdi3_toolStripButton_File.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi3_toolStripButton_File.Name = "F5mdi3_toolStripButton_File";
-            this.F5mdi3_toolStripButton_File.Size = new System.Drawing.Size(58, 23);
-            this.F5mdi3_toolStripButton_File.Text = "File";
+            this.F5mdi3_toolStripButton_File.Size = new System.Drawing.Size(76, 23);
+            this.F5mdi3_toolStripButton_File.Text = "Fișier";
             // 
             // F5mdi3_saveAsToolStripMenuItem
             // 
             this.F5mdi3_saveAsToolStripMenuItem.Name = "F5mdi3_saveAsToolStripMenuItem";
-            this.F5mdi3_saveAsToolStripMenuItem.Size = new System.Drawing.Size(231, 24);
-            this.F5mdi3_saveAsToolStripMenuItem.Text = "Save as .tbl file";
+            this.F5mdi3_saveAsToolStripMenuItem.Size = new System.Drawing.Size(276, 24);
+            this.F5mdi3_saveAsToolStripMenuItem.Text = "Salvare ca fișier .tbl";
             this.F5mdi3_saveAsToolStripMenuItem.Click += new System.EventHandler(this.F5mdi3_saveAsToolStripMenuItem_Click);
             // 
             // F5mdi3_toolStripSeparator_separator1
@@ -132,6 +134,7 @@
             // F5mdi3_printToolStripButton
             // 
             this.F5mdi3_printToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.F5mdi3_printToolStripButton.Enabled = false;
             this.F5mdi3_printToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_printToolStripButton.Image")));
             this.F5mdi3_printToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi3_printToolStripButton.Name = "F5mdi3_printToolStripButton";
@@ -143,6 +146,17 @@
             // 
             this.F5mdi3_toolStripSeparator_separator2.Name = "F5mdi3_toolStripSeparator_separator2";
             this.F5mdi3_toolStripSeparator_separator2.Size = new System.Drawing.Size(6, 26);
+            // 
+            // F5mdi3_toolStripButton_addColumn
+            // 
+            this.F5mdi3_toolStripButton_addColumn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.F5mdi3_toolStripButton_addColumn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi3_toolStripButton_addColumn.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_toolStripButton_addColumn.Image")));
+            this.F5mdi3_toolStripButton_addColumn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi3_toolStripButton_addColumn.Name = "F5mdi3_toolStripButton_addColumn";
+            this.F5mdi3_toolStripButton_addColumn.Size = new System.Drawing.Size(157, 23);
+            this.F5mdi3_toolStripButton_addColumn.Text = "Adăugare coloană";
+            this.F5mdi3_toolStripButton_addColumn.Click += new System.EventHandler(this.F5mdi3_toolStripButton_addColumn_Click);
             // 
             // F5mdi3_cutToolStripButton
             // 
@@ -169,16 +183,16 @@
             this.F5mdi3_helpToolStripButton.Text = "He&lp";
             this.F5mdi3_helpToolStripButton.Click += new System.EventHandler(this.F5mdi3_helpToolStripButton_Click);
             // 
-            // F5mdi3_toolStripButton_addColumn
+            // F5mdi3_toolStripButton_tools
             // 
-            this.F5mdi3_toolStripButton_addColumn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi3_toolStripButton_addColumn.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F5mdi3_toolStripButton_addColumn.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_toolStripButton_addColumn.Image")));
-            this.F5mdi3_toolStripButton_addColumn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.F5mdi3_toolStripButton_addColumn.Name = "F5mdi3_toolStripButton_addColumn";
-            this.F5mdi3_toolStripButton_addColumn.Size = new System.Drawing.Size(103, 23);
-            this.F5mdi3_toolStripButton_addColumn.Text = "Add column";
-            this.F5mdi3_toolStripButton_addColumn.Click += new System.EventHandler(this.F5mdi3_toolStripButton_addColumn_Click);
+            this.F5mdi3_toolStripButton_tools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.F5mdi3_toolStripButton_tools.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi3_toolStripButton_tools.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi3_toolStripButton_tools.Image")));
+            this.F5mdi3_toolStripButton_tools.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi3_toolStripButton_tools.Name = "F5mdi3_toolStripButton_tools";
+            this.F5mdi3_toolStripButton_tools.Size = new System.Drawing.Size(112, 23);
+            this.F5mdi3_toolStripButton_tools.Text = "Instrumente";
+            this.F5mdi3_toolStripButton_tools.Click += new System.EventHandler(this.F5mdi3_toolStripButton_tools_Click);
             // 
             // F5mdi3_DatabaseTableEditor
             // 
@@ -190,7 +204,7 @@
             this.Controls.Add(this.F5mdi3_dataGridView_databaseTableEditor);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "F5mdi3_DatabaseTableEditor";
-            this.Text = "Database Table Editor";
+            this.Text = "Editor de tabele";
             this.Load += new System.EventHandler(this.F5mdi3_DatabaseTableEditor_Load);
             this.Resize += new System.EventHandler(this.F5mdi3_DatabaseTableEditor_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.F5mdi3_dataGridView_databaseTableEditor)).EndInit();
@@ -218,5 +232,6 @@
         private System.Windows.Forms.ToolStripMenuItem F5mdi3_saveAsToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog F5mdi3_openFileDialog_openLocalFile;
         private System.Windows.Forms.ToolStripButton F5mdi3_toolStripButton_addColumn;
+        private System.Windows.Forms.ToolStripButton F5mdi3_toolStripButton_tools;
     }
 }

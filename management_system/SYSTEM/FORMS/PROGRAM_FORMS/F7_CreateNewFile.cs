@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace management_system
 {
@@ -16,11 +17,14 @@ namespace management_system
     public partial class F7_CreateNewFile : Form
     {
         //VARIABLES
-
+        private F5_FileEditorForm f5_fileEditorForm = null;
         //CONSTRUCTORS
-        public F7_CreateNewFile()
+        public F7_CreateNewFile(F5_FileEditorForm f5_fileEditorForm)
         {
             InitializeComponent();
+
+            //store the F5 form
+            this.f5_fileEditorForm=f5_fileEditorForm;
         }
 
         //UTILITY METHODS
@@ -53,7 +57,7 @@ namespace management_system
         //EVENT HANDLERS
         private void F7_CreateNewFile_Load(object sender, EventArgs e)
         {
-            
+            Utility.setLanguage(this); //set language
         }
 
         //create new file and add it to the current group
@@ -76,6 +80,26 @@ namespace management_system
             catch (Exception exception)
             {
                 Utility.DisplayError("Groups_failed_to_create_new_file", exception, "Group: Failed to add a new file from the Tree view MDI window: " + exception.ToString(), false);
+            }
+        }
+
+        //create a new database table using the database table editor
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.F7_textBox_newFileName.Text != null && this.F7_textBox_newFileName.Text != "" && this.F7_textBox_newFileName.Text.Contains('.') == false)
+                {
+                    F5mdi3_DatabaseTableEditor f5Mdi3_DatabaseTableEditor = new F5mdi3_DatabaseTableEditor(this.f5_fileEditorForm, this.F7_textBox_newFileName.Text, false, true);
+
+                    f5Mdi3_DatabaseTableEditor.Show();
+
+                    this.Close();
+                }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("Groups_failed_to_create_new_db_table", exception, "Group: Failed to create a new DB table: \n" + exception.ToString(), false);
             }
         }
     }

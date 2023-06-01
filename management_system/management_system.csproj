@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -68,6 +68,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\XMLNode.cs" />
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.Designer.cs">
+      <DependentUpon>F10_DatabaseTableTools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.Designer.cs">
+      <DependentUpon>F9_Logo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.Designer.cs">
       <DependentUpon>F5mdi5_FileOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi6_ImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi6_ImageViewer.Designer.cs">
+      <DependentUpon>F5mdi6_ImageViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +190,12 @@
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\Utility.cs" />
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.resx">
+      <DependentUpon>F10_DatabaseTableTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.resx">
+      <DependentUpon>F9_Logo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.resx">
       <DependentUpon>F7_CreateNewFile.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,12 +247,17 @@
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.resx">
       <DependentUpon>F5mdi5_FileOverview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi6_ImageViewer.resx">
+      <DependentUpon>F5mdi6_ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.resx">
       <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U1_CustomizationForm.resx">
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -244,6 +273,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SYSTEM\RESOURCES\IMG_default_group_icon.bmp" />
+    <Content Include="SYSTEM\RESOURCES\IMG_Logo.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_important_notificationWindow.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_important.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_unimportant.bmp" />
@@ -253,6 +283,7 @@
     <Content Include="SYSTEM\SETTINGS\XML_messages.xml" />
     <Content Include="SYSTEM\SETTINGS\XML_preferences.xml" />
     <Content Include="SYSTEM\SETTINGS\XML_themePack.xml" />
+    <Content Include="TblFileFormat.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DATA\" />

@@ -60,8 +60,8 @@ namespace management_system
             {
                 MessageBox.Show(Utility.displayError("Code_wrong_function_call")+"U0_UtilityMainForm.setCredentials()","WARNING",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Utility.WARNING= true;
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Stop();
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Start();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Stop();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Start();
                 
                 return false;
             }
@@ -276,7 +276,7 @@ namespace management_system
                     if(this.ACTION==false)
                     {
                         //change mouse cursor
-                        Start.u0_utilityMainFrom.Cursor = Cursors.Default;
+                        Start.u0_utilityMainForm.Cursor = Cursors.Default;
 
                         //make the progress bar visible and increment its value
                         this.U0_toolStripProgressBar_actionStatus.Visible = false;
@@ -285,7 +285,7 @@ namespace management_system
                     else
                     {
                         //change mouse cursor
-                        Start.u0_utilityMainFrom.Cursor = Cursors.WaitCursor;
+                        Start.u0_utilityMainForm.Cursor = Cursors.WaitCursor;
 
                         //make the progress bar visible and increment its value
                         this.U0_toolStripProgressBar_actionStatus.Visible = true;
@@ -298,13 +298,13 @@ namespace management_system
                     MessageBox.Show(Utility.displayError("DB_conn_failed") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
                     Utility.ERR = true;
                     Utility.WARNING = true;
-                    Start.u0_utilityMainFrom.U0_timer_clearErr.Stop();
-                    Start.u0_utilityMainFrom.U0_timer_clearErr.Start();
+                    Start.u0_utilityMainForm.U0_timer_clearErr.Stop();
+                    Start.u0_utilityMainForm.U0_timer_clearErr.Start();
                 }
             }
 
             //clear the diagnostic log rich text box if the length of the text is greater than a specified number of characters
-            if (this.U0_richTextBox_diagnosticLog.Text.Length > Utility.maxDiaggnosticLogCharacters)
+            if (this.U0_richTextBox_diagnosticLog.Text.Length > Utility.maxDiagnosticLogCharacters)
             {
                 this.U0_richTextBox_diagnosticLog.Clear();
                 //change the status bar notification label
@@ -393,8 +393,8 @@ namespace management_system
                 MessageBox.Show(Utility.displayError("Code_error_opening_diagnostic_log_saveFile_dialog") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Utility.ERR = true;
                 Utility.WARNING = true;
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Stop();
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Start();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Stop();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Start();
             }
         }
 
@@ -428,8 +428,8 @@ namespace management_system
                 MessageBox.Show(Utility.displayError("Code_error_saving_diagnostic_log") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Utility.ERR = true;
                 Utility.WARNING = true;
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Stop();
-                Start.u0_utilityMainFrom.U0_timer_clearErr.Start();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Stop();
+                Start.u0_utilityMainForm.U0_timer_clearErr.Start();
             }
         }
 

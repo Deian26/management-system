@@ -2,8 +2,8 @@
 
 	<EN>
 		<Account_new_user_registered>New user successfully registered. </Account_new_user_registered>
-		<Account_access_Admin>Rights: Admin</Account_access_Admin>
-		<Account_access_User>Rights: User</Account_access_User>
+		<Account_access_Admin>Admin</Account_access_Admin>
+		<Account_access_User>User</Account_access_User>
 		<Account_confirmation_delete>Do you really want to delete the account? </Account_confirmation_delete>
 		<Account_details_title>Account</Account_details_title>
 		
@@ -18,12 +18,14 @@
 		<F1_Notification_count_text>Unread notifications: </F1_Notification_count_text>
 		<F1_Notification_DB_connection_status_text>Connection status: </F1_Notification_DB_connection_status_text>
 		<F1_aboutPageTitle>About the Management System</F1_aboutPageTitle>
-		<F1_aboutPageInfo> THIS PROGRAM IS MEANT TO BE USED AS AN EXAMPLE OR FOR RESEARCH/DEVELOPEMENT OF OTHER PROGRAMS !
+		<F1_aboutPageInfo> 
+		THIS PROGRAM IS MEANT TO BE USED AS AN EXAMPLE OR FOR RESEARCH/DEVELOPEMENT OF OTHER PROGRAMS NOT FOR ACTUAL USE/DEPLOYMENT !
+		
 		This program is meant to help manage different groups of files, both locally and on a connected database.
 		Current implementation:
 			Account system:
 				-> 'User' access rights (regular access, can not create admin groups or send admin notifications; also cannot access the utility service)
-				-> 'Administrator' ('admin') access rights ('user' access rights and can create admin groups, send admin notifications and access the utility service)
+				-> 'Administrator' ('admin') access rights ('user' access rights and can create admin groups, send admin notifications and access the utility service; can also give administrator rights to users)
 			Utility service:
 				-> mainly used to diagnose issues with the program
 				-> features currently under implementation: form language and theme packs editor
@@ -192,8 +194,194 @@ Trif Paul Deian, May 14, 2023
 	
 </EN>
 	
-	<RO>
+<RO>
+	<Account_new_user_registered>Nou utilizator înregistrat cu succes. </Account_new_user_registered>
+	<Account_access_Admin>Administrator</Account_access_Admin>
+	<Account_access_User>Utilizator</Account_access_User>
+	<Account_confirmation_delete>Sunteți sigur că doriți să ștergeți acest cont? </Account_confirmation_delete>
+	<Account_details_title>Cont</Account_details_title>
+
+	<Help_register_username>Nume de utilizator invalid. Numele de utilizator trebuie să conțină cel puțin 5 caractere, printre care pot fi: litere mici, litere mari (din alfabetul latin), cifre și caractere bară jos ('_') . </Help_register_username>
+	<Help_register_password>Parolă invalidă. Parola trebuie să conțină cel puțin 10 caractere și cel puțin o literă mică, o literă mare (din alfabetul latin), cel puțin o cifră și cel puțin un caracter special din lista: ~!@#$%^*_</Help_register_password>
+	<Help_database_combobox>Baza de date la care se face conectarea </Help_database_combobox>
+	<Help_register_user>Înregistrați un nou utilizator cu permisiuni obișnuite.</Help_register_user>
+	<Help_login>Conectați-vă la baza de date selectată cu credențialele introduse.s</Help_login>
+	<Help_language>Schimbați limba</Help_language>
+	<Help_theme>Schimbați tema</Help_theme>
+
+	<F1_Notification_count_text>Notificări necitite: </F1_Notification_count_text>
+	<F1_Notification_DB_connection_status_text>Status conexiune: </F1_Notification_DB_connection_status_text>
+	<F1_aboutPageTitle>Despre Sistemul de adiminstrare a fișierelor</F1_aboutPageTitle>
+	<F1_aboutPageInfo>
+		ACEST PROGRAM ESTE MENTI SĂ SERVEASCĂ DREPT SUPORT EDUCATIV SAU DREPT EXEMPLU NU PENTRU UTILIZARE EFECTIVĂ SAU INSTALARE (DEPLOYMENT) !
 		
-	</RO>
+		Acest program are rolul de a ajuta la administrarea diferitelor grupuri de fișiere, atât locale cât și stocate într-o bază de date.
+		Implementare curentă:
+		Sistem de conturi:
+		-> Permisiuni de 'utilizator' (acces obișnuit, nu poate crea grupuri de administrator sau trimite notificări de administrator; de asemenea, nu poate accesa serviciul utilitar)
+		-> Permisiuni de 'administrator' ('admin') (drepturi de 'utilizator' și poate crea grupuri de administratpr, poate trimite notificări de administrator și poate accesa serviciul utilitar; de asemenea, poate acorda drepturi de administrator utilizatorilor)
+		Serviciul utilitar:
+		-> utilizat, în principal, la diagnosticarea programului
+		-> funcționalități sub implementare: crearea/editarea de pachete de limbi și temes
+		Grupuri:
+		-> pot conține (deschide și edita):
+		*) Fișiere text (și orice fișier care poate fi interpretat ca și un fișier text)
+		*) Fișiere XML
+		*) Fișiere în format Rich text file (.rtf)
+		*) Tabele în baza de date conectată
+		-> sunt stocate local, pentru fiecare utilizator, și în baza de date conectată
+		-> mai multe informații despre un editor pot fi găsite în pagina 'Despre' a acestuia
+		Notificări:
+		-> pot fi trimise cu 2 niveluri de importanță:
+		*) normal
+		*) administrator (important)
+		-> pot fi citite de către toți utilizatorii (utilizatori și administratori)
+		-> sunt stocate în baza de date conectată (și într-un fișier local, pentru fiecare utilizator, pentru a permite afișarea doar a notificărilor necitite)
+
+		Trif Paul Deian, 21 Mai, 2023
+	</F1_aboutPageInfo>
+
+	<F1_user_manual_form_title>Manual de utilizare</F1_user_manual_form_title>
+	<F1_user_manual_form_info>
+		Acest manual este menit să ofere informații relevante legate de utilizare obișnuită a Sistemului de administarre a fișierelor.
+		Informații specifice pot fi găsite în ghiduri și pagini 'Despre'
+
+
+		Trif Paul Deian
+	</F1_user_manual_form_info>
+
+	<F1_create_group_guide_form_title>Crearea unui nou grup</F1_create_group_guide_form_title>
+	<F1_create_group_guide_form_info>
+		Acest ghid explică pașii necesari creării unui nou grup.
+		
+		1. Faceți click pe butonul 'Grup nou' din pagina principală a aplicației (prima pagină care se deschide după autentificare)
+		2. Scrieți numele grupului (trebuie să fie unic, altfel grupul nu va fi creat); faceți click pe butonul 'Imagine grup' și selectați imaginea grupului (dacă nicio imagine nu este selectată, o imgaine implicită este folosită)
+		3. Faceți click pe butonul 'Crează grup nou'
+		4. Noul grup va fi adăugat în baza de date și în lista de grupuri din pagina principală a aplicației, iar un subdirector va fi creat în directorul local al utilizatorului.
+
+		Trif Paul Deian, 21 Mai, 2023
+	</F1_create_group_guide_form_info>
+
+	<F1_add_delete_files_guide_form_title>Adăugare/Ștergere de fișiere dintr-un grup</F1_add_delete_files_guide_form_title>
+	<F1_add_delete_files_guide_form_info>
+		Acest ghid explică adăugarea/ștergerea de fișiere dintr-un grup.
+
+		1.
+
+		Trif Paul Deian
+	</F1_add_delete_files_guide_form_info>
+
+	<F1_user_rights_information_form_title>Sistemul de permisiuni de utilizator</F1_user_rights_information_form_title>
+	<F1_user_rights_information_form_info>
+		Această pagină explică sistemul de permisiuni de utilizator folosit de Sistemul de administrare de fișiere.
+
+		Sistemul de permisiuni de utilizator are 2 tipuri de conturi:
+		1.Utilizator:
+		-> permite utilizatorilor să creeze grupuri
+		-> permite utilizatorilor să vizualizeze/adauge/editeze/șteargă fișiere în grupuri
+
+		2.Administrator:
+		Administratorii au aceleași drepturi ca și utilizatorii plus:
+		-> pot crea grupuri marcate drept 'grupuri de administrator'
+		-> pot trimite notificări importante
+		-> pot accesa serviciul utilitar pentru diagnosticarea aplicației sau personalizarea interfeței aplicație (pot schimba limba și tema interfeței grafice)
+
+		Trif Paul Deian, 21 Mai, 2023
+	</F1_user_rights_information_form_info>
+
+	<F3_dataGridView_usernameColumnHeader>Nume utilizator</F3_dataGridView_usernameColumnHeader>
+	<F3_dataGridView_rightsColumnHeader>Permisiuni</F3_dataGridView_rightsColumnHeader>
+
+	<F4_newGroup_title>Grup nou</F4_newGroup_title>
+	<F4_newGroupCreated>Grup nou creat</F4_newGroupCreated>
+	<F4_newGroupNotCreated_duplicateName>Grupul nu a fost creat. Numele este invalid. </F4_newGroupNotCreated_duplicateName>
+	<F4_newGroupNotCreated_error>Grupul nu a fost creat. O eroare a fost întâlnită. </F4_newGroupNotCreated_error>
+
+	<System_systemShutdownMessage>Oprire(min):</System_systemShutdownMessage>
+
+	<XML_setting_file_invalid_signature>Semnătură invalidă</XML_setting_file_invalid_signature>
+	<XML_valid_setting_files>Semnătură validă</XML_valid_setting_files>
+
+	<F5mdi4_file_tree_view_default_node_Local>Local</F5mdi4_file_tree_view_default_node_Local>
+	<F5mdi4_file_tree_view_default_node_Database>Baza de date</F5mdi4_file_tree_view_default_node_Database>
+
+	<F5mdi1_local_file_save_successful>Fișier salvat!</F5mdi1_local_file_save_successful>
+	<F5mdi1_local_file_save_unsuccessful>Fișierul nu a fost salvat!</F5mdi1_local_file_save_unsuccessful>
+	<F5_wordCountLabel>cuvinte</F5_wordCountLabel>
+	<F5mdi1_db_file_upload_successful>Încărcare cu succes!</F5mdi1_db_file_upload_successful>
+	<F5mdi1_db_file_upload_unsuccessful>Încărcare eșuată!</F5mdi1_db_file_upload_unsuccessful>
+
+	<F6_title_textEditor_About>Despre - Editor de text</F6_title_textEditor_About>
+	<F6_info_textEditor_AboutInfo>
+		Despre editorul de text
+
+		Editorul de text este un sub-sistem al aplicației utilizat pentru editarea de fișiere text, .rtf și orice fișier care poate fi interpretat drept text.
+
+		Unelte:
+		1) Formatare de text:
+		- stiluri: Bold, Italic, Subliniat, Tăiat
+		- text: setează culoarea, dimensiunea și familia fontului textului
+		- căutare de fraze în text
+		- înlocuire de fraze în text
+		2) Opțiuni fișier:
+		- salvare fișier (implicit, .txt sau .rtf, dar alte formate pot fi specificate)
+		- număr de cuvinte
+		- vizualizarea extensiei fișierului
+		- status sincronizare cu baza de date
+		
+		Trif Paul Deian, 21 Mai 2023
+
+	</F6_info_textEditor_AboutInfo>
+
+	<Replace_text_successful>Textul a fost înlocuit cu succes! </Replace_text_successful>
+
+	<F1_delete_group_context_menu_message>Ștergeți grupul</F1_delete_group_context_menu_message>
+	<F1_confirm_group_deletion>Sunteți sigur că doriți să ștergeți grupul selectat?</F1_confirm_group_deletion>
+	<F1_group_successfully_deleted>Grupul selectat a fost șters cu succes ! </F1_group_successfully_deleted>
+
+	<F5mdi4_delete_file>Ștergeți fișier</F5mdi4_delete_file>
+	<F5mdi4_delete_file_confirmation>Sunteți sigur că doriți să ștergeți fișierul selectat?</F5mdi4_delete_file_confirmation>
+
+	<F7_new_file_created>Noul fișier a fost creat cu succes!</F7_new_file_created>
+
+	<F5mdi5_filePath>Cale fișier</F5mdi5_filePath>
+	<F5mdi5_fileAttributes>Detalii fișier</F5mdi5_fileAttributes>
+	<F5mdi5_lastAccessDateTime>Data și ora ultimei accesări</F5mdi5_lastAccessDateTime>
+	<F5mdi5_lastModificationDateTime>Data și ora ultimei modificări</F5mdi5_lastModificationDateTime>
+	<F5mdi5_fileExtension>Extensia fișierului</F5mdi5_fileExtension>
+	<F5mdi5_fileType>Tipul fișierului</F5mdi5_fileType>
+	<F5mdi5_fileCreationDateTime>Data și ora creării fișierului</F5mdi5_fileCreationDateTime>
+	<F5mdi5_containerGroup>Nume grup</F5mdi5_containerGroup>
+	<F5mdi5_groupAuthor>Nume autor</F5mdi5_groupAuthor>
+	<F5mdi5_adminGroup>Este grup de administrator</F5mdi5_adminGroup>
+	<F5mdi5_fileName>Nume fișier</F5mdi5_fileName>
+
+	<F5mdi3_guide_form_title>Ghid de editare a tabelelor din baza de date</F5mdi3_guide_form_title>
+	<F5mdi3_guide_form_info>
+		Cum se utilizează editorul de baze de date:
+
+		-> Deschiderea unui fișier local:
+		1. selecați butonul de deschidere a unui fișier local (un director deschis)
+		2. selectați fișierul .tbl pe care doriți să îl deschideți
+
+		-> Salvarea în baza de date a tabelului deschis
+		1. faceți click pe pictograma de salvare (un disk Floppy)
+
+		-> Ștergerea unei coloane:
+		1. selectați pictograma de decupare (foarfece)
+
+		-> Adăugarea unei noi coloane:
+		1. faceți click pe butonul de 'Adăugare'
+		2. specificați un nume și un tip de dată valide
+		3. faceți click pe butonul 'Adăugare coloană' din formularul de adăugare a unei coloane
+
+		-> Salvarea unui tabel ca și fișier .tbl local:
+		1. faceți click pe butonul 'File'
+		2. faceți click pe butonul 'Salvare ca fișier .tbl'
+		3. selectați numele și calea fișierului și sakvați fișierul
+
+		Trif Paul Deian, 21 Mai, 2023
+	</F5mdi3_guide_form_info>		
+</RO>
 	
 </Messages>

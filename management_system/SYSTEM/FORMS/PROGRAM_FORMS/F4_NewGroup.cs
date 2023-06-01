@@ -106,7 +106,7 @@ namespace management_system
                 {
                     MessageBox.Show(Utility.displayMessage("F4_newGroupNotCreated_duplicateName"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else //error encounterd (value = -2)
+                else //error encountered (value = -2)
                 {
                     MessageBox.Show(Utility.displayMessage("F4_newGroupNotCreated_error"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -159,7 +159,7 @@ namespace management_system
             {
 
                 MessageBox.Show(Utility.displayError("System_failed_to_select_new_group_icon") + exception.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Utility.logDiagnsoticEntry("Warning: failed to open the new group icon file dialog: " + exception.ToString());
+                Utility.logDiagnosticEntry("Warning: failed to open the new group icon file dialog: " + exception.ToString());
                 Utility.WARNING = true;
 
 

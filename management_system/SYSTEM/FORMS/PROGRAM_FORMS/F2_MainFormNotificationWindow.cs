@@ -36,6 +36,7 @@ namespace management_system
         //EVENT HANDLERS
         private void F2_MainFormNotificationWindow_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
             //load language pack
             Utility.setLanguage(this);
         }

@@ -60,15 +60,17 @@ namespace management_system
                     this.F5mdi4_treeView_currentGroupFiles.SelectedNode == this.F5mdi4_treeView_currentGroupFiles.Nodes[1])
                     return;
 
-                //check if the file still exists
-                if (File.Exists(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name) == false)
-                {
-                    Utility.DisplayWarning("FileTreeViewer_invalid_file_or_filepath",new Exception(""),"FileTreeView: Failed to open a file; the file path or name might be invalid (he file might have been deleted). Path: "+this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name.ToString(),false);
-                    return;
-                }
+
                 //check if the selected file is a local file or a database table
                 if (this.F5mdi4_treeView_currentGroupFiles.Nodes[0].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //local file
                 {
+                    //check if the file still exists
+                    if (File.Exists(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name) == false)
+                    {
+                        Utility.DisplayWarning("FileTreeViewer_invalid_file_or_filepath", new Exception(""), "FileTreeView: Failed to open a file; the file path or name might be invalid (he file might have been deleted). Path: " + this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name.ToString(), false);
+                        return;
+                    }
+
                     //determine file type and open the corresponding file editor
 
                     //DEV
@@ -126,7 +128,7 @@ namespace management_system
                 }
                 else if (this.F5mdi4_treeView_currentGroupFiles.Nodes[1].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //database table
                 {
-                    F5mdi3_DatabaseTableEditor f5Mdi1_databaseTableEditor = new F5mdi3_DatabaseTableEditor(this.f5_containerForm, this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text, false); //'false' = not a local .tbl database table
+                    F5mdi3_DatabaseTableEditor f5Mdi1_databaseTableEditor = new F5mdi3_DatabaseTableEditor(this.f5_containerForm, this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Text, false, false); //1st 'false' = not a local .tbl database table, 2nd 'false' = not a new table
 
                     f5Mdi1_databaseTableEditor.Show();
 
@@ -201,6 +203,8 @@ namespace management_system
         //EVENT HANDLERS
         private void F5mdi4_FileTreeView_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
 
@@ -239,7 +243,7 @@ namespace management_system
             try
             {
                 //display the create new file form (F7 form)
-                F7_CreateNewFile f7_createNewFile = new F7_CreateNewFile();
+                F7_CreateNewFile f7_createNewFile = new F7_CreateNewFile(this.f5_containerForm);
 
                 f7_createNewFile.ShowDialog();
 
@@ -264,23 +268,46 @@ namespace management_system
         {
             try
             {
-                //get the file path
-                string filepath = this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name;
+                if (this.F5mdi4_treeView_currentGroupFiles.SelectedNode == null)
+                    return;
 
-                //display a deletion confirmation dialog box
-                DialogResult deleteFile = MessageBox.Show(Utility.displayMessage("F5mdi4_delete_file_confirmation"),"",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-                if(deleteFile== DialogResult.Yes) //delete file
+                if (this.F5mdi4_treeView_currentGroupFiles.Nodes[0].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //local file
                 {
-                    File.Delete(filepath);
 
-                    //refresh the tree view control (re-load group files)
-                    this.loadGroupFiles();
+                    //local file
 
-                    //expand all Tree view nodes
-                    this.F5mdi4_treeView_currentGroupFiles.ExpandAll();
+                    //get the file path
+                    string filepath = this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name;
+
+                    //display a deletion confirmation dialog box
+                    DialogResult deleteFile = MessageBox.Show(Utility.displayMessage("F5mdi4_delete_file_confirmation"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (deleteFile == DialogResult.Yes) //delete file
+                    {
+                        File.Delete(filepath);
+
+                        //refresh the tree view control (re-load group files)
+                        this.loadGroupFiles();
+
+                        //expand all Tree view nodes
+                        this.F5mdi4_treeView_currentGroupFiles.ExpandAll();
+                    }
+                }else if (this.F5mdi4_treeView_currentGroupFiles.Nodes[1].Nodes.Contains(this.F5mdi4_treeView_currentGroupFiles.SelectedNode)) //database table
+                {
+                    //delete file from the _DatabaseFiles table
+                    SqlCommand deleteTable = Utility.getSqlCommand("DELETE FROM "+Utility.currentGroup.getName()+"_DatabaseFiles WHERE filename='"+this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name + "'");
+                    deleteTable.ExecuteNonQuery();
+
+                    //delete table
+                    deleteTable = Utility.getDropTableSqlCommand(Utility.currentGroup.getName() + "_" + this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name);
+
+                    deleteTable.ExecuteNonQuery();
+
+                    deleteTable.Dispose();
                 }
-            }catch(Exception exception)
+            }
+            catch(Exception exception)
             {
                 Utility.DisplayError("FileTreeView_could_not_delete_file",exception,"FileTreeView: Failed to delete a file: \n"+exception.ToString(),false);
             }

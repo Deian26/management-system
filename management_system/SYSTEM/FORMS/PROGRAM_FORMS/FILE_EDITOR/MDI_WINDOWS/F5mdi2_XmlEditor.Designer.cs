@@ -79,7 +79,7 @@
             // 
             this.F5mdi2_treeView_xmlEditor.Location = new System.Drawing.Point(12, 29);
             this.F5mdi2_treeView_xmlEditor.Name = "F5mdi2_treeView_xmlEditor";
-            this.F5mdi2_treeView_xmlEditor.Size = new System.Drawing.Size(470, 399);
+            this.F5mdi2_treeView_xmlEditor.Size = new System.Drawing.Size(899, 399);
             this.F5mdi2_treeView_xmlEditor.TabIndex = 5;
             this.F5mdi2_treeView_xmlEditor.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.F5mdi2_treeView_xmlEditor_NodeMouseHover);
             this.F5mdi2_treeView_xmlEditor.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.F5mdi2_treeView_xmlEditor_AfterSelect);
@@ -93,21 +93,21 @@
             this.F5mdi2_toolStripDropDownButton_fileButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripDropDownButton_fileButton.Image")));
             this.F5mdi2_toolStripDropDownButton_fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi2_toolStripDropDownButton_fileButton.Name = "F5mdi2_toolStripDropDownButton_fileButton";
-            this.F5mdi2_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(48, 23);
-            this.F5mdi2_toolStripDropDownButton_fileButton.Text = "File";
+            this.F5mdi2_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(62, 23);
+            this.F5mdi2_toolStripDropDownButton_fileButton.Text = "Fișier";
             // 
             // F5mdi2_toolStripMenuItem_saveAsButton
             // 
             this.F5mdi2_toolStripMenuItem_saveAsButton.Name = "F5mdi2_toolStripMenuItem_saveAsButton";
-            this.F5mdi2_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(200, 22);
-            this.F5mdi2_toolStripMenuItem_saveAsButton.Text = "Save as";
+            this.F5mdi2_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(249, 22);
+            this.F5mdi2_toolStripMenuItem_saveAsButton.Text = "Salvare ca";
             this.F5mdi2_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_saveAsButton_Click);
             // 
             // F5mdi2_toolStripMenuItem_uploadToDatabaseButton
             // 
             this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Name = "F5mdi2_toolStripMenuItem_uploadToDatabaseButton";
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Size = new System.Drawing.Size(200, 22);
-            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Text = "Upload to database";
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Size = new System.Drawing.Size(249, 22);
+            this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Text = "Încărcare în baza de date";
             this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_uploadToDatabaseButton_Click);
             // 
             // F5mdi2_toolStripSeparator_separator1
@@ -128,6 +128,7 @@
             // F5mdi2_toolStripButton_print
             // 
             this.F5mdi2_toolStripButton_print.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.F5mdi2_toolStripButton_print.Enabled = false;
             this.F5mdi2_toolStripButton_print.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripButton_print.Image")));
             this.F5mdi2_toolStripButton_print.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi2_toolStripButton_print.Name = "F5mdi2_toolStripButton_print";
@@ -164,7 +165,7 @@
             this.F5mdi2_toolStripLabel_searchTextboxLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi2_toolStripLabel_searchTextboxLabel.Name = "F5mdi2_toolStripLabel_searchTextboxLabel";
             this.F5mdi2_toolStripLabel_searchTextboxLabel.Size = new System.Drawing.Size(63, 23);
-            this.F5mdi2_toolStripLabel_searchTextboxLabel.Text = "#SRCH#";
+            this.F5mdi2_toolStripLabel_searchTextboxLabel.Text = "Caută:";
             // 
             // F5mdi2_toolStripTextBox_searchTextbox
             // 
@@ -179,8 +180,8 @@
             this.F5mdi2_toolStripButton_startSearch.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi2_toolStripButton_startSearch.Image")));
             this.F5mdi2_toolStripButton_startSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi2_toolStripButton_startSearch.Name = "F5mdi2_toolStripButton_startSearch";
-            this.F5mdi2_toolStripButton_startSearch.Size = new System.Drawing.Size(85, 23);
-            this.F5mdi2_toolStripButton_startSearch.Text = "#SEARCH#";
+            this.F5mdi2_toolStripButton_startSearch.Size = new System.Drawing.Size(76, 23);
+            this.F5mdi2_toolStripButton_startSearch.Text = "Căutare";
             this.F5mdi2_toolStripButton_startSearch.Click += new System.EventHandler(this.F5mdi2_toolStripButton_startSearch_Click);
             // 
             // F5mdi2_toolStrip_xmlEditor
@@ -230,7 +231,7 @@
             this.F5mdi1_toolStripSplitButton_searchOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripSplitButton_searchOptions.Name = "F5mdi1_toolStripSplitButton_searchOptions";
             this.F5mdi1_toolStripSplitButton_searchOptions.Size = new System.Drawing.Size(85, 23);
-            this.F5mdi1_toolStripSplitButton_searchOptions.Text = "Options";
+            this.F5mdi1_toolStripSplitButton_searchOptions.Text = "Opțiuni";
             this.F5mdi1_toolStripSplitButton_searchOptions.ToolTipText = "SearchOptions";
             // 
             // F5mdi2_toolStripMenuItem_matchCaseCheckbox
@@ -238,23 +239,23 @@
             this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.CheckOnClick = true;
             this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Name = "F5mdi2_toolStripMenuItem_matchCaseCheckbox";
-            this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Size = new System.Drawing.Size(168, 24);
-            this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Text = "Match case";
+            this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi2_toolStripMenuItem_matchCaseCheckbox.Text = "Respectare capitalizare";
             // 
             // F5mdi2_toolStripMenuItem_reverseCheckbox
             // 
             this.F5mdi2_toolStripMenuItem_reverseCheckbox.CheckOnClick = true;
             this.F5mdi2_toolStripMenuItem_reverseCheckbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi2_toolStripMenuItem_reverseCheckbox.Name = "F5mdi2_toolStripMenuItem_reverseCheckbox";
-            this.F5mdi2_toolStripMenuItem_reverseCheckbox.Size = new System.Drawing.Size(168, 24);
-            this.F5mdi2_toolStripMenuItem_reverseCheckbox.Text = "Reverse";
+            this.F5mdi2_toolStripMenuItem_reverseCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi2_toolStripMenuItem_reverseCheckbox.Text = "Inversat";
             // 
             // F5mdi2_toolStripMenuItem_wholeWordCheckbox
             // 
             this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.CheckOnClick = true;
             this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.Name = "F5mdi2_toolStripMenuItem_wholeWordCheckbox";
-            this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.Size = new System.Drawing.Size(168, 24);
-            this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.Text = "Whole word";
+            this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi2_toolStripMenuItem_wholeWordCheckbox.Text = "Întregul cuvânt";
             // 
             // F5mdi2_toolStripMenuItem_replaceButton
             // 
@@ -262,8 +263,8 @@
             this.F5mdi2_toolStripTextBox_replaceTextBox,
             this.F5mdi2_toolStripMenuItem_replaceAll});
             this.F5mdi2_toolStripMenuItem_replaceButton.Name = "F5mdi2_toolStripMenuItem_replaceButton";
-            this.F5mdi2_toolStripMenuItem_replaceButton.Size = new System.Drawing.Size(168, 24);
-            this.F5mdi2_toolStripMenuItem_replaceButton.Text = "Replace";
+            this.F5mdi2_toolStripMenuItem_replaceButton.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi2_toolStripMenuItem_replaceButton.Text = "Înlocuire";
             // 
             // F5mdi2_toolStripTextBox_replaceTextBox
             // 
@@ -274,8 +275,8 @@
             // F5mdi2_toolStripMenuItem_replaceAll
             // 
             this.F5mdi2_toolStripMenuItem_replaceAll.Name = "F5mdi2_toolStripMenuItem_replaceAll";
-            this.F5mdi2_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(177, 24);
-            this.F5mdi2_toolStripMenuItem_replaceAll.Text = "Replace all";
+            this.F5mdi2_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(213, 24);
+            this.F5mdi2_toolStripMenuItem_replaceAll.Text = "Înlocuire toate";
             this.F5mdi2_toolStripMenuItem_replaceAll.Click += new System.EventHandler(this.F5mdi2_toolStripMenuItem_replaceAll_Click);
             // 
             // toolStripSeparator
@@ -355,7 +356,7 @@
             this.F5mdi2_richTextBox_xmlEditor.AcceptsTab = true;
             this.F5mdi2_richTextBox_xmlEditor.Location = new System.Drawing.Point(12, 29);
             this.F5mdi2_richTextBox_xmlEditor.Name = "F5mdi2_richTextBox_xmlEditor";
-            this.F5mdi2_richTextBox_xmlEditor.Size = new System.Drawing.Size(423, 399);
+            this.F5mdi2_richTextBox_xmlEditor.Size = new System.Drawing.Size(899, 399);
             this.F5mdi2_richTextBox_xmlEditor.TabIndex = 7;
             this.F5mdi2_richTextBox_xmlEditor.Text = "";
             this.F5mdi2_richTextBox_xmlEditor.TextChanged += new System.EventHandler(this.F5mdi2_richTextBox_xmlEditor_TextChanged);
@@ -380,7 +381,7 @@
             this.Controls.Add(this.F5mdi2_statusStrip_xmlEditor);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "F5mdi2_XmlEditor";
-            this.Text = "XML Editor";
+            this.Text = "Editor XML";
             this.Load += new System.EventHandler(this.F5mdi2_XmlEditor_Load);
             this.Resize += new System.EventHandler(this.F5mdi2_XmlEditor_Resize);
             this.F5mdi2_toolStrip_xmlEditor.ResumeLayout(false);

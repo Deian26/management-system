@@ -35,7 +35,7 @@
 		<F1_MainForm>
 			<F1_label_greeting>
 				<WELCOME>Bună ziua, #USERNAME# !</WELCOME>
-				<NEWS>#USERNAME#, acestea sunt groupurile dvs</NEWS>
+				<NEWS>#USERNAME#, acestea sunt grupurile dvs</NEWS>
 				<NOTIFICATIONS>#USERNAME#, aveți #NUMBER_NOTIFICATIONS# notificări necitite</NOTIFICATIONS>
 			</F1_label_greeting>
 			<F1_label_groupsTitle>Grupuri</F1_label_groupsTitle>	

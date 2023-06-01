@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -18,6 +22,10 @@ namespace management_system
     public partial class F5mdi3_DatabaseTableEditor : Form
     {
         //VARIABLES
+        //new table
+        private bool newTable = false;
+        private string tableName = null;
+
         //database table
         private string databaseTable = null; //database table name : GroupName + _ + TableName
 
@@ -32,21 +40,39 @@ namespace management_system
         private List<string> stringColumns = new List<string>();
 
         //CONSTRUCTORSw
-        public F5mdi3_DatabaseTableEditor(F5_FileEditorForm f5_containerForm, string databaseTable, bool localFile)
+        public F5mdi3_DatabaseTableEditor(F5_FileEditorForm f5_containerForm, string databaseTable, bool localFile, bool newTable)
         {
             InitializeComponent();
             
             //link the specified database table with the data grid view control
-            this.databaseTable = databaseTable;
+            this.databaseTable = Utility.currentGroup.getName()+"_"+ databaseTable;
             this.currentTable = new DataTable(this.databaseTable);
+            this.newTable = newTable;
+            this.Text = databaseTable.ToString();
 
-            if (localFile == true) //local .tbl file
+            if (newTable == true) //the table is new
             {
-                this.parseTblFile(this.databaseTable);
-            }
-            else //database table
-            {
+                //create the table in the current group
+                SqlCommand createTable = Utility.getSqlCommand("CREATE TABLE "+Utility.currentGroup.getName()+"_"+databaseTable.ToString()+"(_id INT)");
+                createTable.ExecuteNonQuery();
+
+                createTable.Dispose();
+
+                //update variables
+                this.tableName = databaseTable;
+                this.databaseTable = Utility.currentGroup.getName() + "_" + databaseTable.ToString();
                 this.refreshDatabaseData();
+            }
+            else
+            { //table already exists in the database
+                if (localFile == true) //local .tbl file
+                {
+                    this.parseTblFile(this.databaseTable);
+                }
+                else //database table
+                {
+                    this.refreshDatabaseData();
+                }
             }
             //container form
             this.MdiParent = f5_containerForm;
@@ -85,7 +111,8 @@ namespace management_system
 
                     this.currentTable.Rows.Add(rowValues); //add values into memory
 
-                   //delete old values from the array to make sure that a missing attribute from the XML does not allow an old value to be written into memory again
+                   //delete old values from the array to make sure that a missing attribute from the XML does not allow an old value to be
+                   //written into memory again (in the next iteration)
                    for (i = 0; i < this.currentTable.Columns.Count; i++)
                         rowValues[i] = null;
                 }
@@ -93,7 +120,7 @@ namespace management_system
 
             }catch(Exception exception)
             {
-                Utility.DisplayError("DataBaseTableEditor_failed_to_parse_local_file_tbl", exception, "DataBaseTableEditor: Failed to parse a loclaly stored .tbl file: " + exception.ToString(), false);
+                Utility.DisplayError("DataBaseTableEditor_failed_to_parse_local_file_tbl", exception, "DataBaseTableEditor: Failed to parse a locally stored .tbl file: " + exception.ToString(), false);
             }
         }
 
@@ -102,7 +129,16 @@ namespace management_system
         {
             try
             {
+                //clear variable
+                this.currentTable.Clear();
+                this.currentTable.Columns.Clear();
+
                 SqlCommand refresh_cmd = Utility.getSqlCommand("SELECT * FROM " + this.databaseTable.ToString());
+
+                SqlDataAdapter ad = new SqlDataAdapter(refresh_cmd);
+                ad.Fill(this.currentTable);
+                return;
+                
 
                 //get columns
                 SqlDataReader dr = refresh_cmd.ExecuteReader();
@@ -145,7 +181,7 @@ namespace management_system
 
                 }
                 else
-                    Utility.logDiagnsoticEntry("DatabaseTableEditor: failed to load database table; 'databaseTable' was null");
+                    Utility.logDiagnosticEntry("DatabaseTableEditor: failed to load database table; 'databaseTable' was null");
             }catch(Exception exception)
             {
                 Utility.DisplayError("DataBaseTableEditor_failed_to_load_database_table", exception, "DataBaseTableEditor: failed to load database table: " + exception.ToString(), false);
@@ -170,7 +206,56 @@ namespace management_system
                     throw new Exception(Utility.displayError("DataBaseTableEditor_failed_to_locally_save_database_table"));
 
                 //save the table in a .tbl file (XML format)
-                //DEV
+                XmlWriterSettings ws = new XmlWriterSettings();
+                ws.IndentChars = "\t";
+                ws.Indent = true;
+                ws.NewLineChars = "\r\n";
+                ws.CheckCharacters = true;
+
+                //create file
+                //StreamWriter file = File.CreateText(folderPath + "\\" + this.databaseTable + ".tbl");
+
+                XmlWriter w = XmlWriter.Create(folderPath+"\\"+this.databaseTable+".tbl", ws);
+                w.WriteStartDocument(true);
+                w.WriteStartElement("table");
+                //columns
+                w.WriteStartElement("columns");
+
+                int index = 1;
+                foreach (DataColumn column in this.currentTable.Columns) 
+                {
+
+                    w.WriteAttributeString("column"+index.ToString(), column.ColumnName);
+                    index++;
+                }
+                
+                w.WriteEndElement();
+
+                //rows
+                w.WriteStartElement("rows");
+                index = 1;
+                foreach (DataRow row in this.currentTable.Rows)
+                {
+                    w.WriteStartElement("row");
+                    index=1;
+                    foreach (string cell in row.ItemArray)
+                    {
+
+                        w.WriteAttributeString("value" + index.ToString(), cell.ToString());
+                        index++;
+
+                    }
+                    w.WriteEndElement();
+                }
+
+                w.WriteEndElement();
+
+
+                w.WriteEndElement();
+                w.WriteEndDocument();
+
+                w.Close();
+                //file.Close();
             }
             catch (Exception exception)
             {
@@ -187,10 +272,12 @@ namespace management_system
         //EVENT HANDLERS
         private void F5mdi3_DatabaseTableEditor_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
-
-            //refresh control appareance
+            
+            //refresh control appearance
             this.refreshControlsAppearance();
         }
 
@@ -240,31 +327,133 @@ namespace management_system
                     this.stringColumns.Add(column.ColumnName);
                 }
 
+                bool _string = false; //the current column type is numeric (_string=false) or not (_string=true)
+                string values2;
+
                 foreach (DataGridViewRow row in this.F5mdi3_dataGridView_databaseTableEditor.Rows)
                 {
-                    values = "UPDATE "+databaseTable.ToString()+" SET ";
+                    values = "";
+                    values2 = "";
 
                     if (row.IsNewRow) break; //if this is the last, empty row used to add new rows, skip it
-
-                    for(int i=0; i<row.Cells.Count;i++)
+                    _string = false;
+                    for (int i=0; i<row.Cells.Count;i++)
                     {
                         //construct a string containing the new values
                         values += this.stringColumns[i]+"=";
 
-                        //prepend and append thevalue to '
-                        values += "'";
-                        values += row.Cells[i].Value + "'";
+                        //prepend and append the value to '
                         
+                        if(this.currentTable.Columns[i].DataType.Name.Equals("String"))
+                            _string= true;
 
-                        if (i < row.Cells.Count - 1) values += ",";
+
+                        if (_string == true)
+                        {
+                            values += "'";
+                            values2 += "'";
+                        }
+                        
+                        values += row.Cells[i].Value;
+                        values2 += row.Cells[i].Value;
+
+                        if (_string == true)
+                        {
+                            values += "'";
+                            values2 += "'";
+                        }
+
+
+                        if (i < row.Cells.Count - 1)
+                        {
+                            values += ",";
+                            values2 += ",";
+                        }
+
                     }
-                    
+
+                    SqlCommand read = Utility.getSqlCommand("SELECT * FROM "+this.databaseTable);
+                    SqlDataReader dr = read.ExecuteReader();
+                    bool found = false;
+
+                    while(dr.Read())
+                    {
+                        if(dr.GetInt32(0)== Convert.ToInt32(row.Cells[0].Value.ToString()))
+                        {
+                            found = true;
+                            dr.Close();
+                            break;
+                        }
+                    }
+
+                    if (dr!=null) dr.Close();
+                    string where = "";
+
+                    if (found==true) //current _id found in the database table => UPDATE
+                    {
+                        
+                        values = "UPDATE " + databaseTable.ToString() + " SET " + values;
+                        where = " WHERE _id=" + row.Cells[0].Value.ToString();
+                    }
+                    else //current _id not found in the database table => INSERT
+                    {
+                        values = "INSERT INTO " + databaseTable.ToString() + " VALUES (" + values2+")";
+                    }
+
                     //update the row
-                    upload_cmd = Utility.getSqlCommand(values);
+                    upload_cmd = Utility.getSqlCommand(values+where);
                     int result = upload_cmd.ExecuteNonQuery();
 
                     if (result == -1) //no rows updated
                         throw new Exception("Failed to update connected database table");
+                }
+
+                //delete rows that are no longer in the editor
+                SqlCommand read2 = Utility.getSqlCommand("SELECT * FROM " + this.databaseTable);
+                SqlDataReader dr2 = read2.ExecuteReader();
+                bool found2 = false;
+                List<int> IDs = new List<int>();
+
+                while (dr2.Read())
+                {
+                    IDs.Add(dr2.GetInt32(0));
+                }
+
+                if (dr2 != null) dr2.Close();
+
+                foreach (int _id in IDs)
+                {
+                    found2 = false;
+
+                    foreach (DataGridViewRow row in this.F5mdi3_dataGridView_databaseTableEditor.Rows)
+                    {
+                        if (row.IsNewRow) break; //last, empty row (used to insert new rows)
+
+                        if ( _id == Convert.ToInt32(row.Cells[0].Value.ToString()))
+                        {
+                            found2 = true;
+                            break;
+                        }
+                    }
+
+                    if (found2 == false) //delete row
+                    {
+                        upload_cmd = Utility.getSqlCommand("DELETE FROM "+this.databaseTable.ToString()+" WHERE _id=" + _id.ToString());
+                        int result = upload_cmd.ExecuteNonQuery();
+
+                        if (result == -1) //no rows updated
+                            throw new Exception("Failed to update connected database table");
+                    }
+                }
+
+                //if this is a new table, add it into the database files table
+                if (this.newTable == true)
+                {
+                    SqlCommand addTable = Utility.getSqlCommand("INSERT INTO " + Utility.currentGroup.getName() + "_DatabaseFiles(filename, databaseTable) VALUES ('" + this.tableName + "', 1)");
+
+                    addTable.ExecuteNonQuery();
+
+                    addTable.Dispose();
                 }
             }
             catch (Exception exception)
@@ -293,7 +482,7 @@ namespace management_system
 
                         break;
                     
-                    case DialogResult.Cancel: //cancel openning the file
+                    case DialogResult.Cancel: //cancel opening the file
                         break;
                     
                     case DialogResult.Abort: //cancel openning the file
@@ -301,7 +490,7 @@ namespace management_system
                     
                     default: 
                         throw new Exception("Invalid dialog option chosen: "+result.ToString());
-                        break;
+                        //break;
                 }
 
             }
@@ -334,7 +523,7 @@ namespace management_system
         //delete a column
         private void F5mdi3_cutToolStripButton_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         //print
@@ -355,9 +544,28 @@ namespace management_system
 
                 f8_AddNewTableColumn.Close();
 
+                //refresh table
+                this.refreshDatabaseData();
+
             }catch(Exception exception)
             {
                 Utility.DisplayError("DataBaseTableEditor_failed_to_add_new_column_to_table", exception, "DataBaseTableEditor: Failed to add a new column to the table: \n" + exception.ToString(), false);
+            }
+        }
+
+        private void F5mdi3_toolStripButton_tools_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                F10_DatabaseTableTools f10_DatabaseTableTools = new F10_DatabaseTableTools(this);
+
+                f10_DatabaseTableTools.ShowDialog();
+
+                f10_DatabaseTableTools.Close();
+
+            }catch (Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_cannot_open_tools_form", exception, "DataBaseTableEditor: Could not open the database table editor tools form: \n" + exception.ToString(), false); ;
             }
         }
     }

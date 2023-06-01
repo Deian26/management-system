@@ -1,5 +1,5 @@
 ﻿/*
-    Management System
+    Management System / „Sistem de administrare a fisierelor”
     
     Developer: Trif, Paul-Deian
  */
@@ -22,8 +22,11 @@ namespace management_system
         //main
         static public F0_Login f0_logIn;
         static public F1_MainForm f1_mainForm;
+        
+        static public F9_Logo f9_logo;
+        
         //utility service
-        static public U0_UtilityMainForm u0_utilityMainFrom;
+        static public U0_UtilityMainForm u0_utilityMainForm;
         static public Thread utility_thread = null;
 
         //main thread
@@ -43,9 +46,9 @@ namespace management_system
         }
         private static void startUtilityService()
         {
-            u0_utilityMainFrom = new U0_UtilityMainForm();
-            //u0_utilityMainFrom.Hide();
-            Application.Run(u0_utilityMainFrom);
+            u0_utilityMainForm = new U0_UtilityMainForm();
+            //u0_utilityMainForm.Hide();
+            Application.Run(u0_utilityMainForm);
             
         }
 
@@ -60,7 +63,11 @@ namespace management_system
         public static void startMainThread()
         {
             f0_logIn = new F0_Login();
-            Application.Run(f0_logIn);
+            //Application.Run(f0_logIn);
+
+            f9_logo = new F9_Logo();
+            Application.Run(f9_logo);
+        
         }
 
         //main
@@ -81,33 +88,6 @@ namespace management_system
                 Start.initializeUtilityService(); //start the utility service thread
                 Start.initializeMainThread(); //start the main thread
 
-
-                /* DEV - obsolete?
-                //stop the main thread
-                try
-                {
-                    Start.main_thread.Abort();
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(Utility.displayError("Code_main_thread_termination_error") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Utility.ERR = true;
-                    Application.Exit();
-                }
-                finally { Application.Exit(); }
-
-                //stop the utility service
-                try
-                {
-                    Start.utility_thread.Abort();
-                }catch(Exception exception) 
-                {
-                    MessageBox.Show(Utility.displayError("Code_utility_thread_termination_error")+exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Utility.ERR = true;
-                    Application.Exit();
-                }
-                finally { Application.Exit(); }
-                */
             }
         }
 

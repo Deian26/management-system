@@ -52,7 +52,7 @@
             // 
             // F0_textBox_username
             // 
-            this.F0_textBox_username.Location = new System.Drawing.Point(118, 62);
+            this.F0_textBox_username.Location = new System.Drawing.Point(207, 62);
             this.F0_textBox_username.Margin = new System.Windows.Forms.Padding(2);
             this.F0_textBox_username.Name = "F0_textBox_username";
             this.F0_helpProvider_help.SetShowHelp(this.F0_textBox_username, true);
@@ -63,7 +63,7 @@
             // 
             // F0_textBox_password
             // 
-            this.F0_textBox_password.Location = new System.Drawing.Point(118, 106);
+            this.F0_textBox_password.Location = new System.Drawing.Point(207, 106);
             this.F0_textBox_password.Margin = new System.Windows.Forms.Padding(2);
             this.F0_textBox_password.Name = "F0_textBox_password";
             this.F0_textBox_password.Size = new System.Drawing.Size(191, 20);
@@ -83,9 +83,9 @@
             this.F0_label_username.Location = new System.Drawing.Point(9, 60);
             this.F0_label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F0_label_username.Name = "F0_label_username";
-            this.F0_label_username.Size = new System.Drawing.Size(90, 19);
+            this.F0_label_username.Size = new System.Drawing.Size(153, 19);
             this.F0_label_username.TabIndex = 2;
-            this.F0_label_username.Text = "Username:";
+            this.F0_label_username.Text = "Nume utilizator:";
             // 
             // F0_label_password
             // 
@@ -94,9 +94,9 @@
             this.F0_label_password.Location = new System.Drawing.Point(9, 104);
             this.F0_label_password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F0_label_password.Name = "F0_label_password";
-            this.F0_label_password.Size = new System.Drawing.Size(90, 19);
+            this.F0_label_password.Size = new System.Drawing.Size(72, 19);
             this.F0_label_password.TabIndex = 3;
-            this.F0_label_password.Text = "Password:";
+            this.F0_label_password.Text = "Parolă:";
             // 
             // F0_label_titleLogIn
             // 
@@ -105,19 +105,19 @@
             this.F0_label_titleLogIn.Location = new System.Drawing.Point(6, 7);
             this.F0_label_titleLogIn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F0_label_titleLogIn.Name = "F0_label_titleLogIn";
-            this.F0_label_titleLogIn.Size = new System.Drawing.Size(90, 27);
+            this.F0_label_titleLogIn.Size = new System.Drawing.Size(181, 27);
             this.F0_label_titleLogIn.TabIndex = 4;
-            this.F0_label_titleLogIn.Text = "Log in";
+            this.F0_label_titleLogIn.Text = "Autentificare";
             // 
             // F0_button_login
             // 
             this.F0_button_login.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_login.Location = new System.Drawing.Point(209, 180);
+            this.F0_button_login.Location = new System.Drawing.Point(274, 180);
             this.F0_button_login.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_login.Name = "F0_button_login";
-            this.F0_button_login.Size = new System.Drawing.Size(100, 37);
+            this.F0_button_login.Size = new System.Drawing.Size(137, 37);
             this.F0_button_login.TabIndex = 5;
-            this.F0_button_login.Text = "Login";
+            this.F0_button_login.Text = "Conectare";
             this.F0_button_login.UseVisualStyleBackColor = true;
             this.F0_button_login.Click += new System.EventHandler(this.F0_button_login_Click);
             this.F0_button_login.MouseEnter += new System.EventHandler(this.F0_button_login_MouseEnter);
@@ -125,12 +125,12 @@
             // F0_button_register
             // 
             this.F0_button_register.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_register.Location = new System.Drawing.Point(100, 180);
+            this.F0_button_register.Location = new System.Drawing.Point(13, 180);
             this.F0_button_register.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_register.Name = "F0_button_register";
-            this.F0_button_register.Size = new System.Drawing.Size(100, 37);
+            this.F0_button_register.Size = new System.Drawing.Size(137, 37);
             this.F0_button_register.TabIndex = 6;
-            this.F0_button_register.Text = "Register";
+            this.F0_button_register.Text = "Înregistrare";
             this.F0_button_register.UseVisualStyleBackColor = true;
             this.F0_button_register.Click += new System.EventHandler(this.F0_button_register_Click);
             this.F0_button_register.MouseEnter += new System.EventHandler(this.F0_button_register_MouseEnter);
@@ -138,7 +138,7 @@
             // F0_comboBox_dataBase
             // 
             this.F0_comboBox_dataBase.FormattingEnabled = true;
-            this.F0_comboBox_dataBase.Location = new System.Drawing.Point(118, 144);
+            this.F0_comboBox_dataBase.Location = new System.Drawing.Point(207, 144);
             this.F0_comboBox_dataBase.Margin = new System.Windows.Forms.Padding(2);
             this.F0_comboBox_dataBase.Name = "F0_comboBox_dataBase";
             this.F0_comboBox_dataBase.Size = new System.Drawing.Size(191, 21);
@@ -153,19 +153,19 @@
             this.F0_label_dataBase.Location = new System.Drawing.Point(9, 146);
             this.F0_label_dataBase.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F0_label_dataBase.Name = "F0_label_dataBase";
-            this.F0_label_dataBase.Size = new System.Drawing.Size(90, 19);
+            this.F0_label_dataBase.Size = new System.Drawing.Size(126, 19);
             this.F0_label_dataBase.TabIndex = 9;
-            this.F0_label_dataBase.Text = "DataBase:";
+            this.F0_label_dataBase.Text = "Bază de date:";
             // 
             // F0_button_language
             // 
             this.F0_button_language.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_language.Location = new System.Drawing.Point(227, 7);
+            this.F0_button_language.Location = new System.Drawing.Point(316, 7);
             this.F0_button_language.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_language.Name = "F0_button_language";
             this.F0_button_language.Size = new System.Drawing.Size(45, 24);
             this.F0_button_language.TabIndex = 10;
-            this.F0_button_language.Text = "EN";
+            this.F0_button_language.Text = "RO";
             this.F0_button_language.UseVisualStyleBackColor = true;
             this.F0_button_language.Click += new System.EventHandler(this.F0_button_language_Click);
             this.F0_button_language.MouseEnter += new System.EventHandler(this.F0_button_language_MouseEnter);
@@ -173,7 +173,7 @@
             // F0_button_theme
             // 
             this.F0_button_theme.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.F0_button_theme.Location = new System.Drawing.Point(277, 7);
+            this.F0_button_theme.Location = new System.Drawing.Point(366, 7);
             this.F0_button_theme.Margin = new System.Windows.Forms.Padding(2);
             this.F0_button_theme.Name = "F0_button_theme";
             this.F0_button_theme.Size = new System.Drawing.Size(45, 24);
@@ -203,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 234);
+            this.ClientSize = new System.Drawing.Size(434, 234);
             this.Controls.Add(this.F0_button_theme);
             this.Controls.Add(this.F0_button_language);
             this.Controls.Add(this.F0_label_dataBase);
@@ -217,11 +217,11 @@
             this.Controls.Add(this.F0_textBox_username);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(349, 273);
-            this.MinimumSize = new System.Drawing.Size(349, 273);
+            this.MaximumSize = new System.Drawing.Size(450, 273);
+            this.MinimumSize = new System.Drawing.Size(450, 273);
             this.Name = "F0_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Autentificare";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.F0_Login_FormClosed);
             this.Load += new System.EventHandler(this.F0_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.F0_errorProvider)).EndInit();

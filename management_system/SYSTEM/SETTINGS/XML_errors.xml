@@ -8,7 +8,7 @@
 		<DB_creating_table_failed>Error creating a table. </DB_creating_table_failed>
 		<DB_delete_old_notifications_failed>Error deeleting old notifications from the database. </DB_delete_old_notifications_failed>
 		<DB_create_table_failed>Error deleting old notifications. </DB_create_table_failed>
-		<DB_account_not_found>Account not found in the database. </DB_account_not_found>
+		<DB_account_not_found>Account not found in the database or could not delete local directory. </DB_account_not_found>
 		<DB_error_getting_key>Error loading the cryptographic key. </DB_error_getting_key>
 		<DB_failed_to_upload_group_file>Failed to upload a group file to the database. </DB_failed_to_upload_group_file>
 		
@@ -34,7 +34,7 @@
 		<SQL_statement_error>SQL statement error. </SQL_statement_error>
 		<SQL_table_format_error>SQL table format error. </SQL_table_format_error>
 		
-		<Code_wrong_function_call>Wrong function call (check parameters and returned values); function:  </Code_wrong_function_call>
+		<Code_wrong_function_call>Wrong function call.  </Code_wrong_function_call>
 		<Code_utility_thread_termination_error>Error when terminating the utility service thread. Details:  </Code_utility_thread_termination_error>
 		<Code_main_thread_termination_error>Error when terminating the main thread. Details:  </Code_main_thread_termination_error>
 		<Code_error_opening_diagnostic_log_saveFile_dialog>Error opening the save file dialog box for the diagnostic log. Details:  </Code_error_opening_diagnostic_log_saveFile_dialog>
@@ -67,18 +67,22 @@
 		<Groups_failed_to_clear_temporary_memory>Failed to clear temporary memory. </Groups_failed_to_clear_temporary_memory>
 		<Groups_failed_to_add_to_temporary_memory>Failed to add information into temporary memory. </Groups_failed_to_add_to_temporary_memory>
 		<Groups_failed_to_create_databaseFiles_table>Failed to create the file table for this group. </Groups_failed_to_create_databaseFiles_table>
-		<Groups_failed_to_load_group_into_mmeory>Failed to load group into memory. </Groups_failed_to_load_group_into_mmeory>
+		<Groups_failed_to_load_group_into_memory>Failed to load group into memory. </Groups_failed_to_load_group_into_memory>
 		<Groups_failed_to_open_group>Failed to open a group from the main form. </Groups_failed_to_open_group>
 		<Groups_failed_to_create_groupUsers_table>Failed to create the users table for a group. </Groups_failed_to_create_groupUsers_table>
 		<Groups_failed_to_delete_a_group>Failed to delete a group. </Groups_failed_to_delete_a_group>
 		<Groups_failed_to_find_group_by_name>Failed to find a group. </Groups_failed_to_find_group_by_name>
 		<Groups_failed_to_delete_group_from_mainForm>Failed to delete the selected group from the Main Form. </Groups_failed_to_delete_group_from_mainForm>
 		<Groups_failed_to_create_new_file>Failed to create a new file. </Groups_failed_to_create_new_file>
+		<Groups_failed_to_verify_if_file_is_management_system_data_file>Failed to verify whether a file is in the main folder of the program. </Groups_failed_to_verify_if_file_is_management_system_data_file>
+		<Groups_failed_to_load_groups_invalid_date>Failed to load groups; invalid creation date of a group. </Groups_failed_to_load_groups_invalid_date>
+		<Groups_failed_to_create_new_db_table>Failed to create a new Database table. </Groups_failed_to_create_new_db_table>
 		
 		<FileTreeView_failed_to_load_group_files>Failed to load the files of the current group into the File Tree view. </FileTreeView_failed_to_load_group_files>
 		<FileTreeView_failed_to_load_file>Failed to load the selected file from the tree view. </FileTreeView_failed_to_load_file>
 		<FileTreeView_failed_to_expand_file_tree_view_nodes>Failed to expand the nodes of the file tree control. </FileTreeView_failed_to_expand_file_tree_view_nodes>
 		<FileTreeViewer_invalid_file_or_filepath>Failed to open the selected file. The file might have been deleted or the path/filename is invalid.</FileTreeViewer_invalid_file_or_filepath>
+		<FileTreeView_could_not_delete_file>Failed to delete a file or database table. </FileTreeView_could_not_delete_file>
 		
 		<TextEditor_failed_to_open_text_file>Failed to open a text or general file. </TextEditor_failed_to_open_text_file>
 		<TextEditor_file_does_not_exist>The specified file does not exist; path: </TextEditor_file_does_not_exist>
@@ -96,7 +100,7 @@
 		<XMLEditor_cannot_add_custom_node>Failed to add an XML node. </XMLEditor_cannot_add_custom_node>
 		<XMLEditor_cannot_get_custom_node>Failed to get an XML node. </XMLEditor_cannot_get_custom_node>
 		<XMLEditor_cannot_remove_custom_node>Failed to remove an XML node. </XMLEditor_cannot_remove_custom_node>
-		<XMLEditor_cannot_add_custom_node_attribute>Failed to remove add an attribute to an XML node. </XMLEditor_cannot_add_custom_node_attribute>
+		<XMLEditor_cannot_add_custom_node_attribute>Failed to add an attribute to an XML node. </XMLEditor_cannot_add_custom_node_attribute>
 		<XMLEditor_cannot_save_tree>Failed to save the tree view XML structure in memory. </XMLEditor_cannot_save_tree>
 		<XMLEditor_cannot_load_textbox_XML_string_into_memory>Failed to save the textbox XML structure in memory. </XMLEditor_cannot_load_textbox_XML_string_into_memory>
 		<XMLEditor_cannot_load_local_XML_file>Failed to load the local XML file. </XMLEditor_cannot_load_local_XML_file>
@@ -113,6 +117,8 @@
 		<DataBaseTableEditor_failed_to_open_editor_guide>Failed to open the Database table editor guide. </DataBaseTableEditor_failed_to_open_editor_guide>
 		<DataBaseTableEditor_failed_to_add_new_column_to_table>Failed to add a new column to the Database table. </DataBaseTableEditor_failed_to_add_new_column_to_table>
 		<DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>Invalid new column name or database error. </DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>
+		<DataBaseTableEditor_invalid_column_type>Invalid column data type</DataBaseTableEditor_invalid_column_type>
+		<DataBaseTableEditor_cannot_open_tools_form>Failed to open the database table editor tools form. </DataBaseTableEditor_cannot_open_tools_form>
 		
 		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
@@ -123,7 +129,131 @@
 	</EN>
 	
 	<RO>
+		<DB_conn_failed>Conexiunea cu baza de date a ușuat. </DB_conn_failed>
+		<DB_invalid_database>Nume de bază de date invalid. </DB_invalid_database>
+		<DB_disconnect_failed>Eroare la deconectarea de la baza de date. </DB_disconnect_failed>
+		<DB_load_databases_failed>Eroare la încărcarea listei de baze de date din fișierul XML de sistem. </DB_load_databases_failed>
+		<DB_creating_table_failed>Eroare la crearea unui tabel. </DB_creating_table_failed>
+		<DB_delete_old_notifications_failed>Eroare la ștergerea notificărilor vechi din baza de date. </DB_delete_old_notifications_failed>
+		<DB_create_table_failed>Eroare la crearea unui tabel. </DB_create_table_failed>
+		<DB_account_not_found>Contul nu a fost găsit în baza de date sau o eroare a fost întâlnită la ștergerea directorului local. </DB_account_not_found>
+		<DB_error_getting_key>Eroare la încărcarea cheii criptografice. </DB_error_getting_key>
+		<DB_failed_to_upload_group_file>Eroare la încărcarea unui fișier din grup în baza de date. </DB_failed_to_upload_group_file>
 		
+		<Load_languages_failed>Eroare la încărcarea pachetului de limbi. </Load_languages_failed>
+		<Load_themes_failed>Eroare la încărcarea pachetului de teme. </Load_themes_failed>
+		<Load_f1_mainForm_about_page_failed>Eroare la încărcarea paginii 'Despre' a paginii principale. </Load_f1_mainForm_about_page_failed>
+		<Load_f1_mainForm_user_manual_page_failed>Eroare la încărcarea manualului de utilizare. </Load_f1_mainForm_user_manual_page_failed>
+		<Load_f1_mainForm_create_group_guide_page_failed>Eroare la încărcarea ghidului de creare a unui grup. </Load_f1_mainForm_create_group_guide_page_failed>
+		<Load_f1_mainForm_add_delete_files_guide_page_failed>Eroare la încărcarea ghidului de adăugare/ștergere a fișierelor într-un grup. </Load_f1_mainForm_add_delete_files_guide_page_failed>
+		<Load_f1_mainForm_user_rights_information_page_failed>Eroare la încărcarea paginii cu informații despre permisiunile utilizatorilor. </Load_f1_mainForm_user_rights_information_page_failed>
+		
+		<Invalid_username>Nume de utilizator invalid. </Invalid_username>
+		<Invalid_username_duplicate>Numele de utilizator există deja. </Invalid_username_duplicate>
+		<Invalid_password>Parolă invalidă. Parola trebuie să conțină cel puțin 10 caractere și cel puțin o literă mică, o literă mare (din alfabetul latin), cel puțin o cifră și cel puțin un caracter special din lista: ~!@#$%^*_</Invalid_password>
+		<Invalid_credentials>Credențiale invalide. </Invalid_credentials>
+		
+		<XML_format_error>Format XML invalid sau cale către fișier invalidă. </XML_format_error>
+		<XML_language_control_not_found>Un control nu a fost găsit în pachetul de limbi. </XML_language_control_not_found>
+		<XML_theme_control_not_found>Un control nu a fost găsit în pachetul de teme. </XML_theme_control_not_found>
+		<XML_file_invalid_signature>EROARE DE SECURITATE: SEMNĂTURA FIȘIERULUI XML NU ESTE VALIDĂ. </XML_file_invalid_signature>
+		<XML_updating_notifications_failed>Eroare la aducerea informațiilor despre notificări din baza de date în fișierul XML local. </XML_updating_notifications_failed>
+		
+		<SQL_statement_error>Eroare la comanda SQL. </SQL_statement_error>
+		<SQL_table_format_error>Eroare de format la tabelul din baza de date. </SQL_table_format_error>
+		
+		<Code_wrong_function_call>Apel de funcție greșit.  </Code_wrong_function_call>
+		<Code_utility_thread_termination_error>Eroare întâlnită la oprirea firului de execuție a serviciului utilitar.  </Code_utility_thread_termination_error>
+		<Code_main_thread_termination_error>Eroare întâlnitî la oprirea firului de execuție principal.  </Code_main_thread_termination_error>
+		<Code_error_opening_diagnostic_log_saveFile_dialog>Eroare la deschiderea casetei de dialog pentru salvarea jurnalului de diagnoză.  </Code_error_opening_diagnostic_log_saveFile_dialog>
+		<Code_error_saving_diagnostic_log>Eroare la salvarea jurnalului de diagnoză într-un fișier. </Code_error_saving_diagnostic_log>
+		<Code_invalid_byte_digit>Șir de caractere reprezentând octeți invalid.  </Code_invalid_byte_digit>
+		
+		<Form_duplicate_controls>Mai multe controale cu același nume au fost găsite în același formular. </Form_duplicate_controls>
+		
+		<Account_Error_new_user_registered>Eroare la înregistrarea unui cont nou. </Account_Error_new_user_registered>
+		<Account_security_utility_service_insufficient_rights>CONT DE UTILIZATOR A ÎNCERCAT SĂ ACCESEZE SERVICIUL UTILITAR (REZERVAT PENTRU ADMINISTRATORI) </Account_security_utility_service_insufficient_rights>
+		
+		<Data_wrong_folder_path>Cale greșită către un nou director. </Data_wrong_folder_path>
+		<Data_wrong_file_path_or_type>Cale greșită sau tip de fișier greșit dat pentru crearea unui fișier nou de date. </Data_wrong_file_path_or_type>
+
+		<Groups_failed_to_load_local_fileNames>Eroare la încărcarea fișierelor stocate local. </Groups_failed_to_load_local_fileNames>
+		<Groups_failed_to_load_database_fileNames>Eroare la încărcarea fișierelor stocate în baza de date. </Groups_failed_to_load_database_fileNames>
+		<Groups_failed_to_compute_key>Eroare la calcularea cheii criptografice a unui grup </Groups_failed_to_compute_key>
+		<Groups_failed_to_load_groups>Eroare la încărcarea grupurilor. </Groups_failed_to_load_groups>
+		<Groups_failed_to_load_group_NameTooLongInDB>Eroare la încărcarea unui grup (numele din baza de date este prea lung). </Groups_failed_to_load_group_NameTooLongInDB>
+		<Groups_failed_to_load_group_InvalidCharacter>Eroare la încărcarea unui grup (caracter invalid). </Groups_failed_to_load_group_InvalidCharacter>
+		<Groups_failed_to_load_group_InvalidImage>Eroare la încărcarea unui grup (imagine invalidă). </Groups_failed_to_load_group_InvalidImage>
+		<Groups_invalid_group_name_too_long>Numele grupului este prea lung. Lungime maximă (caractere): </Groups_invalid_group_name_too_long>
+		<Groups_invalid_character_in_group_name>Nume de grup invalid. Numele de grup pot conține doar litere ale alfabetlului latin (A-Z, a-z), cifre (0-9) și caractere bară jos ('_') .</Groups_invalid_character_in_group_name>
+		<Groups_invalid_image>Imagine invalidă furnizată la crearea grupului </Groups_invalid_image>
+		<Groups_invalid_group_name_empty>Nume de grup invalid: caseta de text nu poate rămâne goală.</Groups_invalid_group_name_empty>
+		<Groups_error_loading_groups_in_listView_control>Eroare la încărcarea unui grup în lista de grupuri din pagina principală. </Groups_error_loading_groups_in_listView_control>
+		<Groups_failed_to_store_details_into_indexing_table>Eroare la salvarea datelor unui grup în tabelul de indexare a grupurilor din baza de date. </Groups_failed_to_store_details_into_indexing_table>
+		<Groups_failed_to_load_groups_form_database_into_memory>Eroare la încărcarea grupurilor în memorie din tabelul de indexare a grupurilor din baza de date. </Groups_failed_to_load_groups_form_database_into_memory>
+		<Groups_cannot_load_default_group_icon>Eroare la setarea imaginii implicite a grupului din directorul SYSTEM. </Groups_cannot_load_default_group_icon>
+		<Groups_failed_to_clear_temporary_memory>Eroare la golirea memoriei temporare. </Groups_failed_to_clear_temporary_memory>
+		<Groups_failed_to_add_to_temporary_memory>Eroare la adăugarea de informații în memoria temporară. </Groups_failed_to_add_to_temporary_memory>
+		<Groups_failed_to_create_databaseFiles_table>Eroare la crearea tabelului de fișiere pentru un grup. </Groups_failed_to_create_databaseFiles_table>
+		<Groups_failed_to_load_group_into_memory>Eroare la încărcarea unui grup în memorie. </Groups_failed_to_load_group_into_memory>
+		<Groups_failed_to_open_group>Eroare la deschiderea unui grup in pagina principală. </Groups_failed_to_open_group>
+		<Groups_failed_to_create_groupUsers_table>Eroare la crearea tabelului de utilizatori pentru un grup. </Groups_failed_to_create_groupUsers_table>
+		<Groups_failed_to_delete_a_group>Eroare la ștergerea unui grup. </Groups_failed_to_delete_a_group>
+		<Groups_failed_to_find_group_by_name>Grupul nu a fost găsit. </Groups_failed_to_find_group_by_name>
+		<Groups_failed_to_delete_group_from_mainForm>Eroare la ștergerea grupului selectat din pagina principală. </Groups_failed_to_delete_group_from_mainForm>
+		<Groups_failed_to_create_new_file>Eroare la creare unui nou fișier. </Groups_failed_to_create_new_file>
+		<Groups_failed_to_verify_if_file_is_management_system_data_file>Eroare la verificarea dacă un fișier este în folderul principal al programului. </Groups_failed_to_verify_if_file_is_management_system_data_file>
+		<Groups_failed_to_load_groups_invalid_date>Eroarea la crearea unui grup. Data creării este invalidă. </Groups_failed_to_load_groups_invalid_date>
+		<Groups_failed_to_create_new_db_table>Eroarea la crearea unui tabel nou în baza de date. </Groups_failed_to_create_new_db_table>
+		
+		<FileTreeView_failed_to_load_group_files>Eroare la încărcarea fișierelor grupului curent în arborele din fereastra de vizualizare a fișierelor. </FileTreeView_failed_to_load_group_files>
+		<FileTreeView_failed_to_load_file>Eroare la deschiderea fișierului selectat din arborele din fereastra de vizualizare a fișierelor. </FileTreeView_failed_to_load_file>
+		<FileTreeView_failed_to_expand_file_tree_view_nodes>Eroare la expandarea nodului selectat al arborelui din fereastra de vizualizare a fișierelor. </FileTreeView_failed_to_expand_file_tree_view_nodes>
+		<FileTreeViewer_invalid_file_or_filepath>Eroare la deschiderea fișierului selectat. Acesta ar putea fi mutat sau șters. </FileTreeViewer_invalid_file_or_filepath>
+		<FileTreeView_could_not_delete_file>Eroare la ștergerea unui fișier sau tabel. </FileTreeView_could_not_delete_file>
+		
+		<TextEditor_failed_to_open_text_file>Eroare la deschiderea unui fișier de text sau general. </TextEditor_failed_to_open_text_file>
+		<TextEditor_file_does_not_exist>Fișierul specificat nu există.  </TextEditor_file_does_not_exist>
+		<TextEditor_a_file_already_open>Nu se poate deschide un nou fișier text. Un fișier este deja deschis. </TextEditor_a_file_already_open>
+		<TextEditor_file_cannot_be_closed>Fișierul nu poate fi închis.  </TextEditor_file_cannot_be_closed>
+		<TextEditor_unrecognized_character_found_in_text>Caracter nerecunoscut găsit în text. </TextEditor_unrecognized_character_found_in_text>
+		<TextEditor_cannot_save_file>Nu se poate salva fișierul .rtf la calea specificată. </TextEditor_cannot_save_file>
+		<TextEditor_cannot_display_AboutInfo>Nu se poate încărca pagina 'Despre' a editorului de text. </TextEditor_cannot_display_AboutInfo>
+		<TextEditor_invalid_path>Cale invalidă. </TextEditor_invalid_path>
+		<TextEditor_cannot_replace_phrase>Eroare la înlocuire frazei din text cu fraza din caseta de text "Înlocuire toate". </TextEditor_cannot_replace_phrase>
+		<TextEditor_failed_to_load_text_file_into_textbox>Eroare la încărcarea textului din fișier în caseta de text. </TextEditor_failed_to_load_text_file_into_textbox>
+		
+		<XmlEditor_cannot_add_tree_node>Eroare la adăugarea unui nou nod în arbore. </XmlEditor_cannot_add_tree_node>
+		<XmlEditor_cannot_edit_tree_node>Eroare la editarea unui nod XML din arbore. </XmlEditor_cannot_edit_tree_node>
+		<XMLEditor_cannot_add_custom_node>Eroare la adăugarea unui nou nod XML. </XMLEditor_cannot_add_custom_node>
+		<XMLEditor_cannot_get_custom_node>Eroare la obținerea unui nod XML. </XMLEditor_cannot_get_custom_node>
+		<XMLEditor_cannot_remove_custom_node>Eroare la ștergerea unui nod XML. </XMLEditor_cannot_remove_custom_node>
+		<XMLEditor_cannot_add_custom_node_attribute>Eroare la adăugarea unui atribut la un nod XML. </XMLEditor_cannot_add_custom_node_attribute>
+		<XMLEditor_cannot_save_tree>Eroare la salvarea structurii arborescente XML în memorie. </XMLEditor_cannot_save_tree>
+		<XMLEditor_cannot_load_textbox_XML_string_into_memory>Eroare la salvarea în memorie a datelor XML din caseta de text. </XMLEditor_cannot_load_textbox_XML_string_into_memory>
+		<XMLEditor_cannot_load_local_XML_file>Eroare la încărcarea fișierului XML local. </XMLEditor_cannot_load_local_XML_file>
+		<XMLEditor_cannot_save_local_XML_file>Eroare la salvarea datelor XML într-un fișier local. </XMLEditor_cannot_save_local_XML_file>
+		<XmlEditor_failed_to_switch_XML_edit_mode>Eroare la schimbarea modului de editare a datelor XML. </XmlEditor_failed_to_switch_XML_edit_mode>
+		<XmlEditor_failed_to_save_XML_file>Eroare la salvarea unui fișier XML. </XmlEditor_failed_to_save_XML_file>
+		
+		<DataBaseTableEditor_failed_to_load_database_table>Eroare la încărcarea unui tabel din baza de date. </DataBaseTableEditor_failed_to_load_database_table>
+		<DataBaseTableEditor_failed_to_upload_database_table>Eroare la încărcarea unui tabel în baza de date. </DataBaseTableEditor_failed_to_upload_database_table>
+		<DataBaseTableEditor_failed_to_locally_save_database_table>Eroare la salvarea tabelului din baza de date ca și un fișier .tbl local. </DataBaseTableEditor_failed_to_locally_save_database_table>
+		<DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>Failed to load locally stored database file (.tbl). </DataBaseTableEditor_failed_to_load_locally_saved_database_file_tbl>
+		<DataBaseTableEditor_failed_to_parse_local_file_tbl>Eroare la parcurgerea unui fișier .tbl local. </DataBaseTableEditor_failed_to_parse_local_file_tbl>
+		<DataBaseTableEditor_failed_to_open_table>Eroare la deschiderea unui tabel din baza de date. </DataBaseTableEditor_failed_to_open_table>
+		<DataBaseTableEditor_failed_to_open_editor_guide>Eroare la deschiderea ghidului de editare a tabelelor din baza de date. </DataBaseTableEditor_failed_to_open_editor_guide>
+		<DataBaseTableEditor_failed_to_add_new_column_to_table>Eroare la adăugarea unei noi coloane în tabelul din baza de date. </DataBaseTableEditor_failed_to_add_new_column_to_table>
+		<DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>Nume de coloană nouă invalid sau eroare în baza de date. </DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>
+		<DataBaseTableEditor_invalid_column_type>Tip invalid de coloană. </DataBaseTableEditor_invalid_column_type>
+		<DataBaseTableEditor_cannot_open_tools_form>Eroare la deschiderea formularului cu unelte al editorului de tabele. </DataBaseTableEditor_cannot_open_tools_form>
+		
+		<System_failed_to_select_new_group_icon>Atenție: Eroare la selectarea imaginii unui grup. Vă rugăm încercați din nou. </System_failed_to_select_new_group_icon>
+	
+		<UtilityService_failed_to_check_XML_files>Eroare la verificarea fișierelor XML. </UtilityService_failed_to_check_XML_files>
+
+		<FileOverview_failed_to_load_file_overview>Eroare la încărcarea detaliilor despre fișiere în fereastra de detalii despre fișier. </FileOverview_failed_to_load_file_overview>
+		<FileOverview_failed_to_get_file_information>Eroare la obținerea detaliilor unui fișier. </FileOverview_failed_to_get_file_information>
 	</RO>
 	
 </Errors>

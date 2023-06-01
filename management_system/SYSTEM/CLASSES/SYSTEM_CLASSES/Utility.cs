@@ -108,9 +108,15 @@ namespace management_system
         public static int oldNotificationsLifespanDays = 14; //days
         public static int genKey = 23; //generic encryption key, used to encrypt general data in the database table (such as each group's cryptographic key)
         public static string enc_allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|="; //allowed characters for encryption/decryption
+        public static string enc_allowedCharacters_TXT = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|='\""; //allowed characters for encryption/decryption of text files
+        public static int LOGO_interval = 7500;//ms; logo form (F9) display time
+        //reversed enc_ strings (used for decryption)
+        public static string rev_enc_allowedCharacters = "=|~`><\\/][-+_)(*&^%$@#:;,.?! 9876543210ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
+        public static string rev_enc_allowedCharacters_TXT = "\"'=|~`><\\/][-+_)(*&^%$@#:;,.?! 9876543210ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
+
         public static string filename_allowedSpecialCharacters = "_# *"; //special characters allowed in file names
         //diagnostic
-        public static int maxDiaggnosticLogCharacters = int.MaxValue-1; //max number of characters to add into the diagnsotic log before clearing the textbox
+        public static int maxDiagnosticLogCharacters = int.MaxValue-1; //max number of characters to add into the diagnostic log before clearing the textbox
 
         //forms
         public static bool openUtilityService = false;
@@ -136,14 +142,14 @@ namespace management_system
         //public static List<Notification> XML_notifications = new List<Notification>(); //active notifications logged in the user's XML notifications file
         private static Dictionary<string, string> f1_greetings = new Dictionary<string, string>(); //greetings for F1_MainForm
         private static List<string> error_log = new List<string>(); //errors and warnings reported (and not yet written into the diagnostic log); keys for error messages
-        private static List<string> error_log_messages = new List<string>(); //errors and warnings reported; actual error messages
+        //private static List<string> error_log_messages = new List<string>(); //errors and warnings reported; actual error messages
 
         public static string username = null;
         public static string admin = null;
         public static int key = 0;
-        public static int language = 0; //default language: English (EN)
+        public static int language = 1; //default language: Romanian (RO)
         public static int theme = 0; //default theme: Lite (LITE)
-
+        
         //paths
         //image files
         public static string[] IMG_notifications_icons = { "..\\..\\SYSTEM\\RESOURCES\\IMG_notifications_icon_unimportant.bmp",
@@ -201,15 +207,15 @@ namespace management_system
         public static string groupIconFileFilterString = "JPEG|*.jpeg|JPG|*.jpg|PNG|*.png";//the filter to be applied for the files shown in the new group icon file dialog 
 
         //local folder names
-        public static string TempfolderName = "TBL"; //Temp folder
-        public static string localRtfFolderName = "RTF"; //RTF folder
-        public static string localXmlFolderName = "XML"; //XML folder
-        public static string localTblFolderName = "TBL"; //TBL folder
-        public static string localGrphFolderName = "GRPH"; //GRPH folder
+        //public static string TempfolderName = "TBL"; //Temp folder
+        //public static string localRtfFolderName = "RTF"; //RTF folder
+        //public static string localXmlFolderName = "XML"; //XML folder
+        //public static string localTblFolderName = "TBL"; //TBL folder
+        //public static string localGrphFolderName = "GRPH"; //GRPH folder
         
 
 
-        //file editting
+        //file editing
         public const float textPointSizeIncrement = 1.5f; //size (in points) with which to increment the a selection from a text
         public const float textPointSizeDecrement = 1.5f; //size (in points) with which to decrement the a selection from a text
         public const float minPointTextSize = 5.0f; //minimum text size in points
@@ -230,7 +236,7 @@ namespace management_system
         public static int Initialize()
         {
             if (Utility.ERR == true) return 0; //exit the function if errors were detected
-
+            
             //reset stored values
             Utility.errors.Clear();
             Utility.notifications.Clear();
@@ -325,11 +331,7 @@ namespace management_system
                     i++;
                 }catch (Exception exception)
                 {
-                    MessageBox.Show(Utility.displayError("Code_invalid_byte_digit") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                    Utility.ERR = true;
-                    Utility.WARNING = true;
-                    Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                    Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
+                    Utility.DisplayError("Code_invalid_byte_digit",exception, "CODE: Invalid byte digit given to Utility.toByteArray(string); digit given: "+c.ToString()+"; details: \n"+exception.ToString(),false);
                 }
 
             }
@@ -378,11 +380,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("Code_invalid_byte_digit") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
+                Utility.DisplayError("Code_invalid_byte_digit", exception, "CODE: Invalid byte digit given to Utility.toByteArray(string); details: \n" + exception.ToString(), false);
             }
 
 
@@ -457,11 +455,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message+"; File: "+XML_path.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.WARNING = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                //Application.Exit(); //trigger an application exit
+                Utility.DisplayWarning("XML_format_error",exception,"SYSTEM: Notifications XML file format error: \n"+exception.ToString(),false);
                 return false;
             }
 
@@ -500,7 +494,7 @@ namespace management_system
                 if(checkSignature == false)
                 {
                     //MessageBox.Show(Utility.displayError("XML_file_invalid_signature"), "SECURITY ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                    Utility.logDiagnsoticEntry("EN: Invalid signature for the XML file: " + XML_path.ToString());
+                    Utility.logDiagnosticEntry("EN: Invalid signature for the XML file: " + XML_path.ToString());
                     Utility.WARNING = true;
                     //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                     //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -510,11 +504,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.WARNING = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                //Application.Exit(); //trigger an application exit
+                Utility.DisplayWarning("XML_format_error",exception,"SYSTEM: Notifications XML file format error: \n"+exception.ToString(),false);
                 return false;
             }
 
@@ -587,13 +577,7 @@ namespace management_system
                 Directory.CreateDirectory(path);
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("Data_wrong_folder_path") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("Error creating directory: " + exception.ToString());
-                Utility.ERR = true;
-                //Utility.WARNING = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop();
-                //Start.f0_logIn.F0_timer_errorClear.Start();
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("Data_wrong_folder_path",exception,"SYSTEM: Failed to create the 'DATA' directory: \n"+exception.ToString(),true);
             }
             return true;
         }
@@ -631,11 +615,7 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("DB_load_databases_failed")+exception.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
+                Utility.DisplayError("DB_load_databases_failed",exception,"SYSTEM: Failed to load databases from the XML file: \n"+exception.ToString(),true);
                 return false;
             }
 
@@ -646,11 +626,7 @@ namespace management_system
                     Utility.databases_list.Add(database.InnerText);
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
+                Utility.DisplayError("XML_format_error",exception,"SYSTEM: Databases XML file format error: \n"+exception.ToString(),true);
                 return false;
             }
             return true;
@@ -694,11 +670,7 @@ namespace management_system
             catch (Exception exception)
             {
                 Utility.DB_name = "#ERR#";
-                MessageBox.Show(Utility.displayError("DB_conn_failed")+exception.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("DB_conn_failed",exception,"SYSTEM: Failed to connect to the database: \n"+exception.ToString(),true);
                 return false;
             }
         }
@@ -713,12 +685,7 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("DB_disconnect_failed")+exception.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error); //display error
-                Utility.ERR = true;
-                Utility.WARNING = true;
-
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
+                Utility.DisplayError("DB_disconnect_failed",exception,"SYSTEM: Failed to disconnect from the database: \n"+exception.ToString(),false);
             }
         }
 
@@ -737,12 +704,8 @@ namespace management_system
                 dr = cmd.ExecuteReader();
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("SQL_statement_error")+exception.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                if(dr!=null) dr.Close();
-                Application.Exit();
+                if (dr != null) dr.Close();
+                Utility.DisplayError("SQL_statement_error",exception,"SYSTEM: SQL statement error: \n"+exception.ToString(),true);
                 return null;
             }
                 
@@ -762,12 +725,8 @@ namespace management_system
                     rows++;
                     if (rows >= 2)
                     {
-                        MessageBox.Show(Utility.displayError("Invalid_credentials"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Utility.ERR = true;
-                        Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                        Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                        dr.Close();
-                        Application.Exit();
+                        if (dr != null) dr.Close();
+                        Utility.DisplayError("Invalid_credentials",new Exception(""),"SYSTEM: Invalid credentials given",true);
                         return null; //multiple accounts found
                     }
                 }
@@ -776,12 +735,8 @@ namespace management_system
                 return null; //no account found
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("SQL_table_format_error")+exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                dr.Close();
-                Application.Exit();
+                if (dr != null) dr.Close();
+                Utility.DisplayError("SQL_table_format_error", exception,"SYSTEM: SQL table format error: \n"+exception.ToString(), true) ;
                 return null; //multiple accounts found
             }
         }
@@ -793,11 +748,12 @@ namespace management_system
             Utility.key = 0;
             Utility.notifications.Clear();
             Utility.userGroups.Clear();
+            Utility.currentGroup = null;
 
             Utility.ERR = false;
             Utility.WARNING = false;
             //f1.Close();
-            f1.Hide();
+            if(f1!=null) f1.Hide();
             Start.f0_logIn.Show();
             Start.f0_logIn.ClearCredentials();
 
@@ -823,13 +779,7 @@ namespace management_system
 
                 if (i != 1) //duplicate usernames
                 {
-                    MessageBox.Show(Utility.displayError("Invalid_username_duplicate"), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Utility.logDiagnsoticEntry("Error: duplicate usernames found in the Users table: " + username.ToString());
-                    Utility.ERR = true;
-                    Utility.WARNING = true;
-                    Start.f0_logIn.F0_timer_errorClear.Stop();
-                    Start.f0_logIn.F0_timer_errorClear.Start();
-
+                    Utility.DisplayError("Invalid_username_duplicate", new Exception(""), "Error: duplicate usernames found in the Users table: " + username.ToString(), false);
                     return -1;
                 }
                 if (i == 1)
@@ -838,13 +788,7 @@ namespace management_system
                     return -1;
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("DB_error_getting_key")+exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("Error getting the cryptographic key: "+exception.ToString());
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                Application.Exit();
+                Utility.DisplayError("DB_error_getting_key", exception, "Error getting the cryptographic key: " + exception.ToString(), true);
             }
 
             return -1;
@@ -869,11 +813,7 @@ namespace management_system
                 cmd = new SqlCommand(SQL_command, Utility.conn);
             }catch (Exception exception)
             {
-                Utility.ERR = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("DB_conn_failed") +exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                Utility.DisplayError("DB_conn_failed", exception, "SYSTEM: Database connection failed: " + exception.ToString(), true);
             }
 
             return cmd;
@@ -893,18 +833,14 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.ERR = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("DB_conn_failed") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
+                Utility.DisplayError("DB_conn_failed", exception, "SYSTEM: Database connection failed: " + exception.ToString(), true);
             }
 
             return cmd;
         }
 
         //create a table in the database; if the table already exists, an exception will be thrown but handled without a warning
-        //ATTENTION: FOR COMPATIBILITY, FIELD CREATED USING THIS FUNCTION SHOULD ALWAYS CONTAIN '_' AT THE BEGINNING OF THEIR NAME
+        //ATTENTION: FOR COMPATIBILITY, FIELDS CREATED USING THIS FUNCTION SHOULD ALWAYS CONTAIN '_' AT THE BEGINNING OF THEIR NAME
         //Dictionary layout: fields[field_name] = field_type (ex.: fields["id"]="INT")
         public static bool setCreateTable(string table, Dictionary<string,string> fields)
         {
@@ -926,19 +862,14 @@ namespace management_system
                     cmd.ExecuteNonQuery();
                 }catch (Exception exception) 
                 {
-                    Utility.logDiagnsoticEntry("Notifications table already exists in the database: "+exception.ToString());
+                    Utility.logDiagnosticEntry("Notifications table already exists in the database: "+exception.ToString());
                 }
                     
                 cmd.Dispose();
             }
             catch (Exception exception)
             {
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("DB_create_table_failed") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("EN: Error creating table. "+exception.Message);
+                Utility.DisplayError("DB_create_table_failed", exception, "SYSTEM: Error creating table. " + exception.ToString(), false);
                 return false;
             }
 
@@ -986,12 +917,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                //Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("DB_delete_old_notifications_failed") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Utility.logDiagnsoticEntry("EN: Error deleting old notifications from the database. " + exception.Message);
+                Utility.DisplayWarning("DB_delete_old_notifications_failed", exception, "SYSTEM: Error deleting old notifications from the database. " + exception.ToString(), false);
             }
         }
 
@@ -1067,7 +993,8 @@ namespace management_system
             for (int i = 0; i < txt.Length; i++)
             {
                 //txt[i] = (char)(txt[i] + (char)(sgn * key));
-                txt[i] = Utility.enc_allowedCharacters[(Utility.enc_allowedCharacters.IndexOf(txt[i]) + (sgn * key)) % Utility.enc_allowedCharacters.Length];
+                if (txt[i]!='\n' && txt[i]!='\t' && txt[i]!='\r')
+                    txt[i] = Utility.enc_allowedCharacters[(Utility.enc_allowedCharacters.IndexOf(txt[i]) + (sgn * key)) % Utility.enc_allowedCharacters.Length];
                 //sgn *= -1;
             }
 
@@ -1078,6 +1005,29 @@ namespace management_system
             return output;
         }
 
+        //ENC_GEN() version for text files
+        public static string ENC_TXT(string input, int key)
+        {
+            string output = "";
+            int sgn = 1;
+            char[] txt = input.ToCharArray();
+
+
+            for (int i = 0; i < txt.Length; i++)
+            {
+                //txt[i] = (char)(txt[i] + (char)(sgn * key));
+                if (txt[i] != '\n' && txt[i] != '\t' && txt[i] != '\r')
+                    txt[i] = Utility.enc_allowedCharacters_TXT[(Utility.enc_allowedCharacters_TXT.IndexOf(txt[i]) + (sgn * key)) % Utility.enc_allowedCharacters_TXT.Length];
+                //sgn *= -1;
+            }
+
+            foreach (char c in txt)
+                output += c;
+
+
+            return output;
+        }
+        
         //ENC_GEN() overload for integers
         public static int ENC_GEN(int input, int key)
         {
@@ -1117,6 +1067,26 @@ namespace management_system
         //Used to decrypt general data such as XML files, notifications from the DataBase etc. (complementary to ENC_GEN)
         public static string DEC_GEN(string input, int key)
         {
+
+
+            string output = "";
+            int sgn = 1;
+            char[] txt = input.ToCharArray();
+
+            for (int i = 0; i < txt.Length; i++)
+            {
+                //txt[i] = (char)(txt[i] + (char)(sgn * key));
+                if (txt[i] != '\n' && txt[i] != '\t' && txt[i] != '\r')
+                    txt[i] = Utility.rev_enc_allowedCharacters[(Utility.rev_enc_allowedCharacters.IndexOf(txt[i]) + (sgn * key)) % Utility.rev_enc_allowedCharacters.Length];
+                //sgn *= -1;
+            }
+
+            foreach (char c in txt)
+                output += c;
+
+
+            return output;
+            /*
             string output = "";
             int sgn = -1;
             char[] txt = input.ToCharArray();
@@ -1124,23 +1094,46 @@ namespace management_system
             for (int i = 0; i < txt.Length; i++)
             {
                 //txt[i] = (char)(txt[i] + (char)(sgn * key));
+                if (txt[i]!='\n' && txt[i]!='\t' && txt[i]!='\r')
+                    if (Utility.enc_allowedCharacters.IndexOf(txt[i])-key<0) //wrap around from the end of the Utility.enc_allowedCharacters string
+                    {
+                        int index = key - Utility.enc_allowedCharacters.IndexOf(txt[i]);
 
-                if (Utility.enc_allowedCharacters.IndexOf(txt[i])-key<0) //wrap around from the end of the Utility.enc_allowedCharacters string
-                {
-                    int index = key - Utility.enc_allowedCharacters.IndexOf(txt[i]);
-
-                    txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.Length - index];
-                }
-                else
-                {
-                    txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.IndexOf(txt[i]) - key];
-                }
+                        txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.Length - index];
+                    }
+                    else
+                    {
+                        txt[i] = Utility.enc_allowedCharacters[Utility.enc_allowedCharacters.IndexOf(txt[i]) - key];
+                    }
                 
                 //sgn *= -1;
             }
 
             foreach (char c in txt)
                 output += c;
+
+            return output;
+            */
+        }
+
+        //DEC_GEN() version for text files
+        public static string DEC_TXT(string input, int key)
+        {
+            string output = "";
+            int sgn = 1;
+            char[] txt = input.ToCharArray();
+
+            for (int i = 0; i < txt.Length; i++)
+            {
+                //txt[i] = (char)(txt[i] + (char)(sgn * key));
+                if (txt[i] != '\n' && txt[i] != '\t' && txt[i] != '\r')
+                    txt[i] = Utility.rev_enc_allowedCharacters_TXT[(Utility.rev_enc_allowedCharacters_TXT.IndexOf(txt[i]) + (sgn * key)) % Utility.rev_enc_allowedCharacters_TXT.Length];
+                //sgn *= -1;
+            }
+
+            foreach (char c in txt)
+                output += c;
+
 
             return output;
         }
@@ -1186,7 +1179,8 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                MessageBox.Show("EN: ERROR LOADING ERROR MESSAGES; CHECK THE XML FILE UNDER management_system\\SYSTEM\\SETTINGS\\XML_errors.xml; Details: "+exception.Message,"ENGLISH",MessageBoxButtons.OK,MessageBoxIcon.Error); //display a generic, english error message for an error loading error messages
+                MessageBox.Show("EN: ERROR LOADING ERROR MESSAGES; CHECK THE XML FILE UNDER management_system\\SYSTEM\\SETTINGS\\XML_errors.xml; Details: "+exception.Message,"ENGLISH",
+                    MessageBoxButtons.OK,MessageBoxIcon.Error); //display a generic, english error message for an error loading error messages
                 Utility.ERR = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -1207,7 +1201,8 @@ namespace management_system
 
             }catch (Exception exception) 
             {
-                MessageBox.Show("EN: ERROR WITH THE XML FORMAT FOR THE ERROR MESSAGES; CHECK THE XML FILE UNDER management_system\\SYSTEM\\SETTINGS\\XML_errors.xml; Details: " + exception.Message, "ENGLISH", MessageBoxButtons.OK, MessageBoxIcon.Error); //display a generic, english error message for an error loading error messages
+                MessageBox.Show("EN: ERROR WITH THE XML FORMAT FOR THE ERROR MESSAGES; CHECK THE XML FILE UNDER management_system\\SYSTEM\\SETTINGS\\XML_errors.xml; Details: " + exception.Message, "ENGLISH", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error); //display a generic, english error message for an error loading error messages
                 Utility.ERR = true;
                 //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -1266,15 +1261,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error")+exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display a generic, english error message for an error loading error messages
-                Utility.ERR = true;
-                Utility.ERR_MESSAGES = true;
-                if (Start.f0_logIn != null)
-                {
-                    //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                    //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                }
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: XML file format error: " + exception.ToString(), true);
                 return;
             }
 
@@ -1375,12 +1362,7 @@ namespace management_system
                     dr = cmd.ExecuteReader();
                 }catch (Exception exception)
                 {
-                    
-                    MessageBox.Show(Utility.displayError("SQL_statement_error")+exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Utility.ERR = true;
-                    //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                    //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                    Application.Exit();
+                    Utility.DisplayError("SQL_statement_error",exception,"SYSTEM: SQL statement error: "+exception.ToString(), true);
                     return;
                 }
 
@@ -1392,28 +1374,20 @@ namespace management_system
                     //load new notifications
                     while (dr.Read())
                     {
-                            Utility.notifications.Add(new Notification(dr.GetInt32(0), Utility.DB_DEC(dr.GetString(1), Utility.key), Utility.DB_DEC(dr.GetString(2), Utility.key), Utility.DB_DEC(dr.GetString(3), Utility.key).ToString(), dr.GetInt32(4), 0));
+                            Utility.notifications.Add(new Notification(dr.GetInt32(0), Utility.DB_DEC(dr.GetString(1), Utility.genKey), Utility.DB_DEC(dr.GetString(2), Utility.genKey), Utility.DB_DEC(dr.GetString(3), Utility.genKey).ToString(), dr.GetInt32(4), 0));
                     }
 
                     dr.Close();
                     cmd.Dispose();
                 }catch (Exception exception)
                 {
-                    Utility.ERR = true;
-                    //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                    //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                    MessageBox.Show(Utility.displayError("SQL_table_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Exit();
+                    Utility.DisplayError("SQL_table_format_error",exception,"SYSTEM: Database table format error: \n"+exception.ToString(), true);
                     return;
                 }
             }
             else
             {
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                MessageBox.Show(Utility.displayError("DB_conn_failed"),"",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                Application.Exit();
+                Utility.DisplayError("DB_conn_failed", new Exception(""), "SYSTEM: Database connection failed.", true);
                 return;
             }
         }
@@ -1442,22 +1416,18 @@ namespace management_system
                         notification.Attributes[5] != null && notification.Attributes[5].Name.Equals("read")
                         )
                     {
-                        notif.Add(new Notification(Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[0].Value, Utility.key)),
-                                                   Utility.DEC_GEN(notification.Attributes[1].Value, Utility.key),
-                                                   Utility.DEC_GEN(notification.Attributes[2].Value, Utility.key),
-                                                   Utility.DEC_GEN(notification.Attributes[3].Value, Utility.key),
-                                                   Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[4].Value, Utility.key)),
-                                                   Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[5].Value, Utility.key))
+                        notif.Add(new Notification(Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[0].Value, Utility.genKey)),
+                                                   Utility.DEC_GEN(notification.Attributes[1].Value, Utility.genKey),
+                                                   Utility.DEC_GEN(notification.Attributes[2].Value, Utility.genKey),
+                                                   Utility.DEC_GEN(notification.Attributes[3].Value, Utility.genKey),
+                                                   Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[4].Value, Utility.genKey)),
+                                                   Convert.ToInt32(Utility.DEC_GEN(notification.Attributes[5].Value, Utility.genKey))
                                                   ));
                     }
                 }
             }catch (Exception exception)
             {
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("XML_updating_notifications_failed") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Utility.DisplayError("XML_updating_notifications_failed", exception, "SYSTEM: Updating notifications to the XML file failed: \n" + exception.ToString(), false);
             }
 
             return notif;
@@ -1519,12 +1489,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("Data_wrong_file_path_or_type") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Utility.WARNING = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop();
-                //Start.f0_logIn.F0_timer_errorClear.Start();
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("Data_wrong_file_path_or_type",exception, "SYSTEM: Wrong path to the notifications XML file or invalid file format: \n"+exception.ToString(),true);
             }
 
             return true;
@@ -1593,11 +1558,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("XML_updating_notifications_failed") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Utility.DisplayError("XML_updating_notifications_failed",exception,"SYSTEM: Failed to update the XML notifications file: \n"+exception.ToString(),false);
             }
         }
 
@@ -1677,11 +1638,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-                MessageBox.Show(Utility.displayError("XML_updating_notifications_failed") + exception.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Utility.DisplayError("XML_updating_notifications_failed", exception, "SYSTEM: Failed to update the XML notifications file: \n" + exception.ToString(), false);
             }
 
         }
@@ -1723,16 +1680,11 @@ namespace management_system
             }
             catch (Exception exception)
             {
-
-                MessageBox.Show(Utility.displayError("Load_languages_failed") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("Load_languages_failed",exception,"SYSTEM: Faield to load langauges: \n"+exception.ToString(),true);
                 return;
             }
 
-            //save the langage names into the dictionary
+            //save the language names into the dictionary
             try
             {
                 foreach (XmlNode language in root.ChildNodes)
@@ -1742,11 +1694,7 @@ namespace management_system
                 }
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error")+exception.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Languages XML file format error: \n" + exception.ToString(), true);
                 return;
             }
 
@@ -1782,12 +1730,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-
-                MessageBox.Show(Utility.displayError("Load_languages_failed") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("Load_languages_failed",exception,"SYSTEM: Failed to load the languages from the language XML file: \n"+exception.ToString(), true);
                 return;
             }
 
@@ -1848,11 +1791,7 @@ namespace management_system
                                 }
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error",exception,"SYSTEM: Languages XML file format error; \n"+exception.ToString(), true);
                 return;
             }
                                                     
@@ -1899,12 +1838,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-
-                MessageBox.Show(Utility.displayError("Load_themes_failed") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("Load_themes_failed", exception,"SYSTEM: Failed to load languages XML file: \n"+exception.ToString(),true);
                 return;
             }
 
@@ -1919,11 +1853,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Themes XML file format error: \n" + exception.ToString(), true);
                 return;
             }
         }
@@ -1948,11 +1878,7 @@ namespace management_system
             }catch (Exception exception)
             {
 
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Themes XML file format error: \n" + exception.ToString(), true);
                 return "#ERR#";
 
             }
@@ -1988,14 +1914,11 @@ namespace management_system
                                             */
                                         }
                                     }
-                                    else if (ctrl_list.Length == 0) MessageBox.Show(Utility.displayError("XML_theme_control_not_found") + control.Name, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);//display info message about a control not being found
+                                    else if (ctrl_list.Length == 0) MessageBox.Show(Utility.displayError("XML_theme_control_not_found") + control.Name, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);//display info message
+                                                                                                                                                                                                                  //about a control not being found
                                     else
                                     { //error
-                                        MessageBox.Show(Utility.displayError("Form_duplicate_controls") + control.Name + "; " + ctrl_list.ToString(), "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        Utility.ERR = true;
-                                        //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                                        //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                                        Application.Exit(); //trigger an application exit
+                                        Utility.DisplayError("Form_duplicate_controls",new Exception(""),"SYSTEM: A form contains duplicate controls in the themes XML file: "+control.Name.ToString(),true);
                                         return "#ERR#";
                                     }
                                 }
@@ -2004,11 +1927,7 @@ namespace management_system
 
             }catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit(); //trigger an application exit
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Themes XML file format error: \n" + exception.ToString(), true);
                 return "#ERR#";
             }
 
@@ -2038,11 +1957,7 @@ namespace management_system
         {
             if(preference.Equals("") || preference==null || value<0 || value>255) // 0 <= value <= 255
             {
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                MessageBox.Show(Utility.displayError("Code_wrong_function_call")+ "Utility.savePreference()","", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Utility.DisplayError("Code_wrong_function_call",new Exception(""), "CODE: Wrong function call (check parameters and returned values); function called: Utility.savePreference()", false);
                 return;
             }
 
@@ -2059,12 +1974,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
-
+                Utility.DisplayError("XML_format_error",exception,"SYSTEM: Preferences XML file format error: \n"+exception.ToString(),true);
             }
 
             try
@@ -2078,11 +1988,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Preferences XML file format error: \n" + exception.ToString(), true);
             }
         }
 
@@ -2102,12 +2008,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
-
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Preferences XML file format error: \n" + exception.ToString(), true);
             }
 
             try
@@ -2124,18 +2025,14 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("XML_format_error") + exception.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.ERR = true;
-                //Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                //Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
-                Application.Exit();
+                Utility.DisplayError("XML_format_error", exception, "SYSTEM: Preferences XML file format error: \n" + exception.ToString(), true);
             }
             
 
         }
 
 
-        //set the correct lamguage and theme on the buttons in the login form
+        //set the correct language and theme on the buttons in the login form
         public static string[] setLoginButtonsText()
         {
             string[] preferences = new string[2];
@@ -2174,18 +2071,14 @@ namespace management_system
             }
             catch (Exception exception) 
             {
-                MessageBox.Show(Utility.displayError("DB_conn_failed") + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.ERR = true;
-                Utility.WARNING = true;
-                Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
-                Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
+                Utility.DisplayError("DB_conn_failed", exception, "SYSTEM: Themes XML file format error: \n" + exception.ToString(), true);
             }
 
             return connection_details;
         }
 
-        //add a new entry into the diagnsotic log (Utility.error_log); this function is used when the displayError() function is not to be used
-        public static void logDiagnsoticEntry(string message)
+        //add a new entry into the diagnostic log (Utility.error_log); this function is used when the displayError() function is not to be used
+        public static void logDiagnosticEntry(string message)
         {
             Utility.error_log.Add(message);
         }
@@ -2196,7 +2089,7 @@ namespace management_system
             try
             {
                 MessageBox.Show(Utility.displayError(errorKey) + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                Utility.logDiagnsoticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
+                Utility.logDiagnosticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
                 Utility.ERR = true;
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
@@ -2210,7 +2103,7 @@ namespace management_system
             }catch (Exception ex)
             {
                 MessageBox.Show("Cannot display error; error key: "+errorKey.ToString()+"; details: "+ex.Message,"SYSTEM ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
+                Utility.logDiagnosticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
                 Utility.ERR = true;
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
@@ -2228,7 +2121,7 @@ namespace management_system
             try
             {
                 MessageBox.Show(Utility.displayError(errorKey) + exception.Message, "ERROR", messageBoxButton, messageBoxIcon); //display an error message
-                Utility.logDiagnsoticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
+                Utility.logDiagnosticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
                 Utility.ERR = true;
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
@@ -2242,7 +2135,7 @@ namespace management_system
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot display error; error key: " + errorKey.ToString() + "; details: " + ex.Message, "SYSTEM ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
+                Utility.logDiagnosticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
                 Utility.ERR = true;
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
@@ -2261,7 +2154,7 @@ namespace management_system
             try
             {
                 MessageBox.Show(Utility.displayError(errorKey) + exception.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); //display an error message
-                if(diagnosticEntry!=null) Utility.logDiagnsoticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
+                if(diagnosticEntry!=null) Utility.logDiagnosticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -2275,7 +2168,7 @@ namespace management_system
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot display error; error key: " + errorKey.ToString() + "; details: " + ex.Message, "SYSTEM ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
+                Utility.logDiagnosticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -2292,7 +2185,7 @@ namespace management_system
             try
             {
                 MessageBox.Show(Utility.displayError(errorKey) + exception.Message, "ERROR", messageBoxButton, messageBoxIcon); //display an error message
-                if(diagnosticEntry!=null) Utility.logDiagnsoticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
+                if(diagnosticEntry!=null) Utility.logDiagnosticEntry(diagnosticEntry + "; " + exception.ToString()); //add a new entry into the diagnostic log
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -2305,7 +2198,7 @@ namespace management_system
             catch (Exception ex)
             {
                 MessageBox.Show("Cannot display error; error key: " + errorKey.ToString() + "; details: " + ex.Message, "SYSTEM ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
+                Utility.logDiagnosticEntry("System: cannot display error. Error key: " + errorKey.ToString() + "; details: " + ex.ToString());
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop(); //stop the timer for the error flags to be cleared
                 Start.f0_logIn.F0_timer_errorClear.Start(); //start the timer for the error flags to be cleared
@@ -2345,7 +2238,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.DisplayError("Groups_failed_to_veifiy_if_file_is_management_system_data_file", exception, "Group: Failed to verify if the file at the given path is a Management System DATA file: " + exception.ToString(), false);
+                Utility.DisplayError("Groups_failed_to_verify_if_file_is_management_system_data_file", exception, "Group: Failed to verify if the file at the given path is a Management System DATA file: " + exception.ToString(), false);
                 return false; //error
             }
 
@@ -2357,15 +2250,7 @@ namespace management_system
         {
             if(groupName.Length > Utility.maxGroupNameLength) //name length check
             {
-                Utility.logDiagnsoticEntry("Error loading group: " + groupName + "; the name from the database was too long");
-                MessageBox.Show(Utility.displayError("Groups_failed_to_load_group_NameTooLongInDB")+groupName,"Groups",MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                Utility.ERR = true;
-                Utility.WARNING = true;
-
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
-
+                Utility.DisplayError("Groups_failed_to_load_group_NameTooLongInDB",new Exception(), "Error loading group: " + groupName + "; the name from the database was too long",false);
                 return false;
             }
 
@@ -2374,15 +2259,7 @@ namespace management_system
             {
                 if((c<'A' || c>'Z') && (c<'a' || c>'z') && (c<'0' || c>'9') && c!='_') //invalid character
                 {
-                    Utility.logDiagnsoticEntry("Error loading group: " + groupName + "; invalid character found: "+c.ToString());
-                    MessageBox.Show(Utility.displayError("Groups_failed_to_load_group_InvalidCharacter") + groupName+"; "+c.ToString(), "Groups", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    Utility.ERR = true;
-                    Utility.WARNING = true;
-
-                    Start.f0_logIn.F0_timer_errorClear.Stop();
-                    Start.f0_logIn.F0_timer_errorClear.Start();
-
+                    Utility.DisplayError("Groups_failed_to_load_group_InvalidCharacter", new Exception(""),"Error loading group: " + groupName + "; invalid character found: " + c.ToString(),false);
                     return false;
                 }
             }
@@ -2408,14 +2285,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.logDiagnsoticEntry("Error loading group: " + exception.Message + "; invalid image ");
-                MessageBox.Show(Utility.displayError("Groups_failed_to_load_group_InvalidCharacter") + exception.Message, "Groups", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                Utility.ERR = true;
-                Utility.WARNING = true;
-
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
+                Utility.DisplayError("Groups_failed_to_load_group_InvalidCharacter", exception, "Error loading group: " + exception.Message + "; invalid image ", false);
                 return null;
             }
 
@@ -2451,11 +2321,7 @@ namespace management_system
                     }catch(Exception exception)
                     {
                         dateCreated = DateTime.Parse("1.1.1970"); //default value - Epoch
-                        Utility.logDiagnsoticEntry("Error loading group (invalid creation date):" + exception.Message);
-                        Utility.WARNING = true;
-
-                        Start.f0_logIn.F0_timer_errorClear.Stop();
-                        Start.f0_logIn.F0_timer_errorClear.Start();
+                        Utility.DisplayWarning("Groups_failed_to_load_groups_invalid_date", exception, "Error loading group (invalid creation date):" + exception.Message, true);
 
                     }
                     adminGroup = true ? dr_groups.GetInt32(3) == 1 : false;
@@ -2488,13 +2354,7 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                MessageBox.Show(Utility.displayError("Groups_failed_to_load_groups") + exception.Message, "Groups", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Utility.logDiagnsoticEntry("Error loading groups: " + exception.ToString());
-                Utility.ERR = true;
-                Utility.WARNING = true;
-
-                Start.f0_logIn.F0_timer_errorClear.Stop();
-                Start.f0_logIn.F0_timer_errorClear.Start();
+                Utility.DisplayError("Groups_failed_to_load_groups",exception, "Error loading groups: \n" + exception.ToString(),true);
             }
         }
 
@@ -2590,7 +2450,7 @@ namespace management_system
                 {
                     if(dr.GetString(0).Equals(Utility.ENC_GEN(groupName,Utility.genKey))==true) //group name already exists in the GroupIndex database table
                     {
-                        Utility.logDiagnsoticEntry("Group: the group name already exists in the GroupIndex database table and cannot be used again: " + groupName);
+                        Utility.logDiagnosticEntry("Group: the group name already exists in the GroupIndex database table and cannot be used again: " + groupName);
                         dr.Close();
                         return -1; //group not created - duplicate names
                     }
@@ -2603,7 +2463,7 @@ namespace management_system
                 foreach (Group group in Utility.userGroups)
                     if (group.getName().Equals(groupName))
                     {
-                        Utility.logDiagnsoticEntry("Group: the group name already exists in memory and cannot be used again: " + groupName);
+                        Utility.logDiagnosticEntry("Group: the group name already exists in memory and cannot be used again: " + groupName);
 
                         return -1; //group not created - duplicate names
                     }
@@ -2618,7 +2478,7 @@ namespace management_system
                                                 ));
             }catch(Exception exception) 
             {
-                Utility.DisplayError("Groups_failed_to_load_group_into_mmeory", exception, "Group: Failed to load group: " + groupName + " into memory: " + exception.ToString(), false); ;
+                Utility.DisplayError("Groups_failed_to_load_group_into_memory", exception, "Group: Failed to load group: " + groupName + " into memory: " + exception.ToString(), false); ;
                 return -2; //group not created - error
             }
 

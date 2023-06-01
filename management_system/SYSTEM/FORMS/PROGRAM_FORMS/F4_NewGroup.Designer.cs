@@ -42,7 +42,7 @@
             // 
             this.F4_textBox_groupName.Location = new System.Drawing.Point(148, 24);
             this.F4_textBox_groupName.Name = "F4_textBox_groupName";
-            this.F4_textBox_groupName.Size = new System.Drawing.Size(227, 24);
+            this.F4_textBox_groupName.Size = new System.Drawing.Size(227, 20);
             this.F4_textBox_groupName.TabIndex = 0;
             // 
             // F4_button_createNewGroup
@@ -52,7 +52,7 @@
             this.F4_button_createNewGroup.Name = "F4_button_createNewGroup";
             this.F4_button_createNewGroup.Size = new System.Drawing.Size(154, 31);
             this.F4_button_createNewGroup.TabIndex = 1;
-            this.F4_button_createNewGroup.Text = "Create group";
+            this.F4_button_createNewGroup.Text = "Creează grup";
             this.F4_button_createNewGroup.UseVisualStyleBackColor = true;
             this.F4_button_createNewGroup.Click += new System.EventHandler(this.F4_button_createNewGroup_Click);
             // 
@@ -63,9 +63,9 @@
             this.F4_label_groupName.Location = new System.Drawing.Point(11, 25);
             this.F4_label_groupName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F4_label_groupName.Name = "F4_label_groupName";
-            this.F4_label_groupName.Size = new System.Drawing.Size(142, 23);
+            this.F4_label_groupName.Size = new System.Drawing.Size(99, 19);
             this.F4_label_groupName.TabIndex = 5;
-            this.F4_label_groupName.Text = "#GROUP_NAME#";
+            this.F4_label_groupName.Text = "Nume grup:";
             // 
             // F4_errorProvider_newGroupForm
             // 
@@ -78,13 +78,13 @@
             this.F4_button_newGroupIcon.Name = "F4_button_newGroupIcon";
             this.F4_button_newGroupIcon.Size = new System.Drawing.Size(130, 31);
             this.F4_button_newGroupIcon.TabIndex = 6;
-            this.F4_button_newGroupIcon.Text = "Group icon";
+            this.F4_button_newGroupIcon.Text = "Imagine grup";
             this.F4_button_newGroupIcon.UseVisualStyleBackColor = true;
             this.F4_button_newGroupIcon.Click += new System.EventHandler(this.F4_button_newGroupIcon_Click);
             // 
             // F4_NewGroup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 108);
             this.Controls.Add(this.F4_button_newGroupIcon);
@@ -94,7 +94,7 @@
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "F4_NewGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "New Group";
+            this.Text = "Grup nou";
             this.Load += new System.EventHandler(this.F4_NewGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.F4_errorProvider_newGroupForm)).EndInit();
             this.ResumeLayout(false);

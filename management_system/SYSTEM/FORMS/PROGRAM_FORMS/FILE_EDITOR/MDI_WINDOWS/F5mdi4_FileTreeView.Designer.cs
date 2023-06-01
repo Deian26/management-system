@@ -48,7 +48,7 @@
             this.F5mdi4_button_createNewFile.Name = "F5mdi4_button_createNewFile";
             this.F5mdi4_button_createNewFile.Size = new System.Drawing.Size(113, 23);
             this.F5mdi4_button_createNewFile.TabIndex = 1;
-            this.F5mdi4_button_createNewFile.Text = "#CREATE_NEW_FILE#";
+            this.F5mdi4_button_createNewFile.Text = "Creare fișier";
             this.F5mdi4_button_createNewFile.UseVisualStyleBackColor = true;
             this.F5mdi4_button_createNewFile.Click += new System.EventHandler(this.F5mdi4_button_createNewFile_Click);
             // 
@@ -58,7 +58,7 @@
             this.F5mdi4_button_reloadFiles.Name = "F5mdi4_button_reloadFiles";
             this.F5mdi4_button_reloadFiles.Size = new System.Drawing.Size(113, 23);
             this.F5mdi4_button_reloadFiles.TabIndex = 2;
-            this.F5mdi4_button_reloadFiles.Text = "#RELOAD_FILES#";
+            this.F5mdi4_button_reloadFiles.Text = "Reîncărcare";
             this.F5mdi4_button_reloadFiles.UseVisualStyleBackColor = true;
             this.F5mdi4_button_reloadFiles.Click += new System.EventHandler(this.F5mdi4_button_reloadFiles_Click);
             // 
@@ -72,7 +72,7 @@
             this.Controls.Add(this.F5mdi4_treeView_currentGroupFiles);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Name = "F5mdi4_FileTreeView";
-            this.Text = "File Tree View";
+            this.Text = "Vizualizare arborescentă";
             this.Load += new System.EventHandler(this.F5mdi4_FileTreeView_Load);
             this.Resize += new System.EventHandler(this.F5mdi4_FileTreeView_Resize);
             this.ResumeLayout(false);

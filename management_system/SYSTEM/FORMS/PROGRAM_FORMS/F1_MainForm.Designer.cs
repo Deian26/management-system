@@ -122,7 +122,7 @@
             this.F1_groupBox_accountDetails.Size = new System.Drawing.Size(164, 81);
             this.F1_groupBox_accountDetails.TabIndex = 5;
             this.F1_groupBox_accountDetails.TabStop = false;
-            this.F1_groupBox_accountDetails.Text = "#ACCOUNT_DETAILS#";
+            this.F1_groupBox_accountDetails.Text = "Detalii cont";
             // 
             // F1_label_userRightsDisplay
             // 
@@ -262,14 +262,14 @@
             this.F1_toolStripDropDownButton_Help.Image = ((System.Drawing.Image)(resources.GetObject("F1_toolStripDropDownButton_Help.Image")));
             this.F1_toolStripDropDownButton_Help.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F1_toolStripDropDownButton_Help.Name = "F1_toolStripDropDownButton_Help";
-            this.F1_toolStripDropDownButton_Help.Size = new System.Drawing.Size(48, 22);
-            this.F1_toolStripDropDownButton_Help.Text = "Help";
+            this.F1_toolStripDropDownButton_Help.Size = new System.Drawing.Size(62, 22);
+            this.F1_toolStripDropDownButton_Help.Text = "Ajutor";
             // 
             // userGuideToolStripMenuItem
             // 
             this.userGuideToolStripMenuItem.Name = "userGuideToolStripMenuItem";
-            this.userGuideToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.userGuideToolStripMenuItem.Text = "User manual";
+            this.userGuideToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.userGuideToolStripMenuItem.Text = "Manual de utilizare";
             this.userGuideToolStripMenuItem.Click += new System.EventHandler(this.userGuideToolStripMenuItem_Click);
             // 
             // guidesToolStripMenuItem
@@ -278,29 +278,29 @@
             this.creatingAGroupToolStripMenuItem,
             this.deletingAGroupToolStripMenuItem});
             this.guidesToolStripMenuItem.Name = "guidesToolStripMenuItem";
-            this.guidesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.guidesToolStripMenuItem.Text = "Guides";
+            this.guidesToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.guidesToolStripMenuItem.Text = "Ghiduri";
             this.guidesToolStripMenuItem.Click += new System.EventHandler(this.guidesToolStripMenuItem_Click);
             // 
             // creatingAGroupToolStripMenuItem
             // 
             this.creatingAGroupToolStripMenuItem.Name = "creatingAGroupToolStripMenuItem";
-            this.creatingAGroupToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.creatingAGroupToolStripMenuItem.Text = "Create/delete a group";
+            this.creatingAGroupToolStripMenuItem.Size = new System.Drawing.Size(347, 22);
+            this.creatingAGroupToolStripMenuItem.Text = "Creare/Ștergere de grupuri";
             this.creatingAGroupToolStripMenuItem.Click += new System.EventHandler(this.creatingAGroupToolStripMenuItem_Click);
             // 
             // deletingAGroupToolStripMenuItem
             // 
             this.deletingAGroupToolStripMenuItem.Name = "deletingAGroupToolStripMenuItem";
-            this.deletingAGroupToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
-            this.deletingAGroupToolStripMenuItem.Text = "Add/remove a file to a group";
+            this.deletingAGroupToolStripMenuItem.Size = new System.Drawing.Size(347, 22);
+            this.deletingAGroupToolStripMenuItem.Text = "Adăugare/Eliminare fișier dintr-un grup";
             this.deletingAGroupToolStripMenuItem.Click += new System.EventHandler(this.deletingAGroupToolStripMenuItem_Click);
             // 
             // userAccessRightsToolStripMenuItem
             // 
             this.userAccessRightsToolStripMenuItem.Name = "userAccessRightsToolStripMenuItem";
-            this.userAccessRightsToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.userAccessRightsToolStripMenuItem.Text = "User access rights";
+            this.userAccessRightsToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.userAccessRightsToolStripMenuItem.Text = "Permisiuni utilizatori";
             this.userAccessRightsToolStripMenuItem.Click += new System.EventHandler(this.userAccessRightsToolStripMenuItem_Click);
             // 
             // F1_toolStripButton_About
@@ -310,8 +310,8 @@
             this.F1_toolStripButton_About.Image = ((System.Drawing.Image)(resources.GetObject("F1_toolStripButton_About.Image")));
             this.F1_toolStripButton_About.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F1_toolStripButton_About.Name = "F1_toolStripButton_About";
-            this.F1_toolStripButton_About.Size = new System.Drawing.Size(46, 22);
-            this.F1_toolStripButton_About.Text = "About";
+            this.F1_toolStripButton_About.Size = new System.Drawing.Size(53, 22);
+            this.F1_toolStripButton_About.Text = "Despre";
             this.F1_toolStripButton_About.Click += new System.EventHandler(this.F1_toolStripButton_About_Click);
             // 
             // F1_toolStripSeparator2
@@ -326,8 +326,8 @@
             this.F1_toolStripButton_openUtilityService.Image = ((System.Drawing.Image)(resources.GetObject("F1_toolStripButton_openUtilityService.Image")));
             this.F1_toolStripButton_openUtilityService.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F1_toolStripButton_openUtilityService.Name = "F1_toolStripButton_openUtilityService";
-            this.F1_toolStripButton_openUtilityService.Size = new System.Drawing.Size(116, 22);
-            this.F1_toolStripButton_openUtilityService.Text = "Utility service";
+            this.F1_toolStripButton_openUtilityService.Size = new System.Drawing.Size(130, 22);
+            this.F1_toolStripButton_openUtilityService.Text = "Serviciu utilitar";
             this.F1_toolStripButton_openUtilityService.Click += new System.EventHandler(this.F1_toolStripButton_openUtilityService_Click);
             // 
             // F1_toolStripButton_ADMIN_userManagement
@@ -337,8 +337,8 @@
             this.F1_toolStripButton_ADMIN_userManagement.Image = ((System.Drawing.Image)(resources.GetObject("F1_toolStripButton_ADMIN_userManagement.Image")));
             this.F1_toolStripButton_ADMIN_userManagement.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F1_toolStripButton_ADMIN_userManagement.Name = "F1_toolStripButton_ADMIN_userManagement";
-            this.F1_toolStripButton_ADMIN_userManagement.Size = new System.Drawing.Size(116, 22);
-            this.F1_toolStripButton_ADMIN_userManagement.Text = "User Management";
+            this.F1_toolStripButton_ADMIN_userManagement.Size = new System.Drawing.Size(207, 22);
+            this.F1_toolStripButton_ADMIN_userManagement.Text = "Administrarea utilizatorilor";
             this.F1_toolStripButton_ADMIN_userManagement.Click += new System.EventHandler(this.F1_toolStripButton_ADMIN_userManagement_Click);
             // 
             // F2_toolStripSeparator3
@@ -353,8 +353,8 @@
             this.F1_toolStripButton_LogOut.Image = ((System.Drawing.Image)(resources.GetObject("F1_toolStripButton_LogOut.Image")));
             this.F1_toolStripButton_LogOut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F1_toolStripButton_LogOut.Name = "F1_toolStripButton_LogOut";
-            this.F1_toolStripButton_LogOut.Size = new System.Drawing.Size(60, 22);
-            this.F1_toolStripButton_LogOut.Text = "Log out";
+            this.F1_toolStripButton_LogOut.Size = new System.Drawing.Size(88, 22);
+            this.F1_toolStripButton_LogOut.Text = "Deconectare";
             this.F1_toolStripButton_LogOut.Click += new System.EventHandler(this.F1_toolStripButton_LogOut_Click);
             // 
             // F1_timer_updateTimer
@@ -394,9 +394,9 @@
             this.F1_label_groupsTitle.Location = new System.Drawing.Point(11, 119);
             this.F1_label_groupsTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F1_label_groupsTitle.Name = "F1_label_groupsTitle";
-            this.F1_label_groupsTitle.Size = new System.Drawing.Size(81, 19);
+            this.F1_label_groupsTitle.Size = new System.Drawing.Size(72, 19);
             this.F1_label_groupsTitle.TabIndex = 4;
-            this.F1_label_groupsTitle.Text = "#GROUPS#";
+            this.F1_label_groupsTitle.Text = "Grupuri";
             // 
             // F1_timer_shutdownNotification
             // 
@@ -420,7 +420,7 @@
             this.F1_button_addNewGroup.Name = "F1_button_addNewGroup";
             this.F1_button_addNewGroup.Size = new System.Drawing.Size(142, 39);
             this.F1_button_addNewGroup.TabIndex = 11;
-            this.F1_button_addNewGroup.Text = "New group";
+            this.F1_button_addNewGroup.Text = "Grup nou";
             this.F1_button_addNewGroup.UseVisualStyleBackColor = true;
             this.F1_button_addNewGroup.Click += new System.EventHandler(this.F1_button_addNewGroup_Click);
             // 
@@ -441,7 +441,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F1_MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main page";
+            this.Text = "Pagina principală";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.F1_MainForm_FormClosed);
             this.Load += new System.EventHandler(this.F1_MainForm_Load);
             this.MouseEnter += new System.EventHandler(this.F1_MainForm_MouseEnter);

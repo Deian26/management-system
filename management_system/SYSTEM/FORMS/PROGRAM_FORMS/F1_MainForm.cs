@@ -208,7 +208,7 @@ namespace management_system
             this.F1_timer_updateTimer.Interval = Utility.updateTimerInterval;
             this.F1_timer_updateTimer.Start();
 
-            //set the shutdonw timer interval
+            //set the shutdown timer interval
             this.F1_timer_shutdown.Interval = Utility.shutdownTimerInterval;
 
             //start shutdown notification timer
@@ -419,7 +419,7 @@ namespace management_system
                 {
                     //Utility.DisplayError("Groups_invalid_image",exception,"Group: Invalid image given to for the group creation: "+exception.ToString(),false);
                     
-                    Utility.logDiagnsoticEntry("Group: Invalid image given to for the group creation: "+exception.ToString());
+                    Utility.logDiagnosticEntry("Group: Invalid image given to for the group creation: "+exception.ToString());
                     this.F1_listView_groups.Items.Add(group.getName(),Utility.imgName_defaultGroupIcon); //set the default group image as the groups' icon
                 }
             }
@@ -560,7 +560,8 @@ namespace management_system
             }
             catch (Exception exception)
             {
-                Utility.DisplayError("Groups_failed_to_open_group", exception, "Groups: Failed to open the group: " + this.F1_listView_groups.SelectedItems.ToString() + ": " + exception.ToString(), false);
+                Utility.DisplayError("Groups_failed_to_open_group", exception, "Groups: Failed to open the group: " + this.F1_listView_groups.SelectedItems.ToString() + ": " + exception.ToString(), true);
+            
             }
         }
 

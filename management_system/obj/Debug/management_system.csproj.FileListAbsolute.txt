@@ -24,3 +24,6 @@ C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi3_DatabaseTableEditor.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi5_FileOverview.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F8_AddNewTableColumn.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F10_DatabaseTableTools.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F9_Logo.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi6_ImageViewer.resources

@@ -42,7 +42,7 @@
             this.F8_label_newColumnName.Name = "F8_label_newColumnName";
             this.F8_label_newColumnName.Size = new System.Drawing.Size(126, 19);
             this.F8_label_newColumnName.TabIndex = 0;
-            this.F8_label_newColumnName.Text = "#COLUMN_NAME#";
+            this.F8_label_newColumnName.Text = "Nume coloană:";
             // 
             // F8_textBox_newColumnName
             // 
@@ -57,7 +57,7 @@
             this.F8_button_addNewColumn.Name = "F8_button_addNewColumn";
             this.F8_button_addNewColumn.Size = new System.Drawing.Size(128, 31);
             this.F8_button_addNewColumn.TabIndex = 2;
-            this.F8_button_addNewColumn.Text = "#ADD_COLUMN#";
+            this.F8_button_addNewColumn.Text = "Adăugare";
             this.F8_button_addNewColumn.UseVisualStyleBackColor = true;
             this.F8_button_addNewColumn.Click += new System.EventHandler(this.F8_button_addNewColumn_Click);
             // 
@@ -73,9 +73,9 @@
             this.F8_label_newColumnDataType.AutoSize = true;
             this.F8_label_newColumnDataType.Location = new System.Drawing.Point(30, 66);
             this.F8_label_newColumnDataType.Name = "F8_label_newColumnDataType";
-            this.F8_label_newColumnDataType.Size = new System.Drawing.Size(108, 19);
+            this.F8_label_newColumnDataType.Size = new System.Drawing.Size(90, 19);
             this.F8_label_newColumnDataType.TabIndex = 4;
-            this.F8_label_newColumnDataType.Text = "#DATA_TYPE#";
+            this.F8_label_newColumnDataType.Text = "Tip dată:";
             // 
             // F8_AddNewTableColumn
             // 
@@ -88,9 +88,10 @@
             this.Controls.Add(this.F8_textBox_newColumnName);
             this.Controls.Add(this.F8_label_newColumnName);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F8_AddNewTableColumn";
-            this.Text = "F8_AddNewTableColumn";
+            this.Text = "Adăugare coloană nouă";
+            this.Load += new System.EventHandler(this.F8_AddNewTableColumn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

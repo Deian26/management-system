@@ -27,7 +27,7 @@ namespace management_system
         protected FileAttributes fileAttributes; //file attributes
         protected DateTime creationDateTime, //the date and time of the creation of the file
                  lastModifiedDateTime, //the last date and time the file was written to
-                 lasAccessDateTime; //the last date and time the file was accessed
+                 lastAccessDateTime; //the last date and time the file was accessed
         protected string fileExtension = null; //the fileExtension of the current file
 
         //CONSTRUCTORS
@@ -43,7 +43,7 @@ namespace management_system
                 this.fileAttributes = File.GetAttributes(path); //get file attributes
                 this.creationDateTime = File.GetCreationTimeUtc(path); //get file creation date and time
                 this.lastModifiedDateTime = File.GetLastWriteTimeUtc(path); //get the last date and time when this file was written to
-                this.lasAccessDateTime = File.GetLastAccessTimeUtc(path); //get the last time this file was accessed
+                this.lastAccessDateTime = File.GetLastAccessTimeUtc(path); //get the last time this file was accessed
 
                 //determine the file type
                 this.fileType = fileType;
@@ -93,7 +93,7 @@ namespace management_system
             catch (Exception exception)
             {
                 MessageBox.Show(Utility.displayError("TextEditor_file_cannot_be_closed") + filePath.ToString() + "; " + exception.Message, "TextEditor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Utility.logDiagnsoticEntry("TextEditor: File cannot be closed; path: " + filePath.ToString() + "; details: " + exception.ToString());
+                Utility.logDiagnosticEntry("TextEditor: File cannot be closed; path: " + filePath.ToString() + "; details: " + exception.ToString());
                 Utility.WARNING = true;
                 Start.f0_logIn.F0_timer_errorClear.Stop();
                 Start.f0_logIn.F0_timer_errorClear.Start();
@@ -106,7 +106,7 @@ namespace management_system
                 }
                 catch (Exception exception)
                 {
-                    Utility.logDiagnsoticEntry("TextEditor: FileStream cannot be freed; path: " + filePath.ToString() + "; details: " + exception.ToString());
+                    Utility.logDiagnosticEntry("TextEditor: FileStream cannot be freed; path: " + filePath.ToString() + "; details: " + exception.ToString());
                     Utility.WARNING = true;
                     Start.f0_logIn.F0_timer_errorClear.Stop();
                     Start.f0_logIn.F0_timer_errorClear.Start();
@@ -144,7 +144,7 @@ namespace management_system
 
                 
                                                     info[0] = this.fileAttributes.ToString();
-                if(this.lasAccessDateTime!=null)    info[1] = this.lasAccessDateTime.ToString();
+                if(this.lastAccessDateTime!=null)    info[1] = this.lastAccessDateTime.ToString();
                 if(this.lastModifiedDateTime!=null) info[2] = this.lastModifiedDateTime.ToString();
                 if(this.fileExtension!=null)        info[3] = this.fileExtension.ToString();
                                                     info[4] = this.fileType.ToString();

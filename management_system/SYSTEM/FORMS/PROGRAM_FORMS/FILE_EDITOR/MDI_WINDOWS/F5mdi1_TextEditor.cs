@@ -31,7 +31,7 @@ namespace management_system
         private int widthOffset = 40;
         private int heightOffset = 90;
 
-        //text editting
+        //text editing
         private Color highlightColour = Color.GreenYellow;
         private RichTextBoxFinds searchOptions = RichTextBoxFinds.None;
 
@@ -122,10 +122,15 @@ namespace management_system
             //add the shortcuts to the text editor
             this.F5mdi1_richTextBox_textEditor.ContextMenu = textboxShortcuts;
 
-            //load the text from the file into the text editortry
+            //load the text from the file into the text editor and create a TextFile object for it
             try 
             {
-                this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(this.file.getFilePath());
+                //this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_GEN(File.ReadAllText(this.file.getFilePath()),Utility.key);
+                if (this.file.getFileType() == FileEditor.FileType.text) this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_TXT(File.ReadAllText(this.file.getFilePath()), Utility.key);
+                else if(this.file.getFileType() == FileEditor.FileType.rtf) this.F5mdi1_richTextBox_textEditor.LoadFile(this.file.getFilePath());
+                else this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(this.file.getFilePath());
+
+                this.file = new TextFile(this.file.getFilePath());
             }catch(Exception exception) 
             {
                 Utility.DisplayError("TextEditor_failed_to_load_text_file_into_textbox", exception,"TextEditor: Failed to load the text into the textbox. "+exception.ToString() ,false);
@@ -137,7 +142,7 @@ namespace management_system
                 this.F5mdi1_toolStripStatusLabel_fileExtension.Text = this.file.getFilePath().Split('.').Last();
             }catch(Exception exception)
             {
-                Utility.logDiagnsoticEntry("TextEditor: Failed to display file extension for file: "+this.file.getFilePath()+" ; details: " + exception.ToString());
+                Utility.logDiagnosticEntry("TextEditor: Failed to display file extension for file: "+this.file.getFilePath()+" ; details: " + exception.ToString());
             }
 
             //display word count
@@ -220,11 +225,27 @@ namespace management_system
         {
             try
             {
-                this.F5mdi1_richTextBox_textEditor.SaveFile(this.file.getFilePath(), RichTextBoxStreamType.PlainText);
+                string beforeEncryption = this.F5mdi1_richTextBox_textEditor.Text;
+                //this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
 
-            }catch(Exception exception)
+                if (this.file.getFileType() == FileEditor.FileType.text)
+                {
+                    this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_TXT(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
+
+                    this.F5mdi1_richTextBox_textEditor.SaveFile(this.file.getFilePath(), RichTextBoxStreamType.PlainText);
+
+
+                    this.F5mdi1_richTextBox_textEditor.Text = beforeEncryption;
+                }
+                else
+                {
+                    this.F5mdi1_richTextBox_textEditor.SaveFile(this.file.getFilePath(), RichTextBoxStreamType.RichText);
+                }
+
+            }
+            catch(Exception exception)
             {
-                Utility.DisplayError("TextEditor_could_not_save_same_file",exception, "TextEditor: Could not sabe the text file: "+this.file.getFilePath().ToString(), false);
+                Utility.DisplayError("TextEditor_could_not_save_same_file",exception, "TextEditor: Could not save the text file: "+this.file.getFilePath().ToString(), false);
                 return false;
             }
 
@@ -244,7 +265,9 @@ namespace management_system
                 //encrypt text
                 string aux_string = this.F5mdi1_richTextBox_textEditor.Text;
 
-                this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
+                //this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_GEN(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
+                if(this.file.getFileType() == FileEditor.FileType.text)
+                    this.F5mdi1_richTextBox_textEditor.Text = Utility.ENC_TXT(this.F5mdi1_richTextBox_textEditor.Text, Utility.key);
                 
 
                 //set filter
@@ -261,7 +284,8 @@ namespace management_system
 
                 this.F5mdi1_richTextBox_textEditor.SaveFile(path);
 
-                this.F5mdi1_richTextBox_textEditor.Text = aux_string;
+                if (this.file.getFileType() == FileEditor.FileType.text)
+                    this.F5mdi1_richTextBox_textEditor.Text = aux_string;
 
             }catch (Exception exception)
             {
@@ -269,6 +293,27 @@ namespace management_system
             }
         }
 
+        //increase text size
+        private void increaseTextSize()
+        {
+            float size = this.F5mdi1_richTextBox_textEditor.SelectionFont.SizeInPoints;
+            if (size + Utility.textPointSizeIncrement <= Utility.maxPointTextSize) size += Utility.textPointSizeIncrement;
+
+            FontStyle style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style;
+
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont.FontFamily, size, style);
+        }
+
+        //decrease text size
+        private void decreaseTextSize()
+        {
+            float size = this.F5mdi1_richTextBox_textEditor.SelectionFont.SizeInPoints;
+            if (size - Utility.textPointSizeDecrement >= Utility.minPointTextSize) size -= Utility.textPointSizeDecrement;
+
+            FontStyle style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style;
+
+            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont.FontFamily, size, style);
+        }
 
         //EVENT HANDLERS
         //shortcut events for the rich textbox control (text editor)
@@ -317,26 +362,16 @@ namespace management_system
             this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont, style);
         }
 
-        //increase the size of the selected text
+        //increase the size of the text
         private void onShortcut_increaseTextSize(object sender, EventArgs e)
         {
-            float size = this.F5mdi1_richTextBox_textEditor.SelectionFont.SizeInPoints;
-            if (size + Utility.textPointSizeIncrement <= Utility.maxPointTextSize) size += Utility.textPointSizeIncrement;
-
-            FontStyle style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style;
-
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont.FontFamily,size, style);
+            this.increaseTextSize();
         }
 
-        //decrease the size of the selected text
+        //decrease the size of the text
         private void onShortcut_decreaseTextSize(object sender, EventArgs e)
         {
-            float size = this.F5mdi1_richTextBox_textEditor.SelectionFont.SizeInPoints;
-            if(size - Utility.textPointSizeDecrement>=Utility.minPointTextSize) size -= Utility.textPointSizeDecrement;
-
-            FontStyle style = this.F5mdi1_richTextBox_textEditor.SelectionFont.Style;
-
-            this.F5mdi1_richTextBox_textEditor.SelectionFont = new Font(this.F5mdi1_richTextBox_textEditor.SelectionFont.FontFamily,size, style);
+            this.decreaseTextSize();
         }
 
         //save text
@@ -348,6 +383,8 @@ namespace management_system
         //form load
         private void F5mdi1_TextEditor_Load(object sender, EventArgs e)
         {
+            Utility.setLanguage(this); //set language
+
             //form settings
             this.MinimumSize = Utility.mdiEditorMinimumSize;
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false;
@@ -623,6 +660,23 @@ namespace management_system
             this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = false; //hide the local file save status label
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false; //hide the database file upload label
             this.countWords(); //calculate and display the word count
+        }
+
+        private void F5mdi1_toolStripMenuItem_matchCaseCheckbox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //increase text size - button
+        private void F5mdi1_toolStripButton_increaseTextSize_Click(object sender, EventArgs e)
+        {
+            this.increaseTextSize();
+        }
+
+        //decrease text size - button
+        private void F5mdi1_toolStripButton_decreaseTextSize_Click(object sender, EventArgs e)
+        {
+            this.decreaseTextSize();
         }
     }   
 }
