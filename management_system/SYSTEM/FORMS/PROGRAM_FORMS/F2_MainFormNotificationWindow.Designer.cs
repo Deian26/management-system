@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F2_MainFormNotificationWindow));
             this.F1_label_sender = new System.Windows.Forms.Label();
             this.F2_label_dateSent = new System.Windows.Forms.Label();
             this.F2_richTextBox_notificationText = new System.Windows.Forms.RichTextBox();
@@ -104,6 +105,7 @@
             this.Controls.Add(this.F2_label_dateSent);
             this.Controls.Add(this.F1_label_sender);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(550, 300);
             this.MinimumSize = new System.Drawing.Size(550, 300);
             this.Name = "F2_MainFormNotificationWindow";

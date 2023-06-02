@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F7_CreateNewFile));
             this.F7_textBox_newFileName = new System.Windows.Forms.TextBox();
             this.F7_label_newFileNameLabel = new System.Windows.Forms.Label();
             this.F7_button_createNewFile = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.F7_label_newFileNameLabel);
             this.Controls.Add(this.F7_textBox_newFileName);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F7_CreateNewFile";
             this.Text = "Creare fișier nou";

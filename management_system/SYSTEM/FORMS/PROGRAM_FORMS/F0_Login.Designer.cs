@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F0_Login));
             this.F0_textBox_username = new System.Windows.Forms.TextBox();
             this.F0_textBox_password = new System.Windows.Forms.TextBox();
             this.F0_errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -43,7 +44,6 @@
             this.F0_button_theme = new System.Windows.Forms.Button();
             this.F0_timer_errorClear = new System.Windows.Forms.Timer(this.components);
             this.F0_timer_warningClear = new System.Windows.Forms.Timer(this.components);
-            this.timer_debug = new System.Windows.Forms.Timer(this.components);
             this.F0_helpProvider_help = new System.Windows.Forms.HelpProvider();
             this.F0_toolTip_help = new System.Windows.Forms.ToolTip(this.components);
             this.F0_timer_updateTimer = new System.Windows.Forms.Timer(this.components);
@@ -191,10 +191,6 @@
             // 
             this.F0_timer_warningClear.Tick += new System.EventHandler(this.F0_timer_warningClear_Tick);
             // 
-            // timer_debug
-            // 
-            this.timer_debug.Tick += new System.EventHandler(this.timer_debug_Tick);
-            // 
             // F0_timer_updateTimer
             // 
             this.F0_timer_updateTimer.Tick += new System.EventHandler(this.F0_timer_updateTimer_Tick);
@@ -216,6 +212,7 @@
             this.Controls.Add(this.F0_textBox_password);
             this.Controls.Add(this.F0_textBox_username);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(450, 273);
             this.MinimumSize = new System.Drawing.Size(450, 273);
@@ -246,7 +243,6 @@
         public System.Windows.Forms.Timer F0_timer_errorClear;
         public System.Windows.Forms.Button F0_button_theme;
         private System.Windows.Forms.Timer F0_timer_warningClear;
-        private System.Windows.Forms.Timer timer_debug;
         private System.Windows.Forms.HelpProvider F0_helpProvider_help;
         private System.Windows.Forms.ToolTip F0_toolTip_help;
         private System.Windows.Forms.Timer F0_timer_updateTimer;

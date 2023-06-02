@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F3_UserManagement));
             this.F3_label_username = new System.Windows.Forms.Label();
             this.F3_user_rights = new System.Windows.Forms.Label();
             this.F3_textBox_username = new System.Windows.Forms.TextBox();
@@ -156,6 +157,7 @@
             this.Controls.Add(this.F3_user_rights);
             this.Controls.Add(this.F3_label_username);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F3_UserManagement";
             this.Text = "Administrare utilizatori";
             this.Load += new System.EventHandler(this.F3_UserManagement_Load);

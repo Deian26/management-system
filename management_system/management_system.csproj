@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SYSTEM\RESOURCES\IMG_ProgramIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -281,6 +284,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SYSTEM\RESOURCES\IMG_ProgramIcon.ico" />
     <Content Include="SYSTEM\RESOURCES\IMG_default_group_icon.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_Logo.bmp" />
     <Content Include="SYSTEM\RESOURCES\IMG_notifications_icon_important_notificationWindow.bmp" />

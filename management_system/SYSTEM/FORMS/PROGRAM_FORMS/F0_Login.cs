@@ -86,10 +86,6 @@ namespace management_system
             this.F0_timer_updateTimer.Interval = Utility.intervalUpdateTimer;
             this.F0_timer_updateTimer.Start();
 
-            //DEBUG - TO BE DELETED AFTER DEVELOPMENT
-            timer_debug.Interval = 10;
-            timer_debug.Start();
-
 
         }
 
@@ -333,17 +329,6 @@ namespace management_system
         {
             this.F0_timer_warningClear.Stop(); //stop this timer
             Utility.WARNING = false; //clear the warning flag
-        }
-
-        //DEBUG - TO BE DELETED AFTER DEVELOPMENT
-        private void timer_debug_Tick(object sender, EventArgs e)
-        {
-            
-            timer_debug.Stop();
-            this.F0_textBox_username.Text = "admin1";
-            this.F0_textBox_password.Text = "Admin1234@";
-            this.F0_button_login.PerformClick();
-            
         }
 
         //enter the username textbox

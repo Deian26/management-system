@@ -45,6 +45,7 @@
             this.ClientSize = new System.Drawing.Size(600, 550);
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(600, 550);
             this.MinimumSize = new System.Drawing.Size(600, 550);
             this.Name = "F9_Logo";

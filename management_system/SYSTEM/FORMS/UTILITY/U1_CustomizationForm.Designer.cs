@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(U1_CustomizationForm));
             this.U1_label_title = new System.Windows.Forms.Label();
             this.U1_tabControl_customization = new System.Windows.Forms.TabControl();
             this.U1_tabPage_languages = new System.Windows.Forms.TabPage();
@@ -55,7 +56,7 @@
             this.U1_tabControl_customization.Controls.Add(this.U1_tabPage_languages);
             this.U1_tabControl_customization.Controls.Add(this.U1_tabPage_themes);
             this.U1_tabControl_customization.Location = new System.Drawing.Point(9, 36);
-            this.U1_tabControl_customization.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.U1_tabControl_customization.Margin = new System.Windows.Forms.Padding(2);
             this.U1_tabControl_customization.Name = "U1_tabControl_customization";
             this.U1_tabControl_customization.SelectedIndex = 0;
             this.U1_tabControl_customization.Size = new System.Drawing.Size(582, 320);
@@ -65,9 +66,9 @@
             // 
             this.U1_tabPage_languages.Controls.Add(this.U1_label_description_addLanguage);
             this.U1_tabPage_languages.Location = new System.Drawing.Point(4, 22);
-            this.U1_tabPage_languages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.U1_tabPage_languages.Margin = new System.Windows.Forms.Padding(2);
             this.U1_tabPage_languages.Name = "U1_tabPage_languages";
-            this.U1_tabPage_languages.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.U1_tabPage_languages.Padding = new System.Windows.Forms.Padding(2);
             this.U1_tabPage_languages.Size = new System.Drawing.Size(574, 294);
             this.U1_tabPage_languages.TabIndex = 0;
             this.U1_tabPage_languages.Text = "Languages";
@@ -88,9 +89,9 @@
             // 
             this.U1_tabPage_themes.Controls.Add(this.U1_label_description_addTheme);
             this.U1_tabPage_themes.Location = new System.Drawing.Point(4, 22);
-            this.U1_tabPage_themes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.U1_tabPage_themes.Margin = new System.Windows.Forms.Padding(2);
             this.U1_tabPage_themes.Name = "U1_tabPage_themes";
-            this.U1_tabPage_themes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.U1_tabPage_themes.Padding = new System.Windows.Forms.Padding(2);
             this.U1_tabPage_themes.Size = new System.Drawing.Size(574, 294);
             this.U1_tabPage_themes.TabIndex = 1;
             this.U1_tabPage_themes.Text = "Themes";
@@ -114,7 +115,8 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.U1_tabControl_customization);
             this.Controls.Add(this.U1_label_title);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "U1_CustomizationForm";
             this.Text = "Customization";
             this.Load += new System.EventHandler(this.U1_CustomizationForm_Load);

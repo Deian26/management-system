@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F5mdi6_ImageViewer));
             this.F5mdi6_pictureBox_image = new System.Windows.Forms.PictureBox();
             this.F5mdi6_toolStrip_image = new System.Windows.Forms.ToolStrip();
-            this.F5mdi6_toolStripButton_moveImage = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.F5mdi6_toolStripButton_moveImage = new System.Windows.Forms.ToolStripButton();
             this.F5mdi6_openFileDialog_loadImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.F5mdi6_pictureBox_image)).BeginInit();
             this.F5mdi6_toolStrip_image.SuspendLayout();
@@ -57,16 +57,6 @@
             this.F5mdi6_toolStrip_image.TabIndex = 1;
             this.F5mdi6_toolStrip_image.Text = "toolStrip1";
             // 
-            // F5mdi6_toolStripButton_moveImage
-            // 
-            this.F5mdi6_toolStripButton_moveImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi6_toolStripButton_moveImage.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi6_toolStripButton_moveImage.Image")));
-            this.F5mdi6_toolStripButton_moveImage.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.F5mdi6_toolStripButton_moveImage.Name = "F5mdi6_toolStripButton_moveImage";
-            this.F5mdi6_toolStripButton_moveImage.Size = new System.Drawing.Size(149, 22);
-            this.F5mdi6_toolStripButton_moveImage.Text = "Adăugare imagine în grup";
-            this.F5mdi6_toolStripButton_moveImage.Click += new System.EventHandler(this.F5mdi6_toolStripButton_moveImage_Click);
-            // 
             // openToolStripButton
             // 
             this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -77,6 +67,16 @@
             this.openToolStripButton.Text = "&Open";
             this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
+            // F5mdi6_toolStripButton_moveImage
+            // 
+            this.F5mdi6_toolStripButton_moveImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.F5mdi6_toolStripButton_moveImage.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi6_toolStripButton_moveImage.Image")));
+            this.F5mdi6_toolStripButton_moveImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.F5mdi6_toolStripButton_moveImage.Name = "F5mdi6_toolStripButton_moveImage";
+            this.F5mdi6_toolStripButton_moveImage.Size = new System.Drawing.Size(149, 22);
+            this.F5mdi6_toolStripButton_moveImage.Text = "Adăugare imagine în grup";
+            this.F5mdi6_toolStripButton_moveImage.Click += new System.EventHandler(this.F5mdi6_toolStripButton_moveImage_Click);
+            // 
             // F5mdi6_ImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -84,6 +84,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.F5mdi6_toolStrip_image);
             this.Controls.Add(this.F5mdi6_pictureBox_image);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F5mdi6_ImageViewer";
             this.Text = "Vizualizator de imagini";
             this.Load += new System.EventHandler(this.F5mdi6_ImageViewer_Load);

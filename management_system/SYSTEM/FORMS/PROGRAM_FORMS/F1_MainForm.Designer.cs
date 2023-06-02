@@ -438,6 +438,7 @@
             this.Controls.Add(this.F1_panel_greeting);
             this.Controls.Add(this.F1_statusStrip_status);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F1_MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F4_NewGroup));
             this.F4_textBox_groupName = new System.Windows.Forms.TextBox();
             this.F4_button_createNewGroup = new System.Windows.Forms.Button();
             this.F4_label_groupName = new System.Windows.Forms.Label();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.F4_button_createNewGroup);
             this.Controls.Add(this.F4_textBox_groupName);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F4_NewGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grup nou";

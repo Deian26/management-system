@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F11_AddGroupUsers));
             this.F11_label_username = new System.Windows.Forms.Label();
             this.F11_textBox_username = new System.Windows.Forms.TextBox();
             this.F11_button_addUserToGroup = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             // F11_textBox_username
             // 
             this.F11_textBox_username.Location = new System.Drawing.Point(223, 42);
-            this.F11_textBox_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.F11_textBox_username.Margin = new System.Windows.Forms.Padding(4);
             this.F11_textBox_username.Name = "F11_textBox_username";
             this.F11_textBox_username.Size = new System.Drawing.Size(391, 26);
             this.F11_textBox_username.TabIndex = 2;
@@ -55,7 +56,7 @@
             // F11_button_addUserToGroup
             // 
             this.F11_button_addUserToGroup.Location = new System.Drawing.Point(472, 105);
-            this.F11_button_addUserToGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.F11_button_addUserToGroup.Margin = new System.Windows.Forms.Padding(4);
             this.F11_button_addUserToGroup.Name = "F11_button_addUserToGroup";
             this.F11_button_addUserToGroup.Size = new System.Drawing.Size(142, 57);
             this.F11_button_addUserToGroup.TabIndex = 3;
@@ -72,7 +73,8 @@
             this.Controls.Add(this.F11_textBox_username);
             this.Controls.Add(this.F11_label_username);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(645, 215);
             this.MinimumSize = new System.Drawing.Size(645, 215);
             this.Name = "F11_AddGroupUsers";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F8_AddNewTableColumn));
             this.F8_label_newColumnName = new System.Windows.Forms.Label();
             this.F8_textBox_newColumnName = new System.Windows.Forms.TextBox();
             this.F8_button_addNewColumn = new System.Windows.Forms.Button();
@@ -88,6 +89,7 @@
             this.Controls.Add(this.F8_textBox_newColumnName);
             this.Controls.Add(this.F8_label_newColumnName);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F8_AddNewTableColumn";
             this.Text = "Adăugare coloană nouă";

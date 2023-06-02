@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F5mdi4_FileTreeView));
             this.F5mdi4_treeView_currentGroupFiles = new System.Windows.Forms.TreeView();
             this.F5mdi4_button_createNewFile = new System.Windows.Forms.Button();
             this.F5mdi4_button_reloadFiles = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             this.Controls.Add(this.F5mdi4_button_createNewFile);
             this.Controls.Add(this.F5mdi4_treeView_currentGroupFiles);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F5mdi4_FileTreeView";
             this.Text = "Vizualizare arborescentă";
             this.Load += new System.EventHandler(this.F5mdi4_FileTreeView_Load);

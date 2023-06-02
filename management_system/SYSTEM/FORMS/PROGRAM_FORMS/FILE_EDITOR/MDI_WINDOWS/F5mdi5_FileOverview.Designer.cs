@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F5mdi5_FileOverview));
             this.F5mdi5_richTextBox_fileOverview = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(914, 311);
             this.Controls.Add(this.F5mdi5_richTextBox_fileOverview);
             this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F5mdi5_FileOverview";
             this.Text = "Informații fișier";

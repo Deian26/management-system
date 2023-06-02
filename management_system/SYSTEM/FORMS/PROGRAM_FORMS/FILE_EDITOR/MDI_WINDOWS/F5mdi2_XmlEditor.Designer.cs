@@ -380,6 +380,7 @@
             this.Controls.Add(this.F5mdi2_toolStrip_xmlEditor);
             this.Controls.Add(this.F5mdi2_statusStrip_xmlEditor);
             this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F5mdi2_XmlEditor";
             this.Text = "Editor XML";
             this.Load += new System.EventHandler(this.F5mdi2_XmlEditor_Load);
