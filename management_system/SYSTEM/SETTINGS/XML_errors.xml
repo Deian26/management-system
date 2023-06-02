@@ -77,6 +77,7 @@
 		<Groups_failed_to_verify_if_file_is_management_system_data_file>Failed to verify whether a file is in the main folder of the program. </Groups_failed_to_verify_if_file_is_management_system_data_file>
 		<Groups_failed_to_load_groups_invalid_date>Failed to load groups; invalid creation date of a group. </Groups_failed_to_load_groups_invalid_date>
 		<Groups_failed_to_create_new_db_table>Failed to create a new Database table. </Groups_failed_to_create_new_db_table>
+		<Groups_failed_to_add_user_to_group>Failed to add a user to a group. </Groups_failed_to_add_user_to_group>
 		
 		<FileTreeView_failed_to_load_group_files>Failed to load the files of the current group into the File Tree view. </FileTreeView_failed_to_load_group_files>
 		<FileTreeView_failed_to_load_file>Failed to load the selected file from the tree view. </FileTreeView_failed_to_load_file>
@@ -119,6 +120,7 @@
 		<DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>Invalid new column name or database error. </DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>
 		<DataBaseTableEditor_invalid_column_type>Invalid column data type</DataBaseTableEditor_invalid_column_type>
 		<DataBaseTableEditor_cannot_open_tools_form>Failed to open the database table editor tools form. </DataBaseTableEditor_cannot_open_tools_form>
+		<DataBaseTableEditor_cannot_search_column>Failed to search for the value in the specified column. </DataBaseTableEditor_cannot_search_column>
 		
 		<System_failed_to_select_new_group_icon>Warning: failed to select the new group's icon. Please try again. </System_failed_to_select_new_group_icon>
 	
@@ -126,6 +128,11 @@
 
 		<FileOverview_failed_to_load_file_overview>Failed to load file details into the File Overview MDI window. </FileOverview_failed_to_load_file_overview>
 		<FileOverview_failed_to_get_file_information>Failed to get file information. </FileOverview_failed_to_get_file_information>
+
+		<ImageViewer_could_not_load_image>Failed to load the image. </ImageViewer_could_not_load_image>
+		<ImageViewer_could_not_add_image_to_group>Failed to add the open image to the current group. </ImageViewer_could_not_add_image_to_group>
+
+		<Notifications_could_not_send_system_notification>Failed to send a system notification about a new group being created. </Notifications_could_not_send_system_notification>
 	</EN>
 	
 	<RO>
@@ -205,6 +212,7 @@
 		<Groups_failed_to_verify_if_file_is_management_system_data_file>Eroare la verificarea dacă un fișier este în folderul principal al programului. </Groups_failed_to_verify_if_file_is_management_system_data_file>
 		<Groups_failed_to_load_groups_invalid_date>Eroarea la crearea unui grup. Data creării este invalidă. </Groups_failed_to_load_groups_invalid_date>
 		<Groups_failed_to_create_new_db_table>Eroarea la crearea unui tabel nou în baza de date. </Groups_failed_to_create_new_db_table>
+		<Groups_failed_to_add_user_to_group>Eroare la adăugarea unui utilizator la un grup. </Groups_failed_to_add_user_to_group>
 		
 		<FileTreeView_failed_to_load_group_files>Eroare la încărcarea fișierelor grupului curent în arborele din fereastra de vizualizare a fișierelor. </FileTreeView_failed_to_load_group_files>
 		<FileTreeView_failed_to_load_file>Eroare la deschiderea fișierului selectat din arborele din fereastra de vizualizare a fișierelor. </FileTreeView_failed_to_load_file>
@@ -247,6 +255,7 @@
 		<DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>Nume de coloană nouă invalid sau eroare în baza de date. </DataBaseTableEditor_failed_to_add_new_column_to_table_invalid_name>
 		<DataBaseTableEditor_invalid_column_type>Tip invalid de coloană. </DataBaseTableEditor_invalid_column_type>
 		<DataBaseTableEditor_cannot_open_tools_form>Eroare la deschiderea formularului cu unelte al editorului de tabele. </DataBaseTableEditor_cannot_open_tools_form>
+		<DataBaseTableEditor_cannot_search_column>Eroare la căutarea unei fraze în coloana specificată.  </DataBaseTableEditor_cannot_search_column>
 		
 		<System_failed_to_select_new_group_icon>Atenție: Eroare la selectarea imaginii unui grup. Vă rugăm încercați din nou. </System_failed_to_select_new_group_icon>
 	
@@ -254,6 +263,11 @@
 
 		<FileOverview_failed_to_load_file_overview>Eroare la încărcarea detaliilor despre fișiere în fereastra de detalii despre fișier. </FileOverview_failed_to_load_file_overview>
 		<FileOverview_failed_to_get_file_information>Eroare la obținerea detaliilor unui fișier. </FileOverview_failed_to_get_file_information>
+
+		<ImageViewer_could_not_load_image>Imaginea nu a putut fi încărcată. </ImageViewer_could_not_load_image>
+		<ImageViewer_could_not_add_image_to_group>Eroare la adăugarea imaginii deschise la grupul curent. </ImageViewer_could_not_add_image_to_group>
+
+		<Notifications_could_not_send_system_notification>Eroare la trimiterea unei notificări de sistem despre crearea unui grup nou. </Notifications_could_not_send_system_notification>
 	</RO>
 	
 </Errors>

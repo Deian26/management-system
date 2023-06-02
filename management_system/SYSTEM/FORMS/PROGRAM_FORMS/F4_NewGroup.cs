@@ -101,6 +101,10 @@ namespace management_system
                 if(result==0) //group created
                 {
                     MessageBox.Show(Utility.displayMessage("F4_newGroupCreated"), Utility.displayMessage("F4_newGroup_title"), MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                    //send SYSTEM notification about the new group
+                    Utility.sendSystemNotification(Utility.displayMessage("Notification_system_new_group")+this.F4_textBox_groupName.Text.ToString());
+                
                 }
                 else if(result==-1) //group not created because there already exists another group with the same name
                 {

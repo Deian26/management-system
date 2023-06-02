@@ -43,7 +43,7 @@ namespace management_system
                 this.F1_listView_groups.Items.Add(name, this.F1_listView_groups.LargeImageList.Images.Count - 1);
             }catch(Exception exception)
             {
-                Utility.DisplayError("Groups_error_loading_groups_in_listView_control",exception,"Group: Failed to load a greoup into the list view control of the main form",false);
+                Utility.DisplayError("Groups_error_loading_groups_in_listView_control",exception,"Group: Failed to load a group into the list view control of the main form",false);
             }
         }
 
@@ -255,7 +255,7 @@ namespace management_system
         //double click on the notification shown in the windows taskbar
         private void F1_notifyIcon_notification_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //DEV
+            
         }
 
         //notification list view
@@ -303,7 +303,7 @@ namespace management_system
 
                                 f2_MainFormNotificationWindow.Dispose();
 
-                                Utility.markNotificationAsRead(id);
+                                //Utility.markNotificationAsRead(id);
                             }
                         }
                     }

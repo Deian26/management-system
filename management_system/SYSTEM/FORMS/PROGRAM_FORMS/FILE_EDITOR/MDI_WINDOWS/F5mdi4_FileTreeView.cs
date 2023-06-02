@@ -110,6 +110,17 @@ namespace management_system
                             file.CloseFile();
                             break;
 
+                        case FileEditor.FileType.img: //IMAGE
+                            file = new GeneralFile(this.F5mdi4_treeView_currentGroupFiles.SelectedNode.Name, FileEditor.FileType.img);
+
+                            F5mdi6_ImageViewer f5Mdi6_imageViewer = new F5mdi6_ImageViewer(this.f5_containerForm, file);
+
+                            f5Mdi6_imageViewer.Show();
+
+                            file.CloseFile();
+
+                            break;
+
                         case FileEditor.FileType.noFile: //no file given / no file type
 
                             break;

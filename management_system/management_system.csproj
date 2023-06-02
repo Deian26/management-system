@@ -74,6 +74,12 @@
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.Designer.cs">
       <DependentUpon>F10_DatabaseTableTools.cs</DependentUpon>
     </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F11_AddGroupUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F11_AddGroupUsers.Designer.cs">
+      <DependentUpon>F11_AddGroupUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     <Compile Include="SYSTEM\CLASSES\SYSTEM_CLASSES\Utility.cs" />
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.resx">
       <DependentUpon>F10_DatabaseTableTools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F11_AddGroupUsers.resx">
+      <DependentUpon>F11_AddGroupUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.resx">
       <DependentUpon>F9_Logo.cs</DependentUpon>

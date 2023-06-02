@@ -6,6 +6,11 @@
 		<Account_access_User>User</Account_access_User>
 		<Account_confirmation_delete>Do you really want to delete the account? </Account_confirmation_delete>
 		<Account_details_title>Account</Account_details_title>
+
+		<Groups_user_already_added>User already has access to the current group. </Groups_user_already_added>
+		<Groups_user_added_successfully>User added successfully. </Groups_user_added_successfully>
+		<Username_nonexistent>This username does not exist in the current database. </Username_nonexistent>
+		<ImageViewer_image_successfully_added_to_the_current_group>Image successfully added to the current group. </ImageViewer_image_successfully_added_to_the_current_group>
 		
 		<Help_register_username>The username needs to be at least 5 characters and must only contain lowercase, uppercase letters from the latin alphabet and the character '_' (underscore)</Help_register_username>
 		<Help_register_password>The password must have at least 10 character and contain at least one lower case latin alphabet letter, at least one upper case latin alphabet letter, at least one digit and at least one special character from the list: ~!@#$%^*_</Help_register_password>
@@ -190,9 +195,35 @@ Management system version: v0.1
 			
 Trif Paul Deian, May 14, 2023
 </F5mdi3_guide_form_info>
+
+
+		<DataBaseTableEditor_instrument_searchColumn>Search a value in a column</DataBaseTableEditor_instrument_searchColumn>
+
+		<Notification_system_new_group>New group created: </Notification_system_new_group>
 		
-	
 </EN>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 <RO>
 	<Account_new_user_registered>Nou utilizator înregistrat cu succes. </Account_new_user_registered>
@@ -201,6 +232,11 @@ Trif Paul Deian, May 14, 2023
 	<Account_confirmation_delete>Sunteți sigur că doriți să ștergeți acest cont? </Account_confirmation_delete>
 	<Account_details_title>Cont</Account_details_title>
 
+	<Username_nonexistent>Acest nume de utilizator nu există în baza de date curentă. </Username_nonexistent>
+	<Groups_user_already_added>Utilizatorul are deja acces la grupul curent. </Groups_user_already_added>
+	<Groups_user_added_successfully>Utilizator adăugat cu succes. </Groups_user_added_successfully>
+	<ImageViewer_image_successfully_added_to_the_current_group>Imaginea a fost adăugată cu succes la grupul curent. </ImageViewer_image_successfully_added_to_the_current_group>
+	
 	<Help_register_username>Nume de utilizator invalid. Numele de utilizator trebuie să conțină cel puțin 5 caractere, printre care pot fi: litere mici, litere mari (din alfabetul latin), cifre și caractere bară jos ('_') . </Help_register_username>
 	<Help_register_password>Parolă invalidă. Parola trebuie să conțină cel puțin 10 caractere și cel puțin o literă mică, o literă mare (din alfabetul latin), cel puțin o cifră și cel puțin un caracter special din lista: ~!@#$%^*_</Help_register_password>
 	<Help_database_combobox>Baza de date la care se face conectarea </Help_database_combobox>
@@ -209,6 +245,8 @@ Trif Paul Deian, May 14, 2023
 	<Help_language>Schimbați limba</Help_language>
 	<Help_theme>Schimbați tema</Help_theme>
 
+
+	
 	<F1_Notification_count_text>Notificări necitite: </F1_Notification_count_text>
 	<F1_Notification_DB_connection_status_text>Status conexiune: </F1_Notification_DB_connection_status_text>
 	<F1_aboutPageTitle>Despre Sistemul de adiminstrare a fișierelor</F1_aboutPageTitle>
@@ -381,7 +419,12 @@ Trif Paul Deian, May 14, 2023
 		3. selectați numele și calea fișierului și sakvați fișierul
 
 		Trif Paul Deian, 21 Mai, 2023
-	</F5mdi3_guide_form_info>		
+	</F5mdi3_guide_form_info>
+
+
+	<DataBaseTableEditor_instrument_searchColumn>Căutați o valoare într-o coloană</DataBaseTableEditor_instrument_searchColumn>
+
+	<Notification_system_new_group>Nou grup creat: </Notification_system_new_group>
 </RO>
 	
 </Messages>

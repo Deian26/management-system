@@ -11,6 +11,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Shapes;
@@ -22,6 +24,9 @@ namespace management_system
     public partial class F5mdi3_DatabaseTableEditor : Form
     {
         //VARIABLES
+        //instruments window
+        private F10_DatabaseTableTools f10_DatabaseTableTools = null;
+
         //new table
         private bool newTable = false;
         private string tableName = null;
@@ -80,6 +85,26 @@ namespace management_system
         }
 
         //UTILITY FUNCTIONS
+
+        //implemented tools
+
+        //search the value int the specified column; returns the index of the row which contains the value and it displays it in the instruments window
+        public void instrument_searchColumn(string columnName, string value)
+        {
+            try
+            {
+                foreach(DataRow row in this.currentTable.Rows)
+                    if(row[columnName].ToString().Equals(value)) //value found
+                    {
+                        this.f10_DatabaseTableTools.display_searchColumn(row,this.currentTable.Columns);
+                    }
+            }
+            catch (Exception exception)
+            {
+                Utility.DisplayError("DataBaseTableEditor_cannot_search_column", exception, "DataBaseTableEditor: cannot search a value in the specified column: \n" + exception.ToString(), false);
+            }
+        }
+
 
         //parse a locally stored .tbl file (xml format)
         private void parseTblFile(string path)
@@ -485,7 +510,7 @@ namespace management_system
                     case DialogResult.Cancel: //cancel opening the file
                         break;
                     
-                    case DialogResult.Abort: //cancel openning the file
+                    case DialogResult.Abort: //cancel opening the file
                             break;
                     
                     default: 
@@ -557,11 +582,11 @@ namespace management_system
         {
             try
             {
-                F10_DatabaseTableTools f10_DatabaseTableTools = new F10_DatabaseTableTools(this);
+                f10_DatabaseTableTools = new F10_DatabaseTableTools(this);
 
-                f10_DatabaseTableTools.ShowDialog();
+                f10_DatabaseTableTools.Show();
 
-                f10_DatabaseTableTools.Close();
+               
 
             }catch (Exception exception)
             {

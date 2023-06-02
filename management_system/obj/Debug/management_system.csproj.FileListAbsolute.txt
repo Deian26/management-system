@@ -27,3 +27,4 @@ C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F10_DatabaseTableTools.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F9_Logo.resources
 C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F5mdi6_ImageViewer.resources
+C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\obj\Debug\management_system.F11_AddGroupUsers.resources

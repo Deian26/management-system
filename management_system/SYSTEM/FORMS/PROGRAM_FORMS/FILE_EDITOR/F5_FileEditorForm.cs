@@ -256,5 +256,23 @@ namespace management_system
             if(this.f5_mdiFileOverview != null)
                 this.f5_mdiFileOverview.getCurrentFileOverview();
         }
+
+        //add a user to the current group
+        private void F5_toolStripButton_addUsers_Click(object sender, EventArgs e)
+        {
+            F11_AddGroupUsers f11_AddGroupUsers = new F11_AddGroupUsers();
+
+            f11_AddGroupUsers.ShowDialog();
+
+
+        }
+
+        //open image viewer
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            F5mdi6_ImageViewer f5Mdi6_ImageViewer = new F5mdi6_ImageViewer();
+
+            f5Mdi6_ImageViewer.Show();
+        }
     }
 }

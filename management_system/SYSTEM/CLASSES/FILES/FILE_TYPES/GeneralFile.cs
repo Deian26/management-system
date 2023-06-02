@@ -47,7 +47,7 @@ namespace management_system
 
                 //determine the file type
                 this.fileType = fileType;
-                this.fileExtension = FileEditor.extension[(int)this.fileType]; //determine the file fileExtension
+                //this.fileExtension = FileEditor.extension[(int)this.fileType]; //determine the file fileExtension
                 //this.FileType = this.determineFileType(path);
 
                 this.file.Close();

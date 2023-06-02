@@ -25,6 +25,7 @@ namespace management_system
             img = 6
         };
 
+        /*
         public static string[] extension = { //currently recognized file extensions - this string array matches the 'FileType' enum
                         null, //no file currently open
                         "", //general file type
@@ -33,6 +34,7 @@ namespace management_system
                         ".tbl", //locally stored database table - custom format & fileExtension: .tbl
                         ".rtf" //rich text format
                         };
+        */
         //METHODS
 
         //determine the file type based on the given file name . extension
@@ -59,7 +61,11 @@ namespace management_system
                     return FileType.databaseTable;
 
                 case "rtf":
-                        return FileType.rtf;
+                    return FileType.rtf;
+                case "bmp":
+                    return FileType.img;
+                case "jpeg":
+                    return FileType.img;
 
                 default: //general file -> unrecognized file extension
                     return FileType.general;

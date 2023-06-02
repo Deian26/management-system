@@ -1342,6 +1342,38 @@ namespace management_system
         #endregion
 
         #region notifications
+
+        //send system notification
+        public static void sendSystemNotification(string message)
+        {
+            try
+            {
+                SqlCommand notificationCommand = Utility.getSqlCommand("SELECT _id FROM Notifications");
+                SqlDataReader dr = notificationCommand.ExecuteReader();
+                int id = -1;
+
+                //get a new ID for the new notification
+                while(dr.Read())
+                {
+                    id = dr.GetInt32(0);
+                }
+
+                id += 1;
+                
+                dr.Close();
+
+
+                notificationCommand = Utility.getSqlCommand("INSERT INTO Notifications VALUES("+id.ToString()+",'"+message.ToString()+"','SYSTEM','"+DateTime.Now.ToShortDateString()+"',1,0)");
+                notificationCommand.ExecuteNonQuery();
+
+                notificationCommand.Dispose();
+            }   
+            catch(Exception exception)
+            {
+                Utility.DisplayError("Notifications_could_not_send_system_notification", exception, "Notifications: Could not send a system notification about a new group being created: \n" + exception.ToString(), false);
+            }
+        }
+
         //update notifications list from the database
         public static void getNotificationsFromDB(string username)
         {
@@ -1613,15 +1645,31 @@ namespace management_system
                 }
 
                 List<Notification> updateNotif = new List<Notification>();
+                updateNotif.Clear();
                 bool found = false;
 
+                
                 //only keep in memory notifications that appear in the database too
                 //and only load notifications from the database that are not already present in memory and that are not yet read
                 foreach (Notification notification in Utility.notifications)
                 {
                     found = false;
                     foreach (Notification notification1 in notif)
-                        if (notification.equalId(notification1.getId()) && notification.getRead() == 0) { updateNotif.Add(notification); found = true; break; }
+                    { 
+                        if (notification.equalId(notification1.getId()))
+                        {
+                            found = true;
+
+                            //if (notification1.getRead() == 0)
+                            //{
+                                updateNotif.Add(notification);
+                                updateNotif.Last().setRead(notification1.getRead());
+
+                             //   break;
+                            //}
+                        }
+
+                    }
 
                     if (found == false) updateNotif.Add(notification);
                 }
@@ -1630,10 +1678,11 @@ namespace management_system
                 //use the Utility.notifications variable to point to the updated notification list
                 Utility.notifications.Clear(); //clear the list
                 Utility.notifications = updateNotif;
+                
 
                 //update the XML file
                 Utility.writeNotificationsToXmlFile(path);
-
+                
 
             }
             catch (Exception exception)
@@ -1647,14 +1696,20 @@ namespace management_system
         //mark the notification with the given ID as 'read'
         public static void markNotificationAsRead(int id)
         {
+            bool old = false;
+
             foreach (Notification notification in Utility.notifications)
                 if (notification.getId() == id)
                 {
                     notification.setRead(1);
+                    if (DateTime.Compare(DateTime.Now,DateTime.Parse(notification.getDate()).AddDays(Utility.oldNotificationsLifespanDays))>=0)
+                        old = true;
+
                     break;
                 }
 
-            //delete the notification from the local XML file
+            //mark the notification as 'read'
+            //if(old==true)
             Utility.writeNotificationsToXmlFile(Utility.XML_notifications_userFolder + Utility.username+"\\"+Utility.username+"_notifications.xml");
         }
         
