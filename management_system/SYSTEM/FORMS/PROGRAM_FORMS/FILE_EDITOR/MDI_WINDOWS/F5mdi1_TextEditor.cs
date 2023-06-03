@@ -126,11 +126,18 @@ namespace management_system
             try 
             {
                 //this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_GEN(File.ReadAllText(this.file.getFilePath()),Utility.key);
-                if (this.file.getFileType() == FileEditor.FileType.text) this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_TXT(File.ReadAllText(this.file.getFilePath()), Utility.key);
-                else if(this.file.getFileType() == FileEditor.FileType.rtf) this.F5mdi1_richTextBox_textEditor.LoadFile(this.file.getFilePath());
-                else this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(this.file.getFilePath());
-
-                this.file = new TextFile(this.file.getFilePath());
+                if (this.file.getFileType() == FileEditor.FileType.text)
+                {
+                    this.F5mdi1_richTextBox_textEditor.Text = Utility.DEC_TXT(File.ReadAllText(this.file.getFilePath()), Utility.key);
+                    this.file = new TextFile(this.file.getFilePath());
+                }
+                else if (this.file.getFileType() == FileEditor.FileType.rtf) this.F5mdi1_richTextBox_textEditor.LoadFile(this.file.getFilePath());
+                else
+                {
+                    this.F5mdi1_richTextBox_textEditor.Text = File.ReadAllText(this.file.getFilePath());
+                    this.file = new TextFile(this.file.getFilePath());
+                }
+                
             }catch(Exception exception) 
             {
                 Utility.DisplayError("TextEditor_failed_to_load_text_file_into_textbox", exception,"TextEditor: Failed to load the text into the textbox. "+exception.ToString() ,false);
@@ -201,13 +208,20 @@ namespace management_system
         {
             try
             {
-                string[] aux_str = this.F5mdi1_richTextBox_textEditor.Text.Split(' ');
+                string[] aux_str = this.F5mdi1_richTextBox_textEditor.Text.Split('\n');
                 int count = 0;
 
                 foreach(string aux in aux_str) 
                 {
-                    if (!aux.Equals(""))
-                        count++;
+                    if (aux != "") count++;
+
+                    foreach (char c in aux)
+                        if (c == ' ' || c == '\r' || c == '\t')
+                            count++;
+
+                    //if (!aux.Equals(""))
+                    //    count++;
+                    //count++;
                 }
 
                 //display word count

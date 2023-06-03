@@ -1,0 +1,26 @@
+<tipuri_produse>
+	<alimentare>
+		<produse_de_baza>
+paine
+lapte
+apa
+		</produse_de_baza>
+
+		<fructe>
+mar
+		</fructe>
+
+
+	</alimentare>
+
+	<non_alimentare>
+		<detergenti>
+
+		</detergenti>
+
+
+	</non_alimentare>
+
+
+</tipuri_produse>
+

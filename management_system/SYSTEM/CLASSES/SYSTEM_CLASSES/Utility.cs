@@ -110,6 +110,8 @@ namespace management_system
         public static string enc_allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|="; //allowed characters for encryption/decryption
         public static string enc_allowedCharacters_TXT = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !?.,;:#@$%^&*()_+-[]/\\<>`~|='\""; //allowed characters for encryption/decryption of text files
         public static int LOGO_interval = 7500;//ms; logo form (F9) display time
+        public static int unread_notifications = 0; //number of unread notifications
+
         //reversed enc_ strings (used for decryption)
         public static string rev_enc_allowedCharacters = "=|~`><\\/][-+_)(*&^%$@#:;,.?! 9876543210ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
         public static string rev_enc_allowedCharacters_TXT = "\"'=|~`><\\/][-+_)(*&^%$@#:;,.?! 9876543210ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba";
@@ -211,7 +213,7 @@ namespace management_system
         //public static string localRtfFolderName = "RTF"; //RTF folder
         //public static string localXmlFolderName = "XML"; //XML folder
         //public static string localTblFolderName = "TBL"; //TBL folder
-        //public static string localGrphFolderName = "GRPH"; //GRPH folder
+        //public static string localGrphFolderName = "GRPH"; //GRPH folder - Graphs
         
 
 
@@ -1819,7 +1821,13 @@ namespace management_system
                                                  */
 
                                                 variable_text = variable_text.Replace("#USERNAME#", Utility.username);
-                                                variable_text = variable_text.Replace("#NUMBER_NOTIFICATIONS#", Utility.notifications.Count.ToString());
+
+                                                //check notifications
+                                                Utility.unread_notifications = 0;
+                                                foreach (Notification notification in Utility.notifications)
+                                                    if (notification.getRead() == 0) Utility.unread_notifications++;
+
+                                                variable_text = variable_text.Replace("#NUMBER_NOTIFICATIONS#", Utility.unread_notifications.ToString());
                                             }
 
                                             ctrl.Text = variable_text;
@@ -2458,7 +2466,7 @@ namespace management_system
 
                 foreach(string table in tables)
                 {
-                    deleteGroupTable = Utility.getDropTableSqlCommand(table); //delete the table
+                    deleteGroupTable = Utility.getDropTableSqlCommand(name+"_"+table); //delete the table
                     deleteGroupTable.ExecuteNonQuery();
                 }
 

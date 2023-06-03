@@ -33,6 +33,9 @@ namespace management_system
         {
             Utility.setLanguage(this); //set language
 
+            this.F3_label_password.Visible = false;
+            this.F3_textBox_password.Visible = false;
+
             //set the minimum and maximum sizes for the form
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
@@ -63,11 +66,13 @@ namespace management_system
                 
                 //calculate admin string
                 Random rnd = new Random();
+                bool setUser = false;
 
                 switch (this.F3_comboBox_userRights.SelectedItem)
                 {
                     case "User": //assign user rights (default)
                         this.adminString = Utility.DB_HASH((rnd.Next() % 100).ToString());
+                        setUser = true;
                         break;
                     case "Administrator": //assign admin rights
                         this.adminString = Utility.DB_HASH(Utility.ENC_GEN(this.F3_textBox_password.Text, this.key));
@@ -86,14 +91,23 @@ namespace management_system
                     return;
                 }
 
-                if (!Utility.validPassword(this.F3_textBox_password.Text))
+                if (!Utility.validPassword(this.F3_textBox_password.Text) && setUser == false)
                 {
                     this.F3_errorProvider_userManagement.SetError(this.F3_textBox_password, Utility.displayError("Invalid_password"));
 
                     return;
                 }
 
-                SqlCommand cmd = Utility.getSqlCommand("UPDATE Users SET admin='" + this.adminString.ToString() + "' WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text) + "' and password = '" + Utility.DB_HASH(this.F3_textBox_password.Text) + "'");
+                SqlCommand cmd;
+                if(setUser==true)
+                {
+                    cmd = Utility.getSqlCommand("UPDATE Users SET admin='" + this.adminString.ToString() + "' WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text)+"'");
+                }
+                else
+                {
+                    cmd = Utility.getSqlCommand("UPDATE Users SET admin='" + this.adminString.ToString() + "' WHERE username='" + Utility.DB_HASH(this.F3_textBox_username.Text) + "' and password = '" + Utility.DB_HASH(this.F3_textBox_password.Text) + "'");
+                }
+
                 cmd.ExecuteNonQuery();
 
                 cmd.Dispose();
@@ -115,7 +129,16 @@ namespace management_system
         //select user rights to assign
         private void F3_comboBox_userRights_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(this.F3_comboBox_userRights.SelectedIndex == 0) //set to 'user' permissions
+            {
+                this.F3_label_password.Visible = false;
+                this.F3_textBox_password.Visible = false;
+            }
+            else if(this.F3_comboBox_userRights.SelectedIndex == 1)
+            {
+                this.F3_label_password.Visible = true;
+                this.F3_textBox_password.Visible = true;
+            }
         }
 
         //delete the account (based only on the given username)

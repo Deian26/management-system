@@ -50,7 +50,7 @@ namespace management_system
         //update notifications
         private void updateNotifications()
         {
-            int unread_notifications = 0;
+            Utility.unread_notifications = 0;
             
             this.F1_listView_Notifications.Items.Clear();
 
@@ -59,12 +59,12 @@ namespace management_system
                 if (!this.F1_listView_Notifications.Items.ContainsKey(notification.getId().ToString()) && notification.getRead()==0)
                     this.F1_listView_Notifications.Items.Add(notification.getId().ToString(), notification.getSender(), notification.getImportance());
 
-                if (notification.getRead() == 0) unread_notifications++;
+                if (notification.getRead() == 0) Utility.unread_notifications++;
 
             }
 
             //update unread notifications counter
-            this.F1_toolStripStatusLabel_NumberOfNotifications.Text = unread_notifications.ToString();
+            this.F1_toolStripStatusLabel_NumberOfNotifications.Text = Utility.unread_notifications.ToString();
         }
 
         //restart the shutdown timer
@@ -114,7 +114,7 @@ namespace management_system
             }
 
             //notifications
-            this.F1_toolStripStatusLabel_NumberOfNotifications.Text = Utility.notifications.Count.ToString();
+            this.F1_toolStripStatusLabel_NumberOfNotifications.Text = Utility.unread_notifications.ToString();
             this.F1_listView_Notifications.MultiSelect = false;
 
             //configure the listview icons
@@ -177,6 +177,8 @@ namespace management_system
 
             this.F1_toolStripStatusLabel_notificationText.Visible = false;
 
+            
+
             //load language pack
             Utility.setLanguage(this);
 
@@ -228,7 +230,15 @@ namespace management_system
             this.displayGroups();
 
 
-
+            //check notifications
+            Utility.unread_notifications = 0;
+            foreach (Notification notification in Utility.notifications)
+            {
+                if (notification.getRead() == 0)
+                    Utility.unread_notifications++;
+            }
+            //display unread notifications
+            this.F1_toolStripStatusLabel_NumberOfNotifications.Text = Utility.unread_notifications.ToString();
 
         }
 
@@ -270,12 +280,17 @@ namespace management_system
             if (e.Button.Equals(MouseButtons.Right)) //delete the read notification from memory
             {
                 int id;
-                bool parsed = Int32.TryParse(this.F1_listView_Notifications.SelectedItems[0].Name, out id);
+                bool parsed;
 
-                Utility.markNotificationAsRead(id);
+                if (this.F1_listView_Notifications.SelectedItems[0] != null)
+                {
+                    parsed = Int32.TryParse(this.F1_listView_Notifications.SelectedItems[0].Name, out id);
+
+                    Utility.markNotificationAsRead(id);
 
 
-                this.updateNotifications();
+                    this.updateNotifications();
+                }
             }else if(e.Button.Equals(MouseButtons.Left)) //show notification details
             {
                 
@@ -599,5 +614,10 @@ namespace management_system
             }
 
             }
+
+        private void F1_toolStripStatusLabel_NumberOfNotifications_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

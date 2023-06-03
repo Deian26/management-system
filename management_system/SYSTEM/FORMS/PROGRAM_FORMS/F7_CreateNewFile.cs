@@ -70,8 +70,23 @@ namespace management_system
                 {
                     //create the file in the folder of the current group
                     FileStream newFile = File.Create(Utility.currentGroupPath+"\\"+ filenameAndExtension);
-
                     newFile.Close();
+                    if (filenameAndExtension.Split('.')[1].ToLower().Equals("rtf")) //save the file in the RTF format
+                    {
+                        RichTextBox rtf = new RichTextBox();
+                        rtf.Text = "";
+
+                        rtf.SaveFile(Utility.currentGroupPath + "\\" + filenameAndExtension,RichTextBoxStreamType.RichText);
+                        
+                    }
+
+                    if (filenameAndExtension.Split('.')[1].ToLower().Equals("xml")) //add 'root' element to the XML file (if an XML file is created)
+                    {
+                        
+
+                        File.WriteAllText(Utility.currentGroupPath + "\\" + filenameAndExtension,"<root></root>");
+
+                    }
 
                     //display a message indicating that the new file has been created
                     MessageBox.Show(Utility.displayMessage("F7_new_file_created"),"",MessageBoxButtons.OK, MessageBoxIcon.Information);

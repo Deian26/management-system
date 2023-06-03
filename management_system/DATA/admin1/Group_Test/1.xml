@@ -1,0 +1,30 @@
+<tipuri_produse>
+	<aimentare>
+		<produse_de_baza>
+			paine
+			lapte
+			apa
+		</produse_de_baza>
+
+		<fructe>
+
+		</fructe>
+
+
+	</aimentare>
+
+	<produse_curatenie>
+		<detergenti_vase>
+
+		</detergenti_vase>
+
+		<detergenti_rufe>
+
+		</detergenti_rufe>
+
+
+	</produse_curatenie>
+
+
+</tipuri_produse>
+

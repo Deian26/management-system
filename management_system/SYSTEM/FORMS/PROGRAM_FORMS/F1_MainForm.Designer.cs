@@ -202,6 +202,7 @@
             this.F1_toolStripStatusLabel_NumberOfNotifications.Name = "F1_toolStripStatusLabel_NumberOfNotifications";
             this.F1_toolStripStatusLabel_NumberOfNotifications.Size = new System.Drawing.Size(35, 17);
             this.F1_toolStripStatusLabel_NumberOfNotifications.Text = "#NR#";
+            this.F1_toolStripStatusLabel_NumberOfNotifications.Click += new System.EventHandler(this.F1_toolStripStatusLabel_NumberOfNotifications_Click);
             // 
             // F1_toolStripStatusLabel_separator3
             // 

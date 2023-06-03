@@ -1,0 +1,19 @@
+#DIAGNOSTIC START LOG#
+03.06.2023 14:57:48
+
+03.06.2023 14:58:03#Group: Invalid image given to for the group creation: System.InvalidOperationException: Image added to an ImageList must either derive from Image or be an Icon.
+   at System.Windows.Forms.ImageList.Original..ctor(Object image, OriginalOptions options, Color customTransparentColor)
+   at System.Windows.Forms.ImageList.ImageCollection.Add(String key, Image image)
+   at management_system.F1_MainForm.displayGroups() in C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs:line 429#
+03.06.2023 14:58:03#Group: Invalid image given to for the group creation: System.InvalidOperationException: Image added to an ImageList must either derive from Image or be an Icon.
+   at System.Windows.Forms.ImageList.Original..ctor(Object image, OriginalOptions options, Color customTransparentColor)
+   at System.Windows.Forms.ImageList.ImageCollection.Add(String key, Image image)
+   at management_system.F1_MainForm.displayGroups() in C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs:line 429#
+03.06.2023 14:58:12#Group: Invalid image given to for the group creation: System.InvalidOperationException: Image added to an ImageList must either derive from Image or be an Icon.
+   at System.Windows.Forms.ImageList.Original..ctor(Object image, OriginalOptions options, Color customTransparentColor)
+   at System.Windows.Forms.ImageList.ImageCollection.Add(String key, Image image)
+   at management_system.F1_MainForm.displayGroups() in C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs:line 429#
+03.06.2023 14:58:12#Group: Invalid image given to for the group creation: System.InvalidOperationException: Image added to an ImageList must either derive from Image or be an Icon.
+   at System.Windows.Forms.ImageList.Original..ctor(Object image, OriginalOptions options, Color customTransparentColor)
+   at System.Windows.Forms.ImageList.ImageCollection.Add(String key, Image image)
+   at management_system.F1_MainForm.displayGroups() in C:\Users\deian\Source\Repos\Deian26\city_management_system\management_system\SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs:line 429#
