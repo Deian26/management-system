@@ -163,7 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F10_DatabaseTableTools";
-            this.Text = "F10_DatabaseTableTools";
+            this.Text = "Instrumente bază de date";
             this.Load += new System.EventHandler(this.F10_DatabaseTableTools_Load);
             this.F10_groupBox_tool.ResumeLayout(false);
             this.F10_panel_searchColumn.ResumeLayout(false);

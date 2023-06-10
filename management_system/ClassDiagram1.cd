@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="management_system.Properties.Resources" Collapsed="true">
-    <Position X="17.5" Y="0.75" Width="1.5" />
+    <Position X="16.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.Properties.Settings" Collapsed="true">
-    <Position X="17.5" Y="1.5" Width="1.5" />
+    <Position X="16.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
@@ -17,27 +17,20 @@
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
-    <NestedTypes>
-      <Enum Name="management_system.FileEditor.FileType">
-        <TypeIdentifier>
-          <NewMemberFileName>SYSTEM\CLASSES\FILES\FILE_EDITORS\FileEditor.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Enum>
-    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SYSTEM\CLASSES\FILES\FILE_EDITORS\FileEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.GeneralFile" Collapsed="true">
-    <Position X="1.75" Y="5" Width="2.5" />
+    <Position X="1.25" Y="3.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>IBAgAAAEAAIAAQAAAAAgAABAhAAAAUAABABAAAAABBA=</HashCode>
       <FileName>SYSTEM\CLASSES\FILES\FILE_TYPES\GeneralFile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.TextFile" Collapsed="true">
-    <Position X="3.75" Y="6.75" Width="2.25" />
+    <Position X="2.75" Y="5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>SYSTEM\CLASSES\FILES\FILE_TYPES\TextFile.cs</FileName>
@@ -51,7 +44,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.Start" Collapsed="true">
-    <Position X="17.5" Y="2.75" Width="2" />
+    <Position X="13.75" Y="1" Width="2" />
     <TypeIdentifier>
       <HashCode>AAABAAAAAAAAAAgAAgAIAAgAAAIABQAAAAAARAAAAIA=</HashCode>
       <FileName>SYSTEM\CLASSES\SYSTEM_CLASSES\Start.cs</FileName>
@@ -67,161 +60,161 @@
   <Class Name="management_system.Utility" Collapsed="true">
     <Position X="0.5" Y="1.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>TqmwoKDcGXWAQ4uWBg0clLWxmjUKrUMDQgZWIKbqVSQ=</HashCode>
+      <HashCode>TqmwoKDcGXWAQ4uWBg0clLWxmjUKrUMjQgZWIKbqVSQ=</HashCode>
       <FileName>SYSTEM\CLASSES\SYSTEM_CLASSES\Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.XMLNode" Collapsed="true">
-    <Position X="0.5" Y="7.5" Width="1.75" />
+    <Position X="0.5" Y="5.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACIAAAAAAAAAAAAAAIEAAEBwAEkABAggAEkAAAwAA=</HashCode>
       <FileName>SYSTEM\CLASSES\SYSTEM_CLASSES\XMLNode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F0_Login" Collapsed="true">
-    <Position X="6.5" Y="1.5" Width="1.5" />
+    <Position X="5.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>EECAAAIAACACcBKgANCEYIEyAAQYABFACQBgAAQABEA=</HashCode>
+      <HashCode>EECAAAIAACACcBKgAFCEYIEyAAQYABFACQBgAAQABEA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F0_Login.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F1_MainForm" Collapsed="true">
-    <Position X="6.5" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>YNiCAAIGA3qlAAMEAACQosCOCATUQSBdECAkQhACiQA=</HashCode>
+      <HashCode>YNiCAAIGA3qnAAMEAACQosCOCATUQSBdECAkQhACiQA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F1_MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F2_MainFormNotificationWindow" Collapsed="true">
-    <Position X="8.25" Y="2" Width="2.25" />
+    <Position X="7" Y="1.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAgCAAAAAAAACABAACAAAAAAAAAAAABEAggAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F2_MainFormNotificationWindow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F3_UserManagement" Collapsed="true">
-    <Position X="8.25" Y="2.75" Width="2.25" />
+    <Position X="7" Y="2.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AgAAQAAQAiGAAAAAAwiEBAaCAAAAAAAAAAAAABiAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F3_UserManagement.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F4_NewGroup" Collapsed="true">
-    <Position X="8.25" Y="3.5" Width="2.25" />
+    <Position X="7" Y="3" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AACAABAABCEACAAAAACAAIACAAAIAAAAIRAAAAAgAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F4_NewGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F6_GeneralInformation" Collapsed="true">
-    <Position X="13.75" Y="5.5" Width="2" />
+    <Position X="10.75" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAAABAAACAAIACABAAAAAIAACAAAAAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F6_GeneralInformation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F7_CreateNewFile" Collapsed="true">
-    <Position X="10.75" Y="7.25" Width="2.25" />
+    <Position X="9.5" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAEAQAAACAAAICAAEIAIAAANAAAAAAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F7_CreateNewFile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F8_AddNewTableColumn" Collapsed="true">
-    <Position X="10.75" Y="6.25" Width="2.25" />
+    <Position X="9.5" Y="5.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AEBAAACAACAAAAIAAACIAIACAAAAAAAhAAAAEAAAAAI=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F8_AddNewTableColumn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5_FileEditorForm" Collapsed="true">
-    <Position X="6.5" Y="6" Width="1.5" />
+    <Position X="5.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAABARCAgACDMAPCCABACBIAEABAABAAgAAACCAg=</HashCode>
+      <HashCode>CAAAAABQRCAgACDMIPCCQFACBIAEABAABAAgAAACCAg=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\F5_FileEditorForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi1_TextEditor" Collapsed="true">
-    <Position X="8.25" Y="4.5" Width="2.25" />
+    <Position X="7" Y="4" Width="2.25" />
     <TypeIdentifier>
       <HashCode>QBEmFAhtALEFZVJpvKzioQi+AA0BCAQplAAQQMqDSQI=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi1_TextEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi2_XmlEditor" Collapsed="true">
-    <Position X="8.25" Y="5.25" Width="2.25" />
+    <Position X="7" Y="4.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>kAE+gkwPEC1EBkABkLiwJUiCAMwSQAUJpIAIGE6DQAQ=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi2_XmlEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi3_DatabaseTableEditor" Collapsed="true">
-    <Position X="8.25" Y="6" Width="2.25" />
+    <Position X="7" Y="5.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AlUiABBgAKAASCFAAIigoAIGQAgIQYABIAAAAIARAFA=</HashCode>
+      <HashCode>AlUiABBgAKAASCFAQIigoAIGQAgIQYABIAAAAIARCFA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi3_DatabaseTableEditor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi4_FileTreeView" Collapsed="true">
-    <Position X="8.25" Y="7.25" Width="2.25" />
+    <Position X="7" Y="6.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AgQAYAAAICAAACFAASiAAAACQAAQAAAAACCAAAAAAAg=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi4_FileTreeView.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi5_FileOverview" Collapsed="true">
-    <Position X="8.25" Y="8" Width="2.25" />
+    <Position X="7" Y="7.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAACAAABBAAAiAAAACAAAAEAAABACAAAIAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi5_FileOverview.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.U0_UtilityMainForm" Collapsed="true">
-    <Position X="17.5" Y="3.75" Width="2" />
+    <Position X="13.75" Y="2" Width="2" />
     <TypeIdentifier>
       <HashCode>ECCAOjAGKiQEBDAEAACRQAUiAzREQgMMgQyYOEQAQBA=</HashCode>
       <FileName>SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.U1_CustomizationForm" Collapsed="true">
-    <Position X="17.5" Y="4.5" Width="2" />
+    <Position X="13.75" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>gAAAAACEACAAAEAAAAiAAAACCAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\UTILITY\U1_CustomizationForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.SYSTEM.CLASSES.FILES.FILE_TYPES.XmlFile" Collapsed="true">
-    <Position X="0.5" Y="6.75" Width="1.75" />
+    <Position X="0.5" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SYSTEM\CLASSES\FILES\FILE_TYPES\XmlFile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F9_Logo" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAABQIAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F9_Logo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F10_DatabaseTableTools" Collapsed="true">
-    <Position X="10.75" Y="5.5" Width="2.25" />
+    <Position X="9.5" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAgAAAACEAAAGAAAAAAAAAAgAAAEAAAA=</HashCode>
+      <HashCode>AAAAAEAIACAIAiEAAACEAgAGAEAAAAAACQgAAAMQAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F10_DatabaseTableTools.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F5mdi6_ImageViewer" Collapsed="true">
-    <Position X="8.25" Y="8.75" Width="2.25" />
+    <Position X="7" Y="8.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAACAAAAAAIACAAAACAAAAAAAAAAABEAAAAAA=</HashCode>
+      <HashCode>AAACABAAACAAAADAIACAAACiAAAAAAABBAABUAAAQAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\FILE_EDITOR\MDI_WINDOWS\F5mdi6_ImageViewer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="management_system.F11_AddGroupUsers" Collapsed="true">
-    <Position X="8.25" Y="9.5" Width="2.25" />
+    <Position X="7" Y="9" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAACAAAACAAAAAAAACAAABCAAAAAAAAAAAAAAAhAAA=</HashCode>
       <FileName>SYSTEM\FORMS\PROGRAM_FORMS\F11_AddGroupUsers.cs</FileName>
     </TypeIdentifier>
   </Class>
