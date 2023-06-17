@@ -9,9 +9,9 @@ Requirements:
 - OS: Windows
 - folder structure should remain unchanged 
 - a local database, configured in management_system/SYSTEM/SETTINGS/XML_databases.xml (connection string) and with the following mandatory tables:
- 1. Users (log in information)
- 2. Notifications (notifications; will be automatically generated if missing)
- 3. GrupIndex (information about groups)
+    1. Users (log in information)
+    2. Notifications (notifications; will be automatically generated if missing)
+    3. GrupIndex (information about groups)
   
 Main programs used in development:
 - Micrososft Visual Studio 2022 Community Edition
