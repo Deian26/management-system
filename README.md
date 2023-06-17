@@ -4,9 +4,10 @@ This project is meant to be used as an example for educational purposes. It is n
 A system that aims to facilitate the file management of an organization.
 
 Requirements:
-- a local database
+- a local database, configured in management_system/SYSTEM/SETTINGS/XML_databases.xml (connection string)
 - .NET support
-- IDE to build the executable
+- IDE to build the executable (needs to be capable of opening .sln projects)
+- OS: Windows
 
 Main programs used in development:
 - Micrososft Visual Studio 2022 Community Edition
