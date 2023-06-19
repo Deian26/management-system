@@ -206,7 +206,7 @@ namespace management_system
         public const int maxUsernameLength = 20; //the maximum length of a username
         public static Group currentGroup = null; //current group   
 
-        public static string groupIconFileFilterString = "JPEG|*.jpeg|JPG|*.jpg|PNG|*.png";//the filter to be applied for the files shown in the new group icon file dialog 
+        public static string groupIconFileFilterString = "JPEG|*.jpeg|JPG|*.jpg|PNG|*.png|BMP|*.bmp";//the filter to be applied for the files shown in the new group icon file dialog 
 
         //local folder names
         //public static string TempfolderName = "TBL"; //Temp folder
@@ -2558,16 +2558,26 @@ namespace management_system
                 dr = readGroups.ExecuteReader();
                 List<tempGroup> tempList = new List<tempGroup>(); //temporary memory struct
                 bool userHasAccess = false;
+                Image img = null;
+
 
                 //add group details into temporary memory storage
-                while(dr.Read())
+                while (dr.Read())
                 {
+                    img = null;
+                    //search for locally saved group image
+                    if (File.Exists(Utility.dirPathDATA+"\\"+Utility.username+"\\"+ "Group_" +Utility.DEC_GEN(dr.GetString(0), Utility.genKey) +"\\"+ "GroupImage.bmp") == true)
+                    {
+                        //load image
+                        img = Image.FromFile(Utility.dirPathDATA + "\\" + Utility.username + "\\" + "Group_" + Utility.DEC_GEN(dr.GetString(0), Utility.genKey) + "\\" + "GroupImage.bmp");
+                    }
+
                     tempList.Add(new tempGroup(
                             Utility.DEC_GEN(dr.GetString(0), Utility.genKey), //group name
                             Utility.DEC_GEN(dr.GetString(1), Utility.genKey), //group author
                             Utility.DEC_GEN(dr.GetString(2), Utility.genKey), //creation date of the group
                             Utility.DEC_GEN(dr.GetInt32(3), Utility.genKey), //adminGroup (1=true, 0 = false)
-                            null,                                       //image, //image - DEV
+                            img,                                       //image, //image - DEV
                             Utility.DEC_GEN(dr.GetInt32(5), Utility.genKey), //cryptographic key
 
                             Utility.getLastDataBaseConnString()//currently connected database - from which the details are read

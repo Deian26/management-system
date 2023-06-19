@@ -161,6 +161,9 @@ namespace management_system
 
                 //create a GroupName_DatabaseFiles database table to store group files in the database
                 this.createGroupDatabaseFilesTable();
+
+                //save the image locally (in the folder of the group)
+                icon.Save(this.localFilesPath +"\\" + "GroupImage.bmp");
             }
             else
             {
@@ -180,10 +183,17 @@ namespace management_system
             this.creationDate = DateTime.Parse(dateCreated);
             this.key = key;
             this.database = database;
-
+            
             //store the filePath to the local files folder
             this.localFilesPath = Utility.dirPathDATA +"\\"+Utility.username+ "\\Group_" + this.name;
             this.localFilesPath = Path.GetFullPath(this.localFilesPath);
+
+            //load locally stored group image (if it exists)
+            if(File.Exists(this.localFilesPath+"\\"+"GroupImage.bmp"))
+            {
+                this.icon = Image.FromFile(this.localFilesPath + "\\" + "GroupImage.bmp");
+            }
+
 
             //load the names of the locally stored files
             this.loadLocalFileNames(this.localFilesPath);

@@ -141,7 +141,11 @@ namespace management_system
                     //load the icon into memory
                     this.icon = Image.FromFile(iconFilePath);
 
+
+
+
                     //store the image in a byte buffer
+                    /*
                     Stream iconStream = File.Open(iconFilePath, FileMode.Open);
                     int input = 0, i = 0;
                     byte[] byteBuffer = new byte[4096];
@@ -153,7 +157,7 @@ namespace management_system
                         byteBuffer[i] = (byte)input;
                         i++;
                     } while (input != -1);
-
+                    */
                     //load the image into the database
                     //DEV
                 }
