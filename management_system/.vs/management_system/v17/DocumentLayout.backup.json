@@ -1,0 +1,1013 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\Development_Software\\Management_System\\management_system\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f0_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f0_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\utility\\u0_utilitymainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u0_utilitymainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\utility\\u0_utilitymainform.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u0_utilitymainform.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\program_forms\\f9_logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f9_logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\utility\\u1_customizationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u1_customizationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\utility\\u0_utilitymainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u0_utilitymainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f8_addnewtablecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f8_addnewtablecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f7_createnewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f7_createnewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f6_generalinformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f6_generalinformation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi4_filetreeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi4_filetreeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f4_newgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f4_newgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f3_usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f3_usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f2_mainformnotificationwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f2_mainformnotificationwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f11_addgroupusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f11_addgroupusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f10_databasetabletools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f10_databasetabletools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f1_mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f1_mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\f5_fileeditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\f5_fileeditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi6_imageviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi6_imageviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi5_fileoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi5_fileoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\classes\\system_classes\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\system_classes\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\groups\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\groups\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f1_mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f1_mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f4_newgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f4_newgroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi1_texteditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|a:\\development_software\\management_system\\management_system\\system\\settings\\xml_messages.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\settings\\xml_messages.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f3_usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f3_usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f7_createnewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f7_createnewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\files\\file_types\\xmlfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\files\\file_types\\xmlfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi4_filetreeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi4_filetreeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\resources\\img_programicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\resources\\img_programicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f0_login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f0_login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\utility\\u1_customizationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u1_customizationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f0_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f0_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\system_classes\\start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\system_classes\\start.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\settings\\xml_errors.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\settings\\xml_errors.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f10_databasetabletools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f10_databasetabletools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi3_databasetableeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi6_imageviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi6_imageviewer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\files\\file_types\\generalfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\files\\file_types\\generalfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\files\\file_editors\\fileeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\files\\file_editors\\fileeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi5_fileoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi5_fileoverview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\f5_fileeditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\f5_fileeditorform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f11_addgroupusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f11_addgroupusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f9_logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f9_logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\file_editor\\mdi_windows\\f5mdi2_xmleditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f8_addnewtablecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f8_addnewtablecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\utility\\u0_utilitymainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\utility\\u0_utilitymainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\tblfileformat.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:tblfileformat.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\forms\\program_forms\\f2_mainformnotificationwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\forms\\program_forms\\f2_mainformnotificationwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\system_classes\\xmlnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\system_classes\\xmlnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|A:\\Development_Software\\Management_System\\management_system\\system\\classes\\files\\file_types\\textfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C313C66A-9D53-4DC9-996A-F9208592B533}|management_system.csproj|solutionrelative:system\\classes\\files\\file_types\\textfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 446,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "ClassDiagram1.cd",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\ClassDiagram1.cd",
+              "RelativeToolTip": "ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2024-11-18T13:42:08.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "F9_Logo.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:39:11.371Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "U0_UtilityMainForm.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.997Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "F0_Login.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.01Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "U0_UtilityMainForm.resx",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.resx",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.resx",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.resx",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.resx",
+              "ViewState": "AgIAAAAAAAAAAAAAAIAwwMYQAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-11-18T13:42:34.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "U1_CustomizationForm.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:34:29.561Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "U0_UtilityMainForm.Designer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.Designer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.Designer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.Designer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:33:11.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "F5mdi1_TextEditor.Designer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.Designer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.Designer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.Designer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.Designer.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAD4v94AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:30:40.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "F8_AddNewTableColumn.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.005Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "F7_CreateNewFile.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.989Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "F6_GeneralInformation.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F6_GeneralInformation.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F6_GeneralInformation.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F6_GeneralInformation.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F6_GeneralInformation.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.006Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "F5mdi4_FileTreeView.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.993Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "F5mdi3_DatabaseTableEditor.Designer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.Designer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.Designer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.Designer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:31:54.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "F5mdi2_XmlEditor.Designer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.Designer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.Designer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.Designer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:31:46.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "F5mdi1_TextEditor.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.986Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "F5mdi3_DatabaseTableEditor.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.996Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "F5mdi2_XmlEditor.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.994Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "F4_NewGroup.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.979Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "F3_UserManagement.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.343Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "F2_MainFormNotificationWindow.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.008Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "F11_AddGroupUsers.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.009Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "F10_DatabaseTableTools.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.988Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "F1_MainForm.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.98Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "F5_FileEditorForm.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.003Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "F5mdi6_ImageViewer.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.999Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "F5mdi5_FileOverview.cs [Design]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs [Design]",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.002Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Utility.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Utility.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Utility.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Utility.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAIwOYIAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "F4_NewGroup.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F4_NewGroup.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAArwGEAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "F1_MainForm.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F1_MainForm.cs",
+              "ViewState": "AgIAAMMAAADA//////8owNwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "XmlFile.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\XmlFile.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\XmlFile.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\XmlFile.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\XmlFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Group.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\GROUPS\\Group.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\GROUPS\\Group.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\GROUPS\\Group.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\GROUPS\\Group.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAjwMMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "F5mdi1_TextEditor.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi1_TextEditor.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAjwNcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "F3_UserManagement.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F3_UserManagement.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAGQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "F5mdi4_FileTreeView.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi4_FileTreeView.cs",
+              "ViewState": "AgIAAF0AAAAAMjMzMzMlwHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "F7_CreateNewFile.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F7_CreateNewFile.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAASwEwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:49.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IMG_ProgramIcon.ico -  [English (United States)] - Icon [256x256, 24 bit, BMP]",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\RESOURCES\\IMG_ProgramIcon.ico",
+              "RelativeDocumentMoniker": "SYSTEM\\RESOURCES\\IMG_ProgramIcon.ico",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\RESOURCES\\IMG_ProgramIcon.ico -  [English (United States)] - Icon [256x256, 24 bit, BMP]",
+              "RelativeToolTip": "SYSTEM\\RESOURCES\\IMG_ProgramIcon.ico -  [English (United States)] - Icon [256x256, 24 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2024-11-18T13:13:50.011Z",
+              "EditorCaption": " -  [English (United States)] - Icon [256x256, 24 bit, BMP]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "U1_CustomizationForm.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U1_CustomizationForm.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAWwBUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "F0_Login.Designer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.Designer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.Designer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.Designer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.Designer.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAABRwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "F0_Login.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F0_Login.cs",
+              "ViewState": "AgIAAIkBAAAAAAAAAAD4v5cBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Start.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Start.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Start.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Start.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\Start.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "F10_DatabaseTableTools.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F10_DatabaseTableTools.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAwwGEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "F5mdi3_DatabaseTableEditor.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi3_DatabaseTableEditor.cs",
+              "ViewState": "AgIAALwAAAAAmpmZmZkZwGIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "GeneralFile.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\GeneralFile.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\GeneralFile.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\GeneralFile.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\GeneralFile.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAIBJwDkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "FileEditor.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_EDITORS\\FileEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\FILES\\FILE_EDITORS\\FileEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_EDITORS\\FileEditor.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\FILES\\FILE_EDITORS\\FileEditor.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAWwCQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "F5mdi6_ImageViewer.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi6_ImageViewer.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "F5mdi5_FileOverview.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi5_FileOverview.cs",
+              "ViewState": "AgIAADgAAACAzMzMzEwwwKQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "F5_FileEditorForm.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\F5_FileEditorForm.cs",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAPwBIBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "F11_AddGroupUsers.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F11_AddGroupUsers.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAWwDMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "F9_Logo.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F9_Logo.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "F5mdi2_XmlEditor.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\FILE_EDITOR\\MDI_WINDOWS\\F5mdi2_XmlEditor.cs",
+              "ViewState": "AgIAAJwBAAAAAAAAAAAWwK8BAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "F8_AddNewTableColumn.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F8_AddNewTableColumn.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwD0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "U0_UtilityMainForm.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\UTILITY\\U0_UtilityMainForm.cs",
+              "ViewState": "AgIAACQBAAAAAAAAAAArwJEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "TblFileFormat.txt",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\TblFileFormat.txt",
+              "RelativeDocumentMoniker": "TblFileFormat.txt",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\TblFileFormat.txt",
+              "RelativeToolTip": "TblFileFormat.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-18T13:13:50.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "F2_MainFormNotificationWindow.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "RelativeToolTip": "SYSTEM\\FORMS\\PROGRAM_FORMS\\F2_MainFormNotificationWindow.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAtwCYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "TextFile.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\TextFile.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\TextFile.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\TextFile.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\FILES\\FILE_TYPES\\TextFile.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAvwA0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "XMLNode.cs",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\XMLNode.cs",
+              "RelativeDocumentMoniker": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\XMLNode.cs",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\CLASSES\\SYSTEM_CLASSES\\XMLNode.cs",
+              "RelativeToolTip": "SYSTEM\\CLASSES\\SYSTEM_CLASSES\\XMLNode.cs",
+              "ViewState": "AgIAAIAAAAAAMzMzM7MpwBgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T13:13:50.041Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "a0c6fc87-7793-4371-b100-30fbc8457817",
+        "Display": 0,
+        "X": 276,
+        "Y": 254,
+        "Width": 1214,
+        "Height": 576,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "XML_messages.xml",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\SETTINGS\\XML_messages.xml",
+              "RelativeDocumentMoniker": "SYSTEM\\SETTINGS\\XML_messages.xml",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\SETTINGS\\XML_messages.xml",
+              "RelativeToolTip": "SYSTEM\\SETTINGS\\XML_messages.xml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAEwBoAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-11-18T13:13:50.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "XML_errors.xml",
+              "DocumentMoniker": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\SETTINGS\\XML_errors.xml",
+              "RelativeDocumentMoniker": "SYSTEM\\SETTINGS\\XML_errors.xml",
+              "ToolTip": "A:\\Development_Software\\Management_System\\management_system\\SYSTEM\\SETTINGS\\XML_errors.xml",
+              "RelativeToolTip": "SYSTEM\\SETTINGS\\XML_errors.xml",
+              "ViewState": "AgIAAP8AAAAAAAAAAIApwA0BAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-11-18T13:13:50.937Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

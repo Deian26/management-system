@@ -43,11 +43,10 @@
             // U1_label_title
             // 
             this.U1_label_title.AutoSize = true;
-            this.U1_label_title.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.U1_label_title.Location = new System.Drawing.Point(9, 7);
-            this.U1_label_title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.U1_label_title.Font = new System.Drawing.Font("Cascadia Code", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.U1_label_title.Location = new System.Drawing.Point(12, 10);
             this.U1_label_title.Name = "U1_label_title";
-            this.U1_label_title.Size = new System.Drawing.Size(255, 25);
+            this.U1_label_title.Size = new System.Drawing.Size(417, 37);
             this.U1_label_title.TabIndex = 0;
             this.U1_label_title.Text = "Customize the application";
             // 
@@ -55,21 +54,21 @@
             // 
             this.U1_tabControl_customization.Controls.Add(this.U1_tabPage_languages);
             this.U1_tabControl_customization.Controls.Add(this.U1_tabPage_themes);
-            this.U1_tabControl_customization.Location = new System.Drawing.Point(9, 36);
-            this.U1_tabControl_customization.Margin = new System.Windows.Forms.Padding(2);
+            this.U1_tabControl_customization.Location = new System.Drawing.Point(12, 47);
+            this.U1_tabControl_customization.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.U1_tabControl_customization.Name = "U1_tabControl_customization";
             this.U1_tabControl_customization.SelectedIndex = 0;
-            this.U1_tabControl_customization.Size = new System.Drawing.Size(582, 320);
+            this.U1_tabControl_customization.Size = new System.Drawing.Size(776, 419);
             this.U1_tabControl_customization.TabIndex = 2;
             // 
             // U1_tabPage_languages
             // 
             this.U1_tabPage_languages.Controls.Add(this.U1_label_description_addLanguage);
-            this.U1_tabPage_languages.Location = new System.Drawing.Point(4, 22);
-            this.U1_tabPage_languages.Margin = new System.Windows.Forms.Padding(2);
+            this.U1_tabPage_languages.Location = new System.Drawing.Point(4, 26);
+            this.U1_tabPage_languages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.U1_tabPage_languages.Name = "U1_tabPage_languages";
-            this.U1_tabPage_languages.Padding = new System.Windows.Forms.Padding(2);
-            this.U1_tabPage_languages.Size = new System.Drawing.Size(574, 294);
+            this.U1_tabPage_languages.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.U1_tabPage_languages.Size = new System.Drawing.Size(768, 389);
             this.U1_tabPage_languages.TabIndex = 0;
             this.U1_tabPage_languages.Text = "Languages";
             this.U1_tabPage_languages.UseVisualStyleBackColor = true;
@@ -77,22 +76,21 @@
             // U1_label_description_addLanguage
             // 
             this.U1_label_description_addLanguage.AutoSize = true;
-            this.U1_label_description_addLanguage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.U1_label_description_addLanguage.Location = new System.Drawing.Point(6, 15);
-            this.U1_label_description_addLanguage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.U1_label_description_addLanguage.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.U1_label_description_addLanguage.Location = new System.Drawing.Point(8, 19);
             this.U1_label_description_addLanguage.Name = "U1_label_description_addLanguage";
-            this.U1_label_description_addLanguage.Size = new System.Drawing.Size(396, 19);
+            this.U1_label_description_addLanguage.Size = new System.Drawing.Size(780, 27);
             this.U1_label_description_addLanguage.TabIndex = 3;
             this.U1_label_description_addLanguage.Text = "This tab allows the addition of new themes to the language pack.";
             // 
             // U1_tabPage_themes
             // 
             this.U1_tabPage_themes.Controls.Add(this.U1_label_description_addTheme);
-            this.U1_tabPage_themes.Location = new System.Drawing.Point(4, 22);
-            this.U1_tabPage_themes.Margin = new System.Windows.Forms.Padding(2);
+            this.U1_tabPage_themes.Location = new System.Drawing.Point(4, 26);
+            this.U1_tabPage_themes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.U1_tabPage_themes.Name = "U1_tabPage_themes";
-            this.U1_tabPage_themes.Padding = new System.Windows.Forms.Padding(2);
-            this.U1_tabPage_themes.Size = new System.Drawing.Size(574, 294);
+            this.U1_tabPage_themes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.U1_tabPage_themes.Size = new System.Drawing.Size(768, 389);
             this.U1_tabPage_themes.TabIndex = 1;
             this.U1_tabPage_themes.Text = "Themes";
             this.U1_tabPage_themes.UseVisualStyleBackColor = true;
@@ -100,23 +98,23 @@
             // U1_label_description_addTheme
             // 
             this.U1_label_description_addTheme.AutoSize = true;
-            this.U1_label_description_addTheme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.U1_label_description_addTheme.Location = new System.Drawing.Point(6, 15);
-            this.U1_label_description_addTheme.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.U1_label_description_addTheme.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.U1_label_description_addTheme.Location = new System.Drawing.Point(8, 19);
             this.U1_label_description_addTheme.Name = "U1_label_description_addTheme";
-            this.U1_label_description_addTheme.Size = new System.Drawing.Size(380, 19);
+            this.U1_label_description_addTheme.Size = new System.Drawing.Size(744, 27);
             this.U1_label_description_addTheme.TabIndex = 2;
             this.U1_label_description_addTheme.Text = "This tab allows the addition of new themes to the theme pack.";
             // 
             // U1_CustomizationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.U1_tabControl_customization);
             this.Controls.Add(this.U1_label_title);
+            this.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "U1_CustomizationForm";
             this.Text = "Customization";
             this.Load += new System.EventHandler(this.U1_CustomizationForm_Load);

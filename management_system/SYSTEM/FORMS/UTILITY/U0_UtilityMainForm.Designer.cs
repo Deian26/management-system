@@ -172,8 +172,8 @@
             // 
             // U0_toolStripStatusLabel_errorStatus
             // 
-            this.U0_toolStripStatusLabel_errorStatus.Name = "U0_toolStripStatusLabel_errorStatus";
             resources.ApplyResources(this.U0_toolStripStatusLabel_errorStatus, "U0_toolStripStatusLabel_errorStatus");
+            this.U0_toolStripStatusLabel_errorStatus.Name = "U0_toolStripStatusLabel_errorStatus";
             // 
             // U0_toolStripStatusLabel_separator
             // 
@@ -182,8 +182,8 @@
             // 
             // U0_toolStripStatusLabel_warningStatus
             // 
-            this.U0_toolStripStatusLabel_warningStatus.Name = "U0_toolStripStatusLabel_warningStatus";
             resources.ApplyResources(this.U0_toolStripStatusLabel_warningStatus, "U0_toolStripStatusLabel_warningStatus");
+            this.U0_toolStripStatusLabel_warningStatus.Name = "U0_toolStripStatusLabel_warningStatus";
             // 
             // U0_toolStripStatusLabel_separator2
             // 
@@ -192,8 +192,8 @@
             // 
             // U0_toolStripStatusLabel_notification
             // 
-            this.U0_toolStripStatusLabel_notification.Name = "U0_toolStripStatusLabel_notification";
             resources.ApplyResources(this.U0_toolStripStatusLabel_notification, "U0_toolStripStatusLabel_notification");
+            this.U0_toolStripStatusLabel_notification.Name = "U0_toolStripStatusLabel_notification";
             // 
             // U0_toolStripStatusLabel_separator3
             // 
@@ -202,8 +202,8 @@
             // 
             // U0_toolStripProgressBar_actionStatus
             // 
-            this.U0_toolStripProgressBar_actionStatus.Name = "U0_toolStripProgressBar_actionStatus";
             resources.ApplyResources(this.U0_toolStripProgressBar_actionStatus, "U0_toolStripProgressBar_actionStatus");
+            this.U0_toolStripProgressBar_actionStatus.Name = "U0_toolStripProgressBar_actionStatus";
             // 
             // U0_notifyIcon_utilityService
             // 

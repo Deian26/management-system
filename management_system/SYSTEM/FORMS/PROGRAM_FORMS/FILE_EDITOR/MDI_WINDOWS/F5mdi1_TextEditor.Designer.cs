@@ -96,7 +96,8 @@
             // 
             // F5mdi1_toolStrip_textEditor
             // 
-            this.F5mdi1_toolStrip_textEditor.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStrip_textEditor.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStrip_textEditor.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.F5mdi1_toolStrip_textEditor.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5mdi1_toolStripDropDownButton_fileButton,
             this.F5mdi1_toolStripSeparator_separator1,
@@ -123,7 +124,7 @@
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights});
             this.F5mdi1_toolStrip_textEditor.Location = new System.Drawing.Point(0, 0);
             this.F5mdi1_toolStrip_textEditor.Name = "F5mdi1_toolStrip_textEditor";
-            this.F5mdi1_toolStrip_textEditor.Size = new System.Drawing.Size(1165, 26);
+            this.F5mdi1_toolStrip_textEditor.Size = new System.Drawing.Size(1165, 31);
             this.F5mdi1_toolStrip_textEditor.TabIndex = 1;
             this.F5mdi1_toolStrip_textEditor.Text = "ToolStrip";
             this.F5mdi1_toolStrip_textEditor.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.F5mdi1_toolStrip_textEditor_ItemClicked);
@@ -137,27 +138,27 @@
             this.F5mdi1_toolStripDropDownButton_fileButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripDropDownButton_fileButton.Image")));
             this.F5mdi1_toolStripDropDownButton_fileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripDropDownButton_fileButton.Name = "F5mdi1_toolStripDropDownButton_fileButton";
-            this.F5mdi1_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(62, 23);
+            this.F5mdi1_toolStripDropDownButton_fileButton.Size = new System.Drawing.Size(70, 28);
             this.F5mdi1_toolStripDropDownButton_fileButton.Text = "Fișier";
             // 
             // F5mdi1_toolStripMenuItem_saveAsButton
             // 
             this.F5mdi1_toolStripMenuItem_saveAsButton.Name = "F5mdi1_toolStripMenuItem_saveAsButton";
-            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(249, 22);
+            this.F5mdi1_toolStripMenuItem_saveAsButton.Size = new System.Drawing.Size(290, 26);
             this.F5mdi1_toolStripMenuItem_saveAsButton.Text = "Salvare ca";
             this.F5mdi1_toolStripMenuItem_saveAsButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click_1);
             // 
             // F5mdi1_toolStripMenuItem_saveIntoDatabaseButton
             // 
             this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Name = "F5mdi1_toolStripMenuItem_saveIntoDatabaseButton";
-            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Size = new System.Drawing.Size(249, 22);
+            this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Size = new System.Drawing.Size(290, 26);
             this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Text = "Încărcare în baza de date";
             this.F5mdi1_toolStripMenuItem_saveIntoDatabaseButton.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_saveAsButton_Click);
             // 
             // F5mdi1_toolStripSeparator_separator1
             // 
             this.F5mdi1_toolStripSeparator_separator1.Name = "F5mdi1_toolStripSeparator_separator1";
-            this.F5mdi1_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 26);
+            this.F5mdi1_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 31);
             // 
             // F5mdi1_toolStripButton_openFile
             // 
@@ -165,7 +166,7 @@
             this.F5mdi1_toolStripButton_openFile.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_openFile.Image")));
             this.F5mdi1_toolStripButton_openFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_openFile.Name = "F5mdi1_toolStripButton_openFile";
-            this.F5mdi1_toolStripButton_openFile.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_openFile.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_openFile.Text = "&Open";
             this.F5mdi1_toolStripButton_openFile.Click += new System.EventHandler(this.F5mdi1_toolStripButton_openFile_Click);
             // 
@@ -175,7 +176,7 @@
             this.F5mdi1_toolStripButton_save.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_save.Image")));
             this.F5mdi1_toolStripButton_save.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_save.Name = "F5mdi1_toolStripButton_save";
-            this.F5mdi1_toolStripButton_save.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_save.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_save.Text = "&Save";
             this.F5mdi1_toolStripButton_save.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
@@ -186,7 +187,7 @@
             this.F5mdi1_toolStripButton_print.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_print.Image")));
             this.F5mdi1_toolStripButton_print.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_print.Name = "F5mdi1_toolStripButton_print";
-            this.F5mdi1_toolStripButton_print.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_print.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_print.Text = "&Print";
             this.F5mdi1_toolStripButton_print.Click += new System.EventHandler(this.printToolStripButton_Click);
             // 
@@ -196,128 +197,128 @@
             this.F5mdi1_toolStripButton_helpButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_helpButton.Image")));
             this.F5mdi1_toolStripButton_helpButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_helpButton.Name = "F5mdi1_toolStripButton_helpButton";
-            this.F5mdi1_toolStripButton_helpButton.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_helpButton.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_helpButton.Text = "He&lp";
             this.F5mdi1_toolStripButton_helpButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
             // 
             // F5mdi1_toolStripSeparator_separator5
             // 
             this.F5mdi1_toolStripSeparator_separator5.Name = "F5mdi1_toolStripSeparator_separator5";
-            this.F5mdi1_toolStripSeparator_separator5.Size = new System.Drawing.Size(6, 26);
+            this.F5mdi1_toolStripSeparator_separator5.Size = new System.Drawing.Size(6, 31);
             // 
             // F5mdi1_toolStripButton_boldbutton
             // 
             this.F5mdi1_toolStripButton_boldbutton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_boldbutton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_boldbutton.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_boldbutton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_boldbutton.Image")));
             this.F5mdi1_toolStripButton_boldbutton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_boldbutton.Name = "F5mdi1_toolStripButton_boldbutton";
-            this.F5mdi1_toolStripButton_boldbutton.Size = new System.Drawing.Size(24, 23);
+            this.F5mdi1_toolStripButton_boldbutton.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_boldbutton.Text = "B";
             this.F5mdi1_toolStripButton_boldbutton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // F5mdi1_toolStripButton_italicButton
             // 
             this.F5mdi1_toolStripButton_italicButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_italicButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_italicButton.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_italicButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_italicButton.Image")));
             this.F5mdi1_toolStripButton_italicButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_italicButton.Name = "F5mdi1_toolStripButton_italicButton";
-            this.F5mdi1_toolStripButton_italicButton.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_italicButton.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_italicButton.Text = "I";
             this.F5mdi1_toolStripButton_italicButton.Click += new System.EventHandler(this.F5mdi1_toolStripButton_italicButton_Click);
             // 
             // F5mdi1_toolStripButton_underlineButton
             // 
             this.F5mdi1_toolStripButton_underlineButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_underlineButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_underlineButton.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_underlineButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_underlineButton.Image")));
             this.F5mdi1_toolStripButton_underlineButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_underlineButton.Name = "F5mdi1_toolStripButton_underlineButton";
-            this.F5mdi1_toolStripButton_underlineButton.Size = new System.Drawing.Size(24, 23);
+            this.F5mdi1_toolStripButton_underlineButton.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_underlineButton.Text = "U";
             this.F5mdi1_toolStripButton_underlineButton.Click += new System.EventHandler(this.F5mdi1_toolStripButton_underlineButton_Click);
             // 
             // F5mdi1_toolStripButton_strikethroughButton
             // 
             this.F5mdi1_toolStripButton_strikethroughButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_strikethroughButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_strikethroughButton.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_strikethroughButton.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_strikethroughButton.Image")));
             this.F5mdi1_toolStripButton_strikethroughButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_strikethroughButton.Name = "F5mdi1_toolStripButton_strikethroughButton";
-            this.F5mdi1_toolStripButton_strikethroughButton.Size = new System.Drawing.Size(23, 23);
+            this.F5mdi1_toolStripButton_strikethroughButton.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_strikethroughButton.Text = "S";
             this.F5mdi1_toolStripButton_strikethroughButton.Click += new System.EventHandler(this.F5mdi1_toolStripButton_strikethroughButton_Click);
             // 
             // F5mdi1_toolStripSeparator_separator2
             // 
             this.F5mdi1_toolStripSeparator_separator2.Name = "F5mdi1_toolStripSeparator_separator2";
-            this.F5mdi1_toolStripSeparator_separator2.Size = new System.Drawing.Size(6, 26);
+            this.F5mdi1_toolStripSeparator_separator2.Size = new System.Drawing.Size(6, 31);
             // 
             // F5mdi1_toolStripButton_textColour
             // 
             this.F5mdi1_toolStripButton_textColour.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_textColour.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_textColour.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_textColour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.F5mdi1_toolStripButton_textColour.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_textColour.Image")));
             this.F5mdi1_toolStripButton_textColour.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_textColour.Name = "F5mdi1_toolStripButton_textColour";
-            this.F5mdi1_toolStripButton_textColour.Size = new System.Drawing.Size(24, 23);
+            this.F5mdi1_toolStripButton_textColour.Size = new System.Drawing.Size(29, 28);
             this.F5mdi1_toolStripButton_textColour.Text = "A";
             this.F5mdi1_toolStripButton_textColour.Click += new System.EventHandler(this.F5mdi1_toolStripButton_textColour_Click);
             // 
             // F5mdi1_toolStripButton_increaseTextSize
             // 
             this.F5mdi1_toolStripButton_increaseTextSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_increaseTextSize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_increaseTextSize.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_increaseTextSize.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_increaseTextSize.Image")));
             this.F5mdi1_toolStripButton_increaseTextSize.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_increaseTextSize.Name = "F5mdi1_toolStripButton_increaseTextSize";
-            this.F5mdi1_toolStripButton_increaseTextSize.Size = new System.Drawing.Size(33, 23);
+            this.F5mdi1_toolStripButton_increaseTextSize.Size = new System.Drawing.Size(39, 28);
             this.F5mdi1_toolStripButton_increaseTextSize.Text = "A+";
             this.F5mdi1_toolStripButton_increaseTextSize.Click += new System.EventHandler(this.F5mdi1_toolStripButton_increaseTextSize_Click);
             // 
             // F5mdi1_toolStripButton_decreaseTextSize
             // 
             this.F5mdi1_toolStripButton_decreaseTextSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_decreaseTextSize.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_decreaseTextSize.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_decreaseTextSize.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_decreaseTextSize.Image")));
             this.F5mdi1_toolStripButton_decreaseTextSize.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_decreaseTextSize.Name = "F5mdi1_toolStripButton_decreaseTextSize";
-            this.F5mdi1_toolStripButton_decreaseTextSize.Size = new System.Drawing.Size(30, 23);
+            this.F5mdi1_toolStripButton_decreaseTextSize.Size = new System.Drawing.Size(35, 28);
             this.F5mdi1_toolStripButton_decreaseTextSize.Text = "A-";
             this.F5mdi1_toolStripButton_decreaseTextSize.Click += new System.EventHandler(this.F5mdi1_toolStripButton_decreaseTextSize_Click);
             // 
             // F5mdi1_toolStripSeparator_separator3
             // 
             this.F5mdi1_toolStripSeparator_separator3.Name = "F5mdi1_toolStripSeparator_separator3";
-            this.F5mdi1_toolStripSeparator_separator3.Size = new System.Drawing.Size(6, 26);
+            this.F5mdi1_toolStripSeparator_separator3.Size = new System.Drawing.Size(6, 31);
             // 
             // F5mdi1_toolStripComboBox_font
             // 
-            this.F5mdi1_toolStripComboBox_font.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripComboBox_font.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripComboBox_font.Name = "F5mdi1_toolStripComboBox_font";
-            this.F5mdi1_toolStripComboBox_font.Size = new System.Drawing.Size(200, 26);
+            this.F5mdi1_toolStripComboBox_font.Size = new System.Drawing.Size(200, 31);
             this.F5mdi1_toolStripComboBox_font.SelectedIndexChanged += new System.EventHandler(this.F5mdi1_toolStripComboBox_font_SelectedIndexChanged);
             this.F5mdi1_toolStripComboBox_font.Click += new System.EventHandler(this.F5mdi1_toolStripComboBox_font_Click);
             // 
             // F5mdi1_toolStripSeparator_separator4
             // 
             this.F5mdi1_toolStripSeparator_separator4.Name = "F5mdi1_toolStripSeparator_separator4";
-            this.F5mdi1_toolStripSeparator_separator4.Size = new System.Drawing.Size(6, 26);
+            this.F5mdi1_toolStripSeparator_separator4.Size = new System.Drawing.Size(6, 31);
             // 
             // F5mdi1_toolStripLabel_searchTextboxLabel
             // 
-            this.F5mdi1_toolStripLabel_searchTextboxLabel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripLabel_searchTextboxLabel.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripLabel_searchTextboxLabel.Name = "F5mdi1_toolStripLabel_searchTextboxLabel";
-            this.F5mdi1_toolStripLabel_searchTextboxLabel.Size = new System.Drawing.Size(63, 23);
+            this.F5mdi1_toolStripLabel_searchTextboxLabel.Size = new System.Drawing.Size(76, 28);
             this.F5mdi1_toolStripLabel_searchTextboxLabel.Text = "Caută:";
             // 
             // F5mdi1_toolStripTextBox_searchTextbox
             // 
-            this.F5mdi1_toolStripTextBox_searchTextbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripTextBox_searchTextbox.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripTextBox_searchTextbox.Name = "F5mdi1_toolStripTextBox_searchTextbox";
-            this.F5mdi1_toolStripTextBox_searchTextbox.Size = new System.Drawing.Size(130, 26);
+            this.F5mdi1_toolStripTextBox_searchTextbox.Size = new System.Drawing.Size(130, 31);
             this.F5mdi1_toolStripTextBox_searchTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.F5mdi1_toolStripTextBox_searchTextbox_KeyPress);
             // 
             // F5mdi1_toolStripSplitButton_searchOptions
@@ -329,42 +330,42 @@
             this.F5mdi1_toolStripMenuItem_wholeWordCheckbox,
             this.F5mdi1_toolStripMenuItem_highlightColour,
             this.F5mdi1_toolStripMenuItem_replaceButton});
-            this.F5mdi1_toolStripSplitButton_searchOptions.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripSplitButton_searchOptions.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripSplitButton_searchOptions.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripSplitButton_searchOptions.Image")));
             this.F5mdi1_toolStripSplitButton_searchOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripSplitButton_searchOptions.Name = "F5mdi1_toolStripSplitButton_searchOptions";
-            this.F5mdi1_toolStripSplitButton_searchOptions.Size = new System.Drawing.Size(85, 23);
+            this.F5mdi1_toolStripSplitButton_searchOptions.Size = new System.Drawing.Size(101, 28);
             this.F5mdi1_toolStripSplitButton_searchOptions.Text = "Opțiuni";
             this.F5mdi1_toolStripSplitButton_searchOptions.ToolTipText = "SearchOptions";
             // 
             // F5mdi1_toolStripMenuItem_matchCaseCheckbox
             // 
             this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.CheckOnClick = true;
-            this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Name = "F5mdi1_toolStripMenuItem_matchCaseCheckbox";
-            this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Size = new System.Drawing.Size(347, 28);
             this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Text = "Respectare capitalizare";
             this.F5mdi1_toolStripMenuItem_matchCaseCheckbox.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_matchCaseCheckbox_Click);
             // 
             // F5mdi1_toolStripMenuItem_reverseCheckbox
             // 
             this.F5mdi1_toolStripMenuItem_reverseCheckbox.CheckOnClick = true;
-            this.F5mdi1_toolStripMenuItem_reverseCheckbox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripMenuItem_reverseCheckbox.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripMenuItem_reverseCheckbox.Name = "F5mdi1_toolStripMenuItem_reverseCheckbox";
-            this.F5mdi1_toolStripMenuItem_reverseCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi1_toolStripMenuItem_reverseCheckbox.Size = new System.Drawing.Size(347, 28);
             this.F5mdi1_toolStripMenuItem_reverseCheckbox.Text = "Inversat";
             // 
             // F5mdi1_toolStripMenuItem_wholeWordCheckbox
             // 
             this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.CheckOnClick = true;
             this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.Name = "F5mdi1_toolStripMenuItem_wholeWordCheckbox";
-            this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.Size = new System.Drawing.Size(347, 28);
             this.F5mdi1_toolStripMenuItem_wholeWordCheckbox.Text = "Întregul cuvânt";
             // 
             // F5mdi1_toolStripMenuItem_highlightColour
             // 
             this.F5mdi1_toolStripMenuItem_highlightColour.Name = "F5mdi1_toolStripMenuItem_highlightColour";
-            this.F5mdi1_toolStripMenuItem_highlightColour.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi1_toolStripMenuItem_highlightColour.Size = new System.Drawing.Size(347, 28);
             this.F5mdi1_toolStripMenuItem_highlightColour.Text = "Culoare evidențiere";
             this.F5mdi1_toolStripMenuItem_highlightColour.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_highlightColour_Click);
             // 
@@ -374,47 +375,48 @@
             this.F5mdi1_toolStripTextBox_replaceTextBox,
             this.F5mdi1_toolStripMenuItem_replaceAll});
             this.F5mdi1_toolStripMenuItem_replaceButton.Name = "F5mdi1_toolStripMenuItem_replaceButton";
-            this.F5mdi1_toolStripMenuItem_replaceButton.Size = new System.Drawing.Size(285, 24);
+            this.F5mdi1_toolStripMenuItem_replaceButton.Size = new System.Drawing.Size(347, 28);
             this.F5mdi1_toolStripMenuItem_replaceButton.Text = "Înlocuire";
             // 
             // F5mdi1_toolStripTextBox_replaceTextBox
             // 
-            this.F5mdi1_toolStripTextBox_replaceTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripTextBox_replaceTextBox.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripTextBox_replaceTextBox.Name = "F5mdi1_toolStripTextBox_replaceTextBox";
-            this.F5mdi1_toolStripTextBox_replaceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.F5mdi1_toolStripTextBox_replaceTextBox.Size = new System.Drawing.Size(100, 25);
             // 
             // F5mdi1_toolStripMenuItem_replaceAll
             // 
             this.F5mdi1_toolStripMenuItem_replaceAll.Name = "F5mdi1_toolStripMenuItem_replaceAll";
-            this.F5mdi1_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(213, 24);
+            this.F5mdi1_toolStripMenuItem_replaceAll.Size = new System.Drawing.Size(259, 28);
             this.F5mdi1_toolStripMenuItem_replaceAll.Text = "Înlocuire toate";
             this.F5mdi1_toolStripMenuItem_replaceAll.Click += new System.EventHandler(this.F5mdi1_toolStripMenuItem_replaceAll_Click);
             // 
             // F5mdi1_toolStripButton_startSearch
             // 
             this.F5mdi1_toolStripButton_startSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_startSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_startSearch.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_startSearch.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_startSearch.Image")));
             this.F5mdi1_toolStripButton_startSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_startSearch.Name = "F5mdi1_toolStripButton_startSearch";
-            this.F5mdi1_toolStripButton_startSearch.Size = new System.Drawing.Size(76, 23);
+            this.F5mdi1_toolStripButton_startSearch.Size = new System.Drawing.Size(91, 28);
             this.F5mdi1_toolStripButton_startSearch.Text = "Căutare";
             this.F5mdi1_toolStripButton_startSearch.Click += new System.EventHandler(this.F5mdi1_toolStripButton_startSearch_Click);
             // 
             // F5mdi1_toolStripButton_clearSearchedTextHighlights
             // 
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Image = ((System.Drawing.Image)(resources.GetObject("F5mdi1_toolStripButton_clearSearchedTextHighlights.Image")));
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Name = "F5mdi1_toolStripButton_clearSearchedTextHighlights";
-            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Size = new System.Drawing.Size(157, 23);
+            this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Size = new System.Drawing.Size(190, 27);
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Text = "Ștergere căutare";
             this.F5mdi1_toolStripButton_clearSearchedTextHighlights.Click += new System.EventHandler(this.F5mdi1_toolStripButton_clearSearchedTextHighlights_Click);
             // 
             // F5mdi1_statusStrip_status
             // 
-            this.F5mdi1_statusStrip_status.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_statusStrip_status.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_statusStrip_status.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.F5mdi1_statusStrip_status.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5mdi1_toolStripStatusLabel_wordCount,
             this.F5mdi1_toolStripStatusLabel_separator1,
@@ -422,46 +424,46 @@
             this.F5mdi1_toolStripStatusLabel_separator2,
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus,
             this.F5mdi1_toolStripStatusLabel_localFileSaveStatus});
-            this.F5mdi1_statusStrip_status.Location = new System.Drawing.Point(0, 428);
+            this.F5mdi1_statusStrip_status.Location = new System.Drawing.Point(0, 426);
             this.F5mdi1_statusStrip_status.Name = "F5mdi1_statusStrip_status";
-            this.F5mdi1_statusStrip_status.Size = new System.Drawing.Size(1165, 22);
+            this.F5mdi1_statusStrip_status.Size = new System.Drawing.Size(1165, 24);
             this.F5mdi1_statusStrip_status.TabIndex = 2;
             // 
             // F5mdi1_toolStripStatusLabel_wordCount
             // 
             this.F5mdi1_toolStripStatusLabel_wordCount.Name = "F5mdi1_toolStripStatusLabel_wordCount";
-            this.F5mdi1_toolStripStatusLabel_wordCount.Size = new System.Drawing.Size(91, 17);
+            this.F5mdi1_toolStripStatusLabel_wordCount.Size = new System.Drawing.Size(104, 18);
             this.F5mdi1_toolStripStatusLabel_wordCount.Text = "#NR_CUVINTE#";
             // 
             // F5mdi1_toolStripStatusLabel_separator1
             // 
             this.F5mdi1_toolStripStatusLabel_separator1.Name = "F5mdi1_toolStripStatusLabel_separator1";
-            this.F5mdi1_toolStripStatusLabel_separator1.Size = new System.Drawing.Size(14, 17);
+            this.F5mdi1_toolStripStatusLabel_separator1.Size = new System.Drawing.Size(16, 18);
             this.F5mdi1_toolStripStatusLabel_separator1.Text = "|";
             // 
             // F5mdi1_toolStripStatusLabel_fileExtension
             // 
             this.F5mdi1_toolStripStatusLabel_fileExtension.Name = "F5mdi1_toolStripStatusLabel_fileExtension";
-            this.F5mdi1_toolStripStatusLabel_fileExtension.Size = new System.Drawing.Size(126, 17);
+            this.F5mdi1_toolStripStatusLabel_fileExtension.Size = new System.Drawing.Size(144, 18);
             this.F5mdi1_toolStripStatusLabel_fileExtension.Text = "#EXTENSIE_FISIER#";
             // 
             // F5mdi1_toolStripStatusLabel_separator2
             // 
             this.F5mdi1_toolStripStatusLabel_separator2.Name = "F5mdi1_toolStripStatusLabel_separator2";
-            this.F5mdi1_toolStripStatusLabel_separator2.Size = new System.Drawing.Size(14, 17);
+            this.F5mdi1_toolStripStatusLabel_separator2.Size = new System.Drawing.Size(16, 18);
             this.F5mdi1_toolStripStatusLabel_separator2.Text = "|";
             // 
             // F5mdi1_toolStripStatusLabel_databaseSyncStatus
             // 
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Name = "F5mdi1_toolStripStatusLabel_databaseSyncStatus";
-            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Size = new System.Drawing.Size(210, 17);
+            this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Size = new System.Drawing.Size(240, 18);
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Text = "#SINCRONIZARE_BAZA_DATE_TEXT#";
             this.F5mdi1_toolStripStatusLabel_databaseSyncStatus.Visible = false;
             // 
             // F5mdi1_toolStripStatusLabel_localFileSaveStatus
             // 
             this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Name = "F5mdi1_toolStripStatusLabel_localFileSaveStatus";
-            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Size = new System.Drawing.Size(224, 17);
+            this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Size = new System.Drawing.Size(256, 18);
             this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Text = "#SINCRONIZARE_BAZA_DATE_STATUS#";
             this.F5mdi1_toolStripStatusLabel_localFileSaveStatus.Visible = false;
             // 
@@ -489,13 +491,13 @@
             // 
             // F5mdi1_TextEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 450);
             this.Controls.Add(this.F5mdi1_statusStrip_status);
             this.Controls.Add(this.F5mdi1_toolStrip_textEditor);
             this.Controls.Add(this.F5mdi1_richTextBox_textEditor);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F5mdi1_TextEditor";
             this.Text = "Editor de text";

@@ -47,22 +47,22 @@
             // F3_label_username
             // 
             this.F3_label_username.AutoSize = true;
-            this.F3_label_username.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_label_username.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_label_username.Location = new System.Drawing.Point(11, 35);
             this.F3_label_username.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F3_label_username.Name = "F3_label_username";
-            this.F3_label_username.Size = new System.Drawing.Size(153, 19);
+            this.F3_label_username.Size = new System.Drawing.Size(186, 23);
             this.F3_label_username.TabIndex = 4;
             this.F3_label_username.Text = "Nume utilizator:";
             // 
             // F3_user_rights
             // 
             this.F3_user_rights.AutoSize = true;
-            this.F3_user_rights.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_user_rights.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_user_rights.Location = new System.Drawing.Point(11, 119);
             this.F3_user_rights.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F3_user_rights.Name = "F3_user_rights";
-            this.F3_user_rights.Size = new System.Drawing.Size(108, 19);
+            this.F3_user_rights.Size = new System.Drawing.Size(131, 23);
             this.F3_user_rights.TabIndex = 5;
             this.F3_user_rights.Text = "Permisiuni:";
             // 
@@ -70,7 +70,7 @@
             // 
             this.F3_textBox_username.Location = new System.Drawing.Point(217, 37);
             this.F3_textBox_username.Name = "F3_textBox_username";
-            this.F3_textBox_username.Size = new System.Drawing.Size(199, 20);
+            this.F3_textBox_username.Size = new System.Drawing.Size(199, 23);
             this.F3_textBox_username.TabIndex = 6;
             // 
             // F3_comboBox_userRights
@@ -78,13 +78,13 @@
             this.F3_comboBox_userRights.FormattingEnabled = true;
             this.F3_comboBox_userRights.Location = new System.Drawing.Point(217, 119);
             this.F3_comboBox_userRights.Name = "F3_comboBox_userRights";
-            this.F3_comboBox_userRights.Size = new System.Drawing.Size(199, 21);
+            this.F3_comboBox_userRights.Size = new System.Drawing.Size(199, 25);
             this.F3_comboBox_userRights.TabIndex = 7;
             this.F3_comboBox_userRights.SelectedIndexChanged += new System.EventHandler(this.F3_comboBox_userRights_SelectedIndexChanged);
             // 
             // F3_button_assignUserRights
             // 
-            this.F3_button_assignUserRights.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_button_assignUserRights.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_button_assignUserRights.Location = new System.Drawing.Point(234, 161);
             this.F3_button_assignUserRights.Name = "F3_button_assignUserRights";
             this.F3_button_assignUserRights.Size = new System.Drawing.Size(182, 30);
@@ -96,11 +96,11 @@
             // F3_label_password
             // 
             this.F3_label_password.AutoSize = true;
-            this.F3_label_password.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_label_password.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_label_password.Location = new System.Drawing.Point(11, 71);
             this.F3_label_password.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F3_label_password.Name = "F3_label_password";
-            this.F3_label_password.Size = new System.Drawing.Size(72, 19);
+            this.F3_label_password.Size = new System.Drawing.Size(87, 23);
             this.F3_label_password.TabIndex = 11;
             this.F3_label_password.Text = "Parolă:";
             // 
@@ -108,7 +108,7 @@
             // 
             this.F3_textBox_password.Location = new System.Drawing.Point(217, 73);
             this.F3_textBox_password.Name = "F3_textBox_password";
-            this.F3_textBox_password.Size = new System.Drawing.Size(199, 20);
+            this.F3_textBox_password.Size = new System.Drawing.Size(199, 23);
             this.F3_textBox_password.TabIndex = 12;
             this.F3_textBox_password.UseSystemPasswordChar = true;
             // 
@@ -122,7 +122,7 @@
             // 
             // F3_button_deleteAccount
             // 
-            this.F3_button_deleteAccount.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_button_deleteAccount.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_button_deleteAccount.Location = new System.Drawing.Point(12, 161);
             this.F3_button_deleteAccount.Name = "F3_button_deleteAccount";
             this.F3_button_deleteAccount.Size = new System.Drawing.Size(185, 30);
@@ -134,17 +134,17 @@
             // F3_label_user_details
             // 
             this.F3_label_user_details.AutoSize = true;
-            this.F3_label_user_details.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F3_label_user_details.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F3_label_user_details.Location = new System.Drawing.Point(11, 9);
             this.F3_label_user_details.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F3_label_user_details.Name = "F3_label_user_details";
-            this.F3_label_user_details.Size = new System.Drawing.Size(171, 19);
+            this.F3_label_user_details.Size = new System.Drawing.Size(208, 23);
             this.F3_label_user_details.TabIndex = 14;
             this.F3_label_user_details.Text = "Detalii utilizator";
             // 
             // F3_UserManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 203);
             this.Controls.Add(this.F3_label_user_details);
@@ -156,7 +156,7 @@
             this.Controls.Add(this.F3_textBox_username);
             this.Controls.Add(this.F3_user_rights);
             this.Controls.Add(this.F3_label_username);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F3_UserManagement";
             this.Text = "Administrare utilizatori";

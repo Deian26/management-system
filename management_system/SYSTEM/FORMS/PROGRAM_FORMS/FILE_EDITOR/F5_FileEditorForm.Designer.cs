@@ -43,28 +43,29 @@
             // 
             // F5_toolStrip_fileEditorForm
             // 
+            this.F5_toolStrip_fileEditorForm.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.F5_toolStrip_fileEditorForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5_toolStripSeparator_separator1,
             this.F5_toolStripButton_addUsers,
             this.toolStripButton1});
             this.F5_toolStrip_fileEditorForm.Location = new System.Drawing.Point(0, 0);
             this.F5_toolStrip_fileEditorForm.Name = "F5_toolStrip_fileEditorForm";
-            this.F5_toolStrip_fileEditorForm.Size = new System.Drawing.Size(1420, 26);
+            this.F5_toolStrip_fileEditorForm.Size = new System.Drawing.Size(1420, 31);
             this.F5_toolStrip_fileEditorForm.TabIndex = 5;
             // 
             // F5_toolStripSeparator_separator1
             // 
             this.F5_toolStripSeparator_separator1.Name = "F5_toolStripSeparator_separator1";
-            this.F5_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 26);
+            this.F5_toolStripSeparator_separator1.Size = new System.Drawing.Size(6, 31);
             // 
             // F5_toolStripButton_addUsers
             // 
             this.F5_toolStripButton_addUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.F5_toolStripButton_addUsers.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5_toolStripButton_addUsers.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5_toolStripButton_addUsers.Image = ((System.Drawing.Image)(resources.GetObject("F5_toolStripButton_addUsers.Image")));
             this.F5_toolStripButton_addUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.F5_toolStripButton_addUsers.Name = "F5_toolStripButton_addUsers";
-            this.F5_toolStripButton_addUsers.Size = new System.Drawing.Size(193, 23);
+            this.F5_toolStripButton_addUsers.Size = new System.Drawing.Size(234, 28);
             this.F5_toolStripButton_addUsers.Text = "Adăugare utilizatori";
             this.F5_toolStripButton_addUsers.Click += new System.EventHandler(this.F5_toolStripButton_addUsers_Click);
             // 
@@ -74,26 +75,27 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 23);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // F5_statusStrip_fileEditorForm
             // 
+            this.F5_statusStrip_fileEditorForm.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.F5_statusStrip_fileEditorForm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.F5mdi1_toolStripStatusLabel_connectedDatabaseName,
             this.F5mdi1_toolStripProgressBar_databaseSyncProgressBar});
-            this.F5_statusStrip_fileEditorForm.Location = new System.Drawing.Point(0, 597);
+            this.F5_statusStrip_fileEditorForm.Location = new System.Drawing.Point(0, 595);
             this.F5_statusStrip_fileEditorForm.Name = "F5_statusStrip_fileEditorForm";
-            this.F5_statusStrip_fileEditorForm.Size = new System.Drawing.Size(1420, 22);
+            this.F5_statusStrip_fileEditorForm.Size = new System.Drawing.Size(1420, 24);
             this.F5_statusStrip_fileEditorForm.TabIndex = 4;
             this.F5_statusStrip_fileEditorForm.Text = "F5_statusStrip_status";
             // 
             // F5mdi1_toolStripStatusLabel_connectedDatabaseName
             // 
-            this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Font = new System.Drawing.Font("Cascadia Code", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Name = "F5mdi1_toolStripStatusLabel_connectedDatabaseName";
-            this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Size = new System.Drawing.Size(112, 17);
+            this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Size = new System.Drawing.Size(128, 18);
             this.F5mdi1_toolStripStatusLabel_connectedDatabaseName.Text = "#DATABASE_NAME#";
             // 
             // F5mdi1_toolStripProgressBar_databaseSyncProgressBar
@@ -103,12 +105,12 @@
             // 
             // F5_FileEditorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1420, 619);
             this.Controls.Add(this.F5_toolStrip_fileEditorForm);
             this.Controls.Add(this.F5_statusStrip_fileEditorForm);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "F5_FileEditorForm";

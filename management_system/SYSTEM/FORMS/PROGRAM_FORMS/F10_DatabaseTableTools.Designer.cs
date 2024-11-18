@@ -48,29 +48,31 @@
             // F10_comboBox_databaseTableTools
             // 
             this.F10_comboBox_databaseTableTools.FormattingEnabled = true;
-            this.F10_comboBox_databaseTableTools.Location = new System.Drawing.Point(13, 48);
-            this.F10_comboBox_databaseTableTools.Margin = new System.Windows.Forms.Padding(4);
+            this.F10_comboBox_databaseTableTools.Location = new System.Drawing.Point(14, 56);
+            this.F10_comboBox_databaseTableTools.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.F10_comboBox_databaseTableTools.Name = "F10_comboBox_databaseTableTools";
-            this.F10_comboBox_databaseTableTools.Size = new System.Drawing.Size(584, 27);
+            this.F10_comboBox_databaseTableTools.Size = new System.Drawing.Size(637, 35);
             this.F10_comboBox_databaseTableTools.TabIndex = 0;
             this.F10_comboBox_databaseTableTools.SelectedIndexChanged += new System.EventHandler(this.F10_comboBox_databaseTableTools_SelectedIndexChanged);
             // 
             // F10_label_toolName
             // 
             this.F10_label_toolName.AutoSize = true;
-            this.F10_label_toolName.Location = new System.Drawing.Point(13, 9);
+            this.F10_label_toolName.Location = new System.Drawing.Point(14, 11);
             this.F10_label_toolName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.F10_label_toolName.Name = "F10_label_toolName";
-            this.F10_label_toolName.Size = new System.Drawing.Size(216, 19);
+            this.F10_label_toolName.Size = new System.Drawing.Size(288, 27);
             this.F10_label_toolName.TabIndex = 1;
             this.F10_label_toolName.Text = "Selectați instrumentul:";
             // 
             // F10_groupBox_tool
             // 
             this.F10_groupBox_tool.Controls.Add(this.F10_panel_searchColumn);
-            this.F10_groupBox_tool.Location = new System.Drawing.Point(17, 82);
+            this.F10_groupBox_tool.Location = new System.Drawing.Point(19, 96);
+            this.F10_groupBox_tool.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_groupBox_tool.Name = "F10_groupBox_tool";
-            this.F10_groupBox_tool.Size = new System.Drawing.Size(580, 289);
+            this.F10_groupBox_tool.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.F10_groupBox_tool.Size = new System.Drawing.Size(633, 339);
             this.F10_groupBox_tool.TabIndex = 2;
             this.F10_groupBox_tool.TabStop = false;
             this.F10_groupBox_tool.Text = "Instrument";
@@ -84,33 +86,36 @@
             this.F10_panel_searchColumn.Controls.Add(this.F10_label_searchColumn_valueToSearch);
             this.F10_panel_searchColumn.Controls.Add(this.F10_label_searchColumn_results);
             this.F10_panel_searchColumn.Controls.Add(this.F10_dataGridView_searchColumn_results);
-            this.F10_panel_searchColumn.Location = new System.Drawing.Point(12, 25);
+            this.F10_panel_searchColumn.Location = new System.Drawing.Point(13, 29);
+            this.F10_panel_searchColumn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_panel_searchColumn.Name = "F10_panel_searchColumn";
-            this.F10_panel_searchColumn.Size = new System.Drawing.Size(562, 258);
+            this.F10_panel_searchColumn.Size = new System.Drawing.Size(613, 303);
             this.F10_panel_searchColumn.TabIndex = 0;
             // 
             // F10_textBox_searchColumn_columnName
             // 
-            this.F10_textBox_searchColumn_columnName.Location = new System.Drawing.Point(146, 9);
+            this.F10_textBox_searchColumn_columnName.Location = new System.Drawing.Point(159, 11);
+            this.F10_textBox_searchColumn_columnName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_textBox_searchColumn_columnName.Name = "F10_textBox_searchColumn_columnName";
-            this.F10_textBox_searchColumn_columnName.Size = new System.Drawing.Size(413, 26);
+            this.F10_textBox_searchColumn_columnName.Size = new System.Drawing.Size(450, 31);
             this.F10_textBox_searchColumn_columnName.TabIndex = 8;
             // 
             // F10_label_searchColumn_columnName
             // 
             this.F10_label_searchColumn_columnName.AutoSize = true;
-            this.F10_label_searchColumn_columnName.Location = new System.Drawing.Point(4, 12);
+            this.F10_label_searchColumn_columnName.Location = new System.Drawing.Point(4, 14);
             this.F10_label_searchColumn_columnName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.F10_label_searchColumn_columnName.Name = "F10_label_searchColumn_columnName";
-            this.F10_label_searchColumn_columnName.Size = new System.Drawing.Size(126, 19);
+            this.F10_label_searchColumn_columnName.Size = new System.Drawing.Size(168, 27);
             this.F10_label_searchColumn_columnName.TabIndex = 7;
             this.F10_label_searchColumn_columnName.Text = "Nume coloană:";
             // 
             // F10_button_searchColumn_startSearch
             // 
-            this.F10_button_searchColumn_startSearch.Location = new System.Drawing.Point(470, 73);
+            this.F10_button_searchColumn_startSearch.Location = new System.Drawing.Point(513, 86);
+            this.F10_button_searchColumn_startSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_button_searchColumn_startSearch.Name = "F10_button_searchColumn_startSearch";
-            this.F10_button_searchColumn_startSearch.Size = new System.Drawing.Size(89, 31);
+            this.F10_button_searchColumn_startSearch.Size = new System.Drawing.Size(97, 36);
             this.F10_button_searchColumn_startSearch.TabIndex = 6;
             this.F10_button_searchColumn_startSearch.Text = "Start";
             this.F10_button_searchColumn_startSearch.UseVisualStyleBackColor = true;
@@ -118,50 +123,53 @@
             // 
             // F10_textBox_searchColumn_valueToSearch
             // 
-            this.F10_textBox_searchColumn_valueToSearch.Location = new System.Drawing.Point(146, 41);
+            this.F10_textBox_searchColumn_valueToSearch.Location = new System.Drawing.Point(159, 48);
+            this.F10_textBox_searchColumn_valueToSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_textBox_searchColumn_valueToSearch.Name = "F10_textBox_searchColumn_valueToSearch";
-            this.F10_textBox_searchColumn_valueToSearch.Size = new System.Drawing.Size(413, 26);
+            this.F10_textBox_searchColumn_valueToSearch.Size = new System.Drawing.Size(450, 31);
             this.F10_textBox_searchColumn_valueToSearch.TabIndex = 5;
             // 
             // F10_label_searchColumn_valueToSearch
             // 
             this.F10_label_searchColumn_valueToSearch.AutoSize = true;
-            this.F10_label_searchColumn_valueToSearch.Location = new System.Drawing.Point(4, 44);
+            this.F10_label_searchColumn_valueToSearch.Location = new System.Drawing.Point(4, 52);
             this.F10_label_searchColumn_valueToSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.F10_label_searchColumn_valueToSearch.Name = "F10_label_searchColumn_valueToSearch";
-            this.F10_label_searchColumn_valueToSearch.Size = new System.Drawing.Size(81, 19);
+            this.F10_label_searchColumn_valueToSearch.Size = new System.Drawing.Size(108, 27);
             this.F10_label_searchColumn_valueToSearch.TabIndex = 4;
             this.F10_label_searchColumn_valueToSearch.Text = "Valoare:";
             // 
             // F10_label_searchColumn_results
             // 
             this.F10_label_searchColumn_results.AutoSize = true;
-            this.F10_label_searchColumn_results.Location = new System.Drawing.Point(4, 88);
+            this.F10_label_searchColumn_results.Location = new System.Drawing.Point(4, 103);
             this.F10_label_searchColumn_results.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.F10_label_searchColumn_results.Name = "F10_label_searchColumn_results";
-            this.F10_label_searchColumn_results.Size = new System.Drawing.Size(135, 19);
+            this.F10_label_searchColumn_results.Size = new System.Drawing.Size(180, 27);
             this.F10_label_searchColumn_results.TabIndex = 3;
             this.F10_label_searchColumn_results.Text = "Valori găsite:";
             // 
             // F10_dataGridView_searchColumn_results
             // 
             this.F10_dataGridView_searchColumn_results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.F10_dataGridView_searchColumn_results.Location = new System.Drawing.Point(3, 110);
+            this.F10_dataGridView_searchColumn_results.Location = new System.Drawing.Point(3, 129);
+            this.F10_dataGridView_searchColumn_results.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F10_dataGridView_searchColumn_results.Name = "F10_dataGridView_searchColumn_results";
-            this.F10_dataGridView_searchColumn_results.Size = new System.Drawing.Size(556, 145);
+            this.F10_dataGridView_searchColumn_results.RowHeadersWidth = 51;
+            this.F10_dataGridView_searchColumn_results.Size = new System.Drawing.Size(607, 170);
             this.F10_dataGridView_searchColumn_results.TabIndex = 0;
             // 
             // F10_DatabaseTableTools
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 390);
+            this.ClientSize = new System.Drawing.Size(671, 458);
             this.Controls.Add(this.F10_groupBox_tool);
             this.Controls.Add(this.F10_label_toolName);
             this.Controls.Add(this.F10_comboBox_databaseTableTools);
-            this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F10_DatabaseTableTools";
             this.Text = "Instrumente bază de date";
             this.Load += new System.EventHandler(this.F10_DatabaseTableTools_Load);

@@ -34,21 +34,22 @@
             // 
             // F5mdi5_richTextBox_fileOverview
             // 
-            this.F5mdi5_richTextBox_fileOverview.Location = new System.Drawing.Point(12, 12);
+            this.F5mdi5_richTextBox_fileOverview.Location = new System.Drawing.Point(13, 14);
+            this.F5mdi5_richTextBox_fileOverview.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.F5mdi5_richTextBox_fileOverview.Name = "F5mdi5_richTextBox_fileOverview";
-            this.F5mdi5_richTextBox_fileOverview.Size = new System.Drawing.Size(890, 297);
+            this.F5mdi5_richTextBox_fileOverview.Size = new System.Drawing.Size(971, 348);
             this.F5mdi5_richTextBox_fileOverview.TabIndex = 0;
             this.F5mdi5_richTextBox_fileOverview.Text = "";
             // 
             // F5mdi5_FileOverview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 311);
+            this.ClientSize = new System.Drawing.Size(997, 365);
             this.Controls.Add(this.F5mdi5_richTextBox_fileOverview);
-            this.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "F5mdi5_FileOverview";
             this.Text = "Informații fișier";
             this.Load += new System.EventHandler(this.F5mdi5_FileOverview_Load);

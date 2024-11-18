@@ -264,6 +264,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U0_UtilityMainForm.resx">
       <DependentUpon>U0_UtilityMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SYSTEM\FORMS\UTILITY\U1_CustomizationForm.resx">
       <DependentUpon>U1_CustomizationForm.cs</DependentUpon>

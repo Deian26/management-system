@@ -225,5 +225,5 @@
       <FileName>SYSTEM\CLASSES\GROUPS\Group.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Font Name="Segoe UI" Size="9" />
+  <Font Name="Cascadia Code" Size="9" />
 </ClassDiagram>

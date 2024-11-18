@@ -41,22 +41,22 @@
             // F1_label_sender
             // 
             this.F1_label_sender.AutoSize = true;
-            this.F1_label_sender.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F1_label_sender.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F1_label_sender.Location = new System.Drawing.Point(289, 12);
             this.F1_label_sender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F1_label_sender.Name = "F1_label_sender";
-            this.F1_label_sender.Size = new System.Drawing.Size(72, 19);
+            this.F1_label_sender.Size = new System.Drawing.Size(87, 23);
             this.F1_label_sender.TabIndex = 4;
             this.F1_label_sender.Text = "Sender:";
             // 
             // F2_label_dateSent
             // 
             this.F2_label_dateSent.AutoSize = true;
-            this.F2_label_dateSent.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.F2_label_dateSent.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.F2_label_dateSent.Location = new System.Drawing.Point(262, 40);
             this.F2_label_dateSent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.F2_label_dateSent.Name = "F2_label_dateSent";
-            this.F2_label_dateSent.Size = new System.Drawing.Size(99, 19);
+            this.F2_label_dateSent.Size = new System.Drawing.Size(120, 23);
             this.F2_label_dateSent.TabIndex = 5;
             this.F2_label_dateSent.Text = "Date sent:";
             // 
@@ -74,7 +74,7 @@
             this.F2_textBox_sender.Location = new System.Drawing.Point(366, 9);
             this.F2_textBox_sender.Name = "F2_textBox_sender";
             this.F2_textBox_sender.ReadOnly = true;
-            this.F2_textBox_sender.Size = new System.Drawing.Size(156, 20);
+            this.F2_textBox_sender.Size = new System.Drawing.Size(156, 23);
             this.F2_textBox_sender.TabIndex = 7;
             // 
             // F2_textBox_dateSent
@@ -82,7 +82,7 @@
             this.F2_textBox_dateSent.Location = new System.Drawing.Point(366, 39);
             this.F2_textBox_dateSent.Name = "F2_textBox_dateSent";
             this.F2_textBox_dateSent.ReadOnly = true;
-            this.F2_textBox_dateSent.Size = new System.Drawing.Size(156, 20);
+            this.F2_textBox_dateSent.Size = new System.Drawing.Size(156, 23);
             this.F2_textBox_dateSent.TabIndex = 8;
             // 
             // F2_pictureBox_notificationImportance
@@ -95,16 +95,16 @@
             // 
             // F2_MainFormNotificationWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 261);
+            this.ClientSize = new System.Drawing.Size(532, 253);
             this.Controls.Add(this.F2_pictureBox_notificationImportance);
             this.Controls.Add(this.F2_textBox_dateSent);
             this.Controls.Add(this.F2_textBox_sender);
             this.Controls.Add(this.F2_richTextBox_notificationText);
             this.Controls.Add(this.F2_label_dateSent);
             this.Controls.Add(this.F1_label_sender);
-            this.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Cascadia Code", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(550, 300);
             this.MinimumSize = new System.Drawing.Size(550, 300);

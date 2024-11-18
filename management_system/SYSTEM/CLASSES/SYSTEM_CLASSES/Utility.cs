@@ -224,7 +224,7 @@ namespace management_system
         public static float maxPointTextSize = 50f; //maximum text size in points
         public static float defaultPointTextSize = 12.0f; //default tetx size in points
 
-        public static string defaultFontFamily = "Consolas"; //default font family
+        public static string defaultFontFamily = "Cascadia Code"; //default font family
 
         public static string recognizedWhitespaces = " \t\n\r";
 
